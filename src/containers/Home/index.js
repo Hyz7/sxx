@@ -1,8 +1,8 @@
 import React,{Component} from 'react'
 import Swiper from 'react-id-swiper';
-import '../../style/swiper/swiper.css'
 
-export default class Index extends Component{
+
+export default class Home extends Component{
     render() {
         const params = {
             effect: 'cube',

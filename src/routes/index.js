@@ -1,13 +1,12 @@
 import React,{Component} from 'react'
-import { Router, Route,Switch,Redirect} from 'react-router-dom'
-import Index from '../containers'
+import { Route, Switch, Redirect} from 'react-router-dom'
+import Home from '../containers/home'
 import About from '../containers/about'
 export default ()=>(
-    <Router>
+    <div>
         <Switch>
-            <Route exact path='/' component={Index}></Route>
+            <Route exact path='/' component={Home}></Route>
             <Route path='/aboutUs' component={About}></Route>
-            {/*<Route exact path='/contact' component={Contact}></Route>*/}
         </Switch>
-    </Router>
+    </div>
 )
