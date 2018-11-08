@@ -1,6 +1,9 @@
 import React,{Component} from 'react'
-
-export default class About extends Component{
+import {withRouter} from 'react-router-dom'
+class About extends Component{
+    componentDidMount(){
+        console.log(this.props)
+    }
     render() {
         return(
             <div>
@@ -9,3 +12,5 @@ export default class About extends Component{
         )
     }
 }
+
+export default withRouter(About)

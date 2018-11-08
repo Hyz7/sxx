@@ -2,6 +2,7 @@ import React,{Component,Fragment} from 'react'
 import Swiper from 'react-id-swiper';
 import connect from "react-redux/es/connect/connect";
 import {withRouter} from 'react-router-dom'
+const titleList=[0,1,2,3,4,5,6,7]
 class Home extends Component{
     constructor(props){
         super(props)
@@ -23,6 +24,8 @@ class Home extends Component{
             menuRightList:null
         })
     }
+
+    componentDidMount(){}
 
     render() {
         const params = {
@@ -49,21 +52,21 @@ class Home extends Component{
                                 {this.props.menuList.map((item)=>(
                                         <li key={item.key} value={item.key} onMouseOver={this.showMenuRight}>
                                             {item.title}
-                                            {!menuLeftShow&&e.target.value==item.key?
-                                                <div key={item.key} className="nav-menuDown-right">
-
-                                                </div>:null
-                                            }
                                         </li>
                                 ))}
                             </ul>:null
                         }
-
-                        {/*{menuRightList==2?
+                        {titleList[0]==menuRightList?
                             <div className="nav-menuDown-right">
-
+                                网络安全
                             </div>:null
-                        }*/}
+                        }
+
+                        {titleList[1]==menuRightList?
+                            <div className="nav-menuDown-right">
+                                核心优势
+                            </div>:null
+                        }
                     </div>
                 </div>
                 <Swiper {...params}>

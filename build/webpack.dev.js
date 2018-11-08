@@ -9,7 +9,7 @@ module.exports = merge(baseConfig, {
     devtool: 'cheap-module-source-map',
     devServer: {
         publicPath: '/',
-        contentBase: path.join(__dirname,'../dist'),
+        contentBase: path.join(__dirname,'./dist'),
         historyApiFallback: true,
         inline: true,
         port: 3000

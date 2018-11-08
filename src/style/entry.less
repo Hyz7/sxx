@@ -32,7 +32,8 @@ body{
         color: #fff;
         cursor: pointer;
         &:hover{
-
+          background-color: #fff;
+          color: #007aff;
         }
       }
       li.active{
@@ -83,12 +84,33 @@ body{
         line-height: 50px;
         min-width: 70px;
         text-align: center;
-        margin: 0 20px;
+        margin: 0 10px;
+        &:hover{
+          span{
+            width: 100%;
+            transition:width .5s;
+          }
+        }
+        span{
+          width: 0;
+          margin: 0 auto;
+          transition:width .5s;
+          display: block;
+          border-bottom: 3px solid #007aff;
+          margin-top: -3px;
+        }
         a{
           color: #666 !important;
-          font-size: 16px;
+          font-size: 14px;
           text-decoration: none;
           display: block;
+          padding: 0 20px;
+          box-sizing: border-box;
+          white-space: nowrap;
+        }
+        .active{
+          background-color: #007aff;
+          color: #fff!important;
         }
       }
     }
