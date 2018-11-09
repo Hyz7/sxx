@@ -16,18 +16,6 @@ module.exports = merge(baseConfig, {
     },
     module:{
         rules:[
-            /*{
-                test: /\.(css|less)$/,
-                use: [
-                    'style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: { importLoaders: 1 }
-                    },
-                    'less-loader',
-                    'postcss-loader'
-                ]
-            }*/
             {
                 test: /\.css$/,
                 use: [

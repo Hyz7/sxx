@@ -2,6 +2,11 @@ import React,{Component,Fragment} from 'react'
 import Swiper from 'react-id-swiper';
 import connect from "react-redux/es/connect/connect";
 import {withRouter} from 'react-router-dom'
+import * as actionCreators from './store/actionCreators'
+import Fade from '../fade'
+import { Transition  } from 'react-transition-group'
+// import '../../style/home/index.less'
+
 const titleList=[0,1,2,3,4,5,6,7]
 class Home extends Component{
     constructor(props){
@@ -25,13 +30,21 @@ class Home extends Component{
         })
     }
 
-    componentDidMount(){}
+    componentDidMount(){
+        // this.props.getMenuList()
+        // console.log(this.props.menuList)
+        // console.log(process.env.NODE_ENV)
+    }
 
     render() {
         const params = {
-            effect: 'flip',
+            effect: 'cube',
             grabCursor: true,
             loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false
+            },
             cubeEffect: {
                 shadow: true,
                 slideShadows: true,
@@ -48,15 +61,15 @@ class Home extends Component{
                 <div className="nav-menuDown-box">
                     <div className="inner-box" onMouseLeave={this.hideMenuRight}>
                         {menuLeftShow?
-                            <ul className="nav-menuDown">
+                            <ul className="nav-menuDown example">
                                 {this.props.menuList.map((item)=>(
-                                        <li key={item.key} value={item.key} onMouseOver={this.showMenuRight}>
-                                            {item.title}
-                                        </li>
+                                    <li key={item.key} value={item.key} onMouseOver={this.showMenuRight}>
+                                        {item.title}
+                                    </li>
                                 ))}
                             </ul>:null
                         }
-                        {titleList[0]==menuRightList?
+                                {/*{titleList[0]==menuRightList?
                             <div className="nav-menuDown-right">
                                 网络安全
                             </div>:null
@@ -64,10 +77,11 @@ class Home extends Component{
 
                         {titleList[1]==menuRightList?
                             <div className="nav-menuDown-right">
-                                核心优势
+                                区块链
                             </div>:null
-                        }
+                        }*/}
                     </div>
+
                 </div>
                 <Swiper {...params}>
                     <div><img src={require("../../images/banner.png")} alt=""/></div>
@@ -85,4 +99,10 @@ const mapStateToProps=(state)=>({
     menuLeftShow:state.header.menuLeftShow
 })
 
-export default withRouter(connect(mapStateToProps,null)(Home))
+const mapDispatchToProps=(dispatch)=>({
+    getMenuList(){
+        dispatch(actionCreators.getMenuLeftList())
+    }
+})
+
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Home))

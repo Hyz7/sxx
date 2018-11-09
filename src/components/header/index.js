@@ -6,11 +6,12 @@ import {withRouter} from 'react-router-dom'
 class Header extends Component{
     constructor(props){
         super(props)
-        this.state={
-        }
+        this.state={}
     }
 
-    componentDidMount(){}
+    componentDidMount(){
+
+    }
 
     render() {
         return(
