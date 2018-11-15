@@ -100,7 +100,13 @@ class Home extends Component{
                             </div>
                             <s style={{height:'0',clear:'both',display:'block',overflow:'hidden'}}></s>
                             <div className="course-list">
-                                <div className="list-box"></div>
+                                <div className="list-box">
+                                    <img src="" alt=""/>
+                                    <div className="content">
+                                        <div className="course-title">私有区块链，我们一起GO</div>
+                                        <div className="course-text">用Go语言实现一个区块链私有链</div>
+                                    </div>
+                                </div>
                                 <div className="list-box"></div>
                                 <div className="list-box"></div>
                                 <div className="list-box"></div>
@@ -126,7 +132,16 @@ class Home extends Component{
                                 <span className='span'><span></span></span>
                             </div>
                             <div className="teacher-introduce">
-                                <div className="introduce-list"></div>
+                                <div className="introduce-list">
+                                    <div className="avatar">
+                                        <img src="" alt=""/>
+                                    </div>
+                                    <div className="name">张小松</div>
+                                    <div className="position">长江学者特聘教授</div>
+                                    <div className="content">
+                                        电子科技大学
+                                    </div>
+                                </div>
                                 <div className="introduce-list"></div>
                                 <div className="introduce-list"></div>
                                 <div className="introduce-list"></div>
@@ -147,17 +162,22 @@ class Home extends Component{
                                     <li className={newsLeft==3?'active':''} onClick={()=>this.handleNewsChange(3)}>学员动态</li>
                                 </ul>
                                 {newsLeft==1?
-                                    <div className="news-right">
-                                        新闻资讯
-                                    </div>
+                                    <ul className="news-right">
+                                        <li><a><span></span><div className='news-title'>第三期成都区块链企业沙龙成功举办</div><div className='time'>2018-11-08</div></a></li>
+                                        <li><a><span></span><div className='news-title'>第三期成都区块链企业沙龙成功举办</div><div className='time'>2018-11-08</div></a></li>
+                                        <li><a><span></span><div className='news-title'>第三期成都区块链企业沙龙成功举办</div><div className='time'>2018-11-08</div></a></li>
+                                        <li><a><span></span><div className='news-title'>第三期成都区块链企业沙龙成功举办</div><div className='time'>2018-11-08</div></a></li>
+                                        <li><a><span></span><div className='news-title'>第三期成都区块链企业沙龙成功举办</div><div className='time'>2018-11-08</div></a></li>
+                                        <li><a><span></span><div className='news-title'>第三期成都区块链企业沙龙成功举办</div><div className='time'>2018-11-08</div></a></li>
+                                    </ul>
                                 :newsLeft==2?
-                                    <div className="news-right">
+                                    <ul className="news-right">
                                         行业动态
-                                    </div>
+                                    </ul>
                                 :newsLeft==3?
-                                    <div className="news-right">
+                                    <ul className="news-right">
                                         学员动态
-                                    </div>:null
+                                    </ul>:null
                                 }
                             </div>
                         </div>

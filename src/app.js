@@ -15,9 +15,9 @@ export default class App extends Component{
             <Provider store={store}>
                 <BrowserRouter>
                     <Switch>
-                        <Route exact path="/" render={() => <Redirect to="/xixuexing/index" push />} />
+                        {/*<Route exact path="/" render={() => <Redirect to="/xixuexing/index" push />} />*/}
 
-                        <Route path='/xixuexing/index' component={ MainRoutes }></Route>
+                        <Route path='/' component={ MainRoutes }></Route>
 
                         <Route component={ NotFound }/>
 
