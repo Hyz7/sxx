@@ -1,15 +1,17 @@
 import React,{Component,Fragment} from 'react'
 import { Route, Switch, Redirect} from 'react-router-dom'
+import Header from '../components/header'
+import Footer from '../components/footer'
 import Home from '../containers/home'
-import HomeRoutes from './home'
 import About from '../containers/about'
-import Footer from "../components/footer";
 export default ()=>(
     <div>
-        <header />
+        <Header />
         <Switch>
-            <Route exact path='/' component={Home}></Route>
+            <Route path='/' exact component={Home}></Route>
+            <Route path='/aboutUs'component={About}></Route>
         </Switch>
         <Footer />
     </div>
+
 )

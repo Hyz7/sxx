@@ -1,24 +1,188 @@
-.example-enter {
-  opacity: 0.01;
+//轮播图左侧菜单选项
+.nav-menuDown-box{
+  position:absolute;
+  z-index: 2;
+  width: 100%;
+  .inner-box{
+    width: 1200px;
+    margin: 0 auto;
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    .nav-menuDown-right{
+      width: calc(100vw - 200px);
+      height: 400px;
+      background-color: #fff;
+      box-shadow: 0 0 6px rgba(0,0,0,.3);
+    }
+    .nav-menuDown{
+      min-width: 200px;
+      width: 200px;
+      height: 400px;
+      background:rgba(0,0,0,0.3);
+      li{
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: #fff;
+        cursor: pointer;
+        &:hover{
+          background-color: #fff;
+          color: #007aff;
+        }
+      }
+      li.active{
+        background-color: #fff;
+        color: #007aff;
+        box-shadow: 0 0 6px rgba(0,0,0,.3);
+      }
+    }
+  }
 }
 
-.example-enter.example-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-//当你点击了hello节点的时候，那么该元素将会被移除，它会首先被添加example-leave,
-//然后添加example-leave-active这个class
-.example-leave {
-  opacity: 1;
-}
-.example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
-}
-.example-appear {
-  opacity: 0.01;
-}
-.example-appear.example-appear-active {
-  opacity: 1;
-  transition: opacity .5s ease-in;
+.home-container{
+  background-color: #F5F5F5;
+  .item1{
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16);
+    height: 140px;
+    width: 100%;
+    min-width: 1200px;
+    .item1-position{
+      width: 1200px;
+      padding: 20px 0;
+      margin: 0 auto;
+      .item1-list{
+        width: 270px;
+        border: 1px solid #BCBCBC;
+        border-radius: 10px;
+        height: 100px;
+        float: left;
+        margin-right: 25px;
+        .item1-list-box{
+          width: 130px;
+          height: 46px;
+          border: 1px solid #BCBCBC;
+          border-radius: 8px;
+          float: left;
+        }
+      }
+    }
+  }
+  .title{
+    height: 30px;
+    line-height: 30px;
+    width: 400px;
+    margin: 60px auto;
+    .text{
+      color: #4B4B4B;
+      font-size: 30px;
+      float: left;
+    }
+    .span{
+      float: left;
+      display: block;
+      width: 12px;
+      height: 12px;
+      padding: 3px;
+      box-sizing: border-box;
+      border-radius: 50%;
+      background-color: #B3D2FC;
+      margin: 10px 40px;
+      span{
+        display: block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #67A3F8;
+      }
+    }
+  }
+  .course{
+    height: 400px;
+    width: 100%;
+    min-width: 1200px;
+    .course-position{
+      width: 1210px;
+      margin: 0 auto;
+      .course-list{
+        .list-box{
+          border: 1px solid red;
+          float: left;
+          width: 210px;
+          height: 200px;
+          margin-right: 30px;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+  .largeData{
+    background-color: #fff;
+    height: 734px;
+    width: 100%;
+    min-width: 1200px;
+    overflow: hidden;
+    .largeData-position{
+      width: 1200px;
+      margin: 0 auto;
+    }
+  }
+  .teacher{
+    width: 100%;
+    min-width: 1200px;
+    overflow: hidden;
+    .teacher-position{
+      width: 1230px;
+      margin: 0 auto;
+      .teacher-introduce{
+        .introduce-list{
+          width: 290px;
+          height: 500px;
+          box-shadow: 0 0 6px rgba(0,0,0,.16);
+          float: left;
+          margin-right: 14px;
+        }
+      }
+    }
+  }
+  .news{
+    width: 100%;
+    min-width: 1200px;
+    overflow: hidden;
+    .news-position{
+      width: 1200px;
+      margin: 0 auto;
+      .news-box{
+        .news-left{
+          float: left;
+          li{
+            width: 210px;
+            height: 63px;
+            text-align: center;
+            line-height: 63px;
+            color: #4d4d4d;
+            font-size: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 35px;
+          }
+          li.active{
+            background-color: #4e8cee;
+            color: #fff!important;
+          }
+        }
+        .news-right{
+          width: 941px;
+          height: 260px;
+          border: 4px solid #4e8cee;
+          float: right;
+          border-radius: 5px;
+          padding:30px;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
 }
