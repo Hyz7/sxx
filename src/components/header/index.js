@@ -2,14 +2,12 @@ import React,{Component,Fragment} from 'react'
 import { NavLink } from 'react-router-dom'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
-import logo from "../../images/logo.png"
-import titleImg from  '../../images/title.png'
-import phoneImg from '../../images/phone.png'
-import addressImg from '../../images/address.png'
+import '../icons/iconfont'
+import { CSSTransition } from 'react-transition-group';
 class Header extends Component{
     constructor(props){
         super(props)
-        this.state={}
+        this.state={star: false}
     }
 
     componentDidMount(){
@@ -19,27 +17,47 @@ class Header extends Component{
     render() {
         return(
             <Fragment>
-                <div className='header-container'>
-                    <div className="header-position">
-                        <div className="header-top">
-                            <div className='header-logo'><img src={logo} title='思学行'alt=""/></div>
-                            <div className='header-biaoyu'><img src={titleImg} alt=""/></div>
-                            <div className='header-right'></div>
+                <CSSTransition
+                    in={true}
+                    timeout={300}
+                    appear={true}
+                    classNames="star"
+                    unmountOnExit
+                >
+                    <div className='header-container star'>
+                        <div className="header-position">
+                            <div className="header-top">
+                                <NavLink to='/' activeClassName='header-logo'></NavLink>
+                                <div className='header-biaoyu'></div>
+                                <div className='header-right'>
+                                    <div className='header-text'><span className='span1'></span>成都</div>
+                                    <div className='header-text'><span className='span2'></span>400-000-0000</div>
+                                </div>
+                            </div>
+                            <div className="header-nav">
+                                <div className="nav-left">热门课程</div>
+                                <ul className="nav-right">
+                                    <li><NavLink to='/' exact activeClassName="active">首页</NavLink><span></span></li>
+                                    <li><NavLink to='/1' activeClassName="active">核心优势</NavLink><span></span></li>
+                                    <li><NavLink to='/2' activeClassName="active">授课导师</NavLink><span></span></li>
+                                    <li>
+                                        <NavLink to='/3' activeClassName="active">思学行动态
+                                            <svg className="icon-svg">
+                                                <use xlinkHref='#icon-jiantou-copy-copy'></use>
+                                            </svg>
+                                        </NavLink>
+                                        <span></span>
+                                    </li>
+                                    <li><NavLink to='/4' activeClassName="active">资料下载</NavLink><span></span></li>
+                                    <li><NavLink to='/5' activeClassName="active">网课平台</NavLink><span></span></li>
+                                    <li><NavLink to='/aboutUs' activeClassName="active">关于我们</NavLink><span></span></li>
+                                </ul>
+                            </div>
+                            <s style={{height:'0',clear:'both',display:'block'}}></s>
                         </div>
-                        <div className="header-nav">
-                            <div className="nav-left">热门课程</div>
-                            <ul className="nav-right">
-                                <li><NavLink to='/' exact activeClassName="active">首页</NavLink><span></span></li>
-                                <li><NavLink to='/1' activeClassName="active">核心优势</NavLink><span></span></li>
-                                <li><NavLink to='/2' activeClassName="active">授课导师</NavLink><span></span></li>
-                                <li><NavLink to='/3' activeClassName="active">思学行动态</NavLink><span></span></li>
-                                <li><NavLink to='/4' activeClassName="active">资料下载</NavLink><span></span></li>
-                                <li><NavLink to='/aboutUs' activeClassName="active">关于我们</NavLink><span></span></li>
-                            </ul>
-                        </div>
-                        <s style={{height:'0',clear:'both',display:'block'}}></s>
                     </div>
-                </div>
+                </CSSTransition>
+
             </Fragment>
         )
     }

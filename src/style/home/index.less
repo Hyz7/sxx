@@ -1,3 +1,29 @@
+/*课程列表动画*/
+.bannerList{}
+.bannerList-appear{
+  opacity: 0.01;
+  transform: translateX(-100%) scale(0.75);
+  animation-delay:2s;
+  -webkit-animation-delay:2s;
+}
+.bannerList-appear-active{
+  opacity: 1;
+  transform: translateX(0%) scale(1);
+  transition: all 300ms ease-in;
+  animation-delay:2s;
+  -webkit-animation-delay:2s;
+}
+
+.swiper-container{
+  img{
+    width: 100%;
+    height: 400px;
+    min-width: 1200px;
+  }
+}
+body{
+  overflow-x:hidden!important;
+}
 //轮播图左侧菜单选项
 .nav-menuDown-box{
   position:absolute;
@@ -19,17 +45,29 @@
       min-width: 200px;
       width: 200px;
       height: 400px;
-      background:rgba(0,0,0,0.3);
+      background:rgba(93,150,238,0.8);
+      padding-top: 10px;
+      box-sizing: border-box;
       li{
+        font-size: 18px;
+        line-height: 60px;
+        height: 60px;
         width: 100%;
-        height: 50px;
-        text-align: center;
-        line-height: 50px;
         color: #fff;
         cursor: pointer;
+        text-align: center;
+        transition: all 500ms;
+        opacity: 0.7;
+        font-weight: bold;
+        span{
+          background: url("../../images/title.png");
+          height:1px;width:182px;
+          background-position:-1px -126px;
+        }
         &:hover{
-          background-color: #fff;
-          color: #007aff;
+          transition: all 500ms;
+          opacity:1;
+          transform: scale(1.01);
         }
       }
       li.active{
@@ -53,19 +91,65 @@
       width: 1200px;
       padding: 20px 0;
       margin: 0 auto;
+      .item-list{
+        padding: 0!important;
+        border: 0 !important;
+        .item1-list-box{
+          width: 130px;
+          height: 48px;
+          border: 1px solid #BCBCBC;
+          float: left;
+          display: flex;
+          flex-wrap: nowrap;
+          padding: 8px 0 8px 15px;
+          box-sizing: border-box;
+          font-size: 16px;
+          line-height: 30px;
+          color: #666;
+          cursor: pointer;
+          i{
+            display: block;
+            background: url("../../images/title.png");
+            margin-right: 10px;
+          }
+          .img1{height:30px;width:30px;background-position:-82px 0;}
+          .img2{height:30px;width:30px;background-position:-124px 0;}
+          .img3{height:29px;width:30px;background-position:-163px 0;}
+          .img4{height:30px;width:29px;background-position:-45px 0;}
+        }
+      }
       .item1-list{
         width: 270px;
         border: 1px solid #BCBCBC;
-        border-radius: 10px;
         height: 100px;
         float: left;
         margin-right: 25px;
-        .item1-list-box{
-          width: 130px;
-          height: 46px;
-          border: 1px solid #BCBCBC;
-          border-radius: 8px;
-          float: left;
+        padding: 20px 60px;
+        box-sizing: border-box;
+        .list-title{
+          font-size: 24px;
+          color: #666;
+          line-height: 24px;
+        }
+        .list-text{
+          line-height: 16px;
+          font-size: 16px;
+          color: #666;
+          margin-top: 15px;
+        }
+        span{
+          background: url("../../images/title.png");
+          float:left;
+          margin-right: 20px;
+        }
+        .span1{
+          height:60px;width:60px;background-position:-138px -38px;
+        }
+        .span2{
+          height:60px;width:60px;background-position:0 -37px;
+        }
+        .span3{
+          height:60px;width:60px;background-position:-69px -38px;
         }
       }
     }
@@ -108,12 +192,36 @@
       margin: 0 auto;
       .course-list{
         .list-box{
-          border: 1px solid red;
           float: left;
           width: 210px;
           height: 200px;
           margin-right: 30px;
-          border-radius: 8px;
+          box-shadow: 0 0 6px rgba(0,0,0,.16);
+          span{
+            display: block;
+            height: 120px;
+            width: 100%;
+            background: url("../../images/course.png");
+          }
+          .span1{height:120px;width:210px;background-position:-436px 0;}
+          .span2{height:120px;width:210px;background-position:-654px 0;}
+          .span3{height:120px;width:210px;background-position:-218px 0;}
+          .span4{height:120px;width:210px;background-position:210px 0;}
+          .span5{height:120px;width:210px;background-position:-0px 0;}
+          .content{
+            padding: 16px 10px 25px 10px;
+            box-sizing: border-box;
+            .course-title{
+              font-size: 16px;
+              color: #4c4c4c;
+              line-height: 16px;
+            }
+            .course-text{
+              margin-top: 10px;
+              font-size: 12px;
+              color: #999;
+            }
+          }
         }
       }
     }
@@ -132,17 +240,54 @@
   .teacher{
     width: 100%;
     min-width: 1200px;
-    overflow: hidden;
     .teacher-position{
       width: 1230px;
       margin: 0 auto;
       .teacher-introduce{
         .introduce-list{
+          padding: 15px 10px 0 10px;
+          box-sizing: border-box;
           width: 290px;
           height: 500px;
-          box-shadow: 0 0 6px rgba(0,0,0,.16);
           float: left;
           margin-right: 14px;
+          box-shadow: 0 0 6px rgba(0,0,0,.16);
+          cursor: pointer;
+          transition: all 500ms;
+          background-color: #fff;
+          &:hover{
+            transform: scale(1.05);
+            box-shadow: 3px 3px 12px rgba(0,0,0,.16);
+          }
+          .content{
+            color: #4c4c4c;
+            font-size: 14px;
+          }
+          .position{
+            text-align: center;
+            color:#4c4c4c;
+            font-size: 14px;
+            margin-bottom: 30px;
+          }
+          .name{
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 24px;
+            margin:20px 0;
+          }
+          .avatar{
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto;
+            background: url("../../images/teacher.png") no-repeat;
+          }
+          .active1{height:180px;width:180px;background-position:-193px 0;}
+          .active2{height:180px;width:180px;background-position:-580px 0;}
+          .active3{height:180px;width:180px;background-position:-387px 0;}
+          .active4{height:180px;width:180px;background-position:0 0;}
         }
       }
     }
@@ -163,14 +308,15 @@
             text-align: center;
             line-height: 63px;
             color: #4d4d4d;
-            font-size: 20px;
-            border-radius: 5px;
+            font-size: 24px;
+            font-weight: bold;
             cursor: pointer;
             margin-bottom: 35px;
           }
           li.active{
-            background-color: #4e8cee;
+            background-color: #4e8def;
             color: #fff!important;
+            box-shadow: 0 0 10px rgba(78,141,239,1);
           }
         }
         .news-right{
@@ -178,9 +324,37 @@
           height: 260px;
           border: 4px solid #4e8cee;
           float: right;
-          border-radius: 5px;
           padding:30px;
           box-sizing: border-box;
+          li{
+            cursor: pointer;
+            width: 100%;
+            color: #4c4c4c;
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 16px;
+            overflow: hidden;
+            span{
+              float: left;
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background-color: #4e8cee;
+              display: block;
+              margin: 3px 10px 0 0;
+            }
+            .news-title{
+              float: left;
+              &:hover{
+                color: @theme-color;
+              }
+            }
+            .time{
+              float: right;
+              color: #999;
+              font-size: 16px;
+            }
+          }
         }
       }
     }
