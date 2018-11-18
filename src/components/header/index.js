@@ -39,9 +39,9 @@ class Header extends Component{
                                 <ul className="nav-right">
                                     <li><NavLink to='/' exact activeClassName="active">首页</NavLink><span></span></li>
                                     <li><NavLink to='/1' activeClassName="active">核心优势</NavLink><span></span></li>
-                                    <li><NavLink to='/2' activeClassName="active">授课导师</NavLink><span></span></li>
+                                    <li><NavLink to='/teacher' activeClassName="active">授课导师</NavLink><span></span></li>
                                     <li>
-                                        <NavLink to='/3' activeClassName="active">思学行动态
+                                        <NavLink to='/sixuexing' activeClassName="active">思学行动态
                                             <svg className="icon-svg">
                                                 <use xlinkHref='#icon-jiantou-copy-copy'></use>
                                             </svg>

@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-
+import GZH from '../../images/publicNum.png'
 export default class Footer extends Component{
     render() {
         return(
@@ -51,7 +51,9 @@ export default class Footer extends Component{
                         </div>
                         <div className="item" style={{marginLeft:'96px'}}>
                             <div className="title">关注公众号</div>
-                            <div className='gongzhonghao'></div>
+                            <div className='gongzhonghao'>
+                                <img src={GZH} alt=""/>
+                            </div>
                             <div style={{marginTop:'22px',color:'#fff'}}>动态和资讯都在这里</div>
                         </div>
 
