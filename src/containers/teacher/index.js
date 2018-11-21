@@ -1,34 +1,38 @@
 import React,{Component} from 'react'
-import {withRouter} from 'react-router-dom'
 import sxxImg from '../../images/sxxbanner.png'
 class Teacher extends Component{
-    componentDidMount(){
-        console.log(this.props)
-    }
     render() {
         return(
             <div className='teacher-container'>
-                {/*<div className="teacher-banner">
+                <div className="teacher-banner">
                     <img src={sxxImg} alt=""/>
-                </div>*/}
-                {/*<div className="teacher-item1">
-                    <div className="teacher-item-box fr"></div>
                 </div>
-                <div className="teacher-item2">
-                    <div className="teacher-item-box fl"></div>
+
+                <div className="teacher-position">
+                    <ul className="scrollNav">
+                        <li>全部讲师</li>
+                        <li>区块链</li>
+                        <li>AI人工智能</li>
+                        <li>大数据</li>
+                        <li>新一代网络安全</li>
+                        <li>云计算</li>
+                        <li>智能物联网</li>
+                        <li>全栈软件测试</li>
+                    </ul>
+                    <div className="teacher-list">
+                        <div className="teacher-title">专家大牛全程面授</div>
+                        <div className="list"></div>
+                        <div className="list"></div>
+                        <div className="list"></div>
+                        <div className="list"></div>
+                        <div className="list"></div>
+                        <div className="list"></div>
+
+                    </div>
                 </div>
-                <div className="teacher-item3">
-                    <div className="teacher-item-box fr"></div>
-                </div>
-                <div className="teacher-item4">
-                    <div className="teacher-item-box fl"></div>
-                </div>
-                <div className="teacher-item5">
-                    <div className="teacher-item-box fr"></div>
-                </div>*/}
             </div>
         )
     }
 }
 
-export default withRouter(Teacher)
+export default Teacher

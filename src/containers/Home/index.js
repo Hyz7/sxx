@@ -6,18 +6,24 @@ import * as actionCreators from './store/actionCreators'
 import Self from './self.js'
 import University from './university.js'
 import Enterprise from './enterprise.js'
-
+import Data1 from '../../images/largeData/data1.png'
+import Data2 from '../../images/largeData/data2.png'
+import Data3 from '../../images/largeData/data3.png'
+import DataTitle from '../../images/largeData/datatitle.png'
 import { CSSTransition } from 'react-transition-group';
-import baomingImg from '../../images/baoming.png'
+import baomingImg from '../../images/home/baoming.png'
 const titleList=[0,1,2,3,4,5,6,7]
-class Home extends Component{
+let timer;
+    class Home extends Component{
     constructor(props){
         super(props)
         this.state={
             menuLeftShow: this.props.menuLeftShow,
             menuRightList: false,
             newsLeft: 1,
-            pages:''
+            pages:'',
+            active:'Data1',
+            list: ['Data1','Data2','Data3']
         }
         this.showMenuRight=this.showMenuRight.bind(this)
         this.hideMenuRight=this.hideMenuRight.bind(this)
@@ -59,7 +65,7 @@ class Home extends Component{
                 el: '.swiper-pagination'
             }
         }
-        let {menuLeftShow,menuRightList,newsLeft,pages} = this.state
+        let {menuLeftShow,menuRightList,newsLeft,pages,active} = this.state
         return(
             <Fragment>
                 <div className="nav-menuDown-box">
@@ -67,20 +73,16 @@ class Home extends Component{
                         {menuRightList?
                             <ul className="menu-popup" onMouseLeave={this.hideMenuRight}>
                                 <li>
-                                    <span></span>
-                                    <div className="popup-text">课程介绍</div>
+                                    <span></span><div className="popup-text">课程介绍</div>
                                 </li>
                                 <li>
-                                    <span></span>
-                                    <div className="popup-text">就业薪资</div>
+                                    <span></span><div className="popup-text">就业薪资</div>
                                 </li>
                                 <li>
-                                    <span></span>
-                                    <div className="popup-text">师资介绍</div>
+                                    <span></span><div className="popup-text">师资介绍</div>
                                 </li>
                                 <li>
-                                    <span></span>
-                                    <div className="popup-text">视频资料</div>
+                                    <span></span><div className="popup-text">视频资料</div>
                                 </li>
                             </ul>
                         :null}
@@ -224,6 +226,7 @@ class Home extends Component{
                                         <div className="content">
                                             <div className="course-title">私有区块链，我们一起GO</div>
                                             <div className="course-text">用Go语言实现一个区块链私有链</div>
+                                            <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
                                         </div>
                                     </div>
                                     <div className="list-box">
@@ -231,8 +234,9 @@ class Home extends Component{
                                             <span className='span2'></span>
                                         </div>
                                         <div className="content">
-                                            <div className="course-title">私有区块链，我们一起GO</div>
-                                            <div className="course-text">用Go语言实现一个区块链私有链</div>
+                                            <div className="course-title">玩转数据结构 从入门到进阶</div>
+                                            <div className="course-text">就看你会不会玩！</div>
+                                            <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
                                         </div>
                                     </div>
                                     <div className="list-box">
@@ -240,8 +244,9 @@ class Home extends Component{
                                             <span className='span3'></span>
                                         </div>
                                         <div className="content">
-                                            <div className="course-title">私有区块链，我们一起GO</div>
-                                            <div className="course-text">用Go语言实现一个区块链私有链</div>
+                                            <div className="course-title">Spring Cloud微服务实战</div>
+                                            <div className="course-text">来吧！我们试试实战</div>
+                                            <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
                                         </div>
                                     </div>
                                     <div className="list-box">
@@ -249,8 +254,9 @@ class Home extends Component{
                                             <span className='span4'></span>
                                         </div>
                                         <div className="content">
-                                            <div className="course-title">私有区块链，我们一起GO</div>
-                                            <div className="course-text">用Go语言实现一个区块链私有链</div>
+                                            <div className="course-title">Go语言实战流媒体视频网站</div>
+                                            <div className="course-text">用Go语言实践应用</div>
+                                            <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
                                         </div>
                                     </div>
                                     <div className="list-box">
@@ -258,8 +264,9 @@ class Home extends Component{
                                             <span className='span5'></span>
                                         </div>
                                         <div className="content">
-                                            <div className="course-title">私有区块链，我们一起GO</div>
-                                            <div className="course-text">用Go语言实现一个区块链私有链</div>
+                                            <div className="course-title">SVN从入门到放弃</div>
+                                            <div className="course-text">入门级课程你敢不敢来</div>
+                                            <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
                                         </div>
                                     </div>
                                 </div>
@@ -272,6 +279,24 @@ class Home extends Component{
                                     <span className='span'><span></span></span>
                                     <div className='text'>就业薪资大数据</div>
                                     <span className='span'><span></span></span>
+                                </div>
+                                <div className="imgTitle">
+                                    <img src={DataTitle} alt=""/>
+                                </div>
+                                <div className="data-content">
+                                    <div className="img-box" onMouseOver={()=>{clearInterval(timer)}} onMouseLeave={()=>{this.timerMethod()}}>
+                                        {/*{
+                                            this.state.list.map((item,index)=>{
+                                                return <img src={item} key={index} alt=""/>
+                                            })
+                                        }*/}
+                                        <img className={active=='Data1'?'active':''} src={Data1} alt="" onClick={()=>{this.handleImgChange('Data1')}}/>
+                                        <img className={active=='Data2'?'active':''} src={Data2} alt="" onClick={()=>{this.handleImgChange('Data2')}}/>
+                                        <img className={active=='Data3'?'active':''} src={Data3} alt="" onClick={()=>{this.handleImgChange('Data3')}}/>
+                                    </div>
+                                    <div className="data-description">
+                                        中国互联网行业已具规模，并且发展迅猛，行业平均就业薪资高，但专业技术人才供需严重失衡，未来行业的发展亟待复合型及国际化人才的出现。
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -378,12 +403,30 @@ class Home extends Component{
         )
     }
 
+    timerMethod=()=>{
+        let {list}=this.state
+        this.setState({list:list.unshift(list.pop())})
+    }
+
+    componentDidMount(){
+        /*timer=setInterval(()=>{
+            this.timerMethod()
+        },2000)*/
+    }
+    componentWillUnmount(){
+        clearInterval(timer)
+    }
+
     handleBoxChange=(value)=>{
         this.setState({pages:value})
     }
 
     handleNewsChange=(value)=>{
         this.setState({newsLeft:value})
+    }
+
+    handleImgChange=(value)=>{
+        this.setState({active:value})
     }
 }
 const mapStateToProps=(state)=>({
