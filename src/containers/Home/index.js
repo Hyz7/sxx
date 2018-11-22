@@ -70,7 +70,7 @@ let timer;
             <Fragment>
                 <div className="nav-menuDown-box">
                     <div className="inner-box" onMouseLeave={this.hideMenuRight}>
-                        {menuRightList?
+                        {/*{menuRightList?
                             <ul className="menu-popup" onMouseLeave={this.hideMenuRight}>
                                 <li>
                                     <span></span><div className="popup-text">课程介绍</div>
@@ -85,7 +85,7 @@ let timer;
                                     <span></span><div className="popup-text">视频资料</div>
                                 </li>
                             </ul>
-                        :null}
+                        :null}*/}
                         {menuLeftShow?
                             <CSSTransition
                                 in={true}
