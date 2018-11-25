@@ -1,5 +1,5 @@
 import React,{Component,Fragment} from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink,Link } from 'react-router-dom'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import '../icons/iconfont'
@@ -7,7 +7,10 @@ import { CSSTransition } from 'react-transition-group';
 class Header extends Component{
     constructor(props){
         super(props)
-        this.state={star: false}
+        this.state={
+            star: false,
+            popupHeader:false
+        }
     }
 
     componentDidMount(){
@@ -15,6 +18,7 @@ class Header extends Component{
     }
 
     render() {
+        let {popupHeader}=this.state
         return(
             <Fragment>
                 <CSSTransition
@@ -38,18 +42,30 @@ class Header extends Component{
                                 <div className="nav-left">热门课程</div>
                                 <ul className="nav-right">
                                     <li><NavLink to='/' exact activeClassName="active">首页</NavLink><span></span></li>
-                                    <li><NavLink to='/1' activeClassName="active">核心优势</NavLink><span></span></li>
+                                    <li><NavLink to='/core' activeClassName="active">核心优势</NavLink><span></span></li>
                                     <li><NavLink to='/teacher' activeClassName="active">授课导师</NavLink><span></span></li>
-                                    <li>
+                                    <li onClick={()=>{this.setState({popupHeader:true})}} onMouseLeave={()=>{this.setState({popupHeader:false})}}>
                                         <NavLink to='/sixuexing' activeClassName="active">思学行动态
                                             <svg className="icon-svg">
                                                 <use xlinkHref='#icon-jiantou-copy-copy'></use>
                                             </svg>
                                         </NavLink>
                                         <span></span>
+                                        <CSSTransition
+                                            in={this.state.popupHeader}
+                                            timeout={300}
+                                            classNames="popup"
+                                            unmountOnExit
+                                        >
+                                        <div className="popup-header">
+                                            <div className='list'><Link to='/sixuexing/news'>新闻资讯</Link></div>
+                                            <div className='list'><Link to='/sixuexing/industry'>行业动态</Link></div>
+                                            <div className='list'><Link to='/sixuexing/student'>学员动态</Link></div>
+                                        </div>
+                                        </CSSTransition>
                                     </li>
-                                    <li><NavLink to='/4' activeClassName="active">资料下载</NavLink><span></span></li>
-                                    <li><NavLink to='/5' activeClassName="active">网课平台</NavLink><span></span></li>
+                                    <li><NavLink to='/download' activeClassName="active">资料下载</NavLink><span></span></li>
+                                    <li><NavLink to='/5' activeClassName="active">人才招聘</NavLink><span></span></li>
                                     <li><NavLink to='/aboutUs' activeClassName="active">关于我们</NavLink><span></span></li>
                                 </ul>
                             </div>
