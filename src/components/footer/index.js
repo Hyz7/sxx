@@ -3,7 +3,7 @@ import GZH from '../../images/publicNum.png'
 export default class Footer extends Component{
     render() {
         return(
-            <div className='footer-container'>
+            <footer className='footer-container'>
                 <div className="footer-position">
                     <div className="footer1">
                         <div className="title"  style={{width:'100px'}}>
@@ -67,7 +67,7 @@ export default class Footer extends Component{
                 <div className="footer">
                     Copyright ©2018 studytodo.com 成都思学行教育科技有限公司ICP备 18033964号
                 </div>
-            </div>
+            </footer>
         )
     }
 }

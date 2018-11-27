@@ -40,11 +40,7 @@ let timer;
         })
     }
 
-    componentDidMount(){
-        // this.props.getMenuList()
-        // console.log(this.props.menuList)
-        // console.log(process.env.NODE_ENV)
-    }
+    componentDidMount(){}
 
     render() {
         const params = {
@@ -95,72 +91,67 @@ let timer;
                                 unmountOnExit
                             >
                             <ul className="nav-menuDown">
-                                {/*{this.props.menuList.map((item)=>(
-                                    <li key={item.key} value={item.key} onMouseOver={this.showMenuRight}>
-                                        {item.title}
-                                    </li>
-                                ))}*/}
                                 <li onMouseOver={this.showMenuRight}>
-                                    <div className='course-listbox'>
+                                    <h1 className='course-listbox'>
                                         区块链工程师
                                         <svg className='icon-svg'>
                                             <use xlinkHref='#icon-arrow-right-copy'></use>
                                         </svg>
-                                    </div>
+                                    </h1>
                                     <span></span>
                                 </li>
                                 <li onMouseOver={this.showMenuRight}>
-                                    <div className='course-listbox'>
+                                    <h1 className='course-listbox'>
                                         大数据
                                         <svg className='icon-svg'>
                                             <use xlinkHref='#icon-arrow-right-copy'></use>
                                         </svg>
-                                    </div>
+                                    </h1>
                                     <span></span>
                                 </li>
                                 <li onMouseOver={this.showMenuRight}>
-                                    <div className='course-listbox'>
+                                    <h1 className='course-listbox'>
                                         AI人工智能
                                         <svg className='icon-svg'>
                                             <use xlinkHref='#icon-arrow-right-copy'></use>
                                         </svg>
-                                    </div>
+                                    </h1>
                                     <span></span>
                                 </li>
                                 <li onMouseOver={this.showMenuRight}>
-                                    <div className='course-listbox'>
+                                    <h1 className='course-listbox'>
                                         新一代网络安全
                                         <svg className='icon-svg'>
                                             <use xlinkHref='#icon-arrow-right-copy'></use>
                                         </svg>
-                                    </div>
+                                    </h1>
                                     <span></span>
                                 </li>
                                 <li onMouseOver={this.showMenuRight}>
-                                    <div className='course-listbox'>
+                                    <h1 className='course-listbox'>
                                         云计算
                                         <svg className='icon-svg'>
                                             <use xlinkHref='#icon-arrow-right-copy'></use>
                                         </svg>
-                                    </div>
+                                    </h1>
                                     <span></span>
                                 </li>
                                 <li onMouseOver={this.showMenuRight}>
-                                    <div className='course-listbox'>
+                                    <h1 className='course-listbox'>
                                         智能物联网
                                         <svg className='icon-svg'>
                                             <use xlinkHref='#icon-arrow-right-copy'></use>
                                         </svg>
-                                    </div>
+                                    </h1>
                                     <span></span>
                                 </li>
                                 <li onMouseOver={this.showMenuRight}>
-                                    <div className='course-listbox'>
+                                    <h1 className='course-listbox'>
                                         全栈软件测试
                                         <svg className='icon-svg'>
                                             <use xlinkHref='#icon-arrow-right-copy'></use>
                                         </svg>
-                                    </div>
+                                    </h1>
                                     <span></span>
                                 </li>
                             </ul></CSSTransition>:null
@@ -168,10 +159,10 @@ let timer;
                     </div>
                 </div>
                 <Swiper {...params}>
-                    <div><img src={require("../../images/banner.png")} alt=""/></div>
-                    <div><img src={require("../../images/banner.png")} alt=""/></div>
-                    <div><img src={require("../../images/banner.png")} alt=""/></div>
-                    <div><img src={require("../../images/banner.png")} alt=""/></div>
+                    <div><img src={require("../../images/banner.png")} alt="区块链"/></div>
+                    <div><img src={require("../../images/banner.png")} alt="区块链"/></div>
+                    <div><img src={require("../../images/banner.png")} alt="区块链"/></div>
+                    <div><img src={require("../../images/banner.png")} alt="区块链"/></div>
                 </Swiper>
                 <div className="home-container">
                     <div className="item1">
@@ -213,7 +204,7 @@ let timer;
                             <div className="course-position">
                                 <div className="title" style={{width:'360px'}}>
                                     <span className='span'><span></span></span>
-                                    <div className='text'>0元免费课程</div>
+                                    <h1 className='text'>0元免费课程</h1>
                                     <span className='span'><span></span></span>
                                 </div>
                                 <s style={{height:'0',clear:'both',display:'block',overflow:'hidden'}}></s>
@@ -224,7 +215,7 @@ let timer;
                                             <span className='span1'></span>
                                         </div>
                                         <div className="content">
-                                            <div className="course-title">私有区块链，我们一起GO</div>
+                                            <title className="course-title">私有区块链，我们一起GO</title>
                                             <div className="course-text">用Go语言实现一个区块链私有链</div>
                                             <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
                                         </div>
@@ -234,7 +225,7 @@ let timer;
                                             <span className='span2'></span>
                                         </div>
                                         <div className="content">
-                                            <div className="course-title">玩转数据结构 从入门到进阶</div>
+                                            <title className="course-title">玩转数据结构 从入门到进阶</title>
                                             <div className="course-text">就看你会不会玩！</div>
                                             <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
                                         </div>
@@ -244,7 +235,7 @@ let timer;
                                             <span className='span3'></span>
                                         </div>
                                         <div className="content">
-                                            <div className="course-title">Spring Cloud微服务实战</div>
+                                            <title className="course-title">Spring Cloud微服务实战</title>
                                             <div className="course-text">来吧！我们试试实战</div>
                                             <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
                                         </div>
@@ -254,7 +245,7 @@ let timer;
                                             <span className='span4'></span>
                                         </div>
                                         <div className="content">
-                                            <div className="course-title">Go语言实战流媒体视频网站</div>
+                                            <title className="course-title">Go语言实战流媒体视频网站</title>
                                             <div className="course-text">用Go语言实践应用</div>
                                             <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
                                         </div>
@@ -264,7 +255,7 @@ let timer;
                                             <span className='span5'></span>
                                         </div>
                                         <div className="content">
-                                            <div className="course-title">SVN从入门到放弃</div>
+                                            <title className="course-title">SVN从入门到放弃</title>
                                             <div className="course-text">入门级课程你敢不敢来</div>
                                             <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
                                         </div>
@@ -277,11 +268,11 @@ let timer;
                             <div className="largeData-position">
                                 <div className="title">
                                     <span className='span'><span></span></span>
-                                    <div className='text'>就业薪资大数据</div>
+                                    <h1 className='text'>就业薪资大数据</h1>
                                     <span className='span'><span></span></span>
                                 </div>
                                 <div className="imgTitle">
-                                    <img src={DataTitle} alt=""/>
+                                    <img src={DataTitle} alt="区块链"/>
                                 </div>
                                 <div className="data-content">
                                     <div className="img-box" onMouseOver={()=>{clearInterval(timer)}} onMouseLeave={()=>{this.timerMethod()}}>
@@ -290,9 +281,9 @@ let timer;
                                                 return <img src={item} key={index} alt=""/>
                                             })
                                         }*/}
-                                        <img className={active=='Data1'?'active':''} src={Data1} alt="" onClick={()=>{this.handleImgChange('Data1')}}/>
-                                        <img className={active=='Data2'?'active':''} src={Data2} alt="" onClick={()=>{this.handleImgChange('Data2')}}/>
-                                        <img className={active=='Data3'?'active':''} src={Data3} alt="" onClick={()=>{this.handleImgChange('Data3')}}/>
+                                        <img className={active=='Data1'?'active':''} src={Data1} alt="区块链" onClick={()=>{this.handleImgChange('Data1')}}/>
+                                        <img className={active=='Data2'?'active':''} src={Data2} alt="区块链" onClick={()=>{this.handleImgChange('Data2')}}/>
+                                        <img className={active=='Data3'?'active':''} src={Data3} alt="区块链" onClick={()=>{this.handleImgChange('Data3')}}/>
                                     </div>
                                     <div className="data-description">
                                         中国互联网行业已具规模，并且发展迅猛，行业平均就业薪资高，但专业技术人才供需严重失衡，未来行业的发展亟待复合型及国际化人才的出现。
@@ -304,7 +295,7 @@ let timer;
                             <div className="teacher-position">
                                 <div className="title" style={{width:'320px'}}>
                                     <span className='span'><span></span></span>
-                                    <div className='text'>师资介绍</div>
+                                    <h1 className='text'>师资介绍</h1>
                                     <span className='span'><span></span></span>
                                 </div>
                                 <div className="title-description">顶尖高校教授研发课程，实名行业实战大牛授课</div>
@@ -347,12 +338,12 @@ let timer;
                         </div>
                         <div className="news">
                             <div className="news-position">
-                                <div className="title" style={{width:'320px'}}>
+                                <div className="title" style={{width:'420px'}}>
                                     <span className='span'><span></span></span>
-                                    <div className='text'>新闻资讯</div>
+                                    <h1 className='text'>新闻资讯-区块链</h1>
                                     <span className='span'><span></span></span>
                                 </div>
-                                <div className="title-description">一键了解最新行业讯息</div>
+                                <h2 className="title-description">一键了解最新区块链大数据行业讯息</h2>
                                 <div className="news-box">
                                     <ul className="news-left">
                                         <li className={newsLeft==1?'active':''} onClick={()=>this.handleNewsChange(1)}>新闻资讯</li>
@@ -384,11 +375,11 @@ let timer;
                                     <span className='span'><span></span></span>
                                 </div>
                                 <div className="baoming-box" style={{marginTop:'40px'}}>
-                                    <img src={baomingImg} alt=""/>
+                                    <img src={baomingImg} alt="区块链"/>
                                 </div>
-                                <div className="baoming-btn">
+                                <h1 className="baoming-btn">
                                     我要报名
-                                </div>
+                                </h1>
                             </div>
                         </div>
                     </div>
@@ -409,9 +400,7 @@ let timer;
     }
 
     componentDidMount(){
-        /*timer=setInterval(()=>{
-            this.timerMethod()
-        },2000)*/
+
     }
     componentWillUnmount(){
         clearInterval(timer)

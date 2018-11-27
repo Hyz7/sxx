@@ -28,7 +28,7 @@ class Header extends Component{
                     classNames="star"
                     unmountOnExit
                 >
-                    <div className='header-container star'>
+                    <header className='header-container star'>
                         <div className="header-position">
                             <div className="header-top">
                                 <NavLink to='/' activeClassName='header-logo'></NavLink>
@@ -71,7 +71,7 @@ class Header extends Component{
                             </div>
                             <s style={{height:'0',clear:'both',display:'block'}}></s>
                         </div>
-                    </div>
+                    </header>
                 </CSSTransition>
 
             </Fragment>
