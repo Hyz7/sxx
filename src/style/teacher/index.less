@@ -16,6 +16,7 @@
     margin: 0 auto;
     .teacher-list{
       width: 1200px;
+      margin-bottom: 60px;
       .teacher-title{
         width: 240px;
         margin: 60px auto;
@@ -39,6 +40,21 @@
         }
         .right-box{
           width: 880px;
+          .goodAt{
+            font-size: 14px;
+            display: flex;
+            flex-wrap: nowrap;
+            span{
+              font-weight: bold;
+              white-space: nowrap;
+            }
+          }
+          .box{
+            margin: 20px 0;
+            .text{
+              font-size: 14px;
+            }
+          }
         }
         .name{
           font-size: 24px;
@@ -51,7 +67,7 @@
           }
         }
         .position{
-
+          font-size: 20px;
         }
         &:hover{
           box-shadow: 0 0 6px rgba(0,0,0,.16);
@@ -65,16 +81,27 @@
       top:100px;
       left: -160px;
       background-color: #fff;
-      width: 150px;
+      width: 140px;
       li{
+        margin-bottom: 5px;
         height: 40px;
         text-align: center;
         line-height: 40px;
         box-shadow: 0 0 6px rgba(0,0,0,.16);
         cursor: pointer;
+        position: relative;
         &:hover{
           background-color: @theme-color;
           color: #fff;
+          span{
+            position: absolute;
+            top: 0;
+            left: -15px;
+            width: 10px;
+            background-color: @theme-color;
+            display: block;
+            height: 100%;
+          }
         }
       }
     }
