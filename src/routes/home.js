@@ -1,13 +1,13 @@
 import React,{Component,Fragment} from 'react'
 import { Route, Switch, Redirect} from 'react-router-dom'
-import Header from '../components/header'
-import Footer from '../components/footer'
-import Home from '../containers/home'
-import Sxx from '../containers/sixuexing'
-import Teacher from '../containers/teacher'
-import About from '../containers/about'
-import Core from '../containers/core'
-import Download from '../containers/download'
+import Header from '../common/header'
+import Footer from '../common/footer'
+import Home from '../components/home'
+import Sxx from '../components/sixuexing'
+import Teacher from '../components/teacher'
+import About from '../components/about'
+import Core from '../components/core'
+import Download from '../components/download'
 export default ()=>(
     <div>
         <Header />
