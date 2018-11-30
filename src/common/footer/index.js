@@ -56,7 +56,6 @@ export default class Footer extends Component{
                             </div>
                             <div style={{marginTop:'22px',color:'#fff'}}>动态和资讯都在这里</div>
                         </div>
-
                     </div>
                     <div className="footer3">
                         <div className="title" style={{width:'100px'}}>

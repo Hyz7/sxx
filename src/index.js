@@ -3,7 +3,7 @@ import ReactDom from 'react-dom'
 // import App from './app'
 import store from "./store";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import MainRoutes from "./routes/home";
+import MainRoutes from "./routes/index";
 import NotFound from "./components/notFound";
 import Provider from "react-redux/es/components/Provider";
 import './style/swiper/swiper.css'

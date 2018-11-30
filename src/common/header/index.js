@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import '../icons/iconfont'
 import { CSSTransition } from 'react-transition-group';
+import Recruitment from "../../components/recruitment";
 class Header extends Component{
     constructor(props){
         super(props)
@@ -65,7 +66,7 @@ class Header extends Component{
                                         </CSSTransition>
                                     </li>
                                     <li><NavLink to='/download' activeClassName="active">资料下载</NavLink><span></span></li>
-                                    <li><NavLink to='/5' activeClassName="active">人才招聘</NavLink><span></span></li>
+                                    <li><NavLink to='/recruitment' activeClassName="active">人才招聘</NavLink><span></span></li>
                                     <li><NavLink to='/aboutUs' activeClassName="active">关于我们</NavLink><span></span></li>
                                 </ul>
                             </div>
