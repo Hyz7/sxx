@@ -9,6 +9,7 @@ import About from '../components/about'
 import Core from '../components/core'
 import Download from '../components/download'
 import Recruitment from '../components/recruitment'
+import ContactUs from '../components/contact'
 export default ()=>(
     <div>
         <Header />
@@ -20,6 +21,7 @@ export default ()=>(
             <Route path='/download' component={Download}></Route>
             <Route path='/recruitment' component={Recruitment}></Route>
             <Route path='/aboutUs' component={About}></Route>
+            <Route path='/contactUs' component={ContactUs}></Route>
         </Switch>
         <Footer />
     </div>

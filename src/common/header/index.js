@@ -72,6 +72,7 @@ class Header extends Component{
                                     <li><NavLink to='/download' activeClassName="active">资料下载</NavLink><span></span></li>
                                     <li><NavLink to='/recruitment' activeClassName="active">人才招聘</NavLink><span></span></li>
                                     <li><NavLink to='/aboutUs' activeClassName="active">关于我们</NavLink><span></span></li>
+                                    <li><NavLink to='/contactUs' activeClassName="active">联系我们</NavLink><span></span></li>
                                 </ul>
                             </div>
                             <s style={{height:'0',clear:'both',display:'block'}}></s>

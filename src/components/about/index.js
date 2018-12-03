@@ -1,5 +1,5 @@
 import React,{ Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter,Link } from 'react-router-dom'
 import sxxImg from '../../images/sxxbanner.png'
 import QQ from '../../images/qqcontact.png'
 class About extends Component{
@@ -72,12 +72,12 @@ class About extends Component{
                                     <div className="text">企业内训/商务合作:028—85253153</div>
                                     <div className="text" style={{margin:"20px 0"}}>QQ：2507819723</div>
                                     <div className="text">地址：成都高新区吉泰五路88号香年广场3栋14楼2号</div>
-                                    <a className="address">
+                                    <Link to='contactUs' className="address">
                                         <svg className='icon-svg'>
                                             <use xlinkHref='#icon-didian01'></use>
                                         </svg>
                                         学校地图地址
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="list">
@@ -89,12 +89,12 @@ class About extends Component{
                                     <div className="text">企业内训/商务合作:028—85253153</div>
                                     <div className="text" style={{margin:"20px 0"}}>QQ：2507819723</div>
                                     <div className="text">地址：成都高新区吉泰五路88号香年广场3栋14楼2号</div>
-                                    <a className="address">
+                                    <Link to='contactUs'  className="address">
                                         <svg className='icon-svg'>
                                             <use xlinkHref='#icon-didian01'></use>
                                         </svg>
                                         学校地图地址
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="list">
@@ -106,12 +106,12 @@ class About extends Component{
                                     <div className="text">企业内训/商务合作:028—85253153</div>
                                     <div className="text" style={{margin:"20px 0"}}>QQ：2507819723</div>
                                     <div className="text">地址：成都高新区吉泰五路88号香年广场3栋14楼2号</div>
-                                    <a className="address">
+                                    <Link to='contactUs'  className="address">
                                         <svg className='icon-svg'>
                                             <use xlinkHref='#icon-didian01'></use>
                                         </svg>
                                         学校地图地址
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
