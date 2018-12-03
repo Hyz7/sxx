@@ -44,8 +44,9 @@ let timer;
 
     render() {
         const params = {
-            effect: 'cube',
+            effect: 'fade',
             grabCursor: true,
+            spaceBetween: 30,
             loop: true,
             autoplay: {
                 delay: 2500,
@@ -66,22 +67,6 @@ let timer;
             <Fragment>
                 <div className="nav-menuDown-box">
                     <div className="inner-box" onMouseLeave={this.hideMenuRight}>
-                        {/*{menuRightList?
-                            <ul className="menu-popup" onMouseLeave={this.hideMenuRight}>
-                                <li>
-                                    <span></span><div className="popup-text">课程介绍</div>
-                                </li>
-                                <li>
-                                    <span></span><div className="popup-text">就业薪资</div>
-                                </li>
-                                <li>
-                                    <span></span><div className="popup-text">师资介绍</div>
-                                </li>
-                                <li>
-                                    <span></span><div className="popup-text">视频资料</div>
-                                </li>
-                            </ul>
-                        :null}*/}
                         {menuLeftShow?
                             <CSSTransition
                                 in={true}
@@ -159,10 +144,10 @@ let timer;
                     </div>
                 </div>
                 <Swiper {...params}>
-                    <div><img src={require("../../images/banner.png")} alt="区块链"/></div>
-                    <div><img src={require("../../images/banner.png")} alt="区块链"/></div>
-                    <div><img src={require("../../images/banner.png")} alt="区块链"/></div>
-                    <div><img src={require("../../images/banner.png")} alt="区块链"/></div>
+                    <div><img src={require("../../images/home/banner1.png")} alt="区块链"/></div>
+                    <div><img src={require("../../images/home/banner2.png")} alt="区块链"/></div>
+                    <div><img src={require("../../images/home/banner3.png")} alt="区块链"/></div>
+                    {/*<div><img src={require("../../images/banner.png")} alt="区块链"/></div>*/}
                 </Swiper>
                 <div className="home-container">
                     <div className="item1">
@@ -215,7 +200,7 @@ let timer;
                                             <span className='span1'></span>
                                         </div>
                                         <div className="content">
-                                            <title className="course-title">私有区块链，我们一起GO</title>
+                                            <div className="course-title">私有区块链，我们一起GO</div>
                                             <div className="course-text">用Go语言实现一个区块链私有链</div>
                                             <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
                                         </div>
@@ -225,7 +210,7 @@ let timer;
                                             <span className='span2'></span>
                                         </div>
                                         <div className="content">
-                                            <title className="course-title">玩转数据结构 从入门到进阶</title>
+                                            <div className="course-title">玩转数据结构 从入门到进阶</div>
                                             <div className="course-text">就看你会不会玩！</div>
                                             <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
                                         </div>
@@ -235,7 +220,7 @@ let timer;
                                             <span className='span3'></span>
                                         </div>
                                         <div className="content">
-                                            <title className="course-title">Spring Cloud微服务实战</title>
+                                            <div className="course-title">Spring Cloud微服务实战</div>
                                             <div className="course-text">来吧！我们试试实战</div>
                                             <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
                                         </div>
@@ -245,7 +230,7 @@ let timer;
                                             <span className='span4'></span>
                                         </div>
                                         <div className="content">
-                                            <title className="course-title">Go语言实战流媒体视频网站</title>
+                                            <div className="course-title">Go语言实战流媒体视频网站</div>
                                             <div className="course-text">用Go语言实践应用</div>
                                             <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
                                         </div>
@@ -255,7 +240,7 @@ let timer;
                                             <span className='span5'></span>
                                         </div>
                                         <div className="content">
-                                            <title className="course-title">SVN从入门到放弃</title>
+                                            <div className="course-title">SVN从入门到放弃</div>
                                             <div className="course-text">入门级课程你敢不敢来</div>
                                             <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
                                         </div>
@@ -275,12 +260,7 @@ let timer;
                                     <img src={DataTitle} alt="区块链"/>
                                 </div>
                                 <div className="data-content">
-                                    <div className="img-box" onMouseOver={()=>{clearInterval(timer)}} onMouseLeave={()=>{this.timerMethod()}}>
-                                        {/*{
-                                            this.state.list.map((item,index)=>{
-                                                return <img src={item} key={index} alt=""/>
-                                            })
-                                        }*/}
+                                    <div className="img-box" onMouseOver={()=>{clearInterval(timer)}}>
                                         <img className={active=='Data1'?'active':''} src={Data1} alt="区块链" onClick={()=>{this.handleImgChange('Data1')}}/>
                                         <img className={active=='Data2'?'active':''} src={Data2} alt="区块链" onClick={()=>{this.handleImgChange('Data2')}}/>
                                         <img className={active=='Data3'?'active':''} src={Data3} alt="区块链" onClick={()=>{this.handleImgChange('Data3')}}/>
@@ -394,10 +374,10 @@ let timer;
         )
     }
 
-    timerMethod=()=>{
+   /* timerMethod=()=>{
         let {list}=this.state
         this.setState({list:list.unshift(list.pop())})
-    }
+    }*/
 
     componentDidMount(){
 

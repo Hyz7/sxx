@@ -1,8 +1,9 @@
-import React,{PureComponent} from 'react'
+import React, {PureComponent} from 'react'
 import sxxImg from '../../images/sxxbanner.png'
 
-class Recruitment extends PureComponent{
+export default class Recruitment extends PureComponent{
     render(){
+        console.log(1)
         return (
             <div className="recruitment-container">
                 <div className="recruitment-banner">
@@ -15,5 +16,3 @@ class Recruitment extends PureComponent{
         )
     }
 }
-
-export default Recruitment

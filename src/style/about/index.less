@@ -50,16 +50,71 @@
       }
     }
   }
-  .banner-middle{
-    width: 100%;
-    min-width: 1200px;
-    height: 140px;
-    border: 1px solid red;
-    margin-bottom: 55px;
+  .contactUs{
+    .contact-box{
+      display: flex;
+      flex-wrap: nowrap;
+      .list{
+        width: 360px;
+        height: 370px;
+        margin-right: 60px;
+        &:last-child{
+          margin-right: 0;
+        }
+        .title{
+          font-weight: bold;
+          font-size: 30px;
+          margin-bottom: 45px;
+        }
+        .box{
+          position: relative;
+          .address{
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: nowrap;
+            line-height: 30px;
+            font-size: 18px;
+            color: #F07E0F;
+            cursor: pointer;
+            &:hover{
+              text-decoration: none;
+            }
+            .icon-svg{
+              width: 30px;
+              height: 30px;
+            }
+          }
+          img{
+            position: absolute;
+            top: 110px;
+            left: 200px;
+            cursor: pointer;
+          }
+          .text{
+            font-size: 18px;
+            color: #666;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+    .content-title{
+      margin: 25px 0;
+      .title-text{
+        font-size: 30px;
+        line-height: 30px;
+        color: #666;
+      }
+      .title-description{
+        font-size: 30px;
+        color: #ccc;
+      }
+    }
   }
   .about-content{
     padding-top: 60px;
     box-sizing: border-box;
+    border-bottom: 1px dotted #A0A0A0;
     .content-box{
       margin-bottom: 30px;
       .desContent{

@@ -1,11 +1,12 @@
-import React,{Component} from 'react'
-import {withRouter} from 'react-router-dom'
+import React,{ Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import sxxImg from '../../images/sxxbanner.png'
-import GZH from '../../images/publicNum.png'
+import QQ from '../../images/qqcontact.png'
 class About extends Component{
     componentDidMount(){
-        console.log(this.props)
+        // console.log(this.props)
     }
+
     render() {
         return(
             <div className='about-container'>
@@ -32,8 +33,7 @@ class About extends Component{
                                 思学行平台背景由“成都市大数据协会区块链专委会”指导，“电子科技大学网络空间安全中心”发起，清华大学、浙江大学、四川大学、西南财经大学等多家高校及顶尖企业提供教学资源支持。
                             </div>
                         </div>
-                        <div className="banner-middle"></div>
-                        <div className="bottom-content">
+                        {/*<div className="bottom-content">
                             <div className="content-left">
                                 <div className="list">
                                     <div className="title">联系地址</div>
@@ -55,7 +55,67 @@ class About extends Component{
                                 <img src={GZH} alt=""/>
                                 <div className="text">思学行教育公众号</div>
                             </div>
+                        </div>*/}
+                    </div>
+                    <div className="contactUs">
+                        <div className="content-title">
+                            <div className="title-text">联系我们</div>
+                            <div className="title-description">CONTACT US</div>
                         </div>
+                        <div className="contact-box">
+                            <div className="list">
+                                <div className="title">成都校区（总校）</div>
+                                <div className="box">
+                                    <img src={QQ} alt=""/>
+                                    <div className="text">座机：028-85253153</div>
+                                    <div className="text">邮箱：sxx@studytodo.com</div>
+                                    <div className="text">企业内训/商务合作:028—85253153</div>
+                                    <div className="text" style={{margin:"20px 0"}}>QQ：2507819723</div>
+                                    <div className="text">地址：成都高新区吉泰五路88号香年广场3栋14楼2号</div>
+                                    <a className="address">
+                                        <svg className='icon-svg'>
+                                            <use xlinkHref='#icon-didian01'></use>
+                                        </svg>
+                                        学校地图地址
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="list">
+                                <div className="title">重庆校区（分校）</div>
+                                <div className="box">
+                                    <img src={QQ} alt=""/>
+                                    <div className="text">座机：028-85253153</div>
+                                    <div className="text">邮箱：sxx@studytodo.com</div>
+                                    <div className="text">企业内训/商务合作:028—85253153</div>
+                                    <div className="text" style={{margin:"20px 0"}}>QQ：2507819723</div>
+                                    <div className="text">地址：成都高新区吉泰五路88号香年广场3栋14楼2号</div>
+                                    <a className="address">
+                                        <svg className='icon-svg'>
+                                            <use xlinkHref='#icon-didian01'></use>
+                                        </svg>
+                                        学校地图地址
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="list">
+                                <div className="title">北京校区（分校）</div>
+                                <div className="box">
+                                    <img src={QQ} alt=""/>
+                                    <div className="text">座机：028-85253153</div>
+                                    <div className="text">邮箱：sxx@studytodo.com</div>
+                                    <div className="text">企业内训/商务合作:028—85253153</div>
+                                    <div className="text" style={{margin:"20px 0"}}>QQ：2507819723</div>
+                                    <div className="text">地址：成都高新区吉泰五路88号香年广场3栋14楼2号</div>
+                                    <a className="address">
+                                        <svg className='icon-svg'>
+                                            <use xlinkHref='#icon-didian01'></use>
+                                        </svg>
+                                        学校地图地址
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

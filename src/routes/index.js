@@ -14,12 +14,12 @@ export default ()=>(
         <Header />
         <Switch>
             <Route path='/' exact component={Home}></Route>
-            <Route path='/teacher' exact component={Teacher}></Route>
-            <Route path='/sixuexing' exact component={Sxx}></Route>
-            <Route path='/aboutUs'component={About}></Route>
-            <Route path='/core'component={Core}></Route>
-            <Route path='/download'component={Download}></Route>
-            <Route path='/recruitment'componment={Recruitment}></Route>
+            <Route path='/teacher' component={Teacher}></Route>
+            <Route path='/sixuexing' component={Sxx}></Route>
+            <Route path='/core' component={Core}></Route>
+            <Route path='/download' component={Download}></Route>
+            <Route path='/recruitment'exact componment={Recruitment}></Route>
+            <Route path='/aboutUs' component={About}></Route>
         </Switch>
         <Footer />
     </div>

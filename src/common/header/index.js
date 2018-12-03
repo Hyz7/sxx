@@ -1,22 +1,26 @@
-import React,{Component,Fragment} from 'react'
-import { NavLink,Link } from 'react-router-dom'
-import {connect} from 'react-redux'
-import {withRouter} from 'react-router-dom'
+import React,{ Component, Fragment } from 'react'
+import { NavLink, Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import '../icons/iconfont'
 import { CSSTransition } from 'react-transition-group';
-import Recruitment from "../../components/recruitment";
 class Header extends Component{
     constructor(props){
         super(props)
         this.state={
             star: false,
-            popupHeader:false
+            popupHeader:false,
+            url:'/'
         }
     }
 
     componentDidMount(){
 
     }
+
+/*    getUrl=(path)=>{
+        this.setState({url:path})
+    }*/
 
     render() {
         let {popupHeader}=this.state
@@ -32,7 +36,7 @@ class Header extends Component{
                     <header className='header-container star'>
                         <div className="header-position">
                             <div className="header-top">
-                                <NavLink to='/' activeClassName='header-logo'></NavLink>
+                                <NavLink to='/'activeClassName='header-logo'></NavLink>
                                 <div className='header-biaoyu'></div>
                                 <div className='header-right'>
                                     <div className='header-text'><span className='span1'></span>成都</div>
@@ -82,7 +86,8 @@ class Header extends Component{
 
 const mapStateToProps=(state)=>({
     menuList:state.header.menuLeftList,
-    menuLeftShow:state.header.menuLeftShow
+    menuLeftShow:state.header.menuLeftShow,
+
 })
 
 export default withRouter(connect(mapStateToProps,null)(Header))

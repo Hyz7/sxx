@@ -12,15 +12,31 @@ class Core extends Component{
                         <div className='core-item1'>
                             <img src={Core1} alt=""/>
                             <div className="text">
-                                全新的培训模式，强大的师资团队，
-                                丰富的研发经验，系统的课程体系.
+                                思学行由电子科技大学网络空间安全中心发起，由“成都市大数据协会区块链专委会”的指导。在高校和行业的双指导保障下，
+                                创立紧贴全国新一代信息技术行业需求、发展及就业趋势的教学体系，设置特色化的教学内容和教学方式，打造从线上到线下的一体化教学。
                             </div>
-                            <div className="content">
+                           {/* <div className="content">
                                 高校、专家赋能，紧贴时代，一步一个脚印，踏实研发迭代最快，最符合实战应用的新一代信息技术课程。8大模块，超2000课时教程，求学、加薪、晋升、创业满足你的多种需求。
-                            </div>
-
+                            </div>*/}
+                            <div className="core-btn">查看全部大纲</div>
                         </div>
-                        <div className="core-btn">查看全部大纲</div>
+                        <div className="core-middle">
+                            <div className="list">
+                                <img src="" alt=""/>
+                                <div className="title">首创培训模式</div>
+                                <div className="text">全国首创区块链开源项目源码工程和软件设计模式相结合的培训模式。</div>
+                            </div>
+                            <div className="list">
+                                <img src="" alt=""/>
+                                <div className="title">项目资源多</div>
+                                <div className="text"> 与超过百家顶尖企业保持合作联系。</div>
+                            </div>
+                            <div className="list">
+                                <img src="" alt=""/>
+                                <div className="title">高质量课程</div>
+                                <div className="text">由电子科技大学等高校教授亲自主导课程设计，萃取融合多家顶级公司项目经验，打造真正对接就业的实战课程。</div>
+                            </div>
+                        </div>
                         <div className='core-item2'>
                             <img src={Core2} alt=""/>
                             <div className="box1">

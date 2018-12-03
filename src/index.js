@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-// import App from './app'
 import store from "./store";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
+import './style/entry.less'
 import MainRoutes from "./routes/index";
 import NotFound from "./components/notFound";
-import Provider from "react-redux/es/components/Provider";
+import { Provider } from "react-redux";
 import './style/swiper/swiper.css'
-import './style/entry.less'
+
 
 const App=()=>{
     return(
