@@ -2,6 +2,9 @@ import React,{Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import Core1 from '../../images/core/core1.png'
 import Core2 from '../../images/core/core2.png'
+import coures from '../../images/core/coures.png'
+import project from '../../images/core/project.png'
+import model from '../../images/core/model.png'
 class Core extends Component{
 
     render() {
@@ -22,17 +25,17 @@ class Core extends Component{
                         </div>
                         <div className="core-middle">
                             <div className="list">
-                                <img src="" alt=""/>
+                                <img src={model} alt=""/>
                                 <div className="title">首创培训模式</div>
                                 <div className="text">全国首创区块链开源项目源码工程和软件设计模式相结合的培训模式。</div>
                             </div>
                             <div className="list">
-                                <img src="" alt=""/>
+                                <img src={project} alt=""/>
                                 <div className="title">项目资源多</div>
                                 <div className="text"> 与超过百家顶尖企业保持合作联系。</div>
                             </div>
                             <div className="list">
-                                <img src="" alt=""/>
+                                <img src={coures} alt=""/>
                                 <div className="title">高质量课程</div>
                                 <div className="text">由电子科技大学等高校教授亲自主导课程设计，萃取融合多家顶级公司项目经验，打造真正对接就业的实战课程。</div>
                             </div>
