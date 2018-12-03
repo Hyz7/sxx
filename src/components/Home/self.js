@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import SelfImg from '../../images/1.png'
+import SelfImg from '../../images/server/self.png'
 class Self extends Component {
     render(){
         return (
@@ -11,7 +11,7 @@ class Self extends Component {
                     </div>
                     <div className="item-content">
                         <div className="item-img">
-                            <img src="" alt=""/>
+                            <img src={SelfImg} alt=""/>
                             <div className="theme">
                                 <div className="num">1</div>
                                 <div className="text">个人教育培训服务</div>

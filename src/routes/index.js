@@ -18,7 +18,7 @@ export default ()=>(
             <Route path='/sixuexing' component={Sxx}></Route>
             <Route path='/core' component={Core}></Route>
             <Route path='/download' component={Download}></Route>
-            <Route path='/recruitment'exact componment={Recruitment}></Route>
+            <Route path='/recruitment' component={Recruitment}></Route>
             <Route path='/aboutUs' component={About}></Route>
         </Switch>
         <Footer />

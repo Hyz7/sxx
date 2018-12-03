@@ -1,5 +1,11 @@
 import React,{Component} from 'react'
 import sxxImg from '../../images/sxxbanner.png'
+import zhang from '../../images/teacher/zhang.png'
+import li from '../../images/teacher/li.png'
+import gui from '../../images/teacher/gui.png'
+import yao from '../../images/teacher/yao.png'
+import tian from '../../images/teacher/tian.png'
+import he from '../../images/teacher/he.png'
 class Teacher extends Component{
     render() {
         return(
@@ -22,7 +28,7 @@ class Teacher extends Component{
                     <div className="teacher-list">
                         <div className="teacher-title">专家大牛全程面授</div>
                         <div className="list">
-                            <div className="avatar"></div>
+                            <img className="avatar" src={zhang}/>
                             <div className="right-box">
                                 <div className="name"><i></i>张小松<span>XiaoSong Zhang</span></div>
                                 <div className="position">教务资深顾问</div>
@@ -35,7 +41,7 @@ class Teacher extends Component{
                             </div>
                         </div>
                         <div className="list">
-                            <div className="avatar"></div>
+                            <img className="avatar" src={gui} />
                             <div className="right-box">
                                 <div className="name"><i></i>桂勋<span>Xun Gui</span></div>
                                 <div className="position">教务总监</div>
@@ -48,7 +54,7 @@ class Teacher extends Component{
                             </div>
                         </div>
                         <div className="list">
-                            <div className="avatar"></div>
+                            <img className="avatar" src={li}/>
                             <div className="right-box">
                                 <div className="name"><i></i>李维江<span>Joey</span></div>
                                 <div className="position">区块链课程特聘讲师</div>
@@ -61,7 +67,7 @@ class Teacher extends Component{
                             </div>
                         </div>
                         <div className="list">
-                            <div className="avatar"></div>
+                            <img className="avatar" src={yao} />
                             <div className="right-box">
                                 <div className="name"><i></i>姚兰<span>Lan Yao</span></div>
                                 <div className="position">AI人工智能课程教研总监</div>
@@ -74,7 +80,7 @@ class Teacher extends Component{
                             </div>
                         </div>
                         <div className="list">
-                            <div className="avatar"></div>
+                            <img className="avatar" src={tian}/>
                             <div className="right-box">
                                 <div className="name"><i></i>田涌町<span>YongDing Tian</span></div>
                                 <div className="position">AI人工智能课程讲师</div>
@@ -87,7 +93,7 @@ class Teacher extends Component{
                             </div>
                         </div>
                         <div className="list">
-                            <div className="avatar"></div>
+                            <img className="avatar" src={he}/>
                             <div className="right-box">
                                 <div className="name"><i></i>何涛<span>Tao He</span></div>
                                 <div className="position">大数据课程讲师</div>
