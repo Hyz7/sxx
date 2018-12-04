@@ -111,7 +111,6 @@
           &>img{
             width: 260px!important;
             height: 160px;
-            border: 1px solid red;
           }
           .content{
             width: 430px;
@@ -208,13 +207,16 @@
           &>img{
             width: 130px;
             height: 80px;
-            border: 1px solid red;
           }
           .content{
             position: relative;
             margin-left: 10px;
             width: 200px;
             .title{
+              width: 200px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
               font-size: 14px;
               color: #666;
             }
