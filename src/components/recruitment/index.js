@@ -3,7 +3,8 @@ import sxxImg from '../../images/sxxbanner.png'
 
 export default class Recruitment extends PureComponent{
     state={
-        tabStatus:'0'
+        tabStatus: '0',
+        display: ''
     }
 
     handleChangeTab=(e)=>{
@@ -33,10 +34,10 @@ export default class Recruitment extends PureComponent{
                         <div className="list">
                             WEB前段开发工程师
                             <svg className='icon-svg'>
-                                <use xlinkHref='#icon-jianhaoshouqi'></use>
+                                <use xlinkHref='#icon-jiahaozhankai'></use>
                             </svg>
                         </div>
-                        {/*<div className="list-content">
+                        <div className="list-content">
                             <div className="box">
                                 <div className="text">岗位职责:</div>
                                 <div className="text">1.参与微信应用及WEBAPP的开发;</div>
@@ -52,7 +53,32 @@ export default class Recruitment extends PureComponent{
                                 <div className="text">5.喜欢高效快速的创业氛围；</div>
                                 <div className="text">6.有WEBAPP经验，熟悉相关框架；</div>
                             </div>
-                        </div>*/}
+                        </div>
+                        <div className="list">
+                            WEB前段开发工程师
+                            <svg className='icon-svg'>
+                                <use xlinkHref='#icon-jiahaozhankai'></use>
+                            </svg>
+                        </div>
+                        <div className="list">
+                            WEB前段开发工程师
+                            <svg className='icon-svg'>
+                                <use xlinkHref='#icon-jiahaozhankai'></use>
+                            </svg>
+                        </div>
+                        <div className="list">
+                            WEB前段开发工程师
+                            <svg className='icon-svg'>
+                                <use xlinkHref='#icon-jiahaozhankai'></use>
+                            </svg>
+                        </div>
+                        <div className="list">
+                            WEB前段开发工程师
+                            <svg className='icon-svg'>
+                                <use xlinkHref='#icon-jiahaozhankai'></use>
+                            </svg>
+                        </div>
+
                     </div>
                 </div>
             </div>

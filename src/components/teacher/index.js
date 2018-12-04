@@ -7,6 +7,14 @@ import yao from '../../images/teacher/yao.png'
 import tian from '../../images/teacher/tian.png'
 import he from '../../images/teacher/he.png'
 class Teacher extends Component{
+    scrollToAnchor = (anchorName) => {
+        if (anchorName) {
+            // 找到锚点
+            let anchorElement = document.getElementById(anchorName);
+            // 如果对应id的锚点存在，就跳转到锚点
+            if(anchorElement) { anchorElement.scrollIntoView({block: 'start', behavior: 'smooth'}); }
+        }
+    }
     render() {
         return(
             <div className='teacher-container'>
@@ -16,18 +24,18 @@ class Teacher extends Component{
 
                 <div className="teacher-position">
                     <ul className="scrollNav">
-                        <li>全部讲师<span></span></li>
-                        <li>区块链<span></span></li>
-                        <li>AI人工智能<span></span></li>
-                        <li>大数据<span></span></li>
-                        <li>新一代网络安全<span></span></li>
-                        <li>云计算<span></span></li>
-                        <li>智能物联网<span></span></li>
-                        <li>全栈软件测试<span></span></li>
+                        <li onClick={()=>{this.scrollToAnchor(true)}}>全部讲师<span></span></li>
+                        <li onClick={()=>{this.scrollToAnchor('li')}}>区块链<span></span></li>
+                        <li onClick={()=>{this.scrollToAnchor('yao')}}>AI人工智能<span></span></li>
+                        <li onClick={()=>{this.scrollToAnchor('he')}}>大数据<span></span></li>
+                        <li onClick={()=>{this.scrollToAnchor('zhang')}}>新一代网络安全<span></span></li>
+                        <li onClick={()=>{this.scrollToAnchor('tian')}}>云计算<span></span></li>
+                        <li onClick={()=>{this.scrollToAnchor('gui')}}>智能物联网<span></span></li>
+                        <li onClick={()=>{this.scrollToAnchor('gui')}}>程序设计<span></span></li>
                     </ul>
                     <div className="teacher-list">
                         <div className="teacher-title">专家大牛全程面授</div>
-                        <div className="list">
+                        <div className="list" id='zhang'>
                             <img className="avatar" src={zhang}/>
                             <div className="right-box">
                                 <div className="name"><i></i>张小松<span>XiaoSong Zhang</span></div>
@@ -40,7 +48,7 @@ class Teacher extends Component{
                                 <div className="goodAt" style={{marginTop:'10px'}}><span>简介：</span>国家重点研发计划网络空间安全专项首席科学家，2017国家十大网络安全优秀人才，电子科技大学网络空间安全研究中心主任，政府治理大数据应用技术国家工程实验室技术专家委员会副主任，国防科技工业网络安全创新中心专家委员会委员，教育部科技委国防学部委员，四川省学术技术带头人。长期致力于网络信息技术安全领域的基础研究和技术攻关，成果在应用中取得重要的社会和经济效益。</div>
                             </div>
                         </div>
-                        <div className="list">
+                        <div className="list" id='gui'>
                             <img className="avatar" src={gui} />
                             <div className="right-box">
                                 <div className="name"><i></i>桂勋<span>Xun Gui</span></div>
@@ -53,7 +61,7 @@ class Teacher extends Component{
                                 <div className="goodAt" style={{marginTop:'10px'}}><span>简介：</span>长期从事能源和军工领域内复杂软件系统和实时服务器软件设计，具备实时系统和并行系统设计的丰富经验，其中，设计并成功研制了XX型号无人飞行器飞控综合测试软件系统；在电子科技大学长期开设《C++标准模板库程序设计》和《软件设计模式》两门热选课，在电子科技大学首开32学时的《区块链技术及其应用》课程。曾以“能源互联网区块链项目”，荣获工信部指导，国家电子标准研究院主办的《首届全国区块链开发大赛》全国二等奖；目前参与科技部重大专项《面向新型城镇的能源互联网关键技术及应用》，负责高性能能源区块链的研制工作。为国际电气工程师协会IEEE 2418.2 区块链数据格式标准制定委员会成员。</div>
                             </div>
                         </div>
-                        <div className="list">
+                        <div className="list" id='li'>
                             <img className="avatar" src={li}/>
                             <div className="right-box">
                                 <div className="name"><i></i>李维江<span>Joey</span></div>
@@ -66,7 +74,7 @@ class Teacher extends Component{
                                 <div className="goodAt" style={{marginTop:'10px'}}><span>简介：</span>曾就职于美国华尔街大都会通信有限公司，从事金融、数据软件产品开发和运营。在校期间，长期从事认知无线电网络和计算机算法的设计，并在通信与信息系统国际会议上成功发表论文《多小区认知无线网络中基于免疫算法的资源分配》。2016年，在美国接触到区块链，长期参与公司实验室区块链应用的研究和实践，熟悉比特币和以太坊的源代码设计及技术开发，熟练运用C#, .NET MVC，SQL Server并 参与产品设计，拥有多年数据库开发经验， 熟悉SSIS,SSRS后端数据开发流程。2017年，在美国共同创立毕曼瑞（Bitmory）网络技术有限公司，公司致力于开发区块链矿机方面的实际应用和优化提升矿机的整体效能。</div>
                             </div>
                         </div>
-                        <div className="list">
+                        <div className="list" id='yao'>
                             <img className="avatar" src={yao} />
                             <div className="right-box">
                                 <div className="name"><i></i>姚兰<span>Lan Yao</span></div>
@@ -79,7 +87,7 @@ class Teacher extends Component{
                                 <div className="goodAt" style={{marginTop:'10px'}}><span>简介：</span>美国西北理工大学访问学者，成都软件外包业务首批赴美培训专家，长期在成都信息工程大学开设《面向对象程序设计》，《C++程序设计》等课程。研究领域：区块链+人工智能，在区块链+人工智能领域发表论文10多篇检索论文。</div>
                             </div>
                         </div>
-                        <div className="list">
+                        <div className="list" id='tian'>
                             <img className="avatar" src={tian}/>
                             <div className="right-box">
                                 <div className="name"><i></i>田涌町<span>YongDing Tian</span></div>
@@ -92,7 +100,7 @@ class Teacher extends Component{
                                 <div className="goodAt" style={{marginTop:'10px'}}><span>简介：</span>擅长C# (.Net Framework)、C# (.Net core, including UWP)、C++、Python、Matlab，基于Linux的嵌入式平台: Raspberry Pi, Nvidia Jetson TX2等语言。曾获瓦特创新人才奖学金、2016  中国大学生智能设计竞赛（华为杯）全国总决赛第4名，一等人民奖学金 (电子科技大学前1%)等奖项 。参与过ICRA Robomaster 2018大赛、基于摄像头以及纹理识别的智能小车设计、人类意图识别的自主飞行器、基于UWB定位的无人机编队飞行等多个项目，表现突出，是电子科技大学重点培养的天才少年。</div>
                             </div>
                         </div>
-                        <div className="list">
+                        <div className="list" id='he'>
                             <img className="avatar" src={he}/>
                             <div className="right-box">
                                 <div className="name"><i></i>何涛<span>Tao He</span></div>

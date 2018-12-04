@@ -66,7 +66,7 @@ class About extends Component{
                             <div className="list">
                                 <div className="title">成都校区（总校）</div>
                                 <div className="box">
-                                    <img src={QQ} alt=""/>
+                                    <a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes"><img src={QQ} alt=""/></a>
                                     <div className="text">座机：028-85253153</div>
                                     <div className="text">邮箱：sxx@studytodo.com</div>
                                     <div className="text">企业内训/商务合作:028—85253153</div>
@@ -83,7 +83,7 @@ class About extends Component{
                             <div className="list">
                                 <div className="title">重庆校区（分校）</div>
                                 <div className="box">
-                                    <img src={QQ} alt=""/>
+                                    <a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes"><img src={QQ} alt=""/></a>
                                     <div className="text">座机：028-85253153</div>
                                     <div className="text">邮箱：sxx@studytodo.com</div>
                                     <div className="text">企业内训/商务合作:028—85253153</div>
@@ -100,7 +100,7 @@ class About extends Component{
                             <div className="list">
                                 <div className="title">北京校区（分校）</div>
                                 <div className="box">
-                                    <img src={QQ} alt=""/>
+                                    <a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes"><img src={QQ} alt=""/></a>
                                     <div className="text">座机：028-85253153</div>
                                     <div className="text">邮箱：sxx@studytodo.com</div>
                                     <div className="text">企业内训/商务合作:028—85253153</div>

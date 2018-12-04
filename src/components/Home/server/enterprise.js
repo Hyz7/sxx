@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import enterprise from '../../images/server/enterprise.png'
+import enterprise from '../../../images/server/enterprise.png'
 class Enterprise extends Component {
     render(){
         return (
@@ -22,22 +22,22 @@ class Enterprise extends Component {
                             <div className="item-text">以新技术产业人才培养为核心，以“推动区块链等前沿科技落地应用，推动数字经济与实体经济深度融合”为己任，完善教育生态，积极助力培育各区域、各产业经济发展新动能</div>
                             <div className="content content3">
                                 <div className="list">
-                                    <div className="icon"></div>
+                                    <div className="icon icon1"></div>
                                     <span>员工培养</span>
                                     提供新一代信息技术人才的培训和认证、新一代信息技术运营与管理人才的培训和认证、新一代信息技术社会知识普及型教育
                                 </div>
                                 <div className="list">
-                                    <div className="icon"></div>
+                                    <div className="icon icon2"></div>
                                     <span>政企赋能</span>
                                     进行企业家和高管培训、企业专项定制人才培养、业务专项战略咨询、企业专项资源对接
                                 </div>
                                 <div className="list">
-                                    <div className="icon"></div>
+                                    <div className="icon icon3"></div>
                                     <span>企业内训</span>
                                     明确企业培训目标，严格把控课程设置、授课讲师、授课时间等相关问题，精准匹配企业需求
                                 </div>
                                 <div className="list">
-                                    <div className="icon"></div>
+                                    <div className="icon icon4"></div>
                                     <span>双平台选择</span>
                                     提供线上教学平台学习和线下实训双模式培养，企业可根据自身需要进行选择
                                 </div>

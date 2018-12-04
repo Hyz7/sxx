@@ -16,7 +16,7 @@ export default class Footer extends Component{
                             <div className="item-box">
                                 <div className="text text1">地址：成都市高新区吉泰五路88号香年广场T3栋14楼</div>
                                 <div className="text text2">企业邮箱：sxx@studytodo.com</div>
-                                <div className="text text2">企业QQ：<a href="tencent://message/?uin=800562942&Site=qq&Menu=yes">800000000</a></div>
+                                <div className="text text2">企业QQ：<a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes">2507819723</a></div>
                             </div>
                             <div className="title" style={{width:'100px'}}>服务热线</div>
                             <div className="item1-hot">

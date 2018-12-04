@@ -139,6 +139,20 @@
   background-color: #F5F5F5;
   width: 100%;
   min-width: 1200px;
+  .course-list,.news-box,.teacher-introduce{
+    position: relative;
+    .more-btn{
+      position: absolute;
+      right: 30px;
+      top: -30px;
+      color: #999;
+      font-size: 16px;
+      cursor: pointer;
+      &:hover{
+        color: @theme-color;
+      }
+    }
+  }
   .item1{
     background-color: #fff;
     box-shadow: 0 3px 6px rgba(0,0,0,.16);
@@ -265,6 +279,18 @@
       width: 1210px;
       margin: 0 auto;
       .course-list{
+        position: relative;
+        .more-btn{
+          position: absolute;
+          right: 30px;
+          top: -30px;
+          color: #999;
+          font-size: 16px;
+          cursor: pointer;
+          &:hover{
+            color: @theme-color;
+          }
+        }
         .list-box{
           float: left;
           width: 210px;
@@ -602,8 +628,12 @@
               width: 34px;
               min-width: 34px;
               height: 34px;
-              border: 1px solid red;
+              background:url(../../images/server/server.png) no-repeat;
             }
+            .icon1{height:28px;width:30px;background-position: 0 0;}
+            .icon2{height:32px;width:30px;background-position: -36px 0;}
+            .icon3{height:30px;width:30px;background-position: -39px -37px;}
+            .icon4{height:28px;width:30px;background-position: -40px -103px;}
             span{
               margin: 0 10px 0 25px;
               line-height: 34px;
@@ -622,8 +652,10 @@
             .icon{
               width: 34px;
               height: 34px;
-              border: 1px solid red;
+              background:url(../../images/server/server.png) no-repeat;
             }
+            .icon1{height:24px;width:32px;background-position: -37px -71px;}
+            .icon2{height:26px;width:32px;background-position: 0 -70px;}
             .box{
               font-size: 16px;
               color: #4d4d4d;
@@ -651,8 +683,12 @@
             .icon{
               width: 34px;
               height: 34px;
-              border: 1px solid red;
+              background:url(../../images/server/server.png) no-repeat;
             }
+            .icon1{height:28px;width:30px;background-position: 0 0;}
+            .icon2{height:26px;width:32px;background-position: 0 -35px;}
+            .icon3{height:26px;width:32px;background-position: 0 -70px;}
+            .icon4{height:31px;width:30px;background-position: 0 -102px;}
             span{
               margin: 0 10px 0 25px;
               font-size: 18px;

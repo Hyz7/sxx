@@ -1,11 +1,11 @@
 import React,{Component,Fragment} from 'react'
 import Swiper from 'react-id-swiper';
 import connect from "react-redux/es/connect/connect";
-import {withRouter} from 'react-router-dom'
+import {withRouter,Link} from 'react-router-dom'
 import * as actionCreators from './store/actionCreators'
-import Self from './self.js'
-import University from './university.js'
-import Enterprise from './enterprise.js'
+import Self from './server/self.js'
+import University from './server/university.js'
+import Enterprise from './server/enterprise.js'
 import Data1 from '../../images/largeData/data1.png'
 import Data2 from '../../images/largeData/data2.png'
 import Data3 from '../../images/largeData/data3.png'
@@ -38,6 +38,15 @@ let timer;
         this.setState({
             menuRightList:null
         })
+    }
+
+    scrollToAnchor = (anchorName) => {
+        if (anchorName) {
+            // 找到锚点
+            let anchorElement = document.getElementById(anchorName);
+            // 如果对应id的锚点存在，就跳转到锚点
+            if(anchorElement) { anchorElement.scrollIntoView({block: 'start', behavior: 'smooth'}); }
+        }
     }
 
     componentDidMount(){}
@@ -168,18 +177,18 @@ let timer;
                                 <div className="list-text">产业研发</div>
                             </div>
                             <div className="item1-list item-list">
-                                <div className="item1-list-box">
+                                <Link to='contactUs' className="item1-list-box">
                                     <i className='img1'></i>来校路线
-                                </div>
-                                <div className="item1-list-box fr">
+                                </Link>
+                                <a className="item1-list-box fr" onClick={()=>{this.scrollToAnchor('baoming')}}>
                                     <i className='img2'></i>报名流程
-                                </div>
-                                <div className="item1-list-box" style={{marginTop:'4px'}}>
-                                    <i className='img3'></i>学费价格
-                                </div>
-                                <div className="item1-list-box fr" style={{marginTop:'4px'}}>
+                                </a>
+                                <Link to='core' className="item1-list-box" style={{marginTop:'4px'}}>
+                                    <i className='img3'></i>核心优势
+                                </Link>
+                                <Link to='sixuexing' className="item1-list-box fr" style={{marginTop:'4px'}}>
                                     <i className='img4'></i>学员故事
-                                </div>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -195,6 +204,7 @@ let timer;
                                 <s style={{height:'0',clear:'both',display:'block',overflow:'hidden'}}></s>
                                 <div className="title-description">知识共享，做真正实用的公开课</div>
                                 <div className="course-list">
+                                    <div className="more-btn">查看更多></div>
                                     <div className="list-box">
                                         <div className="span-box">
                                             <span className='span1'></span>
@@ -202,7 +212,7 @@ let timer;
                                         <div className="content">
                                             <div className="course-title">私有区块链，我们一起GO</div>
                                             <div className="course-text">用Go语言实现一个区块链私有链</div>
-                                            <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
+                                            <div className="price"><span>￥0.00 免费</span><s>原价￥99.00</s></div>
                                         </div>
                                     </div>
                                     <div className="list-box">
@@ -212,7 +222,7 @@ let timer;
                                         <div className="content">
                                             <div className="course-title">玩转数据结构 从入门到进阶</div>
                                             <div className="course-text">就看你会不会玩！</div>
-                                            <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
+                                            <div className="price"><span>￥0.00 免费</span><s>原价￥99.00</s></div>
                                         </div>
                                     </div>
                                     <div className="list-box">
@@ -222,7 +232,7 @@ let timer;
                                         <div className="content">
                                             <div className="course-title">Spring Cloud微服务实战</div>
                                             <div className="course-text">来吧！我们试试实战</div>
-                                            <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
+                                            <div className="price"><span>￥0.00 免费</span><s>原价￥99.00</s></div>
                                         </div>
                                     </div>
                                     <div className="list-box">
@@ -232,7 +242,7 @@ let timer;
                                         <div className="content">
                                             <div className="course-title">Go语言实战流媒体视频网站</div>
                                             <div className="course-text">用Go语言实践应用</div>
-                                            <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
+                                            <div className="price"><span>￥0.00 免费</span><s>原价￥99.00</s></div>
                                         </div>
                                     </div>
                                     <div className="list-box">
@@ -242,7 +252,7 @@ let timer;
                                         <div className="content">
                                             <div className="course-title">SVN从入门到放弃</div>
                                             <div className="course-text">入门级课程你敢不敢来</div>
-                                            <div className="price"><span>￥0.00</span><s>原价￥99.00</s></div>
+                                            <div className="price"><span>￥0.00 免费</span><s>原价￥99.00</s></div>
                                         </div>
                                     </div>
                                 </div>
@@ -280,6 +290,7 @@ let timer;
                                 </div>
                                 <div className="title-description">顶尖高校教授研发课程，实名行业实战大牛授课</div>
                                 <div className="teacher-introduce">
+                                    <div className="more-btn">查看更多></div>
                                     <div className="introduce-list">
                                         <div className="avatar active1"></div>
                                         <div className="name">张小松</div>
@@ -325,6 +336,7 @@ let timer;
                                 </div>
                                 <h2 className="title-description">一键了解最新区块链大数据行业讯息</h2>
                                 <div className="news-box">
+                                    <div className="more-btn">查看更多></div>
                                     <ul className="news-left">
                                         <li className={newsLeft==1?'active':''} onClick={()=>this.handleNewsChange(1)}>新闻资讯</li>
                                         <li className={newsLeft==2?'active':''} onClick={()=>this.handleNewsChange(2)}>行业动态</li>
@@ -347,7 +359,7 @@ let timer;
                                 </div>
                             </div>
                         </div>
-                        <div className="baoming">
+                        <div className="baoming" id='baoming'>
                             <div className="baoming-position">
                                 <div className="title" style={{width:'320px'}}>
                                     <span className='span'><span></span></span>
