@@ -204,7 +204,7 @@ let timer;
                                 <s style={{height:'0',clear:'both',display:'block',overflow:'hidden'}}></s>
                                 <div className="title-description">知识共享，做真正实用的公开课</div>
                                 <div className="course-list">
-                                    <div className="more-btn">查看更多></div>
+                                    <Link to='allcourse' className="more-btn">查看更多></Link>
                                     <div className="list-box">
                                         <div className="span-box">
                                             <span className='span1'></span>
@@ -290,7 +290,7 @@ let timer;
                                 </div>
                                 <div className="title-description">顶尖高校教授研发课程，实名行业实战大牛授课</div>
                                 <div className="teacher-introduce">
-                                    <div className="more-btn">查看更多></div>
+                                    <Link to='teacher' className="more-btn">查看更多></Link>
                                     <div className="introduce-list">
                                         <div className="avatar active1"></div>
                                         <div className="name">张小松</div>
@@ -336,7 +336,7 @@ let timer;
                                 </div>
                                 <h2 className="title-description">一键了解最新区块链大数据行业讯息</h2>
                                 <div className="news-box">
-                                    <div className="more-btn">查看更多></div>
+                                    <Link to='sixuexing' className="more-btn">查看更多></Link>
                                     <ul className="news-left">
                                         <li className={newsLeft==1?'active':''} onClick={()=>this.handleNewsChange(1)}>新闻资讯</li>
                                         <li className={newsLeft==2?'active':''} onClick={()=>this.handleNewsChange(2)}>行业动态</li>

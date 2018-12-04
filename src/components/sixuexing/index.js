@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import {withRouter} from 'react-router-dom'
+import NewsDetail from './newsDetail.js'
 import sxxImg from '../../images/sxxbanner.png'
 class Sxx extends Component{
     componentDidMount(){
@@ -16,6 +17,7 @@ class Sxx extends Component{
                         <input type="text" placeholder='请输入你想要查找的数据'/>
                         <div className="searchBtn">搜索</div>
                     </div>
+                    {/*<NewsDetail />*/}
                     <div className="sxx-box sxx-news">
                         <div className="sxx-title">
                             <span></span>

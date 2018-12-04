@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import {withRouter} from 'react-router-dom'
+import DownloadDetail from './downloadDetail.js'
 import sxxImg from '../../images/sxxbanner.png'
 class Download extends Component{
     constructor(){
@@ -26,6 +27,7 @@ class Download extends Component{
                     <img src={sxxImg} alt=""/>
                 </div>
                 <div className="download-content">
+                    {/*<DownloadDetail />*/}
                     <div className="download-left">
                         <div className="tab-box">
                             <ul>

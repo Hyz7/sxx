@@ -125,6 +125,7 @@
       border: 2px solid @theme-color;
       padding: 0 20px;
       box-sizing: border-box;
+      min-height: 300px;
       .sxx-title{
         border-bottom: 1px solid @theme-color;
         height: 50px;
@@ -165,6 +166,61 @@
         font-size: 18px;
         cursor: pointer;
       }
+    }
+  }
+}
+//新闻资讯详情
+.newsDetail-container{
+  width: 760px;
+  max-width:760px ;
+  .title{
+    height: 100px;
+    width: 100%;
+    font-size: 24px;
+    color: #4d4d4d;
+    line-height: 24px;
+    .time{
+      margin-top: 25px;
+      font-size: 16px;
+      color: #999;
+    }
+  }
+  .content{
+    width: 100%;
+    font-size: 14px;
+    color: #4d4d4d;
+    line-height: 21px;
+    &>img{
+      width: 500px;
+      height: 300px;
+      display: block;
+      margin: 20px auto;
+    }
+  }
+  .zan-btn{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    //text-align: center;
+    color: #fff;
+    background-color: @theme-color;
+    border-radius: 10px;
+    padding-left: 30px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 300px;
+    .icon-svg{
+      margin-top: 10px;
+      margin-right: 5px;
+      width: 18px;
+      height: 18px;
+      fill:#fff;
+      color: #fff;
+    }
+    .text{
+      color: #fff!important;
     }
   }
 }

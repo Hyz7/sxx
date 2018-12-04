@@ -10,11 +10,13 @@ import Core from '../components/core'
 import Download from '../components/download'
 import Recruitment from '../components/recruitment'
 import ContactUs from '../components/contact'
+import AllCourse from "../components/Home/allCourse";
 export default ()=>(
     <div>
         <Header />
         <Switch>
             <Route path='/' exact component={Home}></Route>
+            <Route path='/allcourse' component={AllCourse}></Route>
             <Route path='/teacher' component={Teacher}></Route>
             <Route path='/sixuexing' component={Sxx}></Route>
             <Route path='/core' component={Core}></Route>
