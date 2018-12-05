@@ -31,7 +31,7 @@ class Teacher extends Component{
                         <li onClick={()=>{this.scrollToAnchor('zhang')}}>新一代网络安全<span></span></li>
                         <li onClick={()=>{this.scrollToAnchor('tian')}}>云计算<span></span></li>
                         <li onClick={()=>{this.scrollToAnchor('gui')}}>智能物联网<span></span></li>
-                        <li onClick={()=>{this.scrollToAnchor('gui')}}>程序设计<span></span></li>
+                        <li onClick={()=>{this.scrollToAnchor('gui')}}>软件设计模式<span></span></li>
                     </ul>
                     <div className="teacher-list">
                         <div className="teacher-title">专家大牛全程面授</div>
