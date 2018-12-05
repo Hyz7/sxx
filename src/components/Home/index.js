@@ -12,9 +12,9 @@ import Data3 from '../../images/largeData/data3.png'
 import DataTitle from '../../images/largeData/datatitle.png'
 import { CSSTransition } from 'react-transition-group';
 import baomingImg from '../../images/home/baoming.png'
-const titleList=[0,1,2,3,4,5,6,7]
+
 let timer;
-    class Home extends Component{
+class Home extends Component{
     constructor(props){
         super(props)
         this.state={
@@ -76,7 +76,7 @@ let timer;
             <Fragment>
                 <div className="nav-menuDown-box">
                     <div className="inner-box" onMouseLeave={this.hideMenuRight}>
-                        {menuLeftShow?
+
                             <CSSTransition
                                 in={true}
                                 timeout={300}
@@ -84,72 +84,24 @@ let timer;
                                 classNames="bannerList"
                                 unmountOnExit
                             >
-                            <ul className="nav-menuDown">
-                                <li onMouseOver={this.showMenuRight}>
-                                    <h1 className='course-listbox'>
-                                        区块链工程师
-                                        <svg className='icon-svg'>
-                                            <use xlinkHref='#icon-arrow-right-copy'></use>
-                                        </svg>
-                                    </h1>
-                                    <span></span>
-                                </li>
-                                <li onMouseOver={this.showMenuRight}>
-                                    <h1 className='course-listbox'>
-                                        大数据
-                                        <svg className='icon-svg'>
-                                            <use xlinkHref='#icon-arrow-right-copy'></use>
-                                        </svg>
-                                    </h1>
-                                    <span></span>
-                                </li>
-                                <li onMouseOver={this.showMenuRight}>
-                                    <h1 className='course-listbox'>
-                                        AI人工智能
-                                        <svg className='icon-svg'>
-                                            <use xlinkHref='#icon-arrow-right-copy'></use>
-                                        </svg>
-                                    </h1>
-                                    <span></span>
-                                </li>
-                                <li onMouseOver={this.showMenuRight}>
-                                    <h1 className='course-listbox'>
-                                        新一代网络安全
-                                        <svg className='icon-svg'>
-                                            <use xlinkHref='#icon-arrow-right-copy'></use>
-                                        </svg>
-                                    </h1>
-                                    <span></span>
-                                </li>
-                                <li onMouseOver={this.showMenuRight}>
-                                    <h1 className='course-listbox'>
-                                        云计算
-                                        <svg className='icon-svg'>
-                                            <use xlinkHref='#icon-arrow-right-copy'></use>
-                                        </svg>
-                                    </h1>
-                                    <span></span>
-                                </li>
-                                <li onMouseOver={this.showMenuRight}>
-                                    <h1 className='course-listbox'>
-                                        智能物联网
-                                        <svg className='icon-svg'>
-                                            <use xlinkHref='#icon-arrow-right-copy'></use>
-                                        </svg>
-                                    </h1>
-                                    <span></span>
-                                </li>
-                                <li onMouseOver={this.showMenuRight}>
-                                    <h1 className='course-listbox'>
-                                        全栈软件测试
-                                        <svg className='icon-svg'>
-                                            <use xlinkHref='#icon-arrow-right-copy'></use>
-                                        </svg>
-                                    </h1>
-                                    <span></span>
-                                </li>
-                            </ul></CSSTransition>:null
-                        }
+                            <div className="nav-menuDown">
+                                <div className="box">
+                                    <div className="item">Javascript ES6</div>
+                                    <div className="item">Python</div>
+                                    <div className="item">Swift程序设计</div>
+                                    <Link to='/qkl' className="item">区块链工程师</Link>
+                                    <div className="item">新一代网络安全</div>
+                                    <div className="item">全栈软件测试</div>
+                                </div>
+                                <div className="box">
+                                    <div className="item">C/C++</div>
+                                    <div className="item">GO语言</div>
+                                    <div className="item">大数据</div>
+                                    <div className="item">云计算</div>
+                                    <div className="item">AI人工智能</div>
+                                    <div className="item">智能物联网</div>
+                                </div>
+                            </div></CSSTransition>
                     </div>
                 </div>
                 <Swiper {...params}>
@@ -411,8 +363,7 @@ let timer;
     }
 }
 const mapStateToProps=(state)=>({
-    menuList:state.home.menuLeftList,
-    menuLeftShow:state.header.menuLeftShow
+    menuList:state.home.menuLeftList
 })
 
 const mapDispatchToProps=(dispatch)=>({

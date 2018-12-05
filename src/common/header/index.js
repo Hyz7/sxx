@@ -10,17 +10,12 @@ class Header extends Component{
         this.state={
             star: false,
             popupHeader:false,
-            url:'/'
         }
     }
 
     componentDidMount(){
 
     }
-
-/*    getUrl=(path)=>{
-        this.setState({url:path})
-    }*/
 
     render() {
         let {popupHeader}=this.state
@@ -86,9 +81,7 @@ class Header extends Component{
 }
 
 const mapStateToProps=(state)=>({
-    menuList:state.header.menuLeftList,
-    menuLeftShow:state.header.menuLeftShow,
-
+    courseShow:state.header.courseShow,
 })
 
 export default withRouter(connect(mapStateToProps,null)(Header))

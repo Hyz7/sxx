@@ -119,8 +119,8 @@ body{}
     display: flex;
     flex-wrap: nowrap;
     .nav-left{
-      width: 200px;
-      min-width: 200px;
+      width: 230px;
+      min-width: 230px;
       line-height: 50px;
       color: #fff;
       padding-left: 20px;
@@ -128,7 +128,7 @@ body{}
       background-color: #5d96ee;
       font-size: 18px;
       font-weight: bold;
-      margin-right: 50px;
+      margin-right: 20px;
     }
     .nav-right{
       width:1000px;
@@ -225,20 +225,39 @@ body{}
     .title{
       color: #fff;
       font-size: 18px;
-      //border-bottom: 1px solid #fff;
-      display: block;
       white-space: nowrap;
-      text-align: center;
       margin-bottom: 30px;
     }
     .footer1{
       padding-top: 30px;
       height: 224px;
       border-bottom: 1px solid #fff;
+      .partner{
+        .list{
+          float: left;
+          padding: 0 40px;
+          margin-bottom: 40px;
+          width: 160px;
+          height: 50px;
+        }
+        .bg{
+          background:url(../images/partner.png) no-repeat;
+        }
+        .list1{height:47px;width:108px;background-position: 0 -40px;}
+        .list2{height:50px;width:141px;background-position: 0 -192px;margin-top: -5px}
+        .list3{height:40px;width:105px;background-position: 0 0;}
+        .list4{height:39px;width:181px;background-position: 0 -371px;}
+        .list5{height:23px;width:122px;background-position: 0 -131px;margin-top: 10px}
+        .list6{height:38px;width:128px;background-position: 0 -154px;}
+        .list7{height:44px;width:109px;background-position: 0 -87px;}
+        .list8{height:28px;width:157px;background-position: 0 -300px;margin-top: 10px}
+        .list9{height:58px;width:142px;background-position: 0 -242px;margin-top: -10px}
+        .list10{height:43px;width:163px;background-position: 0 -328px;}
+      }
     }
     .footer2{
       padding-top: 20px;
-      height: 318px;
+      height: 248px;
       border-bottom: 1px solid #fff;
       .item{
         float: left;
@@ -260,12 +279,6 @@ body{}
       }
       .item2{
         margin-right: 80px;
-      }
-      .item3{
-        margin-right: 80px;
-      }
-      .item1{
-        margin-right: 80px;
         .item1-hot{
           .phone{
             color: #5fbcfa;
@@ -278,12 +291,27 @@ body{}
             margin-top: 18px;
           }
         }
-
+      }
+      .item3{
+        margin-right: 80px;
+      }
+      .item1{
+        margin-right: 80px;
       }
     }
     .footer3{
       padding-top: 20px;
       height: 172px;
+      &>.box{
+        li{
+          float: left;
+          font-size: 14px;
+          margin-right: 20px;
+          color: #e6e6e6;
+          line-height: 24px;
+          cursor:pointer;
+        }
+      }
     }
   }
 

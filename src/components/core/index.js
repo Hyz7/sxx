@@ -13,7 +13,7 @@ class Core extends Component{
                 <div className="core-position">
                     <div className="core-content">
                         <div className='core-item1'>
-                            <img src={Core1} alt=""/>
+                            {/*<img src={Core1} alt=""/>*/}
                             <div className="text">
                                 思学行由电子科技大学网络空间安全中心发起，由“成都市大数据协会区块链专委会”的指导。在高校和行业的双指导保障下，
                                 创立紧贴全国新一代信息技术行业需求、发展及就业趋势的教学体系，设置特色化的教学内容和教学方式，打造从线上到线下的一体化教学。
@@ -41,7 +41,7 @@ class Core extends Component{
                             </div>
                         </div>
                         <div className='core-item2'>
-                            <img src={Core2} alt=""/>
+                            {/*<img src={Core2} alt=""/>*/}
                             <div className="box1">
                                 <div className="list">双平台教学，超低风险，不用辞职</div>
                                 <div className="list">985、211高校资深教授严控课程研发，保证授课内容的权威有效</div>

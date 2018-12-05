@@ -19,7 +19,7 @@ class Download extends Component{
         }
     }
     componentDidMount(){
-        console.log(this.props)
+
     }
     changeTab=(type)=>{
         this.setState({tabStatus:type})

@@ -12,7 +12,7 @@ import sxxImg from '../../images/sxxbanner.png'
 
 class Sxx extends Component{
     componentDidMount(){
-        console.log(this.props)
+
     }
     render() {
         return(

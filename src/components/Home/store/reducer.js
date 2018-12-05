@@ -1,6 +1,7 @@
 import * as actionTypes from './actionTypes'
 
 const defaultState={
+    courseShow: true,
     menuLeftList:[
         {
             title:'网络安全',

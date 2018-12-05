@@ -11,6 +11,7 @@ import Download from '../components/download'
 import Recruitment from '../components/recruitment'
 import ContactUs from '../components/contact'
 import AllCourse from "../components/Home/allCourse";
+import QKL from "../components/Home/QKL";
 export default ()=>(
     <div>
         <Header />
@@ -24,6 +25,8 @@ export default ()=>(
             <Route path='/recruitment' component={Recruitment}></Route>
             <Route path='/aboutUs' component={About}></Route>
             <Route path='/contactUs' component={ContactUs}></Route>
+            <Route path='/qkl' component={QKL}></Route>
+
         </Switch>
         <Footer />
     </div>
