@@ -102,3 +102,213 @@
     }
   }
 }
+//课程详情页
+.courseDetail-container{
+  background-color: #f7f7f7;
+  padding-top:30px ;
+  padding-bottom: 60px;
+  .position{
+    width: 1200px;
+    margin: 0 auto;
+    .content-box{
+      width: 100%;
+      height: 600px;
+      margin-top: 15px;
+      .title{
+        span{
+          //margin-right: 20px;
+          cursor: pointer;
+          padding: 0 15px;
+          box-sizing: border-box;
+          border-radius: 4px;
+          height: 30px;
+          line-height: 30px;
+          display: block;
+          margin-top: 5px;
+          &:hover{
+            color: @theme-color;
+          }
+          &.active{
+            background-color: @theme-color;
+            color: #fff;
+          }
+        }
+        display: flex;
+        flex-wrap: nowrap;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px solid #ccc;
+        font-size: 16px;
+        color: #4d4d4d;
+      }
+      .left{
+        padding: 0 40px;
+        box-sizing: border-box;
+        float: left;
+        width: 870px;
+        height: 600px;
+        background-color: #fff;
+        .content{
+          padding: 20px;
+          box-sizing: border-box;
+          &>.title{
+            font-size: 18px;
+            color: #333;
+            border: 0;
+            line-height: 20px;
+          }
+          .description{
+            font-size: 14px;
+            line-height: 24px;
+            color: #666;
+            margin-bottom: 30px;
+            p{
+              margin: 15px 0;
+            }
+          }
+        }
+      }
+      .right{
+        float: right;
+        width: 300px;
+        height: 600px;
+        .item{
+          background-color: #fff;
+          padding: 0 40px;
+          box-sizing: border-box;
+          .description{
+            font-size: 14px;
+            color: #4d4d4d;
+          }
+        }
+        .item1{
+          margin-bottom: 20px;
+          height: 270px;
+          img{
+            width: 80px;
+            height: 80px;
+            margin: 20px auto;
+            border: 1px solid red;
+            display: block;
+            border-radius: 50%;
+          }
+          .name{
+            font-size: 16px;
+            color: #4d4d4d;
+            text-align: center;
+            margin-bottom: 5px;
+          }
+        }
+        .item2{
+          height: 310px;
+          .description{
+            padding-top: 25px;
+          }
+        }
+      }
+    }
+    .header-box{
+      width: 100%;
+      height: 350px;
+      background-color: #fff;
+      display: flex;
+      flex-wrap: nowrap;
+      padding: 30px 40px;
+      box-sizing: border-box;
+      img{
+        width: 500px;
+        height: 290px;
+        display: block;
+        border: 1px solid red;
+        margin-right: 30px;
+      }
+      .content{
+        position: relative;
+        width: 590px;
+        .tryWatch{
+          width: 100px;
+          height: 36px;
+          color: #fff;
+          font-size: 16px;
+          text-align: center;
+          line-height: 36px;
+          background-color: @theme-color;
+          margin-top: 20px;
+          cursor: pointer;
+          &:hover{
+            box-shadow: 0 0 6px rgba(0,0,0,.26);
+          }
+        }
+        .createTime{
+          position: absolute;
+          top: 270px;
+          right: 0;
+        }
+        .title{
+          font-size: 24px;
+          line-height: 24px;
+          color: #4d4d4d;
+        }
+        .description{
+          margin-top: 10px;
+          font-size: 16px;
+          color: #4d4d4d;
+        }
+        .type{
+          margin: 5px 0;
+          width: 50px;
+          height: 20px;
+          text-align: center;
+          line-height: 20px;
+          font-size: 12px;
+          color: @theme-color;
+          border: 1px solid @theme-color;
+        }
+        .text{
+          font-size: 12px;
+          color: #4d4d4d;
+          margin-bottom: 5px;
+        }
+
+        .price-box{
+          width: 100%;
+          margin-top: 20px;
+          .top{
+            height: 40px;
+            line-height: 40px;
+            background-color: @theme-color;
+            color: #fff;
+            padding: 0 30px;
+            .left{
+              float: left;
+            }
+            .right{
+              float: right;
+            }
+          }
+          .bottom{
+            height: 50px;
+            display: flex;
+            flex-wrap: nowrap;
+            line-height: 50px;
+            padding: 0 30px;
+            border: 1px solid @theme-color;
+            border-top: 0;
+            .text{
+              display: flex;
+              flex-wrap: nowrap;
+              font-size: 16px;
+              color: #999;
+              margin-right: 30px;
+              span{
+                font-size: 24px;
+                color: #FF121E;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

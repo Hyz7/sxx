@@ -38,30 +38,7 @@ export default class Footer extends Component{
                                 <div className="phone">400-000-0000</div>
                                 <div className="text">咨询时间：09 : 00 - 18 : 00</div>
                             </div>
-                            {/*<div className="title">个人教育培训服务</div>
-                            <div className="item-box">
-                                <div className="text">名师原创课程</div>
-                                <div className="text">模块学习</div>
-                                <div className="text">参与校企合作项目</div>
-                                <div className="text">推荐就业</div>
-                            </div>*/}
                         </div>
-                        {/*<div className="item item3">
-                            <div className="title">高校校际间合作</div>
-                            <div className="item-box">
-                                <div className="text">共同搭建实训基地</div>
-                                <div className="text">合作办学</div>
-                            </div>
-                        </div>
-                        <div className="item">
-                            <div className="title">政企合作</div>
-                            <div className="item-box">
-                                <div className="text">员工培养</div>
-                                <div className="text">政企赋能</div>
-                                <div className="text">企业内训</div>
-                                <div className="text">双平台选择</div>
-                            </div>
-                        </div>*/}
                         <div className="item" style={{marginLeft:'96px'}}>
                             <div className="title">关注公众号</div>
                             <div className='gongzhonghao'>
@@ -95,7 +72,7 @@ export default class Footer extends Component{
                     </div>
                 </div>
                 <div className="footer">
-                    Copyright ©2018 studytodo.com 成都思学行教育科技有限公司ICP备 18033964号
+                    Copyright ©2018 sixuexing.com 成都思学行教育科技有限公司ICP备 18033964号
                 </div>
             </footer>
         )
