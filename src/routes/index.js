@@ -13,6 +13,7 @@ import ContactUs from '../components/contact'
 import AllCourse from "../components/Home/allCourse";
 import QKL from "../components/Home/QKL";
 import CourseDetail from '../components/Home/allCourse/courseDetail'
+import NewsDetail from "../components/sixuexing/newsDetail";
 export default ()=>(
     <div>
         <Header />
@@ -21,6 +22,7 @@ export default ()=>(
             <Route path='/allcourse' component={AllCourse}></Route>
             <Route path='/teacher' component={Teacher}></Route>
             <Route path='/sixuexing' component={Sxx}></Route>
+            <Route path='/detail/:id' component={NewsDetail}></Route>
             <Route path='/core' component={Core}></Route>
             <Route path='/download' component={Download}></Route>
             <Route path='/recruitment' component={Recruitment}></Route>
@@ -28,7 +30,6 @@ export default ()=>(
             <Route path='/contactUs' component={ContactUs}></Route>
             <Route path='/qkl' component={QKL}></Route>
             <Route path='/coursedetail' component={CourseDetail}></Route>
-
         </Switch>
         <Footer />
     </div>

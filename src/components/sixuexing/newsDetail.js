@@ -1,39 +1,150 @@
-import React,{Component} from 'react'
-import sxxbanner from '../../images/sxxbanner.png'
-export default class NewsDetail extends Component{
+import React,{ Component,Fragment } from 'react'
+import sxxImg from '../../images/sxxbanner.png'
+import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import * as actionCreators from '../sixuexing/store/actionCreators'
+import lodashId from "lodash/uniqueId";
+import third from '../../images/sxx/third.png'
+import cansai from '../../images/sxx/cansai.png'
+import huang from '../../images/sxx/huang.png'
+import erdengjiang from '../../images/sxx/erdengjiang.png'
+
+class NewsDetail extends Component{
+    componentDidMount() {
+        this.props.getDetailContent(this.props.match.params.id)
+    }
+
     render(){
         return(
-            <div className='newsDetail-container'>
-                <div className="title">
-                    <div className="text">“区块链的发展与合作”成都区块链企业沙龙第二期成功举办</div>
-                    <div className="time">2018年10月19日</div>
-                </div>
-                <div className="content">
-                    10月19日下午，第二期成都区块链企业沙龙在天府软件园举行。
-
-                    本期活动由成都市大数据协会区块链专委会主办，链博科技有限公司、VENA NETWORK承办，本期沙龙汇聚了三泰控股、长虹电器、拓尔思、链立方学院、思学行教育、中云科技、天虎科技、每日金融等来自近50家机构的行业精英。
-                    <img src={sxxbanner} alt=""/>
-                    活动首先进行了破冰环节，每位到场嘉宾依次上台进行了3分钟的自我介绍、需求简述和观点分享，来宾分别来自教育机构、行业媒体、项目方、技术团队等细分行业，破冰环节给整个沙龙交流营造了良好的氛围。
-
-                    区块链打通金融节点
-                    “以往的互联网金融是每个公司各自为战、孤点式的经营，随着法律监管的不断加强、行业利率和市场的变化，互联网金融的风险不断释放。”链博科技联合创始人李征光表示，利用区块链技术，将机构之间的借贷进行匹配，可以加强互联网金融的流动性。
-
-                    “通过区块链实现资产点对点交易，也可在抵押数字资产之后进行抵押转移和质押物流通，而所有操作由智能合约代码控制，无法人为干预，从而防止欺诈。” VENA NETWORK  CEO朱清认为，“以往的实物与实物交易是比价困难的，通过区块链的技术，就可以实现上链和物物交易。”
-
-                    四方达成战略合作
-                    “目前区块链技术方兴未艾，但已经吸引了世界的关注。成都本身有很好的人才资源和自然资源，在区块链行业也已经有很多企业成立和发展起来。”成都市大数据协会区块链专委会秘书长肖波认为。“大家聚集到一起，就是要抱团取暖，产生价值。”肖波倡议，参与成都区块链企业沙龙的机构深度交流、加深合作。
-
-                    活动当天，成都市大数据协会区块链专委会、每日金融、链立方学院、思学行教育四方签署了战略合作协议，并宣布将会在区块链培训领域深度合作。
-
-                    经当天活动现场商议，第三期成都区块链沙龙活动将由成都市大数据协会区块链专委会主办，预计将由北京拉勾网络技术科技有限公司承办，第四期将由链立方学院承办。
-                </div>
-                <div className="zan-btn">
-                    <svg className='icon-svg'>
-                        <use xlinkHref='#icon-dianzan'></use>
-                    </svg>
-                    <div className="text">赞  (20)</div>
+            <div className='sxx-container'>
+                <div className="sxx-content">
+                    <div className="search">
+                        <input type="text" placeholder='请输入你想要查找的数据'/>
+                        <div className="searchBtn">搜索</div>
+                    </div>
+                    <div className='newsDetail-container'>
+                        {this.props.list.map((item)=>{
+                            if(item.id==this.props.match.params.id){
+                                return (
+                                    <Fragment key={lodashId()}>
+                                        <div className="title">
+                                            <div className="text">{item.title}</div>
+                                            <div className="time">{item.createTime}</div>
+                                        </div>
+                                        <div className="content" dangerouslySetInnerHTML={{__html:item.content}}></div>
+                                    </Fragment>
+                                )
+                            }
+                        })}
+                        <div className="zan-btn">
+                            <svg className='icon-svg'>
+                                <use xlinkHref='#icon-dianzan'></use>
+                            </svg>
+                            <div className="text">赞  (20)</div>
+                        </div>
+                    </div>
+                    <div className="sxx-box sxx-industry">
+                        <div className="sxx-title">
+                            <span></span>
+                            行业动态
+                        </div>
+                        <div className="industry-content">
+                            <div className="industry-list">
+                                <span></span>
+                                <div className="text">【知识库】行业资讯第一篇：易观：2018中国区块链应用专题分析</div>
+                            </div>
+                            <div className="industry-list">
+                                <span></span>
+                                <div className="text">【百度】区块链在列 ｜ 大数据未来七大发展方向</div>
+                            </div>
+                            <div className="industry-list">
+                                <span></span>
+                                <div className="text">【百度】人工智能，描绘万物互联的未来</div>
+                            </div>
+                            <div className="industry-list">
+                                <span></span>
+                                <div className="text">【百度】区块链+AI，恰似双剑合璧？</div>
+                            </div>
+                            <div className="industry-list">
+                                <span></span>
+                                <div className="text">【新华社】习近平：推动我国新一代人工智能健康发展</div>
+                            </div>
+                            <div className="industry-list">
+                                <span></span>
+                                <div className="text">【人民日报】智能网呼唤“全链安防”</div>
+                            </div>
+                            <div className="industry-list">
+                                <span></span>
+                                <div className="text">【知识库】行业资讯第一篇：易观：2018中国区块链应用专题分析</div>
+                            </div>
+                            <div className="industry-list">
+                                <span></span>
+                                <div className="text">【百度】区块链在列 ｜ 大数据未来七大发展方向</div>
+                            </div>
+                            <div className="industry-list">
+                                <span></span>
+                                <div className="text">【百度】人工智能，描绘万物互联的未来</div>
+                            </div>
+                            <div className="industry-list">
+                                <span></span>
+                                <div className="text">【百度】区块链+AI，恰似双剑合璧？</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="sxx-box sxx-student">
+                        <div className="sxx-title">
+                            <span></span>
+                            学员动态
+                        </div>
+                        <ul className='student-list'>
+                            <li>
+                                <div className="box"><img src={cansai} alt=""/></div>
+                                <div className="news-content">
+                                    <div className="list-title">区块链课程学员参赛</div>
+                                    <div className="description">桂勋老师带领学员参加由工信部指导的“首届全国区块链开发大赛”并荣获二等奖</div>
+                                    <div className="time">2018-9-28</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="box"><img src={huang} alt=""/></div>
+                                <div className="news-content">
+                                    <div className="list-title">“区块链体验课“学员采访</div>
+                                    <div className="description">黄同学：试过，才知道自己有多厉害！！</div>
+                                    <div className="time">2018-9-10</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="box"><img src={erdengjiang} alt=""/></div>
+                                <div className="news-content">
+                                    <div className="list-title">区块链开发大赛二等奖</div>
+                                    <div className="description">学员的努力和汗水！</div>
+                                    <div className="time">2018-9-28</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="box"><img src={third} alt=""/></div>
+                                <div className="news-content">
+                                    <div className="list-title">“区块链体验课“顺利开展</div>
+                                    <div className="description">区块链第一课，在天府新谷顺利开展</div>
+                                    <div className="time">2018-9-10</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
         )
     }
 }
+const mapStateToProps=(state)=>({
+    list:state.sixuexing.list
+})
+const mapDispatchToProps=(dispatch)=>({
+    getDetailContent(id){
+        dispatch(actionCreators.getDetailInfo(id))
+    }
+
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(withRouter(NewsDetail))

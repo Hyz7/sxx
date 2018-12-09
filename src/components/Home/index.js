@@ -12,7 +12,7 @@ import Data3 from '../../images/largeData/data3.png'
 import DataTitle from '../../images/largeData/datatitle.png'
 import { CSSTransition } from 'react-transition-group';
 import baomingImg from '../../images/home/baoming.png'
-
+import Galaxy from '../galaxy'
 let timer;
 class Home extends Component{
     constructor(props){
@@ -74,6 +74,7 @@ class Home extends Component{
         let {menuLeftShow,menuRightList,newsLeft,pages,active} = this.state
         return(
             <Fragment>
+                {/*<Galaxy />*/}
                 <div className="nav-menuDown-box">
                     <div className="inner-box" onMouseLeave={this.hideMenuRight}>
 
