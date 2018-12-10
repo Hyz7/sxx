@@ -1,6 +1,6 @@
 import * as actionTypes from './actionTypes'
 import axios from 'axios'
-import * as Api from '../../../api'
+import * as API from '../../../api'
 
 const createNewsList=(result)=>({
     type:actionTypes.GET_NEWS_LIST,
@@ -13,15 +13,15 @@ const createDetailInfo=(result)=>({
 
 export const getNewsList=()=>{
     return (dispatch)=>{
-        axios.get('/api/newsList.json').then(res=>{
-            dispatch(createNewsList(res.data.data.newsList))
+        axios.get(API.GET_NEWS_LIST).then(res=>{
+            dispatch(createNewsList(res.data))
         })
     }
 }
 export const getDetailInfo=(id)=>{
     return (dispatch)=>{
-        axios.get('/api/newsDetail.json?id='+id).then(res=>{
-            dispatch(createDetailInfo(res.data.data.list))
+        axios.get(API.GET_SXX_INFO+'?id='+id).then(res=>{
+            dispatch(createDetailInfo(res.data.dynamic))
         })
     }
 }

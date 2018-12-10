@@ -1,18 +1,13 @@
 import React,{ Component,Fragment } from 'react'
-import sxxImg from '../../images/sxxbanner.png'
+
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as actionCreators from '../sixuexing/store/actionCreators'
 import lodashId from "lodash/uniqueId";
-import third from '../../images/sxx/third.png'
-import cansai from '../../images/sxx/cansai.png'
-import huang from '../../images/sxx/huang.png'
-import erdengjiang from '../../images/sxx/erdengjiang.png'
 
 class NewsDetail extends Component{
     componentDidMount() {
         this.props.getDetailContent(this.props.match.params.id)
-        // console.log(location.pathname.substring(11,12))
     }
 
     render(){
@@ -139,7 +134,7 @@ class NewsDetail extends Component{
     }
 }
 const mapStateToProps=(state)=>({
-    list:state.sixuexing.list
+    list:state.sixuexing.newsList
 })
 const mapDispatchToProps=(dispatch)=>({
     getDetailContent(id){

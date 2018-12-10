@@ -302,19 +302,22 @@ class Home extends Component{
                                     {newsLeft==1?
                                         <ul className="news-right">
                                             {this.props.newsList.map((item)=>{
-                                                return (<li key={lodashId()}><a><span></span><Link to={'/sixuexing/'+item.id} className='news-title'>{item.title}</Link><div className='time'>{item.createTime}</div></a></li>)
+                                                return (<li key={lodashId()}><span></span><Link to={'/sixuexing/'+item.id} className='news-title'>{item.title}</Link><div className='time'>{item.createTime}</div></li>)
                                             })}
-
-                                            {/*<li><a><span></span><div className='news-title'>第三期成都区块链企业沙龙成功举办</div><div className='time'>2018-11-08</div></a></li>
-                                            <li><a><span></span><div className='news-title'>第三期成都区块链企业沙龙成功举办</div><div className='time'>2018-11-08</div></a></li>
-                                            <li><a><span></span><div className='news-title'>第三期成都区块链企业沙龙成功举办</div><div className='time'>2018-11-08</div></a></li>
-                                            <li><a><span></span><div className='news-title'>第三期成都区块链企业沙龙成功举办</div><div className='time'>2018-11-08</div></a></li>
-                                            <li><a><span></span><div className='news-title'>第三期成都区块链企业沙龙成功举办</div><div className='time'>2018-11-08</div></a></li>*/}
                                         </ul>
                                         :newsLeft==2?
-                                            <ul className="news-right">行业动态</ul>
-                                            :newsLeft==3?
-                                                <ul className="news-right">学员动态</ul>:null
+                                        <ul className="news-right">
+                                            {this.props.industryList.map((item)=>{
+                                                return (<li key={lodashId()}><span></span><Link to={'/sixuexing/'+item.id} className='news-title'>{item.title}</Link><div className='time'>{item.createTime}</div></li>)
+                                            })}
+                                        </ul>
+                                        :newsLeft==3?
+                                        <ul className="news-right">
+                                            {this.props.studentList.map((item)=>{
+                                                return (<li key={lodashId()}><span></span><Link to={'/sixuexing/'+item.id} className='news-title'>{item.title}</Link><div className='time'>{item.createTime}</div></li>)
+                                            })}
+                                        </ul>
+                                        :null
                                     }
                                 </div>
                             </div>
@@ -373,15 +376,18 @@ class Home extends Component{
 
 const mapStateToProps=(state)=>({
     menuList:state.home.menuLeftList,
-    newsList:state.sixuexing.newsList
+    newsList:state.sixuexing.newsList,
+    industryList:state.sixuexing.industryList,
+    studentList:state.sixuexing.studentList
+
 })
 
 const mapDispatchToProps=(dispatch)=>({
     getMenuList(){
         dispatch(actionCreators.getMenuLeftList())
     },
-    getNewsList(){
-        dispatch(actionCreators1.getNewsList())
+    getNewsList(id){
+        dispatch(actionCreators1.getNewsList(id))
     }
 })
 

@@ -2,14 +2,20 @@ import * as actionTypes from './actionTypes'
 
 const defaultState={
     newsList:[],
-    list:[]
+    industryList:[],
+    studentList:[],
 }
 
 const getNewsList=(state,action)=>{
-    return Object.assign({},state,{newsList:action.result})
+    return Object.assign({},state,{
+        newsList: action.result.newsList,
+        industryList: action.result.industryList,
+        studentList: action.result.studentList,
+        detailInfo:action.result.detailInfo
+    })
 }
 const getDetailInfo=(state,action)=>{
-    return Object.assign({},state,{list:action.result})
+    return Object.assign({},state,{detailInfo:action.result})
 }
 
 export default (state = defaultState, action)=>{
