@@ -55,6 +55,9 @@ class Home extends Component{
         this.props.getNewsList()
     }
 
+    componentDidMount(){
+
+    }
     render() {
         const params = {
             effect: 'fade',
@@ -307,7 +310,8 @@ class Home extends Component{
                                         </ul>
                                         :newsLeft==2?
                                         <ul className="news-right">
-                                            {this.props.industryList.map((item)=>{
+                                            {this.props.industryList.slice(0,5).map((item)=>{
+
                                                 return (<li key={lodashId()}><span></span><Link to={'/sixuexing/'+item.id} className='news-title'>{item.title}</Link><div className='time'>{item.createTime}</div></li>)
                                             })}
                                         </ul>
@@ -349,10 +353,6 @@ class Home extends Component{
         )
     }
 
-   /* timerMethod=()=>{
-        let {list}=this.state
-        this.setState({list:list.unshift(list.pop())})
-    }*/
 
     componentDidMount(){
 
