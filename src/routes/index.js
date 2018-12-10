@@ -21,8 +21,9 @@ export default ()=>(
             <Route path='/' exact component={Home}></Route>
             <Route path='/allcourse' component={AllCourse}></Route>
             <Route path='/teacher' component={Teacher}></Route>
-            <Route path='/sixuexing' component={Sxx}></Route>
-            <Route path='/detail/:id' component={NewsDetail}></Route>
+            <Route path='/sixuexing'exact component={Sxx}></Route>
+            {/*<Route path='/detail/' component={NewsDetail}></Route>*/}
+            <Route path='/sixuexing/:id' exact component={ NewsDetail }></Route>
             <Route path='/core' component={Core}></Route>
             <Route path='/download' component={Download}></Route>
             <Route path='/recruitment' component={Recruitment}></Route>

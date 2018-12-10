@@ -68,7 +68,7 @@ class About extends Component{
                                 <div className="box">
                                     <a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes"><img src={QQ} alt=""/></a>
                                     <div className="text">座机：028-85253153</div>
-                                    <div className="text">邮箱：sxx@studytodo.com</div>
+                                    <div className="text">邮箱：sxx@sixuexing.com</div>
                                     <div className="text">企业内训/商务合作:028—85253153</div>
                                     <div className="text" style={{margin:"20px 0"}}>QQ：2507819723</div>
                                     <div className="text">地址：成都高新区吉泰五路88号香年广场3栋14楼2号</div>
@@ -85,7 +85,7 @@ class About extends Component{
                                 <div className="box">
                                     <a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes"><img src={QQ} alt=""/></a>
                                     <div className="text">座机：028-85253153</div>
-                                    <div className="text">邮箱：sxx@studytodo.com</div>
+                                    <div className="text">邮箱：sxx@sixuexing.com</div>
                                     <div className="text">企业内训/商务合作:028—85253153</div>
                                     <div className="text" style={{margin:"20px 0"}}>QQ：2507819723</div>
                                     <div className="text">地址：成都高新区吉泰五路88号香年广场3栋14楼2号</div>
@@ -102,7 +102,7 @@ class About extends Component{
                                 <div className="box">
                                     <a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes"><img src={QQ} alt=""/></a>
                                     <div className="text">座机：028-85253153</div>
-                                    <div className="text">邮箱：sxx@studytodo.com</div>
+                                    <div className="text">邮箱：sxx@sixuexing.com</div>
                                     <div className="text">企业内训/商务合作:028—85253153</div>
                                     <div className="text" style={{margin:"20px 0"}}>QQ：2507819723</div>
                                     <div className="text">地址：成都高新区吉泰五路88号香年广场3栋14楼2号</div>

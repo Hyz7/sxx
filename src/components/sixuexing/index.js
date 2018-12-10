@@ -40,7 +40,7 @@ class Sxx extends Component{
                                 return (
                                     <li key={lodashId()} >
                                         <img src={item.imgUrl}></img>
-                                        <Link to={'/detail/'+item.id}>
+                                        <Link to={'/sixuexing/'+item.id}>
                                         <div className="news-content">
                                             <div className="list-title">{item.title}</div>
                                             <div className="description">{item.content}</div>

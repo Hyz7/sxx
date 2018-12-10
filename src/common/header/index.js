@@ -39,7 +39,7 @@ class Header extends Component{
                                 </div>
                             </div>
                             <div className="header-nav">
-                                <div className="nav-left">热门课程</div>
+                                {location.pathname=='/'?<div className="nav-left">热门课程</div>:null}
                                 <ul className="nav-right">
                                     <li><NavLink to='/' exact activeClassName="active">首页</NavLink><span></span></li>
                                     <li><NavLink to='/core' activeClassName="active">核心优势</NavLink><span></span></li>

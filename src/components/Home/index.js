@@ -3,6 +3,7 @@ import Swiper from 'react-id-swiper';
 import connect from "react-redux/es/connect/connect";
 import {withRouter,Link} from 'react-router-dom'
 import * as actionCreators from './store/actionCreators'
+import * as actionCreators1 from '../sixuexing/store/actionCreators'
 import Self from './server/self.js'
 import University from './server/university.js'
 import Enterprise from './server/enterprise.js'
@@ -12,6 +13,7 @@ import Data3 from '../../images/largeData/data3.png'
 import DataTitle from '../../images/largeData/datatitle.png'
 import { CSSTransition } from 'react-transition-group';
 import baomingImg from '../../images/home/baoming.png'
+import lodashId from "lodash/uniqueId";
 import Galaxy from '../galaxy'
 let timer;
 class Home extends Component{
@@ -49,7 +51,9 @@ class Home extends Component{
         }
     }
 
-    componentDidMount(){}
+    componentWillMount(){
+        this.props.getNewsList()
+    }
 
     render() {
         const params = {
@@ -297,12 +301,15 @@ class Home extends Component{
                                     </ul>
                                     {newsLeft==1?
                                         <ul className="news-right">
+                                            {this.props.newsList.map((item)=>{
+                                                return (<li key={lodashId()}><a><span></span><Link to={'/sixuexing/'+item.id} className='news-title'>{item.title}</Link><div className='time'>{item.createTime}</div></a></li>)
+                                            })}
+
+                                            {/*<li><a><span></span><div className='news-title'>第三期成都区块链企业沙龙成功举办</div><div className='time'>2018-11-08</div></a></li>
                                             <li><a><span></span><div className='news-title'>第三期成都区块链企业沙龙成功举办</div><div className='time'>2018-11-08</div></a></li>
                                             <li><a><span></span><div className='news-title'>第三期成都区块链企业沙龙成功举办</div><div className='time'>2018-11-08</div></a></li>
                                             <li><a><span></span><div className='news-title'>第三期成都区块链企业沙龙成功举办</div><div className='time'>2018-11-08</div></a></li>
-                                            <li><a><span></span><div className='news-title'>第三期成都区块链企业沙龙成功举办</div><div className='time'>2018-11-08</div></a></li>
-                                            <li><a><span></span><div className='news-title'>第三期成都区块链企业沙龙成功举办</div><div className='time'>2018-11-08</div></a></li>
-                                            <li><a><span></span><div className='news-title'>第三期成都区块链企业沙龙成功举办</div><div className='time'>2018-11-08</div></a></li>
+                                            <li><a><span></span><div className='news-title'>第三期成都区块链企业沙龙成功举办</div><div className='time'>2018-11-08</div></a></li>*/}
                                         </ul>
                                         :newsLeft==2?
                                             <ul className="news-right">行业动态</ul>
@@ -363,14 +370,19 @@ class Home extends Component{
         this.setState({active:value})
     }
 }
+
 const mapStateToProps=(state)=>({
-    menuList:state.home.menuLeftList
+    menuList:state.home.menuLeftList,
+    newsList:state.sixuexing.newsList
 })
 
 const mapDispatchToProps=(dispatch)=>({
     getMenuList(){
         dispatch(actionCreators.getMenuLeftList())
+    },
+    getNewsList(){
+        dispatch(actionCreators1.getNewsList())
     }
 })
 
-export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Home))
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(withRouter(Home)))

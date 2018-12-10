@@ -12,6 +12,7 @@ import erdengjiang from '../../images/sxx/erdengjiang.png'
 class NewsDetail extends Component{
     componentDidMount() {
         this.props.getDetailContent(this.props.match.params.id)
+        // console.log(location.pathname.substring(11,12))
     }
 
     render(){
@@ -91,7 +92,7 @@ class NewsDetail extends Component{
                             </div>
                         </div>
                     </div>
-                    <div className="sxx-box sxx-student">
+                    {/*<div className="sxx-box sxx-student">
                         <div className="sxx-title">
                             <span></span>
                             学员动态
@@ -130,7 +131,7 @@ class NewsDetail extends Component{
                                 </div>
                             </li>
                         </ul>
-                    </div>
+                    </div>*/}
                 </div>
             </div>
 
