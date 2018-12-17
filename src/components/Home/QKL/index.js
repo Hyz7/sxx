@@ -233,9 +233,9 @@ class QKL extends Component {
                             <div className="baoming-box" style={{marginTop:'40px'}}>
                                 <img src={baomingImg} alt="区块链"/>
                             </div>
-                            <h1 className="baoming-btn">
+                            <div className="baoming-btn">
                                 我要报名
-                            </h1>
+                            </div>
                         </div>
                     </div>
                 </div>
