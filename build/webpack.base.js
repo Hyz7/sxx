@@ -43,7 +43,8 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: '思学行教育',
-            template: path.resolve(__dirname,'../public/index.html')
+            template: path.resolve(__dirname,'../public/index.html'),
+            favicon: './public/favicon.ico'
         })
     ]
 };

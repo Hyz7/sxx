@@ -353,10 +353,6 @@ class Home extends Component{
         )
     }
 
-
-    componentDidMount(){
-
-    }
     componentWillUnmount(){
         clearInterval(timer)
     }
