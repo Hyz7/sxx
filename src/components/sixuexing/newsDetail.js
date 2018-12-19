@@ -6,11 +6,20 @@ import * as actionCreators from '../sixuexing/store/actionCreators'
 import lodashId from "lodash/uniqueId";
 
 class NewsDetail extends Component{
+    state={
+        zanStatus:false
+    }
+
     componentDidMount() {
         this.props.getDetailContent(this.props.match.params.id)
     }
-
+    addZan=()=>{
+        this.setState({
+            zanStatus:!this.state.zanStatus
+        })
+    }
     render(){
+        let {zanStatus} =this.state
         return(
             <div className='sxx-container'>
                 <div className="sxx-content">
@@ -28,16 +37,16 @@ class NewsDetail extends Component{
                                             <div className="time">{item.createTime}</div>
                                         </div>
                                         <div className="content" dangerouslySetInnerHTML={{__html:item.content}}></div>
+                                        <div className={zanStatus?"zan-btn active":"zan-btn"}  onClick={()=>{this.addZan()}}>
+                                            <svg className='icon-svg'>
+                                                <use xlinkHref='#icon-dianzan'></use>
+                                            </svg>
+                                            <div className="text" style={{marginLeft:'20px'}}>{zanStatus?"取消":"赞"}</div>
+                                        </div>
                                     </Fragment>
                                 )
                             }
                         })}
-                        <div className="zan-btn">
-                            <svg className='icon-svg'>
-                                <use xlinkHref='#icon-dianzan'></use>
-                            </svg>
-                            <div className="text">赞  (20)</div>
-                        </div>
                     </div>
                     <div className="sxx-box sxx-industry">
                         <div className="sxx-title">
@@ -140,7 +149,6 @@ const mapDispatchToProps=(dispatch)=>({
     getDetailContent(id){
         dispatch(actionCreators.getDetailInfo(id))
     }
-
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(withRouter(NewsDetail))
