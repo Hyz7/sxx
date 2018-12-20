@@ -44,11 +44,11 @@ class Header extends Component{
                                     <li><NavLink to='/' exact activeClassName="active">首页</NavLink><span></span></li>
                                     <li><NavLink to='/core' activeClassName="active">核心优势</NavLink><span></span></li>
                                     <li><NavLink to='/teacher' activeClassName="active">授课导师</NavLink><span></span></li>
-                                    <li onClick={()=>{this.setState({popupHeader:true})}} onMouseLeave={()=>{this.setState({popupHeader:false})}}>
+                                    <li >{/*onClick={()=>{this.setState({popupHeader:true})}} onMouseLeave={()=>{this.setState({popupHeader:false})}}*/}
                                         <NavLink to='/sixuexing' activeClassName="active">思学行动态
-                                            <svg className="icon-svg">
+                                           {/* <svg className="icon-svg">
                                                 <use xlinkHref='#icon-jiantou-copy-copy'></use>
-                                            </svg>
+                                            </svg>*/}
                                         </NavLink>
                                         <span></span>
                                         <CSSTransition
