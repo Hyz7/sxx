@@ -305,7 +305,7 @@ class Home extends Component{
                                     {newsLeft==1?
                                         <ul className="news-right">
                                             {this.props.newsList.map((item)=>{
-                                                return (<li key={lodashId()}><span></span><Link to={'/sixuexing/'+item.id} className='news-title'>{item.title}</Link><div className='time'>{item.createTime}</div></li>)
+                                                return (<li key={lodashId()}><span></span><Link to={'/sixuexing/detail?id='+item.id} className='news-title'>{item.title}</Link><div className='time'>{item.createTime}</div></li>)
                                             })}
                                         </ul>
                                         :newsLeft==2?

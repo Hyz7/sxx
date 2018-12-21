@@ -8,7 +8,7 @@ import lodashId from "lodash/uniqueId";
 
 class Sxx extends Component{
     componentDidMount(){
-        this.props.getNewsList()
+        this.props.handleMoreList(this.props.page,5)
     }
 
     render() {
@@ -33,7 +33,7 @@ class Sxx extends Component{
                                 return (
                                     <li key={lodashId()} >
                                         <img src={item.image}></img>
-                                        <Link to={'/sixuexing/'+item.id}>
+                                        <Link to={'/sixuexing/detail?id='+item.id}>
                                         <div className="news-content">
                                             <div className="list-title">{item.title}</div>
                                             <div className="description">{item.contentKey.substring(0,100)+'......'}</div>
@@ -43,6 +43,7 @@ class Sxx extends Component{
                                     </li>
                                 )
                             })}
+                            {/*<div className="loading-more" onClick={()=>{this.props.handleMoreList(this.props.page,5)}}>加载更多......</div>*/}
                         </ul>
                     </div>
                     <div className="sxx-box sxx-industry">
@@ -85,17 +86,25 @@ class Sxx extends Component{
             </div>
         )
     }
+    /*handleMoreList=(page,size)=>{
+
+    }*/
 }
 
 const mapStateToProps=(state)=>({
     newsList:state.sixuexing.newsList,
     industryList:state.sixuexing.industryList,
-    studentList:state.sixuexing.studentList
+    studentList:state.sixuexing.studentList,
+    page:state.sixuexing.page
 })
 
 const mapDispatchToProps=(dispatch)=>({
     getNewsList(){
         dispatch(actionCreators.getNewsList())
+    },
+    handleMoreList(page,size){
+        this.getNewsList()
+        dispatch(actionCreators.getMoreList(page,size))
     }
 })
 

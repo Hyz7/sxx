@@ -11,7 +11,8 @@ class NewsDetail extends Component{
     }
 
     componentDidMount() {
-        this.props.getDetailContent(this.props.match.params.id)
+        this.props.getDetailContent(this.props.location.search.substring(4))
+        // this.props.getDetailContent(this.props.match)
     }
     addZan=()=>{
         this.setState({
@@ -23,30 +24,23 @@ class NewsDetail extends Component{
         return(
             <div className='sxx-container'>
                 <div className="sxx-content">
-                    <div className="search">
+                    {/*<div className="search">
                         <input type="text" placeholder='请输入你想要查找的数据'/>
                         <div className="searchBtn">搜索</div>
-                    </div>
+                    </div>*/}
                     <div className='newsDetail-container'>
-                        {this.props.list.map((item)=>{
-                            if(item.id==this.props.match.params.id){
-                                return (
-                                    <Fragment key={lodashId()}>
-                                        <div className="title">
-                                            <div className="text">{item.title}</div>
-                                            <div className="time">{item.createTime}</div>
-                                        </div>
-                                        <div className="content" dangerouslySetInnerHTML={{__html:item.content}}></div>
-                                        <div className={zanStatus?"zan-btn active":"zan-btn"}  onClick={()=>{this.addZan()}}>
-                                            <svg className='icon-svg'>
-                                                <use xlinkHref='#icon-dianzan'></use>
-                                            </svg>
-                                            <div className="text" style={{marginLeft:'20px'}}>{zanStatus?"取消":"赞"}</div>
-                                        </div>
-                                    </Fragment>
-                                )
-                            }
-                        })}
+                            <div className="title">
+                                <div className="text">{this.props.detailInfo.title}</div>
+                                <div className="time">{this.props.detailInfo.createTime}</div>
+                            </div>
+                            <div className="content" dangerouslySetInnerHTML={{__html:this.props.detailInfo.content}}></div>
+                            <div className={zanStatus?"zan-btn active":"zan-btn"}  onClick={()=>{this.addZan()}}>
+                                <svg className='icon-svg'>
+                                    <use xlinkHref='#icon-dianzan'></use>
+                                </svg>
+                                <div className="text" style={{marginLeft:'20px'}}>{zanStatus?"取消":"赞"}</div>
+                            </div>
+
                     </div>
                     <div className="sxx-box sxx-industry">
                         <div className="sxx-title">
@@ -143,7 +137,8 @@ class NewsDetail extends Component{
     }
 }
 const mapStateToProps=(state)=>({
-    list:state.sixuexing.newsList
+    list:state.sixuexing.newsList,
+    detailInfo:state.sixuexing.detailInfo
 })
 const mapDispatchToProps=(dispatch)=>({
     getDetailContent(id){

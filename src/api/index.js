@@ -14,3 +14,8 @@ export const GET_SXX_INFO=HOST+'/dynamic/queryDynamic'
  * @type {string}
  */
 export const GET_NEWS_LIST=HOST+'/dynamic/showNewsInfoList'
+
+/**
+ * 获取新闻分页数据
+ */
+export const GET_MORE_LIST=HOST+ '/dynamic/showNewsListByTypeId'

@@ -14,8 +14,7 @@ const App=()=>{
         <Provider store={store}>
             <BrowserRouter>
                 <Switch>
-                    <Route path='/' component={ MainRoutes }></Route>
-
+                    <MainRoutes />
                     <Route component={ NotFound }/>
                 </Switch>
             </BrowserRouter>
