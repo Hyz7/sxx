@@ -148,20 +148,20 @@ class Teacher extends Component{
                                     </div>
                                 </div>
                                 <div className="list" id='zhangshibing'>
-                                    <img className="avatar" src='http://52.83.225.97:8080/imgs/teacher/zhangshibin.png'/>
-                                    <div className="right-box">
-                                        <div className="name"><i></i>张仕斌<span>ShiBing Zhang</span></div>
-                                        <div className="position">区块链课程特聘讲师</div>
-                                        <div className="box">
-                                            {/*<div className="text">网信天成创始人</div>*/}
-                                            <div className="text">四川省司法厅网络安全鉴定专家</div>
-                                        </div>
-                                        <div className="goodAt"><span>擅长领域：</span>区块链,网络安全</div>
-                                        <div className="goodAt" style={{marginTop:'10px'}}><span>简介：</span>
-                                            研究生学历，工学博士（博士后），四川省有突出贡献的优秀专家，中国计算机学会区块链专委会委员，中国计算机学会教育工作委员会委员，中国计算机学会高级会员，中国密码学会高级会员，四川省计算机学会网络与信息系统专委会暨西南网络与信息系统协会副主任，四川省司法厅网络安全鉴定专家，现任成都信息工程大学网络空间安全学院副院长。主要从事网络安全、工控系统安全、区块链、量子安全通信等领域的教学与科研工作；先后主持或主研国家自然科学基金、科技部网络安全重大专项、四川省战略性兴产品、四川省科技支撑计划等省部级以上项目20余项、企事业单位横向合作项目30余项，获专利及软件著作权授权50余项；发表学术论文100余篇（其中SCI检索18篇）；编著出版教材8本，主持建设省精品课程、省精品资源共享课程、省级精品在线开放课程先后获得省部级科技进步一、二、三等奖4项，教学成果奖1等奖3项、二等奖4项，2007、2012、2017年度学校科技先进个人。
-                                        </div>
+                                <img className="avatar" src='http://52.83.225.97:8080/imgs/teacher/zhangshibin.png'/>
+                                <div className="right-box">
+                                    <div className="name"><i></i>张仕斌<span>ShiBing Zhang</span></div>
+                                    <div className="position">区块链课程特聘讲师</div>
+                                    <div className="box">
+                                        {/*<div className="text">网信天成创始人</div>*/}
+                                        <div className="text">四川省司法厅网络安全鉴定专家</div>
+                                    </div>
+                                    <div className="goodAt"><span>擅长领域：</span>区块链,网络安全</div>
+                                    <div className="goodAt" style={{marginTop:'10px'}}><span>简介：</span>
+                                        研究生学历，工学博士（博士后），四川省有突出贡献的优秀专家，中国计算机学会区块链专委会委员，中国计算机学会教育工作委员会委员，中国计算机学会高级会员，中国密码学会高级会员，四川省计算机学会网络与信息系统专委会暨西南网络与信息系统协会副主任，四川省司法厅网络安全鉴定专家，现任成都信息工程大学网络空间安全学院副院长。主要从事网络安全、工控系统安全、区块链、量子安全通信等领域的教学与科研工作；先后主持或主研国家自然科学基金、科技部网络安全重大专项、四川省战略性兴产品、四川省科技支撑计划等省部级以上项目20余项、企事业单位横向合作项目30余项，获专利及软件著作权授权50余项；发表学术论文100余篇（其中SCI检索18篇）；编著出版教材8本，主持建设省精品课程、省精品资源共享课程、省级精品在线开放课程先后获得省部级科技进步一、二、三等奖4项，教学成果奖1等奖3项、二等奖4项，2007、2012、2017年度学校科技先进个人。
                                     </div>
                                 </div>
+                            </div>
                             </div>
                             :null}
                         {teacherType=='rgzn'?

@@ -11,6 +11,20 @@ class Sxx extends Component{
         this.props.handleMoreList(this.props.page,5)
     }
 
+    searchKey=(value)=>{
+        if(value){
+            let value1=value.replace(/\s+/g,"");
+            this.props.getNewsList(value1)
+        }
+
+    }
+
+    handleKeyDown=(e)=>{
+        if(e.keyCode===13){
+            this.searchKey(this.searchInput.value)
+        }
+    }
+
     render() {
         return(
             <div className='sxx-container'>
@@ -19,8 +33,10 @@ class Sxx extends Component{
                 </div>
                 <div className="sxx-content">
                     <div className="search">
-                        <input type="text" placeholder='请输入你想要查找的数据'/>
-                        <div className="searchBtn">搜索</div>
+                        <input type="text" placeholder='请输入你想要查找的数据' ref={value=>this.searchInput=value} onKeyUp={(e)=>{this.handleKeyDown(e)}}/>
+                        <div className="searchBtn" onClick={()=>{
+                            this.searchKey(this.searchInput.value)
+                        }}>搜索</div>
                     </div>
                     {/*<NewsDetail />*/}
                     <div className="sxx-box sxx-news">
@@ -99,8 +115,8 @@ const mapStateToProps=(state)=>({
 })
 
 const mapDispatchToProps=(dispatch)=>({
-    getNewsList(){
-        dispatch(actionCreators.getNewsList())
+    getNewsList(value){
+        dispatch(actionCreators.getNewsList(value))
     },
     handleMoreList(page,size){
         this.getNewsList()

@@ -23,13 +23,15 @@ export const getMoreList=(page,size)=>{
     }
 }
 
-export const getNewsList=()=>{
+export const getNewsList=(value)=>{
     return (dispatch)=>{
-        axios.get(API.GET_NEWS_LIST+"").then(res=>{
+        axios.get(API.GET_NEWS_LIST+"?name="+value).then(res=>{
+            console.log(res,value)
             dispatch(createNewsList(res.data))
         })
     }
 }
+
 export const getDetailInfo=(id)=>{
     return (dispatch)=>{
         axios.get(API.GET_SXX_INFO+'?id='+id).then(res=>{
