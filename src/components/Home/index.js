@@ -84,7 +84,6 @@ class Home extends Component{
                 {/*<Galaxy />*/}
                 <div className="nav-menuDown-box">
                     <div className="inner-box" onMouseLeave={this.hideMenuRight}>
-
                             <CSSTransition
                                 in={true}
                                 timeout={300}
@@ -116,7 +115,6 @@ class Home extends Component{
                     <div><img src={require("../../images/home/banner1.png")} alt="区块链"/></div>
                     <div><img src={require("../../images/home/banner2.png")} alt="区块链"/></div>
                     <div><img src={require("../../images/home/banner3.png")} alt="区块链"/></div>
-                    {/*<div><img src={require("../../images/banner.png")} alt="区块链"/></div>*/}
                 </Swiper>
                 <div className="home-container">
                     <div className="item1">
@@ -312,13 +310,13 @@ class Home extends Component{
                                         <ul className="news-right">
                                             {this.props.industryList.slice(0,5).map((item)=>{
 
-                                                return (<li key={lodashId()}><span></span><Link to={'/sixuexing/'+item.id} className='news-title'>{item.title}</Link><div className='time'>{item.createTime}</div></li>)
+                                                return (<li key={lodashId()}><span></span><a className='news-title' href={item.content}>{item.title}</a><div className='time'>{item.createTime}</div></li>)
                                             })}
                                         </ul>
                                         :newsLeft==3?
                                         <ul className="news-right">
                                             {this.props.studentList.map((item)=>{
-                                                return (<li key={lodashId()}><span></span><Link to={'/sixuexing/'+item.id} className='news-title'>{item.title}</Link><div className='time'>{item.createTime}</div></li>)
+                                                return (<li key={lodashId()}><span></span><a className='news-title'>{item.title}</a><div className='time'>{item.createTime}</div></li>)
                                             })}
                                         </ul>
                                         :null

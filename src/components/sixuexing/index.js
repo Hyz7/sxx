@@ -72,7 +72,7 @@ class Sxx extends Component{
                                 return (
                                     <div className="industry-list" key={lodashId()}>
                                         <span></span>
-                                        <div className="text">{item.title}</div>
+                                        <a className="text" href={item.content}>{item.title}</a>
                                     </div>
                                 )
                             })}

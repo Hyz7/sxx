@@ -14,6 +14,11 @@ class NewsDetail extends Component{
         this.props.getDetailContent(this.props.location.search.substring(4))
         // this.props.getDetailContent(this.props.match)
         this.node.scrollIntoView();
+        this.props.getNewsList()
+
+        /*this.props.getDetailContent(this.props.location.search.substring(4)+1)
+        this.props.getDetailContent(this.props.location.search.substring(4)-1)*/
+        console.log(parseInt(this.props.location.search.substring(4))+1)
     }
 
     addZan=()=>{
@@ -21,8 +26,13 @@ class NewsDetail extends Component{
             zanStatus:!this.state.zanStatus
         })
     }
+
+    handleChangePage=()=>{
+        this.props.getDetailContent(this.props.location.search.substring(4)+1)
+    }
+
     render(){
-        let {zanStatus} =this.state
+        let { zanStatus } =this.state
         return(
             <div className='sxx-container' ref={node => this.node = node} >
                 <div className="sxx-content">
@@ -50,47 +60,20 @@ class NewsDetail extends Component{
                             行业动态
                         </div>
                         <div className="industry-content">
-                            <div className="industry-list">
-                                <span></span>
-                                <div className="text">【知识库】行业资讯第一篇：易观：2018中国区块链应用专题分析</div>
-                            </div>
-                            <div className="industry-list">
-                                <span></span>
-                                <div className="text">【百度】区块链在列 ｜ 大数据未来七大发展方向</div>
-                            </div>
-                            <div className="industry-list">
-                                <span></span>
-                                <div className="text">【百度】人工智能，描绘万物互联的未来</div>
-                            </div>
-                            <div className="industry-list">
-                                <span></span>
-                                <div className="text">【百度】区块链+AI，恰似双剑合璧？</div>
-                            </div>
-                            <div className="industry-list">
-                                <span></span>
-                                <div className="text">【新华社】习近平：推动我国新一代人工智能健康发展</div>
-                            </div>
-                            <div className="industry-list">
-                                <span></span>
-                                <div className="text">【人民日报】智能网呼唤“全链安防”</div>
-                            </div>
-                            <div className="industry-list">
-                                <span></span>
-                                <div className="text">【知识库】行业资讯第一篇：易观：2018中国区块链应用专题分析</div>
-                            </div>
-                            <div className="industry-list">
-                                <span></span>
-                                <div className="text">【百度】区块链在列 ｜ 大数据未来七大发展方向</div>
-                            </div>
-                            <div className="industry-list">
-                                <span></span>
-                                <div className="text">【百度】人工智能，描绘万物互联的未来</div>
-                            </div>
-                            <div className="industry-list">
-                                <span></span>
-                                <div className="text">【百度】区块链+AI，恰似双剑合璧？</div>
-                            </div>
+                            {this.props.industryList?this.props.industryList.map((item)=>{
+                                return (
+                                    <div className="industry-list" key={lodashId()}>
+                                        <span></span>
+                                        <a className="text" href={item.content}>{item.title}</a>
+                                    </div>
+                                )
+                            }):null}
+                            {/*<div className="btn-box">
+                                <div className="btn prev-btn" onClick={()=>{this.handleChangePage('prev')}}>上一篇：AAA全球应用联盟链白皮书</div>
+                                <div className="btn next-btn" onClick={()=>{this.handleChangePage('next')}}>下一篇：SharesPost 项目投资者概览</div>
+                            </div>*/}
                         </div>
+
                     </div>
                     {/*<div className="sxx-box sxx-student">
                         <div className="sxx-title">
@@ -140,11 +123,15 @@ class NewsDetail extends Component{
 }
 const mapStateToProps=(state)=>({
     list:state.sixuexing.newsList,
-    detailInfo:state.sixuexing.detailInfo
+    detailInfo:state.sixuexing.detailInfo,
+    industryList:state.sixuexing.industryList,
 })
 const mapDispatchToProps=(dispatch)=>({
     getDetailContent(id){
         dispatch(actionCreators.getDetailInfo(id))
+    },
+    getNewsList(){
+        dispatch(actionCreators.getNewsList())
     }
 })
 
