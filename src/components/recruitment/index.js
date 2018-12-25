@@ -57,7 +57,7 @@ export default class Recruitment extends PureComponent{
                                 <div className="box" style={{marginTop:'40px'}}>
                                     <div className="text">联系方式:</div>
                                     <div className="text">邮件标题注明：应聘 新媒体运营专员 </div>
-                                    <div className="text">邮箱地址：19983261218@163.com</div>
+                                    <div className="text">邮箱地址：xiangjun@sixuexing.com</div>
                                 </div>
                             </div>
                         </Fragment>
@@ -90,7 +90,7 @@ export default class Recruitment extends PureComponent{
                                 <div className="box" style={{marginTop:'40px'}}>
                                     <div className="text">联系方式:</div>
                                     <div className="text">邮件标题注明：应聘 新媒体营销 </div>
-                                    <div className="text">邮箱地址：19983261218@163.com</div>
+                                    <div className="text">邮箱地址：xiangjun@sixuexing.com</div>
                                 </div>
                             </div>
                         </Fragment>
@@ -121,7 +121,7 @@ export default class Recruitment extends PureComponent{
                                 <div className="box" style={{marginTop:'40px'}}>
                                     <div className="text">联系方式:</div>
                                     <div className="text">邮件标题注明：应聘 课程顾问 </div>
-                                    <div className="text">邮箱地址：19983261218@163.com</div>
+                                    <div className="text">邮箱地址：xiangjun@sixuexing.com</div>
                                 </div>
                             </div>
                         </Fragment>
@@ -153,7 +153,7 @@ export default class Recruitment extends PureComponent{
                                 <div className="box" style={{marginTop:'40px'}}>
                                     <div className="text">联系方式:</div>
                                     <div className="text">邮件标题注明：应聘 项目执行 </div>
-                                    <div className="text">邮箱地址：19983261218@163.com</div>
+                                    <div className="text">邮箱地址：xiangjun@sixuexing.com</div>
                                 </div>
                             </div>
                         </Fragment>
@@ -188,7 +188,7 @@ export default class Recruitment extends PureComponent{
                                 <div className="box" style={{marginTop:'40px'}}>
                                     <div className="text">联系方式:</div>
                                     <div className="text">邮件标题注明：应聘 产品助理 </div>
-                                    <div className="text">邮箱地址：19983261218@163.com</div>
+                                    <div className="text">邮箱地址：xiangjun@sixuexing.com</div>
                                 </div>
                             </div>
                         </Fragment>

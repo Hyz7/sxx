@@ -27,7 +27,7 @@ export default class Footer extends Component{
                             <div className="title" style={{width:'100px'}}>联系我们</div>
                             <div className="item-box">
                                 <div className="text text1">地址：成都市高新区吉泰五路88号香年广场T3栋14楼</div>
-                                <div className="text text2">企业邮箱：sxx@studytodo.com</div>
+                                <div className="text text2">企业邮箱：sxx@sixuexing.com</div>
                                 <div className="text text2">企业QQ：<a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes">2507819723</a></div>
                             </div>
 
@@ -35,7 +35,7 @@ export default class Footer extends Component{
                         <div className="item item2">
                             <div className="title" style={{width:'100px'}}>服务热线</div>
                             <div className="item1-hot">
-                                <div className="phone">400-000-0000</div>
+                                <div className="phone">028-8525-3153</div>
                                 <div className="text">咨询时间：09 : 00 - 18 : 00</div>
                             </div>
                         </div>
@@ -49,7 +49,7 @@ export default class Footer extends Component{
                     </div>
                     <div className="footer3">
                         <div className="title" style={{width:'100px'}}>
-                            友情链接（友链交换QQ：2507819723）
+                            友情链接(友链交换QQ：2507819723)
                         </div>
                         <ul className="box">
                             <li>西安APP开发</li>

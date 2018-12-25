@@ -13,7 +13,9 @@ class NewsDetail extends Component{
     componentDidMount() {
         this.props.getDetailContent(this.props.location.search.substring(4))
         // this.props.getDetailContent(this.props.match)
+        this.node.scrollIntoView();
     }
+
     addZan=()=>{
         this.setState({
             zanStatus:!this.state.zanStatus
@@ -22,7 +24,7 @@ class NewsDetail extends Component{
     render(){
         let {zanStatus} =this.state
         return(
-            <div className='sxx-container'>
+            <div className='sxx-container' ref={node => this.node = node} >
                 <div className="sxx-content">
                     {/*<div className="search">
                         <input type="text" placeholder='请输入你想要查找的数据'/>
@@ -30,7 +32,7 @@ class NewsDetail extends Component{
                     </div>*/}
                     <div className='newsDetail-container'>
                             <div className="title">
-                                <div className="text">{this.props.detailInfo.title}</div>
+                                <h1 className="text">{this.props.detailInfo.title}</h1>
                                 <div className="time">{this.props.detailInfo.createTime}</div>
                             </div>
                             <div className="content" dangerouslySetInnerHTML={{__html:this.props.detailInfo.content}}></div>

@@ -337,7 +337,7 @@ class Home extends Component{
                                     <img src={baomingImg} alt="区块链"/>
                                 </div>
                                 <h1 className="baoming-btn">
-                                    我要报名
+                                    <a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes" style={{color:'#fff'}}>我要报名</a>
                                 </h1>
                             </div>
                         </div>

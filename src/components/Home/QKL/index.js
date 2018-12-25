@@ -84,8 +84,8 @@ class QKL extends Component {
                             </td>
                             <td>2学时</td>
                             <td rowSpan={3}>
-                                <span><svg className='icon-svg'><use xlinkHref='#icon-qq1'></use></svg>点击咨询</span>
-                                <span><svg className='icon-svg'><use xlinkHref='#icon-weixin1'></use></svg>点击咨询</span>
+                                <span><svg className='icon-svg'><use xlinkHref='#icon-qq1'></use></svg><a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes">点击咨询</a></span>
+                                <span><svg className='icon-svg'><use xlinkHref='#icon-weixin1'></use></svg>点击咨询<div className="wxBox"></div></span>
                             </td>
                         </tr>
                         <tr>
@@ -234,7 +234,7 @@ class QKL extends Component {
                                 <img src={baomingImg} alt="区块链"/>
                             </div>
                             <div className="baoming-btn">
-                                我要报名
+                                <a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes" style={{color:'#fff'}}>我要报名</a>
                             </div>
                         </div>
                     </div>
