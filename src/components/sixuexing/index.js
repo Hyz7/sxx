@@ -5,6 +5,7 @@ import NewsDetail from './newsDetail.js'
 import sxxImg from '../../images/sxxbanner.png'
 import * as actionCreators from "../sixuexing/store/actionCreators";
 import lodashId from "lodash/uniqueId";
+import FloatWin from '../../common/floatWindow'
 
 class Sxx extends Component{
     componentDidMount(){
@@ -28,6 +29,7 @@ class Sxx extends Component{
     render() {
         return(
             <div className='sxx-container'>
+                <FloatWin />
                 <div className="sxx-banner">
                     <img src={sxxImg} alt=""/>
                 </div>
@@ -47,7 +49,7 @@ class Sxx extends Component{
                         <ul className='news-list'>
                             {this.props.newsList.map((item)=>{
                                 return (
-                                    <li key={lodashId()} >
+                                    <li key={lodashId()}>
                                         <img src={item.image}></img>
                                         <Link to={'/sixuexing/detail?id='+item.id}>
                                         <div className="news-content">

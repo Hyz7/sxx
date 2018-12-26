@@ -1,11 +1,7 @@
 import React,{Component} from 'react'
 import sxxImg from '../../images/sxxbanner.png'
-import zhang from '../../images/teacher/zhang.png'
-import li from '../../images/teacher/li.png'
-import gui from '../../images/teacher/gui.png'
-import yao from '../../images/teacher/yao.png'
-import tian from '../../images/teacher/tian.png'
-import he from '../../images/teacher/he.png'
+import FloatWin from '../../common/floatWindow'
+
 class Teacher extends Component{
     state={
         teacherType:'qkl'
@@ -27,6 +23,7 @@ class Teacher extends Component{
         let {teacherType}=this.state
         return(
             <div className='teacher-container'>
+                <FloatWin />
                 <div className="teacher-banner">
                     <img src={sxxImg} alt=""/>
                 </div>

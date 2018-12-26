@@ -14,7 +14,8 @@ import DataTitle from '../../images/largeData/datatitle.png'
 import { CSSTransition } from 'react-transition-group';
 import baomingImg from '../../images/home/baoming.png'
 import lodashId from "lodash/uniqueId";
-import Galaxy from '../galaxy'
+import { message } from 'antd';
+import FloatWin from '../../common/floatWindow'
 let timer;
 class Home extends Component{
     constructor(props){
@@ -51,6 +52,10 @@ class Home extends Component{
         }
     }
 
+    warningMsg=()=>{
+        message.warning('课程正在紧急筹备中...')
+    }
+
     componentWillMount(){
         this.props.getNewsList()
     }
@@ -82,6 +87,7 @@ class Home extends Component{
         return(
             <Fragment>
                 {/*<Galaxy />*/}
+                <FloatWin />
                 <div className="nav-menuDown-box">
                     <div className="inner-box" onMouseLeave={this.hideMenuRight}>
                             <CSSTransition
@@ -93,20 +99,20 @@ class Home extends Component{
                             >
                             <div className="nav-menuDown">
                                 <div className="box">
-                                    <div className="item">Javascript ES6</div>
-                                    <div className="item">Python</div>
-                                    <div className="item">Swift程序设计</div>
                                     <Link to='/qkl' className="item">区块链工程师</Link>
-                                    <div className="item">新一代网络安全</div>
-                                    <div className="item">全栈软件测试</div>
+                                    <div className="item" onClick={()=>{this.warningMsg()}}>Javascript ES6</div>
+                                    <div className="item" onClick={()=>{this.warningMsg()}}>Python</div>
+                                    <div className="item" onClick={()=>{this.warningMsg()}}>Swift程序设计</div>
+                                    <div className="item" onClick={()=>{this.warningMsg()}}>新一代网络安全</div>
+                                    <div className="item" onClick={()=>{this.warningMsg()}}>全栈软件测试</div>
                                 </div>
                                 <div className="box">
-                                    <div className="item">C/C++</div>
-                                    <div className="item">GO语言</div>
-                                    <div className="item">大数据</div>
-                                    <div className="item">云计算</div>
-                                    <div className="item">AI人工智能</div>
-                                    <div className="item">智能物联网</div>
+                                    <div className="item" onClick={()=>{this.warningMsg()}}>C/C++</div>
+                                    <div className="item" onClick={()=>{this.warningMsg()}}>GO语言</div>
+                                    <div className="item" onClick={()=>{this.warningMsg()}}>大数据</div>
+                                    <div className="item" onClick={()=>{this.warningMsg()}}>云计算</div>
+                                    <div className="item" onClick={()=>{this.warningMsg()}}>AI人工智能</div>
+                                    <div className="item" onClick={()=>{this.warningMsg()}}>智能物联网</div>
                                 </div>
                             </div></CSSTransition>
                     </div>
@@ -152,7 +158,7 @@ class Home extends Component{
                     </div>
                     {pages==''?
                     <div>
-                        <div className="course">
+                        {/*<div className="course">
                             <div className="course-position">
                                 <div className="title" style={{width:'360px'}}>
                                     <span className='span'><span></span></span>
@@ -216,7 +222,7 @@ class Home extends Component{
                                 </div>
                                 <s style={{height:'0',clear:'both',display:'block',overflow:'hidden'}}></s>
                             </div>
-                        </div>
+                        </div>*/}
                         <div className="largeData">
                             <div className="largeData-position">
                                 <div className="title">
@@ -295,32 +301,72 @@ class Home extends Component{
                                 <h2 className="title-description">一键了解最新区块链大数据行业讯息</h2>
                                 <div className="news-box">
                                     <Link to='sixuexing' className="more-btn">查看更多></Link>
-                                    <ul className="news-left">
-                                        <li className={newsLeft==1?'active':''} onClick={()=>this.handleNewsChange(1)}>新闻资讯</li>
-                                        <li className={newsLeft==2?'active':''} onClick={()=>this.handleNewsChange(2)}>行业动态</li>
-                                        <li className={newsLeft==3?'active':''} onClick={()=>this.handleNewsChange(3)}>学员动态</li>
+                                    <ul className="newsList-box">
+                                        <div className="newsItem newsList-item">
+                                            <div className="title">
+                                                <svg className='icon-svg'>
+                                                    <use xlinkHref='#icon-xinwen'></use>
+                                                </svg>
+                                                <div className="title-text">新闻资讯</div>
+                                            </div>
+                                            <div className="newsItem-content">
+                                                <img className="left-box" src={require('../../images/home/tuoyuan.png')}></img>
+                                                <ul>
+                                                    {this.props.newsList.slice(0,6).map((item)=>{
+                                                        return (
+                                                            <li key={lodashId()}>
+                                                                <Link to={'/sixuexing/detail?id='+item.id} className="content-title">{item.title}</Link>
+                                                                <div className="createTime">{item.createTime}</div>
+                                                            </li>
+                                                        )
+                                                    })}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div className="newsItem industryList-item">
+                                            <div className="title">
+                                                <svg className='icon-svg'>
+                                                    <use xlinkHref='#icon-link'></use>
+                                                </svg>
+                                                <div className="title-text">行业动态</div>
+                                            </div>
+                                            <div className="newsItem-content">
+                                                <img className="left-box" src={require('../../images/home/tuoyuan.png')}></img>
+                                                <ul>
+                                                    {this.props.industryList.slice(0,6).map((item)=>{
+                                                        return (
+                                                            <li key={lodashId()}>
+                                                                <a className="content-title" href={item.content}>{item.title}</a>
+                                                                <div className="createTime">{item.createTime}</div>
+                                                            </li>
+                                                        )
+                                                    })}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div className="newsItem studyList-item">
+                                            <div className="title">
+                                                <svg className='icon-svg'>
+                                                    <use xlinkHref='#icon-renwu-ren'></use>
+                                                </svg>
+                                                <div className="title-text">学员动态</div>
+                                            </div>
+                                            <div className="newsItem-content-study">
+                                                {this.props.studentList.slice(0,3).map((item)=>{
+                                                    return (
+                                                        <li key={lodashId()}>
+                                                            <img src={item.image} alt=""/>
+                                                            <div className="content-box">
+                                                                <div className="content-title">{item.title}</div>
+                                                                <div className="desc">{item.content?item.content.length>30?item.content.substring(0,30)+'.....':item.content:null}</div>
+                                                                <div className="createTime">{item.createTime}</div>
+                                                            </div>
+                                                        </li>
+                                                    )
+                                                })}
+                                            </div>
+                                        </div>
                                     </ul>
-                                    {newsLeft==1?
-                                        <ul className="news-right">
-                                            {this.props.newsList.map((item)=>{
-                                                return (<li key={lodashId()}><span></span><Link to={'/sixuexing/detail?id='+item.id} className='news-title'>{item.title}</Link><div className='time'>{item.createTime}</div></li>)
-                                            })}
-                                        </ul>
-                                        :newsLeft==2?
-                                        <ul className="news-right">
-                                            {this.props.industryList.slice(0,5).map((item)=>{
-
-                                                return (<li key={lodashId()}><span></span><a className='news-title' href={item.content}>{item.title}</a><div className='time'>{item.createTime}</div></li>)
-                                            })}
-                                        </ul>
-                                        :newsLeft==3?
-                                        <ul className="news-right">
-                                            {this.props.studentList.map((item)=>{
-                                                return (<li key={lodashId()}><span></span><a className='news-title'>{item.title}</a><div className='time'>{item.createTime}</div></li>)
-                                            })}
-                                        </ul>
-                                        :null
-                                    }
                                 </div>
                             </div>
                         </div>
@@ -344,7 +390,6 @@ class Home extends Component{
                     : pages=='university'?<University />
                     : <Enterprise />
                     }
-
                 </div>
             </Fragment>
 

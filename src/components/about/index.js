@@ -2,6 +2,7 @@ import React,{ Component } from 'react'
 import { withRouter,Link } from 'react-router-dom'
 import sxxImg from '../../images/sxxbanner.png'
 import QQ from '../../images/qqcontact.png'
+import FloatWin from '../../common/floatWindow'
 class About extends Component{
     componentDidMount(){
         // console.log(this.props)
@@ -10,6 +11,7 @@ class About extends Component{
     render() {
         return(
             <div className='about-container'>
+                <FloatWin />
                 <div className="about-banner">
                     <img src={sxxImg} alt=""/>
                 </div>
@@ -33,29 +35,6 @@ class About extends Component{
                                 思学行平台背景由“成都市大数据协会区块链专委会”指导，“电子科技大学网络空间安全中心”发起，清华大学、浙江大学、四川大学、西南财经大学等多家高校及顶尖企业提供教学资源支持。
                             </div>
                         </div>
-                        {/*<div className="bottom-content">
-                            <div className="content-left">
-                                <div className="list">
-                                    <div className="title">联系地址</div>
-                                    <div className="description">成都高新区吉泰五路88号香年广场3栋14楼2号</div>
-                                </div>
-                                <div className="list">
-                                    <div className="title">报名咨询</div>
-                                    <div className="description">客服：400-XXX-XXXX</div>
-                                    <div className="description">邮箱：sxx@studytodo.com</div>
-                                </div>
-                                <div className="list">
-                                    <div className="title">企业内训 / 商务合作</div>
-                                    <div className="description">电话：028—85253153  </div>
-                                    <div className="description">邮箱：sxx@studytodo.com</div>
-                                </div>
-                            </div>
-                            <div className="content-right">
-                                <div className="title">微信公众号</div>
-                                <img src={GZH} alt=""/>
-                                <div className="text">思学行教育公众号</div>
-                            </div>
-                        </div>*/}
                     </div>
                     <div className="contactUs">
                         <div className="content-title">

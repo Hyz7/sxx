@@ -22,6 +22,7 @@ export default class Footer extends Component{
                             <li className="list"><div className="list10 bg"></div></li>
                         </ul>
                     </div>
+                    <s style={{clear:'both',display:'block',height:'0'}}></s>
                     <div className="footer2">
                         <div className="item item1">
                             <div className="title" style={{width:'100px'}}>联系我们</div>

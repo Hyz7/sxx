@@ -9,6 +9,7 @@ import MATRIX from '../../images/download/MATRIX.png'
 import sharespost from '../../images/download/sharespost.png'
 import xgh from '../../images/download/xgh.png'
 import zq from '../../images/download/zq.png'
+import FloatWin from '../../common/floatWindow'
 
 class Download extends Component{
     constructor(){
@@ -31,6 +32,7 @@ class Download extends Component{
         let { tabStatus,industry } = this.state
         return(
             <div className='download-container'>
+                <FloatWin />
                 <div className="download-banner">
                     <img src={sxxImg} alt=""/>
                 </div>

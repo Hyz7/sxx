@@ -1,15 +1,15 @@
 import React,{Component} from 'react'
 import {withRouter} from 'react-router-dom'
-import Core1 from '../../images/core/core1.png'
-import Core2 from '../../images/core/core2.png'
 import coures from '../../images/core/coures.png'
 import project from '../../images/core/project.png'
 import model from '../../images/core/model.png'
+import FloatWin from '../../common/floatWindow'
 class Core extends Component{
 
     render() {
         return(
             <div className='core-container'>
+                <FloatWin />
                 <div className="core-position">
                     <div className="core-content">
                         <div className='core-item1'>

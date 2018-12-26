@@ -1,10 +1,10 @@
 import React,{ Component,Fragment } from 'react'
-
+import FloatWin from '../../common/floatWindow'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as actionCreators from '../sixuexing/store/actionCreators'
 import lodashId from "lodash/uniqueId";
-
+let array=[]
 class NewsDetail extends Component{
     state={
         zanStatus:false
@@ -15,10 +15,7 @@ class NewsDetail extends Component{
         // this.props.getDetailContent(this.props.match)
         this.node.scrollIntoView();
         this.props.getNewsList()
-
-        /*this.props.getDetailContent(this.props.location.search.substring(4)+1)
-        this.props.getDetailContent(this.props.location.search.substring(4)-1)*/
-        console.log(parseInt(this.props.location.search.substring(4))+1)
+        // this.props.getDetailContent(this.props.location.search.substring(4)+1)
     }
 
     addZan=()=>{
@@ -27,14 +24,16 @@ class NewsDetail extends Component{
         })
     }
 
-    handleChangePage=()=>{
-        this.props.getDetailContent(this.props.location.search.substring(4)+1)
+    handleChangePage=(id)=>{
+        this.props.getDetailContent(id)
+        this.props.history.replace('/sixuexing/detail?id='+id)
     }
 
     render(){
         let { zanStatus } =this.state
         return(
             <div className='sxx-container' ref={node => this.node = node} >
+                <FloatWin />
                 <div className="sxx-content">
                     {/*<div className="search">
                         <input type="text" placeholder='请输入你想要查找的数据'/>
@@ -72,6 +71,35 @@ class NewsDetail extends Component{
                                 <div className="btn prev-btn" onClick={()=>{this.handleChangePage('prev')}}>上一篇：AAA全球应用联盟链白皮书</div>
                                 <div className="btn next-btn" onClick={()=>{this.handleChangePage('next')}}>下一篇：SharesPost 项目投资者概览</div>
                             </div>*/}
+                            {this.props.newsList.map((item,index)=>{
+                                console.log(this.props.location.search.substring(4))
+                                if(this.props.location.search.substring(4)==item.id){
+                                    console.log(this.props.newsList[index-1])
+                                    console.log(this.props.newsList[index+1])
+                                    return (
+                                        <div className="btn-box">
+                                            <div className="btn prev-btn" onClick={()=>{this.handleChangePage(this.props.newsList[index-1].id)}}>上一篇：<div>{this.props.newsList[index-1]?this.props.newsList[index-1].title:'无上一篇'}</div></div>
+                                            <div className="btn next-btn" onClick={()=>{this.handleChangePage(this.props.newsList[index+1].id)}}>下一篇：<div>{this.props.newsList[index+1]?this.props.newsList[index+1].title:'无下一篇'}</div></div>
+                                        </div>
+                                    )
+                                }
+
+                            })}
+                            {/*{this.props.newsList.map((item)=>{
+                                if(item.id===this.props.location.search.substring(4)){
+                                    this.props.getDetailContent(this.props.newsList[index-1].id)
+                                    this.props.getDetailContent(this.props.newsList[index+1].id)
+                                    return (
+                                        <div className="btn-box">
+
+                                            <div className="btn prev-btn" onClick={()=>{this.handleChangePage('prev')}}>上一篇：AAA全球应用联盟链白皮书</div>
+                                            <div className="btn next-btn" onClick={()=>{this.handleChangePage('next')}}>下一篇：SharesPost 项目投资者概览</div>
+                                        </div>
+                                    )
+                                }
+                                array.push=item.id
+                            })}*/}
+
                         </div>
 
                     </div>
@@ -122,6 +150,7 @@ class NewsDetail extends Component{
     }
 }
 const mapStateToProps=(state)=>({
+    newsList:state.sixuexing.newsList,
     list:state.sixuexing.newsList,
     detailInfo:state.sixuexing.detailInfo,
     industryList:state.sixuexing.industryList,

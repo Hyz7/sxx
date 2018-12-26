@@ -1,5 +1,6 @@
 import React, {Fragment, PureComponent} from 'react'
 import sxxImg from '../../images/sxxbanner.png'
+import FloatWin from '../../common/floatWindow'
 
 export default class Recruitment extends PureComponent{
     state={
@@ -14,6 +15,7 @@ export default class Recruitment extends PureComponent{
         const {tabStatus}=this.state
         return (
             <div className="recruitment-container">
+                <FloatWin />
                 <div className="recruitment-banner">
                     <img src={sxxImg} alt=""/>
                 </div>

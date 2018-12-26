@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import { Map,Marker,Navigation,Animation,Label, WalkingRoute, getPoiByKeyword} from "rc-bmap";
 import sxxImg from '../../images/sxxbanner.png'
+import FloatWin from '../../common/floatWindow'
 const centerPoint = { lng: 104.063296, lat: 30.592122 };
 const point = {
     lng: 104.063296,
@@ -39,6 +40,7 @@ export default class ContactUs extends Component{
     render(){
         return(
             <div className='map-container'>
+                <FloatWin />
                 <div className="map-banner">
                     <img src={sxxImg} alt=""/>
                 </div>

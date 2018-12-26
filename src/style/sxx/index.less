@@ -26,7 +26,17 @@
       .btn-box{
         margin-top: 20px;
         .btn{
+          &>div{
+            width: 270px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          display: flex;
+          flex-wrap: nowrap;
+          white-space: nowrap;
           width: 100%;
+          padding: 0 10px;
+          box-sizing: border-box;
           height: 50px;
           line-height: 50px;
           text-align: center;
