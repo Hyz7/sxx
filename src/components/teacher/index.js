@@ -23,7 +23,7 @@ class Teacher extends Component{
         let {teacherType}=this.state
         return(
             <div className='teacher-container'>
-                <FloatWin />
+                {/*<FloatWin />*/}
                 <div className="teacher-banner">
                     <img src={sxxImg} alt=""/>
                 </div>
@@ -95,7 +95,7 @@ class Teacher extends Component{
                                         </div>
                                         <div className="goodAt"><span>擅长领域：</span>区块链、嵌入式系统与大数据管理</div>
                                         <div className="goodAt" style={{marginTop:'10px'}}><span>简介：</span>
-                                            博士，教授，博士生导师，四川大学计算机学院（软件学院）副院长，CCF/IEEE高级会员，CCF嵌入式系统专委会副主任，四川省物联网工程技术研究中心副主任，四川大学 “嵌入式系统与大数据管理实验室”负责人，曾先后供职于神州数码（深圳）有限公司、北京科银京成技术有限公司、成都国腾电子集团公司和四川省物联网工程技术研究中心，作为负责人或主研，曾在美国密执根州立大学、日本筑波大学和韩国Kyungwon大学做访问教授。发表学术论文160余篇，其中SCI检索34篇，EI检索72篇，撰写教材4本和专著2本，18项国家发明专利，累计完成12门本科/研究生课程，主持《软件开发实践》省级精品课程和“十二五”规划教材建设工作，多种杂志和IEEE/ACM 等多个国际会议审稿人，以General Co-chair主办七次国际会议，核高基、国家863计划、NSFC、教育部长江学者、四川省科技厅等项目评审专家和国家科学技术奖励评审专家。
+                                            博士，教授，博士生导师，四川大学计算机学院（软件学院）副院长，CCF/IEEE高级会员，CCF嵌入式系统专委会副主任，四川省物联网工程技术研究中心副主任，四川大学 “嵌入式系统与大数据管理实验室”负责人，作为负责人或主研，曾在美国密执根州立大学、日本筑波大学和韩国Kyungwon大学做访问教授。发表学术论文160余篇，其中SCI检索34篇，EI检索72篇，撰写教材4本和专著2本，18项国家发明专利，累计完成12门本科/研究生课程，主持《软件开发实践》省级精品课程和“十二五”规划教材建设工作，多种杂志和IEEE/ACM 等多个国际会议审稿人，以General Co-chair主办七次国际会议，核高基、国家863计划、NSFC、教育部长江学者、四川省科技厅等项目评审专家和国家科学技术奖励评审专家。
                                         </div>
                                     </div>
                                 </div>
@@ -103,7 +103,7 @@ class Teacher extends Component{
                                     <img className="avatar" src='http://52.83.225.97:8080/imgs/teacher/gujianjun.png'/>
                                     <div className="right-box">
                                         <div className="name"><i></i>顾见军<span>JianJun Gu</span></div>
-                                        <div className="position">区块链课程特聘讲师</div>
+                                        <div className="position">区块链课程特聘专家</div>
                                         <div className="box">
                                             <div className="text">数融科技CEO</div>
                                             <div className="text">川大硕士</div>
@@ -118,7 +118,7 @@ class Teacher extends Component{
                                     <img className="avatar" src='http://52.83.225.97:8080/imgs/teacher/chensijia.png'/>
                                     <div className="right-box">
                                         <div className="name"><i></i>陈诗佳<span>ShiJia Chen</span></div>
-                                        <div className="position">区块链课程特聘讲师</div>
+                                        <div className="position">区块链课程特聘专家</div>
                                         <div className="box">
                                             <div className="text">网信天成创始人</div>
                                             <div className="text">成都市大数据协会区块链专委会特聘专家</div>
@@ -133,7 +133,7 @@ class Teacher extends Component{
                                     <img className="avatar" src='http://52.83.225.97:8080/imgs/teacher/liuyufeng.png'/>
                                     <div className="right-box">
                                         <div className="name"><i></i>刘宇峰<span>YuFeng Liu</span></div>
-                                        <div className="position">区块链课程特聘讲师</div>
+                                        <div className="position">区块链课程特聘专家</div>
                                         <div className="box">
                                             {/*<div className="text">网信天成创始人</div>*/}
                                             <div className="text">工信部区块链标准组专家成员</div>
@@ -144,21 +144,36 @@ class Teacher extends Component{
                                         </div>
                                     </div>
                                 </div>
-                                <div className="list" id='zhangshibing'>
-                                <img className="avatar" src='http://52.83.225.97:8080/imgs/teacher/zhangshibin.png'/>
-                                <div className="right-box">
-                                    <div className="name"><i></i>张仕斌<span>ShiBing Zhang</span></div>
-                                    <div className="position">区块链课程特聘讲师</div>
-                                    <div className="box">
-                                        {/*<div className="text">网信天成创始人</div>*/}
-                                        <div className="text">四川省司法厅网络安全鉴定专家</div>
-                                    </div>
-                                    <div className="goodAt"><span>擅长领域：</span>区块链,网络安全</div>
-                                    <div className="goodAt" style={{marginTop:'10px'}}><span>简介：</span>
-                                        研究生学历，工学博士（博士后），四川省有突出贡献的优秀专家，中国计算机学会区块链专委会委员，中国计算机学会教育工作委员会委员，中国计算机学会高级会员，中国密码学会高级会员，四川省计算机学会网络与信息系统专委会暨西南网络与信息系统协会副主任，四川省司法厅网络安全鉴定专家，现任成都信息工程大学网络空间安全学院副院长。主要从事网络安全、工控系统安全、区块链、量子安全通信等领域的教学与科研工作；先后主持或主研国家自然科学基金、科技部网络安全重大专项、四川省战略性兴产品、四川省科技支撑计划等省部级以上项目20余项、企事业单位横向合作项目30余项，获专利及软件著作权授权50余项；发表学术论文100余篇（其中SCI检索18篇）；编著出版教材8本，主持建设省精品课程、省精品资源共享课程、省级精品在线开放课程先后获得省部级科技进步一、二、三等奖4项，教学成果奖1等奖3项、二等奖4项，2007、2012、2017年度学校科技先进个人。
+                                <div className="list" id='chenliangyin'>
+                                    <img className="avatar" src='http://52.83.225.97:8080/imgs/teacher/chenliangyin.png'/>
+                                    <div className="right-box">
+                                        <div className="name"><i></i>陈良银<span>LiangYin Chen</span></div>
+                                        <div className="position">区块链课程特聘专家</div>
+                                        <div className="box">
+                                            <div className="text">四川大学计算机学院物联网系主任</div>
+                                            <div className="text">物联网实验室负责人</div>
+                                        </div>
+                                        <div className="goodAt"><span>擅长领域：</span>智能物联网</div>
+                                        <div className="goodAt" style={{marginTop:'10px'}}><span>简介：</span>
+                                            从事智能物联网、工业互联网、计算机应用研究，主持了国家自然科学基金项目“低功耗移动自组网的邻居发现机制研究”、省重大科技专项“面向装备诊断和运维的区块链工况数据管理平台研究”、省科技支撑项目“面向3G/4G营运服务的电子交易服务支撑平台研究”、省科技厅应用示范项目“面向民航机场领域的航班地面服务智能协同管理核心软件研发及示范应用”子课题；参加了自然科学基金重点项目“基于大数据的民航机场运行态势感知关键技术研究”、美国国家科学基金会项目“Addressing Research Challenges in Low-Duty-Cycle Wireless Sensor Networks”等相关研究工作。
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                                <div className="list" id='zhangshibing'>
+                                    <img className="avatar" src='http://52.83.225.97:8080/imgs/teacher/zhangshibin.png'/>
+                                    <div className="right-box">
+                                        <div className="name"><i></i>张仕斌<span>ShiBing Zhang</span></div>
+                                        <div className="position">区块链课程特聘专家</div>
+                                        <div className="box">
+                                            {/*<div className="text">网信天成创始人</div>*/}
+                                            <div className="text">四川省司法厅网络安全鉴定专家</div>
+                                        </div>
+                                        <div className="goodAt"><span>擅长领域：</span>区块链,网络安全</div>
+                                        <div className="goodAt" style={{marginTop:'10px'}}><span>简介：</span>
+                                            工学博士（博士后），四川省有突出贡献的优秀专家，中国计算机学会区块链专委会委员，中国计算机学会教育工作委员会委员，中国计算机学会高级会员，中国密码学会高级会员，四川省计算机学会网络与信息系统专委会暨西南网络与信息系统协会副主任，四川省司法厅网络安全鉴定专家，现任成都信息工程大学网络空间安全学院副院长。主要从事网络安全、工控系统安全、区块链、量子安全通信等领域的教学与科研工作；先后主持或主研国家自然科学基金、科技部网络安全重大专项、四川省科技支撑计划等省部级以上项目20余项、企事业单位横向合作项目30余项，获专利及软件著作权授权50余项；发表学术论文100余篇（其中SCI检索18篇）；编著出版教材8本,省级精品在线开放课程先后获得省部级科技进步一、二、三等奖4项，教学成果奖1等奖3项、二等奖4项。
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             :null}
                         {teacherType=='rgzn'?
