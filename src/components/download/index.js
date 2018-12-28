@@ -37,7 +37,7 @@ class Download extends Component{
                     <img src={sxxImg} alt=""/>
                 </div>
                 <div className="download-content">
-                    {/*<DownloadDetail />*/}
+                    <DownloadDetail />
                     <div className="download-left">
                         <div className="tab-box">
                             <ul>

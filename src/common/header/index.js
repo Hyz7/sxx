@@ -1,9 +1,12 @@
 import React,{ Component, Fragment } from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import {NavLink, Link, Route, Switch} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import '../icons/iconfont'
 import { CSSTransition } from 'react-transition-group';
+import ContactUs from "../../components/contact";
+import QKL from "../../components/Home/QKL";
+import CourseDetail from "../../components/Home/allCourse/courseDetail";
 class Header extends Component{
     constructor(props){
         super(props)
@@ -44,11 +47,11 @@ class Header extends Component{
                                     <li><NavLink to='/' exact activeClassName="active">首页</NavLink><span></span></li>
                                     <li><NavLink to='/core' activeClassName="active">核心优势</NavLink><span></span></li>
                                     <li><NavLink to='/teacher' activeClassName="active">授课导师</NavLink><span></span></li>
-                                    <li >{/*onClick={()=>{this.setState({popupHeader:true})}} onMouseLeave={()=>{this.setState({popupHeader:false})}}*/}
+                                    <li onClick={()=>{this.setState({popupHeader:true})}} onMouseLeave={()=>{this.setState({popupHeader:false})}}>
                                         <NavLink to='/sixuexing' activeClassName="active">思学行动态
-                                           {/* <svg className="icon-svg">
+                                            <svg className="icon-svg">
                                                 <use xlinkHref='#icon-jiantou-copy-copy'></use>
-                                            </svg>*/}
+                                            </svg>
                                         </NavLink>
                                         <span></span>
                                         <CSSTransition

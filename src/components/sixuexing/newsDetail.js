@@ -45,12 +45,12 @@ class NewsDetail extends Component{
                                 <div className="time">{this.props.detailInfo.createTime}</div>
                             </div>
                             <div className="content" dangerouslySetInnerHTML={{__html:this.props.detailInfo.content}}></div>
-                            <div className={zanStatus?"zan-btn active":"zan-btn"}  onClick={()=>{this.addZan()}}>
+                            {/*<div className={zanStatus?"zan-btn active":"zan-btn"}  onClick={()=>{this.addZan()}}>
                                 <svg className='icon-svg'>
                                     <use xlinkHref='#icon-dianzan'></use>
                                 </svg>
                                 <div className="text" style={{marginLeft:'20px'}}>{zanStatus?"取消":"赞"}</div>
-                            </div>
+                            </div>*/}
 
                     </div>
                     <div className="sxx-box sxx-industry">

@@ -22,6 +22,9 @@ export default ()=>(
             <Route path='/allcourse' component={AllCourse}></Route>
             <Route path='/teacher' component={Teacher}></Route>
             <Route path='/sixuexing' exact component={Sxx}></Route>
+            {/*<Route path='/sixuexing/news' component={ContactUs}></Route>
+            <Route path='/sixuexing/industry' component={QKL}></Route>
+            <Route path='/sixuexing/study' component={CourseDetail}></Route>*/}
             <Route path='/sixuexing/detail' component={ NewsDetail }></Route>
             {/*<Route path='/detail/' component={NewsDetail}></Route>*/}
             <Route path='/core' component={Core}></Route>

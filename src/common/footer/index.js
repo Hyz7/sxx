@@ -77,7 +77,7 @@ export default class Footer extends Component{
                     </div>
                 </div>
                 <div className="footer">
-                    Copyright ©2018 <a href="http://www.sixuexing.com">sixuexing.com</a> 成都思学行教育科技有限公司<a href="http://www.miitbeian.gov.cn">蜀ICP备18033964号</a>
+                    Copyright ©2018 <a href="http://www.sixuexing.com">sixuexing.com</a> 成都思学行教育科技有限公司<a href="http://sixuexing.com/sitemap.xml">sitemap.xml</a><a href="http://www.miitbeian.gov.cn">蜀ICP备18033964号</a>
                 </div>
             </footer>
         )
