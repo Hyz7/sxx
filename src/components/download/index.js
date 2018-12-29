@@ -69,7 +69,7 @@ class Download extends Component{
                             </div>
                         </div>
                         <div className="list-box">
-                            {this.props.downloadList?this.props.downloadList.map(item=>{
+                            {/*{this.props.downloadList?this.props.downloadList.map(item=>{
                                 return (
                                     <div className="list" key={uniqueId()}>
                                         <img src={item.image} alt=""/>
@@ -83,8 +83,8 @@ class Download extends Component{
                                         </div>
                                     </div>
                                 )
-                            }):null}
-                            {/* <div className="list">
+                            }):null}*/}
+                             <div className="list">
                                 <img src={AAA} alt=""/>
                                 <div className="content">
                                     <div className="title">AAA全球应用联盟链白皮书</div>
@@ -173,7 +173,7 @@ class Download extends Component{
                                     <div className="bottom-text">标签：交易平台    数字钱包 <span>下载次数18</span></div>
                                     <div className="download-btn">立即下载</div>
                                 </div>
-                            </div>*/}
+                            </div>
                         </div>
                         <div className="more-btn">加载更多...</div>
                     </div>

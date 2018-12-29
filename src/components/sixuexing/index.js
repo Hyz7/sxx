@@ -10,7 +10,6 @@ import FloatWin from '../../common/floatWindow'
 class Sxx extends Component{
     componentDidMount(){
         this.props.handleMoreList(this.props.page,5)
-        console.log(window.location);
     }
 
     listen=()=>{
