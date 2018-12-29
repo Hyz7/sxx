@@ -21,7 +21,7 @@ class Header extends Component{
     }
 
     render() {
-        let {popupHeader}=this.state
+        let { popupHeader }=this.state
         return(
             <Fragment>
                 <CSSTransition
