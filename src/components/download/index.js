@@ -10,7 +10,9 @@ import sharespost from '../../images/download/sharespost.png'
 import xgh from '../../images/download/xgh.png'
 import zq from '../../images/download/zq.png'
 import FloatWin from '../../common/floatWindow'
-
+import {connect} from 'react-redux'
+import * as actionCreators from './store/actionCreators'
+import uniqueId from 'lodash/uniqueId'
 class Download extends Component{
     constructor(){
         super()
@@ -20,7 +22,7 @@ class Download extends Component{
         }
     }
     componentDidMount(){
-
+        this.props.getDownloadList()
     }
     changeTab=(type)=>{
         this.setState({tabStatus:type})
@@ -37,7 +39,7 @@ class Download extends Component{
                     <img src={sxxImg} alt=""/>
                 </div>
                 <div className="download-content">
-                    <DownloadDetail />
+                    {/*<DownloadDetail />*/}
                     <div className="download-left">
                         <div className="tab-box">
                             <ul>
@@ -67,7 +69,22 @@ class Download extends Component{
                             </div>
                         </div>
                         <div className="list-box">
-                            <div className="list">
+                            {this.props.downloadList?this.props.downloadList.map(item=>{
+                                return (
+                                    <div className="list" key={uniqueId()}>
+                                        <img src={item.image} alt=""/>
+                                        <div className="content">
+                                            <div className="title">{item.dataTitle}</div>
+                                            <div className="description">
+                                                {item.dataDesc}
+                                            </div>
+                                            <div className="bottom-text">标签：交易平台    数字钱包 <span>下载次数{item.downloadCount}</span></div>
+                                            <div className="download-btn">立即下载</div>
+                                        </div>
+                                    </div>
+                                )
+                            }):null}
+                            {/* <div className="list">
                                 <img src={AAA} alt=""/>
                                 <div className="content">
                                     <div className="title">AAA全球应用联盟链白皮书</div>
@@ -156,7 +173,7 @@ class Download extends Component{
                                     <div className="bottom-text">标签：交易平台    数字钱包 <span>下载次数18</span></div>
                                     <div className="download-btn">立即下载</div>
                                 </div>
-                            </div>
+                            </div>*/}
                         </div>
                         <div className="more-btn">加载更多...</div>
                     </div>
@@ -217,5 +234,12 @@ class Download extends Component{
         )
     }
 }
-
-export default withRouter(Download)
+const mapStateToProps=(state)=>({
+    downloadList:state.download.list
+})
+const mapDispatchToProps=(dispatch)=>({
+    getDownloadList(){
+        dispatch(actionCreators.getDownloadList())
+    }
+})
+export default connect(mapStateToProps,mapDispatchToProps)(withRouter(Download))

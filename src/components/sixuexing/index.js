@@ -10,8 +10,17 @@ import FloatWin from '../../common/floatWindow'
 class Sxx extends Component{
     componentDidMount(){
         this.props.handleMoreList(this.props.page,5)
+        console.log(window.location);
     }
 
+    listen=()=>{
+        const location = history.location
+        const unlisten = history.listen((location, action) => {
+            console.log(action, location.pathname, location.state)
+        })
+        history.push("/home", { some: "state" })
+        unlisten()
+    }
     searchKey=(value)=>{
         if(value){
             let value1=value.replace(/\s+/g,"");

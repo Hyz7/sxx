@@ -312,7 +312,7 @@ class Home extends Component{
                                             <div className="newsItem-content">
                                                 <img className="left-box" src={require('../../images/home/tuoyuan.png')}></img>
                                                 <ul>
-                                                    {this.props.newsList.slice(0,6).map((item)=>{
+                                                    {this.props.newsList.slice(0,7).map((item)=>{
                                                         return (
                                                             <li key={lodashId()}>
                                                                 <Link to={'/sixuexing/detail?id='+item.id} className="content-title">{item.title}</Link>
