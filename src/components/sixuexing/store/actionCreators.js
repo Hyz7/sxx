@@ -10,15 +10,17 @@ const createDetailInfo=(result)=>({
     type:actionTypes.GET_DETAIL_INFO,
     result
 })
-const moreList=(result)=>({
+const moreList=(result,page)=>({
     type:actionTypes.GET_MORE_LIST,
-    result
+    result,
+    page
 })
 
 export const getMoreList=(page,size)=>{
     return (dispatch)=>{
-        axios.get(API.GET_MORE_LIST+"?typeId=1&&page="+page+"&&size="+size).then(res=>{
-            dispatch(moreList(res.data))
+        axios.get(API.GET_NEWS_LIST+"?page="+page+"&&size="+size).then(res=>{
+            // console.log(res.data.newsList,page+1,size)
+            dispatch(moreList(res.data,page+1))
         })
     }
 }
@@ -26,7 +28,6 @@ export const getMoreList=(page,size)=>{
 export const getNewsList=(value)=>{
     return (dispatch)=>{
         axios.get(API.GET_NEWS_LIST+"?name="+value).then(res=>{
-            console.log(res,value)
             dispatch(createNewsList(res.data))
         })
     }

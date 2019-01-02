@@ -247,7 +247,7 @@ class Home extends Component{
                         </div>
                         <div className="teacher">
                             <div className="teacher-position">
-                                <div className="title" style={{width:'320px'}}>
+                                <div className="title">
                                     <span className='span'><span></span></span>
                                     <h1 className='text'>师资介绍</h1>
                                     <span className='span'><span></span></span>
@@ -293,12 +293,12 @@ class Home extends Component{
                         </div>
                         <div className="news">
                             <div className="news-position">
-                                <div className="title" style={{width:'420px'}}>
+                                <div className="title">
                                     <span className='span'><span></span></span>
-                                    <h1 className='text'>新闻资讯-区块链</h1>
+                                    <h1 className='text'>新闻资讯</h1>
                                     <span className='span'><span></span></span>
                                 </div>
-                                <h2 className="title-description">一键了解最新区块链大数据行业讯息</h2>
+                                <div className="title-description">一键了解最新区块链大数据行业讯息</div>
                                 <div className="news-box">
                                     <Link to='sixuexing' className="more-btn">查看更多></Link>
                                     <ul className="newsList-box">
@@ -372,7 +372,7 @@ class Home extends Component{
                         </div>
                         <div className="baoming" id='baoming'>
                             <div className="baoming-position">
-                                <div className="title" style={{width:'320px'}}>
+                                <div className="title">
                                     <span className='span'><span></span></span>
                                     <div className='text'>报名流程</div>
                                     <span className='span'><span></span></span>

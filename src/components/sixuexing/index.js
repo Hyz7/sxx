@@ -8,18 +8,13 @@ import lodashId from "lodash/uniqueId";
 import FloatWin from '../../common/floatWindow'
 
 class Sxx extends Component{
+    state={
+        pageStatus:true
+    }
     componentDidMount(){
         this.props.handleMoreList(this.props.page,5)
     }
 
-    listen=()=>{
-        const location = history.location
-        const unlisten = history.listen((location, action) => {
-            console.log(action, location.pathname, location.state)
-        })
-        history.push("/home", { some: "state" })
-        unlisten()
-    }
     searchKey=(value)=>{
         if(value){
             let value1=value.replace(/\s+/g,"");
@@ -69,7 +64,11 @@ class Sxx extends Component{
                                     </li>
                                 )
                             })}
-                            {/*<div className="loading-more" onClick={()=>{this.props.handleMoreList(this.props.page,5)}}>加载更多......</div>*/}
+                            {this.props.pageStatus?
+                                <div className="loading-more" onClick={()=>{this.props.handleMoreList(this.props.page,5)}}>加载更多......</div>
+                                :
+                                <div className="loading-more" >没有更多数据了！</div>}
+
                         </ul>
                     </div>
                     <div className="sxx-box sxx-industry">
@@ -121,7 +120,8 @@ const mapStateToProps=(state)=>({
     newsList:state.sixuexing.newsList,
     industryList:state.sixuexing.industryList,
     studentList:state.sixuexing.studentList,
-    page:state.sixuexing.page
+    page:state.sixuexing.page,
+    pageStatus:state.sixuexing.pageStatus
 })
 
 const mapDispatchToProps=(dispatch)=>({
@@ -129,7 +129,6 @@ const mapDispatchToProps=(dispatch)=>({
         dispatch(actionCreators.getNewsList(value))
     },
     handleMoreList(page,size){
-        this.getNewsList()
         dispatch(actionCreators.getMoreList(page,size))
     }
 })

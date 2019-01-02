@@ -22,7 +22,7 @@ export default ()=>(
             <Route path='/allcourse' component={AllCourse}></Route>
             <Route path='/teacher' component={Teacher}></Route>
             <Route path='/sixuexing' exact component={Sxx}></Route>
-            <Route path='/sixuexing/:id' component={Sxx}></Route>
+            {/*<Route path='/sixuexing/:id' component={Sxx}></Route>*/}
             {/*<Route path='/sixuexing/industry' component={Sxx}></Route>
             <Route path='/sixuexing/study' component={Sxx}></Route>*/}
             <Route path='/sixuexing/detail' component={ NewsDetail }></Route>
@@ -37,5 +37,4 @@ export default ()=>(
         </Switch>
         <Footer />
     </div>
-
 )
