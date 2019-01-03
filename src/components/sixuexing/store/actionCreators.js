@@ -35,7 +35,7 @@ export const getTypeList=(id,size,name)=>{
                 })
                 break
             case 3:
-                axios.get(API.GET_TYPE_LIST+"?typeId="+id+'&size='+size+"&name="+name).then(res=>{
+                axios.get(API.GET_TYPE_LIST+"?typeId="+id+"&name="+name).then(res=>{
                     dispatch(studentList(res.data))
                 })
                 break
