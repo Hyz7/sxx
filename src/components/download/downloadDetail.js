@@ -9,7 +9,7 @@ import MATRIX from "../../images/download/MATRIX.png";
 import zq from "../../images/download/zq.png";
 import * as actionCreators from "../download/store/actionCreators";
 import connect from "react-redux/es/connect/connect";
-import {withRouter} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import uniqueId from 'lodash/uniqueId'
 class DownloadDetail extends Component{
     state = { visible: false }
@@ -89,7 +89,20 @@ class DownloadDetail extends Component{
                             <div className="box">最新推荐</div>
                         </div>
                         <div className="list-box">
-                            <div className="list">
+                            {this.props.downloadList?this.props.downloadList.map(item=>{
+                                return <Link className="list"
+                                             to={'/download/detail/'+item.dataId}
+                                             onClick={()=>{this.props.getDownloadInfo(this.props.location.pathname.substring(17))}}
+                                >
+                                    <img src={item.image} alt=""/>
+                                    <div className="content">
+                                        <div className="title">{item.dataTitle}</div>
+                                        <div className="description"  dangerouslySetInnerHTML={{__html:item.dataDesc?item.dataDesc.length>20?item.dataDesc.substring(0,20)+'...':item.dataDesc:null}}></div>
+                                        <div className="time">{item.createTime}</div>
+                                    </div>
+                                </Link>
+                            }):null}
+                            {/*<div className="list">
                                 <img src={sharespost} alt=""/>
                                 <div className="content">
                                     <div className="title">SharesPost 项目投资者概览</div>
@@ -128,7 +141,7 @@ class DownloadDetail extends Component{
                                     <div className="description">R3是目前世界上知名度最高的区...</div>
                                     <div className="time">2018-11-8</div>
                                 </div>
-                            </div>
+                            </div>*/}
                         </div>
                         {this.props.downloadList.map((item,index)=>{
                             if(this.props.location.pathname.substring(17)==item.dataId){

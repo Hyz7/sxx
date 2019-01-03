@@ -180,15 +180,18 @@ class Download extends Component{
                             <div className="box">最新推荐</div>
                         </div>
                         <div className="list-box">
-                            <div className="list">
-                                <img src={sharespost} alt=""/>
-                                <div className="content">
-                                    <div className="title">SharesPost 项目投资者概览</div>
-                                    <div className="description">2018年美国证监会对代币进行监管，多数会归为证券类...</div>
-                                    <div className="time">2018-11-8</div>
-                                </div>
-                            </div>
-                            <div className="list">
+                            {this.props.downloadList?this.props.downloadList.map(item=>{
+                                return <Link className="list"  to={'/download/detail/'+item.dataId}>
+                                    <img src={item.image} alt=""/>
+                                    <div className="content">
+                                        <div className="title">{item.dataTitle}</div>
+                                        <div className="description" dangerouslySetInnerHTML={{__html:item.dataDesc?item.dataDesc.length>20?item.dataDesc.substring(0,20)+'...':item.dataDesc:null}}></div>
+                                        <div className="time">{item.createTime}</div>
+                                    </div>
+                                </Link>
+                            }):null}
+
+                            {/*<div className="list">
                                 <img src={IBM} alt=""/>
                                 <div className="content">
                                     <div className="title">IBM物联网白皮书：设备民主</div>
@@ -220,12 +223,9 @@ class Download extends Component{
                                     <div className="description">R3是目前世界上知名度最高的区...</div>
                                     <div className="time">2018-11-8</div>
                                 </div>
-                            </div>
+                            </div>*/}
                         </div>
-                       {/* <div className="btn-box">
-                            <div className="btn prev-btn">上一篇：AAA全球应用联盟链白皮书</div>
-                            <div className="btn next-btn">下一篇：SharesPost 项目投资者概览</div>
-                        </div>*/}
+
                     </div>
                 </div>
             </div>
