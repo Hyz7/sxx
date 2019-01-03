@@ -26,16 +26,16 @@ const studentList=(result)=>({
     result
 })
 
-export const getTypeList=(id,size)=>{
+export const getTypeList=(id,size,name)=>{
     return (dispatch)=>{
         switch (id) {
             case 2:
-                axios.get(API.GET_TYPE_LIST+"?typeId="+id+'&size='+size).then(res=>{
+                axios.get(API.GET_TYPE_LIST+"?typeId="+id+'&size='+size+"&name="+name).then(res=>{
                     dispatch(industryList(res.data))
                 })
                 break
             case 3:
-                axios.get(API.GET_TYPE_LIST+"?typeId="+id).then(res=>{
+                axios.get(API.GET_TYPE_LIST+"?typeId="+id+'&size='+size+"&name="+name).then(res=>{
                     dispatch(studentList(res.data))
                 })
                 break

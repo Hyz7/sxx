@@ -19,7 +19,7 @@ class Industry extends Component{
     searchKey=(value)=>{
         if(value){
             let value1=value.replace(/\s+/g,"");
-            this.props.getNewsList(value1)
+            this.props.getTypeList(2,'',value1)
         }
 
     }
@@ -68,7 +68,6 @@ class Industry extends Component{
                                 <div className="loading-more" onClick={()=>{this.props.handleMoreList(this.props.page,5)}}>加载更多......</div>
                                 :
                                 <div className="loading-more" >没有更多数据了！</div>}
-
                         </ul>
                     </div>
                     <div className="sxx-box sxx-industry">
@@ -131,8 +130,8 @@ const mapDispatchToProps=(dispatch)=>({
     handleMoreList(page,size){
         dispatch(actionCreators.getMoreList(page,size))
     },
-    getTypeList(id,size){
-        dispatch(actionCreators.getTypeList(id,size))
+    getTypeList(id,size,name){
+        dispatch(actionCreators.getTypeList(id,size,name))
     }
 })
 

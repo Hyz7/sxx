@@ -12,14 +12,15 @@ class Student extends Component{
     }
     componentDidMount(){
         this.props.handleMoreList(this.props.page,5)
-        this.props.getIndustryList(2,10)
-        this.props.getIndustryList(3)
+        this.props.getTypeList(2,10)
+        this.props.getTypeList(3)
     }
 
     searchKey=(value)=>{
+        console.log(value)
         if(value){
             let value1=value.replace(/\s+/g,"");
-            this.props.getNewsList(value1)
+            this.props.getTypeList(3,'',value1)
         }
 
     }
@@ -132,8 +133,8 @@ const mapDispatchToProps=(dispatch)=>({
     handleMoreList(page,size){
         dispatch(actionCreators.getMoreList(page,size))
     },
-    getIndustryList(id,size){
-        dispatch(actionCreators.getTypeList(id,size))
+    getTypeList(id,size,name){
+        dispatch(actionCreators.getTypeList(id,size,name))
     }
 })
 
