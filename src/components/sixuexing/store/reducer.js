@@ -1,4 +1,4 @@
-import * as actionTypes from './actionTypes'
+import * as actionTypes from '../../../store/actionTypes'
 
 const defaultState={
     newsList:[],
@@ -27,10 +27,12 @@ Array.prototype.unique1 = function(){
 const getNewsList=(state,action)=>{
     return Object.assign({},state,{
         newsList: action.result.newsList,
-        industryList: action.result.industryList,
-        studentList: action.result.studentList
+        /*industryList: action.result.industryList,
+        studentList: action.result.studentList*/
     })
 }
+
+
 const getDetailInfo=(state,action)=>{
     return Object.assign({},state,{detailInfo:action.result})
 }
@@ -47,6 +49,16 @@ const createPage=(state,action)=>{
         newsList: state.newsList.concat(action.result.newsList).unique1()
     })
 }
+const getIndustryList=(state,action)=>{
+    return Object.assign({},state,{
+        industryList: action.result.dynamicList,
+    })
+}
+const getStudentList=(state,action)=>{
+    return Object.assign({},state,{
+        studentList: action.result.dynamicList,
+    })
+}
 
 export default (state = defaultState, action)=>{
     switch(action.type){
@@ -56,6 +68,10 @@ export default (state = defaultState, action)=>{
             return getDetailInfo(state,action)
         case actionTypes.GET_MORE_LIST:
             return createPage(state,action)
+        case actionTypes.GET_INDUSTRY_LIST:
+            return getIndustryList(state,action)
+        case actionTypes.GET_STUDENT_LIST:
+            return getStudentList(state,action)
         default:
             return state
     }

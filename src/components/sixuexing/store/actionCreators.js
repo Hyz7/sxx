@@ -1,4 +1,4 @@
-import * as actionTypes from './actionTypes'
+import * as actionTypes from '../../../store/actionTypes'
 import axios from 'axios'
 import * as API from '../../../api'
 
@@ -15,6 +15,34 @@ const moreList=(result,page)=>({
     result,
     page
 })
+
+const industryList=(result)=>({
+    type:actionTypes.GET_INDUSTRY_LIST,
+    result
+})
+
+const studentList=(result)=>({
+    type:actionTypes.GET_STUDENT_LIST,
+    result
+})
+
+export const getTypeList=(id,size)=>{
+    return (dispatch)=>{
+        switch (id) {
+            case 2:
+                axios.get(API.GET_TYPE_LIST+"?typeId="+id+'&size='+size).then(res=>{
+                    dispatch(industryList(res.data))
+                })
+                break
+            case 3:
+                axios.get(API.GET_TYPE_LIST+"?typeId="+id).then(res=>{
+                    dispatch(studentList(res.data))
+                })
+                break
+        }
+
+    }
+}
 
 export const getMoreList=(page,size)=>{
     return (dispatch)=>{

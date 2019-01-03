@@ -14,6 +14,10 @@ import AllCourse from "../components/Home/allCourse";
 import QKL from "../components/Home/QKL";
 import CourseDetail from '../components/Home/allCourse/courseDetail'
 import NewsDetail from "../components/sixuexing/newsDetail";
+// import News from "../components/sixuexing/news";
+import Industry from "../components/sixuexing/industry";
+import Student from "../components/sixuexing/student";
+import DownloadDetail from "../components/download/downloadDetail";
 export default ()=>(
     <div>
         <Header />
@@ -22,13 +26,13 @@ export default ()=>(
             <Route path='/allcourse' component={AllCourse}></Route>
             <Route path='/teacher' component={Teacher}></Route>
             <Route path='/sixuexing' exact component={Sxx}></Route>
-            {/*<Route path='/sixuexing/:id' component={Sxx}></Route>*/}
-            {/*<Route path='/sixuexing/industry' component={Sxx}></Route>
-            <Route path='/sixuexing/study' component={Sxx}></Route>*/}
+            <Route path='/sixuexing/news' component={Sxx}></Route>
+            <Route path='/sixuexing/industry' component={Industry}></Route>
+            <Route path='/sixuexing/student' component={Student}></Route>
             <Route path='/sixuexing/detail' component={ NewsDetail }></Route>
-            {/*<Route path='/detail/' component={NewsDetail}></Route>*/}
             <Route path='/core' component={Core}></Route>
-            <Route path='/download' component={Download}></Route>
+            <Route path='/download' exact component={Download}></Route>
+            <Route path='/download/detail' component={DownloadDetail}></Route>
             <Route path='/recruitment' component={Recruitment}></Route>
             <Route path='/aboutUs' component={About}></Route>
             <Route path='/contactUs' component={ContactUs}></Route>

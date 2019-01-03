@@ -6,7 +6,7 @@ import * as actionCreators from "../sixuexing/store/actionCreators";
 import lodashId from "lodash/uniqueId";
 import FloatWin from '../../common/floatWindow'
 
-class Sxx extends Component{
+class Student extends Component{
     state={
         pageStatus:true
     }
@@ -15,9 +15,7 @@ class Sxx extends Component{
         this.props.getIndustryList(2,10)
         this.props.getIndustryList(3)
     }
-    delHtmlTag=(str)=>{
-        return str.replace(/<[^>]+>/g,"");//去掉所有的html标记
-    }
+
     searchKey=(value)=>{
         if(value){
             let value1=value.replace(/\s+/g,"");
@@ -50,19 +48,19 @@ class Sxx extends Component{
                     <div className="sxx-box sxx-news">
                         <div className="sxx-title">
                             <span></span>
-                            新闻资讯
+                            学员动态
                         </div>
                         <ul className='news-list'>
-                            {this.props.newsList.map((item)=>{
+                            {this.props.studentList.map((item)=>{
                                 return (
                                     <li key={lodashId()}>
                                         <img src={item.image}></img>
                                         <Link to={'/sixuexing/detail?id='+item.id}>
-                                        <div className="news-content">
-                                            <div className="list-title">{item.title}</div>
-                                            <div className="description" dangerouslySetInnerHTML={{__html:this.delHtmlTag(item.content).substring(0,100)+'......'}}></div>
-                                            <div className="time">{item.createTime}</div>
-                                        </div>
+                                            <div className="news-content">
+                                                <div className="list-title">{item.title}</div>
+                                                <div className="description">{item.content?item.content.substring(0,100)+'......':null}</div>
+                                                <div className="time">{item.createTime}</div>
+                                            </div>
                                         </Link>
                                     </li>
                                 )
@@ -77,14 +75,14 @@ class Sxx extends Component{
                     <div className="sxx-box sxx-industry">
                         <div className="sxx-title">
                             <span></span>
-                            行业动态
+                            新闻资讯
                         </div>
                         <div className="industry-content">
-                            {this.props.industryList.map((item)=>{
+                            {this.props.newsList.map((item)=>{
                                 return (
                                     <div className="industry-list" key={lodashId()}>
                                         <span></span>
-                                        <a className="text" href={item.url}>{item.title}</a>
+                                        <Link className="text" to={'/sixuexing/detail?id='+item.id}>{item.title}</Link>
                                     </div>
                                 )
                             })}
@@ -93,18 +91,18 @@ class Sxx extends Component{
                     <div className="sxx-box sxx-student">
                         <div className="sxx-title">
                             <span></span>
-                            学员动态
+                            行业动态
                         </div>
                         <ul className='student-list'>
-                            {this.props.studentList.map((item)=>{
+                            {this.props.industryList.slice(0,5).map((item)=>{
                                 return (
                                     <li key={lodashId()}>
                                         <div className="box"><img src={item.image} alt=""/></div>
-                                        <div className="news-content">
+                                        <a className="news-content" href={item.url}>
                                             <div className="list-title">{item.title}</div>
-                                            <div className="description">{item.content}</div>
+                                            <div className="description">{item.content?item.content.length>40?item.content.substring(0,40)+'...':null:null}</div>
                                             <div className="time">{item.createTime}</div>
-                                        </div>
+                                        </a>
                                     </li>
                                 )
                             })}
@@ -139,4 +137,4 @@ const mapDispatchToProps=(dispatch)=>({
     }
 })
 
-export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Sxx))
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Student))

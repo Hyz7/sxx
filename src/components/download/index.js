@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import {withRouter} from 'react-router-dom'
+import {withRouter,Link} from 'react-router-dom'
 import DownloadDetail from './downloadDetail.js'
 import sxxImg from '../../images/sxxbanner.png'
 import AAA from '../../images/download/AAA.png'
@@ -39,7 +39,6 @@ class Download extends Component{
                     <img src={sxxImg} alt=""/>
                 </div>
                 <div className="download-content">
-                    {/*<DownloadDetail />*/}
                     <div className="download-left">
                         <div className="tab-box">
                             <ul>
@@ -69,22 +68,21 @@ class Download extends Component{
                             </div>
                         </div>
                         <div className="list-box">
-                            {/*{this.props.downloadList?this.props.downloadList.map(item=>{
+                            {this.props.downloadList?this.props.downloadList.map(item=>{
                                 return (
-                                    <div className="list" key={uniqueId()}>
+                                    <Link to={'/download/detail/'+item.dataId} className="list" key={uniqueId()}>
                                         <img src={item.image} alt=""/>
                                         <div className="content">
                                             <div className="title">{item.dataTitle}</div>
-                                            <div className="description">
-                                                {item.dataDesc}
+                                            <div className="description" dangerouslySetInnerHTML={{__html:item.dataDesc?item.dataDesc:null}}>
                                             </div>
                                             <div className="bottom-text">标签：交易平台    数字钱包 <span>下载次数{item.downloadCount}</span></div>
                                             <div className="download-btn">立即下载</div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 )
-                            }):null}*/}
-                             <div className="list">
+                            }):null}
+                             {/*<div className="list">
                                 <img src={AAA} alt=""/>
                                 <div className="content">
                                     <div className="title">AAA全球应用联盟链白皮书</div>
@@ -173,7 +171,7 @@ class Download extends Component{
                                     <div className="bottom-text">标签：交易平台    数字钱包 <span>下载次数18</span></div>
                                     <div className="download-btn">立即下载</div>
                                 </div>
-                            </div>
+                            </div>*/}
                         </div>
                         <div className="more-btn">加载更多...</div>
                     </div>
@@ -224,10 +222,10 @@ class Download extends Component{
                                 </div>
                             </div>
                         </div>
-                        <div className="btn-box">
+                       {/* <div className="btn-box">
                             <div className="btn prev-btn">上一篇：AAA全球应用联盟链白皮书</div>
                             <div className="btn next-btn">下一篇：SharesPost 项目投资者概览</div>
-                        </div>
+                        </div>*/}
                     </div>
                 </div>
             </div>

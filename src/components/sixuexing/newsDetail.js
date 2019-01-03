@@ -3,7 +3,7 @@ import FloatWin from '../../common/floatWindow'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as actionCreators from '../sixuexing/store/actionCreators'
-import lodashId from "lodash/uniqueId";
+import uniqueId from "lodash/uniqueId";
 let array=[]
 class NewsDetail extends Component{
     state={
@@ -12,16 +12,8 @@ class NewsDetail extends Component{
 
     componentDidMount() {
         this.props.getDetailContent(this.props.location.search.substring(4))
-        // this.props.getDetailContent(this.props.match)
         this.node.scrollIntoView();
         this.props.getNewsList()
-        // this.props.getDetailContent(this.props.location.search.substring(4)+1)
-    }
-
-    addZan=()=>{
-        this.setState({
-            zanStatus:!this.state.zanStatus
-        })
     }
 
     handleChangePage=(id)=>{
@@ -30,28 +22,16 @@ class NewsDetail extends Component{
     }
 
     render(){
-        let { zanStatus } =this.state
         return(
             <div className='sxx-container' ref={node => this.node = node} >
                 <FloatWin />
                 <div className="sxx-content">
-                    {/*<div className="search">
-                        <input type="text" placeholder='请输入你想要查找的数据'/>
-                        <div className="searchBtn">搜索</div>
-                    </div>*/}
                     <div className='newsDetail-container'>
                             <div className="title">
                                 <h1 className="text">{this.props.detailInfo.title}</h1>
                                 <div className="time">{this.props.detailInfo.createTime}</div>
                             </div>
                             <div className="content" dangerouslySetInnerHTML={{__html:this.props.detailInfo.content}}></div>
-                            {/*<div className={zanStatus?"zan-btn active":"zan-btn"}  onClick={()=>{this.addZan()}}>
-                                <svg className='icon-svg'>
-                                    <use xlinkHref='#icon-dianzan'></use>
-                                </svg>
-                                <div className="text" style={{marginLeft:'20px'}}>{zanStatus?"取消":"赞"}</div>
-                            </div>*/}
-
                     </div>
                     <div className="sxx-box sxx-industry">
                         <div className="sxx-title">
@@ -61,47 +41,24 @@ class NewsDetail extends Component{
                         <div className="industry-content">
                             {this.props.industryList?this.props.industryList.map((item)=>{
                                 return (
-                                    <div className="industry-list" key={lodashId()}>
+                                    <div className="industry-list" key={uniqueId()}>
                                         <span></span>
-                                        <a className="text" href={item.content}>{item.title}</a>
+                                        <a className="text" href={item.url}>{item.title}</a>
                                     </div>
                                 )
                             }):null}
-                            {/*<div className="btn-box">
-                                <div className="btn prev-btn" onClick={()=>{this.handleChangePage('prev')}}>上一篇：AAA全球应用联盟链白皮书</div>
-                                <div className="btn next-btn" onClick={()=>{this.handleChangePage('next')}}>下一篇：SharesPost 项目投资者概览</div>
-                            </div>*/}
+
                             {this.props.newsList.map((item,index)=>{
-                                console.log(this.props.location.search.substring(4))
                                 if(this.props.location.search.substring(4)==item.id){
-                                    console.log(this.props.newsList[index-1])
-                                    console.log(this.props.newsList[index+1])
                                     return (
-                                        <div className="btn-box">
-                                            <div className="btn prev-btn" onClick={()=>{this.handleChangePage(this.props.newsList[index-1].id)}}>上一篇：<div>{this.props.newsList[index-1]?this.props.newsList[index-1].title:'无上一篇'}</div></div>
-                                            <div className="btn next-btn" onClick={()=>{this.handleChangePage(this.props.newsList[index+1].id)}}>下一篇：<div>{this.props.newsList[index+1]?this.props.newsList[index+1].title:'无下一篇'}</div></div>
+                                        <div className="btn-box" key={uniqueId()}>
+                                            <div className="btn prev-btn noSelectText" onClick={()=>{this.handleChangePage(this.props.newsList[index-1].id)}}>上一篇：<div>{this.props.newsList[index-1]?this.props.newsList[index-1].title:'无上一篇'}</div></div>
+                                            <div className="btn next-btn noSelectText" onClick={()=>{this.handleChangePage(this.props.newsList[index+1].id)}}>下一篇：<div>{this.props.newsList[index+1]?this.props.newsList[index+1].title:'无下一篇'}</div></div>
                                         </div>
                                     )
                                 }
-
                             })}
-                            {/*{this.props.newsList.map((item)=>{
-                                if(item.id===this.props.location.search.substring(4)){
-                                    this.props.getDetailContent(this.props.newsList[index-1].id)
-                                    this.props.getDetailContent(this.props.newsList[index+1].id)
-                                    return (
-                                        <div className="btn-box">
-
-                                            <div className="btn prev-btn" onClick={()=>{this.handleChangePage('prev')}}>上一篇：AAA全球应用联盟链白皮书</div>
-                                            <div className="btn next-btn" onClick={()=>{this.handleChangePage('next')}}>下一篇：SharesPost 项目投资者概览</div>
-                                        </div>
-                                    )
-                                }
-                                array.push=item.id
-                            })}*/}
-
                         </div>
-
                     </div>
                     {/*<div className="sxx-box sxx-student">
                         <div className="sxx-title">

@@ -8,20 +8,30 @@ export const GET_MENU_LIST = HOST+'/getTitle'
  * 思学行动态详情页
  * @type {string}
  */
-export const GET_SXX_INFO=HOST+'/dynamic/queryDynamic'
+export const GET_SXX_INFO = HOST+'/dynamic/queryDynamic'
 /**
  * 获取思学行列表
  * @type {string}
  */
-export const GET_NEWS_LIST=HOST+'/dynamic/showNewsInfoList'
+export const GET_NEWS_LIST = HOST+'/dynamic/showNewsInfoList'
 
 /**
- * 获取新闻分页数据
+ * 根据不同分类id获取新闻分页,学员动态和行业动态的数据
  */
-export const GET_MORE_LIST=HOST+ '/dynamic/showNewsListByTypeId'
+export const GET_TYPE_LIST = HOST+ '/dynamic/showNewsListByTypeId'
 
 /**
  * 获取下载资料列表
  * @type {string}
  */
-export const GET_DOWNLOAD_INFO=HOST+'/data/findDataList'
+export const GET_DOWNLOAD_LIST = HOST+'/data/findDataList'
+/**
+ *获取下载资料详情
+ * @type {string}
+ */
+export const GET_DOWNLOAD_INFO = HOST+'/data/findDataInfoByDataId'
+/**
+ * 请求下载文件
+ * @type {string}
+ */
+export const GET_DOWNLOAD_FILE = HOST+'/data/downloadData'
