@@ -100,11 +100,11 @@ class Sxx extends Component{
                                 return (
                                     <li key={lodashId()}>
                                         <div className="box"><img src={item.image} alt=""/></div>
-                                        <div className="news-content">
+                                        <Link to={'/sixuexing/detail?id='+item.id} className="news-content">
                                             <div className="list-title">{item.title}</div>
                                             <div className="description">{item.content}</div>
                                             <div className="time">{item.createTime}</div>
-                                        </div>
+                                        </Link>
                                     </li>
                                 )
                             })}

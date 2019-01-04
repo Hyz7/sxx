@@ -15,7 +15,11 @@ const moreList=(result,page)=>({
     result,
     page
 })
-
+const moreIndustryList=(result,page)=>({
+    type:actionTypes.GET_MORE_INDUSTRY_LIST,
+    result,
+    page
+})
 const industryList=(result)=>({
     type:actionTypes.GET_INDUSTRY_LIST,
     result
@@ -44,10 +48,18 @@ export const getTypeList=(id,size,name)=>{
     }
 }
 
+export const handleMoreIndustryList=(id,page,size)=>{
+    return (dispatch)=>{
+        axios.get(API.GET_TYPE_LIST+"?typeId="+id+"&page="+(page+1)+"&size="+size).then(res=>{
+            console.log(res.data)
+            dispatch(moreIndustryList(res.data,page))
+        })
+    }
+}
+
 export const getMoreList=(page,size)=>{
     return (dispatch)=>{
         axios.get(API.GET_NEWS_LIST+"?page="+page+"&&size="+size).then(res=>{
-            // console.log(res.data.newsList,page+1,size)
             dispatch(moreList(res.data,page+1))
         })
     }

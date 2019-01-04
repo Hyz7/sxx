@@ -40,11 +40,12 @@ class NewsDetail extends Component{
                         </div>
                         <div className="industry-content">
                             {this.props.industryList?this.props.industryList.map((item)=>{
+                                console.log(this.props.industryList)
                                 return (
-                                    <div className="industry-list" key={uniqueId()}>
+                                    <a href={item.url?item.url:null} className="industry-list" key={uniqueId()}>
                                         <span></span>
-                                        <a className="text" href={item.url}>{item.title}</a>
-                                    </div>
+                                        <div  className="text" >{item.title}</div>
+                                    </a>
                                 )
                             }):null}
 

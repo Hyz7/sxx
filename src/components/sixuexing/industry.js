@@ -8,10 +8,10 @@ import FloatWin from '../../common/floatWindow'
 
 class Industry extends Component{
     state={
-        pageStatus:true
+        industryPageStatus:true
     }
     componentDidMount(){
-        this.props.handleMoreList(this.props.page,5)
+        //
         this.props.getTypeList(2,5)
         this.props.getTypeList(3)
     }
@@ -64,10 +64,11 @@ class Industry extends Component{
                                     </li>
                                 )
                             })}
-                            {this.props.pageStatus?
-                                <div className="loading-more" onClick={()=>{this.props.handleMoreList(this.props.page,5)}}>加载更多......</div>
+                            {this.props.industryPageStatus?
+                                <div className="loading-more" onClick={()=>{this.props.handleMoreIndustryList(2,this.props.industryPage,5)}}>加载更多......</div>
                                 :
-                                <div className="loading-more" >没有更多数据了！</div>}
+                                <div className="loading-more" >没有更多数据了！</div>
+                            }
                         </ul>
                     </div>
                     <div className="sxx-box sxx-industry">
@@ -96,11 +97,11 @@ class Industry extends Component{
                                 return (
                                     <li key={lodashId()}>
                                         <div className="box"><img src={item.image} alt=""/></div>
-                                        <div className="news-content">
+                                        <Link to={'/sixuexing/detail?id='+item.id} className="news-content">
                                             <div className="list-title">{item.title}</div>
                                             <div className="description">{item.content}</div>
                                             <div className="time">{item.createTime}</div>
-                                        </div>
+                                        </Link>
                                     </li>
                                 )
                             })}
@@ -110,25 +111,22 @@ class Industry extends Component{
             </div>
         )
     }
-    /*handleMoreList=(page,size)=>{
-
-    }*/
 }
 
 const mapStateToProps=(state)=>({
     newsList:state.sixuexing.newsList,
     industryList:state.sixuexing.industryList,
     studentList:state.sixuexing.studentList,
-    page:state.sixuexing.page,
-    pageStatus:state.sixuexing.pageStatus
+    industryPage:state.sixuexing.industryPage,
+    industryPageStatus:state.sixuexing.industryPageStatus
 })
 
 const mapDispatchToProps=(dispatch)=>({
     getNewsList(value){
         dispatch(actionCreators.getNewsList(value))
     },
-    handleMoreList(page,size){
-        dispatch(actionCreators.getMoreList(page,size))
+    handleMoreIndustryList(id,page,size){
+        dispatch(actionCreators.handleMoreIndustryList(id,page,size))
     },
     getTypeList(id,size,name){
         dispatch(actionCreators.getTypeList(id,size,name))

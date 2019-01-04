@@ -336,7 +336,7 @@ class Home extends Component{
                                                     {this.props.industryList.slice(0,6).map((item)=>{
                                                         return (
                                                             <li key={lodashId()}>
-                                                                <a className="content-title" href={item.content}>{item.title}</a>
+                                                                <a className="content-title" href={item.url}>{item.title}</a>
                                                                 <div className="createTime">{item.createTime}</div>
                                                             </li>
                                                         )
@@ -356,11 +356,11 @@ class Home extends Component{
                                                     return (
                                                         <li key={lodashId()}>
                                                             <img src={item.image} alt=""/>
-                                                            <div className="content-box">
+                                                            <Link to={'/sixuexing/detail?id='+item.id}  className="content-box">
                                                                 <div className="content-title">{item.title}</div>
                                                                 <div className="desc">{item.content?item.content.length>30?item.content.substring(0,30)+'.....':item.content:null}</div>
                                                                 <div className="createTime">{item.createTime}</div>
-                                                            </div>
+                                                            </Link>
                                                         </li>
                                                     )
                                                 })}

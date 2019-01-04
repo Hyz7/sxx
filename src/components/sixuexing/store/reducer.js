@@ -5,8 +5,10 @@ const defaultState={
     industryList:[],
     studentList:[],
     page:1,
+    industryPage:1,
     detailInfo:'',
-    pageStatus:true
+    pageStatus:true,
+    industryPageStatus:true
 }
 /*
  * 在数组中去除重复项（）
@@ -27,8 +29,8 @@ Array.prototype.unique1 = function(){
 const getNewsList=(state,action)=>{
     return Object.assign({},state,{
         newsList: action.result.newsList,
-        /*industryList: action.result.industryList,
-        studentList: action.result.studentList*/
+        industryList: action.result.industryList,
+        studentList: action.result.studentList
     })
 }
 
@@ -49,6 +51,20 @@ const createPage=(state,action)=>{
         newsList: state.newsList.concat(action.result.newsList).unique1()
     })
 }
+const createIndustryPage=(state,action)=>{
+    if(action.result.dynamicList.length<5){
+        return Object.assign({},state,{
+            industryPage:parseInt(state.page)+1,
+            industryPageStatus:false,
+            industryList: state.industryList.concat(action.result.dynamicList).unique1()
+        })
+    }
+    return Object.assign({},state,{
+        industryPage:state.page+1,
+        industryList: state.industryList.concat(action.result.industryList).unique1()
+    })
+}
+
 const getIndustryList=(state,action)=>{
     return Object.assign({},state,{
         industryList: action.result.dynamicList,
@@ -68,6 +84,8 @@ export default (state = defaultState, action)=>{
             return getDetailInfo(state,action)
         case actionTypes.GET_MORE_LIST:
             return createPage(state,action)
+        case actionTypes.GET_MORE_INDUSTRY_LIST:
+            return createIndustryPage(state,action)
         case actionTypes.GET_INDUSTRY_LIST:
             return getIndustryList(state,action)
         case actionTypes.GET_STUDENT_LIST:

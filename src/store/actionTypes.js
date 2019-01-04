@@ -28,6 +28,12 @@ export const GET_NEWS_LIST = 'sixuexing/GET_NEWS_LIST'
  */
 export const GET_INDUSTRY_LIST = 'sixuexing/GET_INDUSTRY_LIST'
 /**
+ * 行业动态加载更多
+ * @type {string}
+ */
+export const GET_MORE_INDUSTRY_LIST = 'sixuexing/GET_MORE_INDUSTRY_LIST'
+
+/**
  * 获取学员动态列表
  * @type {string}
  */
