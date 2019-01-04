@@ -35,7 +35,16 @@ export default class Footer extends Component{
                                 <div className="text text2">企业邮箱：sxx@sixuexing.com</div>
                                 <div className="text text2">企业QQ：<a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes">2507819723</a></div>
                             </div>
-
+                            <ul className='footer-siteMap'>
+                                <li><a href="http://sixuexing.com">首页</a></li>
+                                <li><a href="http://sixuexing.com/core">核心优势</a></li>
+                                <li><a href="http://sixuexing.com/teacher">授课导师</a></li>
+                                <li><a href="http://sixuexing.com/sixuexing">思学行动态</a></li>
+                                <li><a href="http://sixuexing.com/download">资料下载</a></li>
+                                <li><a href="http://sixuexing.com/recruitment">人才招聘</a></li>
+                                <li><a href="http://sixuexing.com/aboutUs">关于我们</a></li>
+                                <li><a href="http://sixuexing.com/contactUs">联系我们</a></li>
+                            </ul>
                         </div>
                         <div className="item item2">
                             <div className="title" style={{width:'100px'}}>服务热线</div>
