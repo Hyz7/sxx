@@ -29,9 +29,9 @@ export const getDownloadInfo=(id)=>{
     }
 }
 
-export const getDownloadList=()=>{
+export const getDownloadList=(page,size)=>{
     return (dispatch)=>{
-        axios.get(Api.GET_DOWNLOAD_LIST).then(res=>{
+        axios.get(Api.GET_DOWNLOAD_LIST+'?page='+page+'&size='+size).then(res=>{
             dispatch(getList(res.data))
         })
     }

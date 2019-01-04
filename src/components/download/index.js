@@ -22,7 +22,7 @@ class Download extends Component{
         }
     }
     componentDidMount(){
-        this.props.getDownloadList()
+        this.props.getDownloadList(1,10)
     }
     changeTab=(type)=>{
         this.setState({tabStatus:type})
@@ -173,14 +173,14 @@ class Download extends Component{
                                 </div>
                             </div>*/}
                         </div>
-                        <div className="more-btn">加载更多...</div>
+                        {/*<div className="more-btn">加载更多...</div>*/}
                     </div>
                     <div className="download-right">
                         <div className="title">
                             <div className="box">最新推荐</div>
                         </div>
                         <div className="list-box">
-                            {this.props.downloadList?this.props.downloadList.map(item=>{
+                            {this.props.downloadList?this.props.downloadList.slice(0,5).map(item=>{
                                 return <Link className="list"  to={'/download/detail/'+item.dataId}>
                                     <img src={item.image} alt=""/>
                                     <div className="content">
@@ -236,8 +236,8 @@ const mapStateToProps=(state)=>({
     downloadList:state.download.list
 })
 const mapDispatchToProps=(dispatch)=>({
-    getDownloadList(){
-        dispatch(actionCreators.getDownloadList())
+    getDownloadList(page,size){
+        dispatch(actionCreators.getDownloadList(page,size))
     }
 })
 export default connect(mapStateToProps,mapDispatchToProps)(withRouter(Download))

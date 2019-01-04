@@ -14,6 +14,7 @@ class Sxx extends Component{
         this.props.handleMoreList(this.props.page,5)
         this.props.getIndustryList(2,10)
         this.props.getIndustryList(3)
+        document.documentElement.scrollTop=0
     }
     delHtmlTag=(str)=>{
         return str.replace(/<[^>]+>/g,"");//去掉所有的html标记

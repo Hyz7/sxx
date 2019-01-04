@@ -14,6 +14,7 @@ class NewsDetail extends Component{
         this.props.getDetailContent(this.props.location.search.substring(4))
         this.node.scrollIntoView();
         this.props.getNewsList()
+        document.documentElement.scrollTop=0
     }
 
     handleChangePage=(id)=>{

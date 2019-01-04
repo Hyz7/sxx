@@ -5,6 +5,9 @@ import project from '../../images/core/project.png'
 import model from '../../images/core/model.png'
 import FloatWin from '../../common/floatWindow'
 class Core extends Component{
+    componentDidMount() {
+        document.documentElement.scrollTop=0
+    }
 
     render() {
         return(

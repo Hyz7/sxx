@@ -6,6 +6,11 @@ class Teacher extends Component{
     state={
         teacherType:'qkl'
     }
+
+    componentDidMount() {
+        document.documentElement.scrollTop=0
+    }
+
     scrollToAnchor = (anchorName) => {
         if (anchorName) {
             // 找到锚点
@@ -18,6 +23,7 @@ class Teacher extends Component{
         this.setState({
             teacherType:value
         },()=>console.log(this.state.teacherType))
+        document.documentElement.scrollTop=0
     }
     render() {
         let {teacherType}=this.state

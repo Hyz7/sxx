@@ -13,14 +13,13 @@ import {Link, withRouter} from "react-router-dom";
 import uniqueId from 'lodash/uniqueId'
 class DownloadDetail extends Component{
     state = { visible: false }
-    handleOk = (e) => {
-        console.log(e);
+    handleOk = () => {
         this.setState({
             visible: false,
         });
+        window.location.href=this.props.downloadFile
     }
-    handleCancel = (e) => {
-        console.log(e);
+    handleCancel = () => {
         this.setState({
             visible: false,
         });
@@ -89,8 +88,9 @@ class DownloadDetail extends Component{
                             <div className="box">最新推荐</div>
                         </div>
                         <div className="list-box">
-                            {this.props.downloadList?this.props.downloadList.map(item=>{
+                            {this.props.downloadList?this.props.downloadList.slice(0,5).map(item=>{
                                 return <Link className="list"
+                                             key={uniqueId()}
                                              to={'/download/detail/'+item.dataId}
                                              onClick={()=>{this.props.getDownloadInfo(this.props.location.pathname.substring(17))}}
                                 >
@@ -179,7 +179,7 @@ const mapDispatchToProps=(dispatch)=>({
         dispatch(actionCreators.getDownloadInfo(id))
     },
     getDownloadList(){
-        dispatch(actionCreators.getDownloadList())
+        dispatch(actionCreators.getDownloadList(1,10))
     },
     getDownloadFile(id){
         dispatch(actionCreators.getDownloadFile(id))

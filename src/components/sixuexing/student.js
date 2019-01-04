@@ -14,6 +14,7 @@ class Student extends Component{
         this.props.handleMoreList(this.props.page,5)
         this.props.getTypeList(2,10)
         this.props.getTypeList(3)
+        document.documentElement.scrollTop=0
     }
 
     searchKey=(value)=>{

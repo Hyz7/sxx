@@ -150,7 +150,7 @@ class Home extends Component{
                                 <Link to='core' className="item1-list-box" style={{marginTop:'4px'}}>
                                     <i className='img3'></i>核心优势
                                 </Link>
-                                <Link to='sixuexing' className="item1-list-box fr" style={{marginTop:'4px'}}>
+                                <Link to='sixuexing/student' className="item1-list-box fr" style={{marginTop:'4px'}}>
                                     <i className='img4'></i>学员故事
                                 </Link>
                             </div>
@@ -225,11 +225,12 @@ class Home extends Component{
                         </div>*/}
                         <div className="largeData">
                             <div className="largeData-position">
-                                <div className="title">
+                                <div className="title" style={{width:'340px'}}>
                                     <span className='span'><span></span></span>
                                     <h1 className='text'>就业薪资大数据</h1>
                                     <span className='span'><span></span></span>
                                 </div>
+                                <s style={{display:'block',clear:'both',height:'0'}}></s>
                                 <div className="imgTitle">
                                     <img src={DataTitle} alt="区块链"/>
                                 </div>
@@ -247,11 +248,12 @@ class Home extends Component{
                         </div>
                         <div className="teacher">
                             <div className="teacher-position">
-                                <div className="title">
+                                <div className="title" style={{width:'240px'}}>
                                     <span className='span'><span></span></span>
                                     <h1 className='text'>师资介绍</h1>
                                     <span className='span'><span></span></span>
                                 </div>
+                                <s style={{display:'block',clear:'both',height:'0'}}></s>
                                 <div className="title-description">顶尖高校教授研发课程，实名行业实战大牛授课</div>
                                 <div className="teacher-introduce">
                                     <Link to='teacher' className="more-btn">查看更多></Link>
@@ -293,17 +295,18 @@ class Home extends Component{
                         </div>
                         <div className="news">
                             <div className="news-position">
-                                <div className="title">
+                                <div className="title" style={{width:'240px'}}>
                                     <span className='span'><span></span></span>
                                     <h1 className='text'>新闻资讯</h1>
                                     <span className='span'><span></span></span>
                                 </div>
+                                <s style={{display:'block',clear:'both',height:'0'}}></s>
                                 <div className="title-description">一键了解最新区块链大数据行业讯息</div>
                                 <div className="news-box">
                                     <Link to='sixuexing' className="more-btn">查看更多></Link>
                                     <ul className="newsList-box">
                                         <div className="newsItem newsList-item">
-                                            <div className="title">
+                                            <div className="news-title">
                                                 <svg className='icon-svg'>
                                                     <use xlinkHref='#icon-xinwen'></use>
                                                 </svg>
@@ -324,7 +327,7 @@ class Home extends Component{
                                             </div>
                                         </div>
                                         <div className="newsItem industryList-item">
-                                            <div className="title">
+                                            <div className="news-title">
                                                 <svg className='icon-svg'>
                                                     <use xlinkHref='#icon-link'></use>
                                                 </svg>
@@ -345,7 +348,7 @@ class Home extends Component{
                                             </div>
                                         </div>
                                         <div className="newsItem studyList-item">
-                                            <div className="title">
+                                            <div className="news-title">
                                                 <svg className='icon-svg'>
                                                     <use xlinkHref='#icon-renwu-ren'></use>
                                                 </svg>
