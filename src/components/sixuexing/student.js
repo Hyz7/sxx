@@ -18,7 +18,6 @@ class Student extends Component{
     }
 
     searchKey=(value)=>{
-        console.log(value)
         if(value){
             let value1=value.replace(/\s+/g,"");
             this.props.getTypeList(3,'',value1)

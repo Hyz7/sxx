@@ -22,7 +22,7 @@ class Teacher extends Component{
     handleChangeType=(value)=>{
         this.setState({
             teacherType:value
-        },()=>console.log(this.state.teacherType))
+        })
         document.documentElement.scrollTop=0
     }
     render() {

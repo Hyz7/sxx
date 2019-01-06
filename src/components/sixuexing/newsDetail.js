@@ -41,7 +41,6 @@ class NewsDetail extends Component{
                         </div>
                         <div className="industry-content">
                             {this.props.industryList?this.props.industryList.map((item)=>{
-                                console.log(this.props.industryList)
                                 return (
                                     <a href={item.url?item.url:null} className="industry-list" key={uniqueId()}>
                                         <span></span>

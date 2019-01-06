@@ -14,7 +14,7 @@ const offset = {
 
 const events = {
     click() {
-        console.log("label click");
+        // console.log("label click");
     }
 };
 

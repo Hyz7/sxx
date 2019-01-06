@@ -2,11 +2,11 @@ import React,{Component} from 'react'
 import FloatWin from "../../common/floatWindow";
 import {Modal} from 'antd'
 import sxxImg from "../../images/sxxbanner.png";
-import sharespost from "../../images/download/sharespost.png";
+/*import sharespost from "../../images/download/sharespost.png";
 import IBM from "../../images/download/IBM.png";
 import xgh from "../../images/download/xgh.png";
 import MATRIX from "../../images/download/MATRIX.png";
-import zq from "../../images/download/zq.png";
+import zq from "../../images/download/zq.png";*/
 import * as actionCreators from "../download/store/actionCreators";
 import connect from "react-redux/es/connect/connect";
 import {Link, withRouter} from "react-router-dom";
@@ -92,7 +92,11 @@ class DownloadDetail extends Component{
                                 return <Link className="list"
                                              key={uniqueId()}
                                              to={'/download/detail/'+item.dataId}
-                                             onClick={()=>{this.props.getDownloadInfo(this.props.location.pathname.substring(17))}}
+                                             onClick={()=>{
+                                                 this.props.getDownloadInfo(this.props.location.pathname.substring(17))
+                                                 // this.props.history.replace('/download/detail/'+item.dataId)
+                                                 window.location.href='/download/detail/'+item.dataId
+                                             }}
                                 >
                                     <img src={item.image} alt=""/>
                                     <div className="content">

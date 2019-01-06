@@ -51,7 +51,6 @@ export const getTypeList=(id,size,name)=>{
 export const handleMoreIndustryList=(id,page,size)=>{
     return (dispatch)=>{
         axios.get(API.GET_TYPE_LIST+"?typeId="+id+"&page="+(page+1)+"&size="+size).then(res=>{
-            console.log(res.data)
             dispatch(moreIndustryList(res.data,page))
         })
     }
