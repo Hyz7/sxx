@@ -59,7 +59,7 @@ class Student extends Component{
                                         <Link to={'/sixuexing/detail?id='+item.id}>
                                             <div className="news-content">
                                                 <div className="list-title">{item.title}</div>
-                                                <div className="description">{item.content?item.content.substring(0,100)+'......':null}</div>
+                                                <div className="description" dangerouslySetInnerHTML={{__html:item.content?item.content.substring(0,100)+'......':null}}></div>
                                                 <div className="time">{item.createTime}</div>
                                             </div>
                                         </Link>
@@ -101,7 +101,7 @@ class Student extends Component{
                                         <div className="box"><img src={item.image} alt=""/></div>
                                         <a className="news-content" href={item.url}>
                                             <div className="list-title">{item.title}</div>
-                                            <div className="description">{item.content?item.content.length>40?item.content.substring(0,40)+'...':null:null}</div>
+                                            <div className="description" dangerouslySetInnerHTML={{__html:item.content?item.content.length>40?item.content.substring(0,40)+'...':item.content:null}}></div>
                                             <div className="time">{item.createTime}</div>
                                         </a>
                                     </li>

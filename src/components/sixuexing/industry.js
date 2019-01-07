@@ -11,7 +11,7 @@ class Industry extends Component{
         industryPageStatus:true
     }
     componentDidMount(){
-        //
+        this.props.getNewsList()
         this.props.getTypeList(2,5)
         this.props.getTypeList(3)
     }
@@ -29,7 +29,9 @@ class Industry extends Component{
             this.searchKey(this.searchInput.value)
         }
     }
-
+    delHtmlTag=(str)=>{
+        return str.replace(/<[^>]+>/g,"");//去掉所有的html标记
+    }
     render() {
         return(
             <div className='sxx-container'>
@@ -57,7 +59,7 @@ class Industry extends Component{
                                         <a href={item.url?item.url:null}>
                                             <div className="news-content">
                                                 <div className="list-title">{item.title}</div>
-                                                <div className="description">{item.content?item.content.substring(0,100)+'......':null}</div>
+                                                <div className="description" dangerouslySetInnerHTML={{__html:item.content?item.content.substring(0,100)+'......':null}}></div>
                                                 <div className="time">{item.createTime}</div>
                                             </div>
                                         </a>
@@ -99,7 +101,7 @@ class Industry extends Component{
                                         <div className="box"><img src={item.image} alt=""/></div>
                                         <Link to={'/sixuexing/detail?id='+item.id} className="news-content">
                                             <div className="list-title">{item.title}</div>
-                                            <div className="description">{item.content}</div>
+                                            <div className="description" dangerouslySetInnerHTML={{__html:this.delHtmlTag(item.content).substring(0,100)+'......'}}></div>
                                             <div className="time">{item.createTime}</div>
                                         </Link>
                                     </li>
