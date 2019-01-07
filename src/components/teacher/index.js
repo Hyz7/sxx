@@ -23,7 +23,7 @@ class Teacher extends Component{
         this.setState({
             teacherType:value
         })
-        document.documentElement.scrollTop=0
+        document.documentElement.scrollTop=400
     }
     render() {
         let {teacherType}=this.state

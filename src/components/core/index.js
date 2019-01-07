@@ -24,7 +24,12 @@ class Core extends Component{
                            {/* <div className="content">
                                 高校、专家赋能，紧贴时代，一步一个脚印，踏实研发迭代最快，最符合实战应用的新一代信息技术课程。8大模块，超2000课时教程，求学、加薪、晋升、创业满足你的多种需求。
                             </div>*/}
-                            <div className="core-btn"><a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes" style={{color:'#fff'}}>查看全部大纲</a></div>
+                            <div className="core-btn">
+                                {/*<a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes" style={{color:'#fff'}}>查看全部大纲</a>*/}
+                                <a style={{color:'#fff'}} target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2507819723&site=qq&menu=yes">
+                                    查看全部大纲
+                                </a>
+                            </div>
                         </div>
                         <div className="core-middle">
                             <div className="list">
@@ -56,7 +61,12 @@ class Core extends Component{
                                 <div className="list">超30家顶尖企业战略合作，保障就业的稳定可靠</div>
                                 <div className="list">多家金融机构合作，用更少的钱获得更多的知识</div>
                             </div>
-                            <div className="core-btn"><a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes" style={{color:'#fff'}}>了解更多</a></div>
+                            <div className="core-btn">
+                                {/*<a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes" style={{color:'#fff'}}>了解更多</a>*/}
+                                <a style={{color:'#fff'}} target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2507819723&site=qq&menu=yes">
+                                    了解更多
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

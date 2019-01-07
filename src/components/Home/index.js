@@ -384,7 +384,11 @@ class Home extends Component{
                                     <img src={baomingImg} alt="区块链"/>
                                 </div>
                                 <h1 className="baoming-btn">
-                                    <a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes" style={{color:'#fff'}}>我要报名</a>
+                                    <a style={{color:'#fff'}} target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2507819723&site=qq&menu=yes">
+                                        {/*<img border="0" src="http://wpa.qq.com/pa?p=2:2507819723:52" alt="点击这里给我发消息" title="点击这里给我发消息"/>*/}
+                                        我要报名
+                                    </a>
+                                    {/*<a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes" style={{color:'#fff'}}>我要报名</a>*/}
                                 </h1>
                             </div>
                         </div>

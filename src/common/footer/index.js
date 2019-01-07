@@ -33,7 +33,12 @@ export default class Footer extends Component{
                             <div className="item-box">
                                 <div className="text text1">地址：成都市高新区吉泰五路88号香年广场T3栋14楼</div>
                                 <div className="text text2">企业邮箱：sxx@sixuexing.com</div>
-                                <div className="text text2">企业QQ：<a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes">2507819723</a></div>
+                                <div className="text text2">企业QQ：
+                                    {/*<a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes">2507819723</a>*/}
+                                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2507819723&site=qq&menu=yes">
+                                        2507819723
+                                    </a>
+                                </div>
                             </div>
                             <ul className='footer-siteMap'>
                                 <li><a href="http://sixuexing.com">首页</a></li>

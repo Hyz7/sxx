@@ -1,10 +1,41 @@
 import React, {Component} from 'react';
 import img from '../../../images/home/banner1.png'
 import baomingImg from "../../../images/home/baoming.png";
+import {Modal} from 'antd'
+import webChat from '../../../images/publicNum.png'
 class QKL extends Component {
+    state = { visible: false }
+    showModal = (type) => {
+        this.setState({
+            visible: true,
+            modal:type
+        });
+    }
+    handleOk = (e) => {
+
+        this.setState({
+            visible: false,
+        });
+    }
+    handleCancel = (e) => {
+
+        this.setState({
+            visible: false,
+        });
+    }
     render() {
         return (
             <div className='qkl-container'>
+                <Modal title={this.state.modal=='qq'?'思学行官方QQ':'思学行微信公众号'} visible={this.state.visible}
+                       onOk={this.handleOk} onCancel={this.handleCancel}
+                >
+                    {this.state.modal=='qq'?
+                        <div>思学行官方QQ：2507819723</div>
+                        :
+                        <div>
+                            <img src={webChat} style={{width:'100px',display:'block',margin:'0 auto'}} alt=""/>
+                        </div>}
+                </Modal>
                 <div className="banner">
                     <img src={img} alt=""/>
                     <div className="qkl-tab">
@@ -84,8 +115,8 @@ class QKL extends Component {
                             </td>
                             <td>2学时</td>
                             <td rowSpan={3}>
-                                <span><svg className='icon-svg'><use xlinkHref='#icon-qq1'></use></svg><a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes">点击咨询</a></span>
-                                <span><svg className='icon-svg'><use xlinkHref='#icon-weixin1'></use></svg>点击咨询<div className="wxBox"></div></span>
+                                <span onClick={()=>{this.showModal('qq')}}><svg className='icon-svg'><use xlinkHref='#icon-qq1'></use></svg>点击咨询</span>
+                                <span onClick={()=>{this.showModal('webChat')}}><svg className='icon-svg'><use xlinkHref='#icon-weixin1'></use></svg>点击咨询<div className="wxBox"></div></span>
                             </td>
                         </tr>
                         <tr>
@@ -106,8 +137,9 @@ class QKL extends Component {
                                 块链设计语言的核心要素与重要语法。
                             </td>
                             <td>32学时</td>
-                            <td rowSpan={3}><span><svg className='icon-svg'><use xlinkHref='#icon-qq1'></use></svg>点击咨询</span>
-                                <span><svg className='icon-svg'><use xlinkHref='#icon-weixin1'></use></svg>点击咨询</span></td>
+                            <td rowSpan={3}>
+                                <span onClick={()=>{this.showModal('qq')}}><svg className='icon-svg'><use xlinkHref='#icon-qq1'></use></svg>点击咨询</span>
+                                <span onClick={()=>{this.showModal('webChat')}}><svg className='icon-svg'><use xlinkHref='#icon-weixin1'></use></svg>点击咨询</span></td>
                         </tr>
                         <tr>
                             <td>第二章：Hyperlegder、以太坊架
@@ -128,8 +160,9 @@ class QKL extends Component {
                                 共识算法、智能合约、Docker和开发环境搭建上的关键开发技术。
                             </td>
                             <td>16学时</td>
-                            <td rowSpan={6}><span><svg className='icon-svg'><use xlinkHref='#icon-qq1'></use></svg>点击咨询</span>
-                                <span><svg className='icon-svg'><use xlinkHref='#icon-weixin1'></use></svg>点击咨询</span></td>
+                            <td rowSpan={6}>
+                                <span onClick={()=>{this.showModal('qq')}}><svg className='icon-svg'><use xlinkHref='#icon-qq1'></use></svg>点击咨询</span>
+                                <span onClick={()=>{this.showModal('webChat')}}><svg className='icon-svg'><use xlinkHref='#icon-weixin1'></use></svg>点击咨询</span></td>
                         </tr>
                         <tr>
                             <td>第二章：P2P网络</td>
@@ -162,8 +195,9 @@ class QKL extends Component {
                                 全方位提升学员的软件设计水平和架构设计能力。
                             </td>
                             <td>1学时</td>
-                            <td rowSpan={6}><span><svg className='icon-svg'><use xlinkHref='#icon-qq1'></use></svg>点击咨询</span>
-                                <span><svg className='icon-svg'><use xlinkHref='#icon-weixin1'></use></svg>点击咨询</span></td>
+                            <td rowSpan={6}>
+                                <span onClick={()=>{this.showModal('qq')}}><svg className='icon-svg'><use xlinkHref='#icon-qq1'></use></svg>点击咨询</span>
+                                <span onClick={()=>{this.showModal('webChat')}}><svg className='icon-svg'><use xlinkHref='#icon-weixin1'></use></svg>点击咨询</span></td>
                         </tr>
                         <tr>
                             <td>第二章：设计模式的原则</td>
@@ -196,8 +230,9 @@ class QKL extends Component {
                                 链的开发技术。
                             </td>
                             <td>8学时</td>
-                            <td rowSpan={5}><span><svg className='icon-svg'><use xlinkHref='#icon-qq1'></use></svg>点击咨询</span>
-                                <span><svg className='icon-svg'><use xlinkHref='#icon-weixin1'></use></svg>点击咨询</span></td>
+                            <td rowSpan={5}>
+                                <span onClick={()=>{this.showModal('qq')}}><svg className='icon-svg'><use xlinkHref='#icon-qq1'></use></svg>点击咨询</span>
+                                <span onClick={()=>{this.showModal('webChat')}}><svg className='icon-svg'><use xlinkHref='#icon-weixin1'></use></svg>点击咨询</span></td>
                         </tr>
                         <tr>
                             <td>第二章：钱包项目实战</td>
@@ -222,8 +257,8 @@ class QKL extends Component {
                                 反馈培训情况；并颁发结业证书。</td>
                             <td>总结和反馈</td>
                             <td>8学时</td>
-                            <td><span><svg className='icon-svg'><use xlinkHref='#icon-qq1'></use></svg>点击咨询</span>
-                                <span><svg className='icon-svg'><use xlinkHref='#icon-weixin1'></use></svg>点击咨询</span></td>
+                            <td><span onClick={()=>{this.showModal('qq')}}><svg className='icon-svg'><use xlinkHref='#icon-qq1'></use></svg>点击咨询</span>
+                                <span onClick={()=>{this.showModal('webChat')}}><svg className='icon-svg'><use xlinkHref='#icon-weixin1'></use></svg>点击咨询</span></td>
                         </tr>
                         </tbody>
                     </table>
@@ -234,7 +269,10 @@ class QKL extends Component {
                                 <img src={baomingImg} alt="区块链"/>
                             </div>
                             <div className="baoming-btn">
-                                <a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes" style={{color:'#fff'}}>我要报名</a>
+                                {/*<a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes" style={{color:'#fff'}}>我要报名</a>*/}
+                                <a style={{color:'#fff'}} target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2507819723&site=qq&menu=yes">
+                                    我要报名
+                                </a>
                             </div>
                         </div>
                     </div>
