@@ -181,7 +181,7 @@ class Download extends Component{
                         </div>
                         <div className="list-box">
                             {this.props.downloadList?this.props.downloadList.slice(0,5).map(item=>{
-                                return <Link className="list"  to={'/download/detail/'+item.dataId}>
+                                return <Link className="list"  to={'/download/detail/'+item.dataId} key={uniqueId()}>
                                     <img src={item.image} alt=""/>
                                     <div className="content">
                                         <div className="title">{item.dataTitle}</div>
