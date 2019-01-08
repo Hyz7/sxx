@@ -75,7 +75,8 @@
 }
 
 .popup{
-
+  position: fixed;
+  z-index: 10000!important;
 }
 .popup-enter {
   opacity: 0.01;
@@ -93,7 +94,9 @@
   opacity: 0;
   transition: all 300ms ease-in;
 }
-body{}
+body{
+
+}
 .header-container{
   height: 159px;
   width: 100%;
@@ -155,6 +158,7 @@ body{}
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
+    z-index: 2;
     .nav-left{
       width: 230px;
       min-width: 230px;
@@ -180,15 +184,26 @@ body{}
         width: 20px;
         height: 15px;
       }
+      .header-li{
+        &:hover{
+          .popup-header{
+            display: block;
+            z-index: 10000;
+          }
+        }
+      }
       li {
         position: relative;
         height: 50px;
         line-height: 50px;
         min-width:120px;
         text-align: center;
-        z-index: 1000;
+        .pop-fixed{
+          position: fixed;
+        }
         .popup-header{
           position: absolute;
+          display: none;
           top: 50px;
           left: 0;
           width: 120px;

@@ -150,7 +150,7 @@ class Teacher extends Component{
                                         </div>
                                     </div>
                                 </div>
-                                <div className="list" id='chenliangyin'>
+                                {/*<div className="list" id='chenliangyin'>
                                     <img className="avatar" src='http://52.83.225.97:8080/imgs/teacher/chenliangyin.png'/>
                                     <div className="right-box">
                                         <div className="name"><i></i>陈良银<span>LiangYin Chen</span></div>
@@ -164,7 +164,7 @@ class Teacher extends Component{
                                             从事智能物联网、工业互联网、计算机应用研究，主持了国家自然科学基金项目“低功耗移动自组网的邻居发现机制研究”、省重大科技专项“面向装备诊断和运维的区块链工况数据管理平台研究”、省科技支撑项目“面向3G/4G营运服务的电子交易服务支撑平台研究”、省科技厅应用示范项目“面向民航机场领域的航班地面服务智能协同管理核心软件研发及示范应用”子课题；参加了自然科学基金重点项目“基于大数据的民航机场运行态势感知关键技术研究”、美国国家科学基金会项目“Addressing Research Challenges in Low-Duty-Cycle Wireless Sensor Networks”等相关研究工作。
                                         </div>
                                     </div>
-                                </div>
+                                </div>*/}
                                 <div className="list" id='zhangshibing'>
                                     <img className="avatar" src='http://52.83.225.97:8080/imgs/teacher/zhangshibin.png'/>
                                     <div className="right-box">

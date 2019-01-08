@@ -2,10 +2,10 @@ import React, {Component,Fragment} from 'react';
 
 class FloatWin extends Component {
     state={
-        visible:false
+        visible:true
     }
     componentDidMount() {
-        document.addEventListener('scroll',this.winScroll.bind(this),false);
+        // document.addEventListener('scroll',this.winScroll.bind(this),false);
     }
 
     componentWillUnmount() {
