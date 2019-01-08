@@ -4,6 +4,7 @@ import coures from '../../images/core/coures.png'
 import project from '../../images/core/project.png'
 import model from '../../images/core/model.png'
 import FloatWin from '../../common/floatWindow'
+import sxxImg from "../../images/sxxbanner.png";
 class Core extends Component{
     componentDidMount() {
         document.documentElement.scrollTop=0
@@ -13,6 +14,9 @@ class Core extends Component{
         return(
             <div className='core-container'>
                 <FloatWin />
+                <div className="about-banner">
+                    <img src={sxxImg} alt=""/>
+                </div>
                 <div className="core-position">
                     <div className="core-content">
                         <div className='core-item1'>

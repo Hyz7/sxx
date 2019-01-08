@@ -13,6 +13,7 @@ import FloatWin from '../../common/floatWindow'
 import {connect} from 'react-redux'
 import * as actionCreators from './store/actionCreators'
 import uniqueId from 'lodash/uniqueId'
+import { message } from 'antd';
 class Download extends Component{
     constructor(){
         super()
@@ -30,6 +31,9 @@ class Download extends Component{
     handleIndustry=(bool)=>{
         this.setState({industry:bool})
     }
+    warningMsg=()=>{
+        message.warning('暂无相关资源...')
+    }
     render() {
         let { tabStatus,industry } = this.state
         return(
@@ -43,8 +47,13 @@ class Download extends Component{
                         <div className="tab-box">
                             <ul>
                                 <li className={tabStatus=='paper'?'active':''} onClick={()=>{this.changeTab('paper')}}>白皮书</li>
-                                <li className={tabStatus=='media'?'active':''} onClick={()=>{this.changeTab('media')}}>视频</li>
-                                <li className={tabStatus=='tutorial'?'active':''} onClick={()=>{this.changeTab('tutorial')}}>教程</li>
+                                <li className={tabStatus=='media'?'active':''} onClick={()=>{
+                                    this.changeTab('media')
+                                    this.warningMsg()
+                                }}>视频</li>
+                                <li className={tabStatus=='tutorial'?'active':''} onClick={()=>{
+                                    this.changeTab('tutorial')
+                                    this.warningMsg()}}>教程</li>
                             </ul>
                             <div className="select-box">
                                 <div className='title'>筛选条件</div>
