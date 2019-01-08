@@ -83,6 +83,16 @@ class Home extends Component{
                 el: '.swiper-pagination'
             }
         }
+        const params1 = {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false
+            },
+            slideNextClass:'active-swiper-data'
+        }
         let {pages,active} = this.state
         return(
             <Fragment>
@@ -119,7 +129,7 @@ class Home extends Component{
                                 </CSSTransition>
                             </div>
                         </div>
-                        <Swiper {...params}>
+                        <Swiper {...params} >
                             <div><img src={require("../../images/home/banner1.png")} alt="区块链"/></div>
                             <div><img src={require("../../images/home/banner2.png")} alt="区块链"/></div>
                             <div><img src={require("../../images/home/banner3.png")} alt="区块链"/></div>
@@ -239,9 +249,14 @@ class Home extends Component{
                                 </div>
                                 <div className="data-content">
                                     <div className="img-box" onMouseOver={()=>{clearInterval(timer)}}>
-                                        <img className={active=='Data1'?'active':''} src={Data1} alt="区块链" onClick={()=>{this.handleImgChange('Data1')}}/>
+                                        <Swiper {...params1} >
+                                            <div><img src={Data1} alt="区块链"/></div>
+                                            <div><img src={Data2} alt="区块链"/></div>
+                                            <div><img src={Data3} alt="区块链"/></div>
+                                        </Swiper>
+                                        {/*<img className={active=='Data1'?'active':''} src={Data1} alt="区块链" onClick={()=>{this.handleImgChange('Data1')}}/>
                                         <img className={active=='Data2'?'active':''} src={Data2} alt="区块链" onClick={()=>{this.handleImgChange('Data2')}}/>
-                                        <img className={active=='Data3'?'active':''} src={Data3} alt="区块链" onClick={()=>{this.handleImgChange('Data3')}}/>
+                                        <img className={active=='Data3'?'active':''} src={Data3} alt="区块链" onClick={()=>{this.handleImgChange('Data3')}}/>*/}
                                     </div>
                                     <div className="data-description">
                                         中国互联网行业已具规模，并且发展迅猛，行业平均就业薪资高，但专业技术人才供需严重失衡，未来行业的发展亟待复合型及国际化人才的出现。
