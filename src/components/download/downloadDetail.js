@@ -1,12 +1,7 @@
 import React,{Component} from 'react'
 import FloatWin from "../../common/floatWindow";
-import {Modal} from 'antd'
+import { Modal } from 'antd'
 import sxxImg from "../../images/sxxbanner.png";
-/*import sharespost from "../../images/download/sharespost.png";
-import IBM from "../../images/download/IBM.png";
-import xgh from "../../images/download/xgh.png";
-import MATRIX from "../../images/download/MATRIX.png";
-import zq from "../../images/download/zq.png";*/
 import * as actionCreators from "../download/store/actionCreators";
 import connect from "react-redux/es/connect/connect";
 import {Link, withRouter} from "react-router-dom";
@@ -27,6 +22,7 @@ class DownloadDetail extends Component{
     componentDidMount() {
         this.props.getDownloadInfo(this.props.location.pathname.substring(17))
         this.props.getDownloadList()
+        document.documentElement.scrollTop=document.body.scrollTop=0
     }
 
     render(){
@@ -106,46 +102,7 @@ class DownloadDetail extends Component{
                                     </div>
                                 </Link>
                             }):null}
-                            {/*<div className="list">
-                                <img src={sharespost} alt=""/>
-                                <div className="content">
-                                    <div className="title">SharesPost 项目投资者概览</div>
-                                    <div className="description">2018年美国证监会对代币进行监管，多数会归为证券类...</div>
-                                    <div className="time">2018-11-8</div>
-                                </div>
-                            </div>
-                            <div className="list">
-                                <img src={IBM} alt=""/>
-                                <div className="content">
-                                    <div className="title">IBM物联网白皮书：设备民主</div>
-                                    <div className="description">IBM 作为一家全球性的电子企业，理解高科技行业正面临的问题...</div>
-                                    <div className="time">2018-11-8</div>
-                                </div>
-                            </div>
-                            <div className="list">
-                                <img src={xgh} alt=""/>
-                                <div className="content">
-                                    <div className="title">Weridfoxes小怪狐白皮书</div>
-                                    <div className="description">IBM 作为一家全球性的电子企业，理解高科技行业正面临的问题...</div>
-                                    <div className="time">2018-11-8</div>
-                                </div>
-                            </div>
-                            <div className="list">
-                                <img src={MATRIX} alt=""/>
-                                <div className="content">
-                                    <div className="title">MATRIX 人工智能项目白皮书 第十七届西博会</div>
-                                    <div className="description">MATRIX 历史性地将人工智能技术和区块链技术全方位融合...</div>
-                                    <div className="time">2018-11-8</div>
-                                </div>
-                            </div>
-                            <div className="list">
-                                <img src={zq} alt=""/>
-                                <div className="content">
-                                    <div className="title">兴业证券：平安加盟N3...</div>
-                                    <div className="description">R3是目前世界上知名度最高的区...</div>
-                                    <div className="time">2018-11-8</div>
-                                </div>
-                            </div>*/}
+
                         </div>
                         {this.props.downloadList.map((item,index)=>{
                             if(this.props.location.pathname.substring(17)==item.dataId){
