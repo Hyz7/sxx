@@ -130,8 +130,8 @@ class Home extends Component{
                             </div>
                         </div>
                         <Swiper {...params} >
-                            <div><img src={require("../../images/home/banner1.png")} alt="区块链"/></div>
-                            <div><img src={require("../../images/home/banner2.png")} alt="区块链"/></div>
+                            <div><img src={require("../../images/home/banner1-pc.png")} alt="区块链"/></div>
+                            <div><img src={require("../../images/home/banner2-pc.png")} alt="区块链"/></div>
                             <div><img src={require("../../images/home/banner3.png")} alt="区块链"/></div>
                         </Swiper>
                     </div>
