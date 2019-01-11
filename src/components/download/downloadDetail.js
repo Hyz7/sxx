@@ -114,10 +114,6 @@ class DownloadDetail extends Component{
                                 )
                             }
                         })}
-                        {/*<div className="btn-box">
-                            <div className="btn prev-btn">上一篇：AAA全球应用联盟链白皮书</div>
-                            <div className="btn next-btn">下一篇：SharesPost 项目投资者概览</div>
-                        </div>*/}
                     </div>
                 </div>
             </div>
