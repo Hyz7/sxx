@@ -14,29 +14,157 @@
     position: relative;
     width: 1200px;
     margin: 0 auto;
+    .lnav{
+      position: absolute;
+      top: 100px;
+      .scrollNav{
+        position:relative;
+        top:0;
+        width: 180px;
+        min-width: 180px;
+        z-index: 100;
+        padding: 30px 20px;
+        box-sizing: border-box;
+        background-color: #f8f8f8;
+        &>p{
+          font-size: 20px;
+          font-weight: 900;
+        }
+        .shuxian{
+          width: 1px;
+          border-right: 1px solid #B3B3B3;
+          position: absolute;
+          top: 92px;
+          left: 35px;
+          height: 480px;
+        }
+        .hidden-xs{
+          font-size: 1.6rem;
+          color: #000;
+          font-weight: 900;
+        }
+        .lnavs{
+          position: relative;
+          li{
+            height: 40px;
+            padding-left: 10px;
+            box-sizing: border-box;
+            .lnav_active {
+              color: @theme-color;
+              a{
+                color: @theme-color;
+              }
+              .circle{
+                background-color:@theme-color;
+                border: 0;
+              }
+            }
+            a{
+              font-size: 16px;
+              color: inherit;
+              line-height: 30px;
+              text-decoration: none;
+              display: flex;
+              flex-wrap: nowrap;
+              .circle{
+                top: 10px;
+                width: 11px;
+                height: 11px;
+                margin-right: 0.5rem;
+                font-size: 1.2rem;
+                line-height: 3.7rem;
+                background: #f8f8f8;
+                position: relative;
+                z-index: 1;
+                border: 1px solid #B3B3B3;
+                border-radius: 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+    .teacher-title{
+      width: 240px;
+      margin: 60px auto;
+      font-size: 30px;
+      color: #666;
+    }
     .teacher-list{
       width: 1200px;
       margin-bottom: 60px;
-      .teacher-title{
-        width: 240px;
-        margin: 60px auto;
-        font-size: 30px;
-        color: #666;
-      }
+      padding-left: 220px;
       .list{
-        height: 360px;
+        height: 260px;
         background-color: #fff;
         color: #4d4d4d;
-        padding: 60px 30px;
+        padding: 30px;
         box-sizing: border-box;
         display: flex;
         flex-wrap: nowrap;
         cursor: pointer;
         .avatar{
-          width: 220px;
-          height: 220px;
+          width: 200px;
+          height: 200px;
           border-radius: 50%;
           margin-right: 30px;
+        }
+        .list-right-box{
+          width: 680px;
+          //border: 1px solid red;
+          .box{
+            margin: 20px 0;
+            .text{font-size: 14px;}
+          }
+          .goodAt{
+            font-size: 18px;
+            display: flex;
+            flex-wrap: nowrap;
+            span{
+              font-weight: bold;
+              white-space: nowrap;
+            }
+          }
+          .goodAt1{
+            font-size: 18px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            span{
+              font-weight: bold;
+              float: left;
+            }
+          }
+          .title-box{
+            display: flex;
+            flex-wrap: nowrap;
+            line-height: 22px;
+            span{
+              margin-top: 5px;
+              height: 18px;
+              line-height: 18px;
+              font-size: 14px;
+              color: #fff;
+              background-color: @theme-color;
+              padding: 0 5px;
+              box-sizing: border-box;
+              border-radius: 3px;
+            }
+            .teacher-name{
+              font-size: 22px;
+              margin: 0 20px;
+              font-weight: 600;
+            }
+            .teacher-posi{
+              margin-top: 5px;
+              font-size: 16px;
+              border-left: 1px solid #666666;
+              color: #666666;
+              height: 18px;
+              line-height: 18px;
+              padding-left: 15px;
+            }
+          }
         }
         .right-box{
           width: 880px;
@@ -55,12 +183,7 @@
               float: left;
             }
           }
-          .box{
-            margin: 20px 0;
-            .text{
-              font-size: 14px;
-            }
-          }
+
         }
         .name{
           font-size: 24px;
@@ -82,35 +205,7 @@
       }
 
     }
-    .scrollNav{
-      position: fixed;
-      top:400px;
-      right:60px;
-      background-color: #fff;
-      width: 180px;
-      li{
-        margin-bottom: 5px;
-        height: 40px;
-        text-align: center;
-        line-height: 40px;
-        box-shadow: 0 0 6px rgba(0,0,0,.16);
-        cursor: pointer;
-        position: relative;
-        &:hover{
-          background-color: @theme-color;
-          color: #fff;
-          span{
-            position: absolute;
-            top: 0;
-            left: -15px;
-            width: 10px;
-            background-color: @theme-color;
-            display: block;
-            height: 100%;
-          }
-        }
-      }
-    }
+
   }
 
 }
