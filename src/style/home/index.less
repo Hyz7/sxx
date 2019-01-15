@@ -179,16 +179,43 @@
         }
       }
       .item1-list{
+        position: relative;
         width: 270px;
         border: 1px solid #BCBCBC;
         height: 100px;
+        display: block;
         float: left;
         margin-right: 25px;
         padding: 20px 60px;
         box-sizing: border-box;
         cursor: pointer;
+        overflow: hidden;
+        .inner-box{
+          position: absolute;
+          height: 100px;
+          width: 100%;
+          top: 100px;
+          left: 0;
+          background-color: rgba(93,150,238,0.7);
+          transition: all 500ms;
+
+          .button{
+            text-align: center;
+            color: #fff;
+            height: 30px;
+            line-height: 30px;
+            width: 150px;
+            border-radius: 5px;
+            margin: 33px auto;
+            border: 1px solid #fff;
+          }
+        }
         &:hover{
-          box-shadow: 0 0 12px rgba(78,140,238,.3) inset;
+          .inner-box{
+            top: 0!important;
+          }
+          //box-shadow: 0 0 12px rgba(78,140,238,.3) inset;
+          transition: all 500ms;
         }
         .list-title{
           font-size: 24px;
@@ -441,8 +468,6 @@
       .teacher-introduce{
         height: 520px;
         .introduce-list{
-          padding: 15px 10px 0 10px;
-          box-sizing: border-box;
           width: 290px;
           height: 500px;
           float: left;
@@ -450,9 +475,79 @@
           box-shadow: 0 0 6px rgba(0,0,0,.16);
           cursor: pointer;
           transition: all 500ms;
+          position: relative;
+          overflow: hidden;
+          .inner-box1{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            padding: 15px 10px 0 10px;
+            box-sizing: border-box;
+            width: 100%;
+            height: 500px;
+            transform: rotateY(0deg);
+            transition: all 0.50s ease-in-out 0s;
+          }
+          .inner-box2{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            padding: 15px 10px 0 10px;
+            box-sizing: border-box;
+            width: 100%;
+            height: 500px;
+            transform: rotateY(90deg);
+            transition: all 0.50s ease-in-out 0s;
+            background-color: rgba(0,0,0,.5);
+            color: #fff;
+            .t1{
+              font-size: 20px;
+              font-weight: bold;
+              padding-top: 50px;
+              text-align: center;
+            }
+            .t2{
+              font-size: 16px;
+              padding-top: 12px;
+              text-align: center;
+            }
+            .t3{
+              border-bottom: 1px solid #fff;
+              width: 100%;
+              margin: 15px 0;
+            }
+            .t4{
+              font-size: 14px;
+              width: 202px;
+              text-align: justify;
+              margin: 20px auto 0;
+            }
+          }
+          .inner-box3{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            //background-color: #fff;
+          }
           &:hover{
-            transform: scale(1.05);
-            box-shadow: 3px 3px 12px rgba(0,0,0,.16);
+            .inner-box1{
+              transform: rotateY(90deg);
+              transition: all 0.50s ease-in-out 0s;
+            }
+            .inner-box2{
+              transform: rotateY(0deg);
+              transition: all 0.50s ease-in-out 0s;
+            }
+            //transform: rotateY(90deg);
+            //transition: all 0.50s ease-in-out 0s;
+
+            /*.inner-box{
+              transform: rotateY(0deg);
+              transition: all 0.50s ease-in-out 0s
+            }*/
           }
           .content{
             color: #4c4c4c;

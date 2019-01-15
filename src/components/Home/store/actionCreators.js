@@ -1,15 +1,16 @@
-import * as actionTypes from './actionTypes'
+import * as actionTypes from '../../../store/actionTypes'
 import axios from 'axios'
-import * as Api from '../../../api'
-const getLeftList=(result)=>({
-    type: actionTypes.GET_MENU_LIST,
+import * as API from '../../../api'
+
+const getList=(result)=>({
+    type:actionTypes.GET_TEACHER_LIST,
     result
 })
 
-export const getMenuLeftList=()=>{
+export const getTeacherList=()=>{
     return (dispatch)=>{
-        axios.get(Api.GET_MENU_LIST).then(res=>{
-            dispatch(getLeftList(res.data))
+        axios.get(API.GET_TEACHER_LIST).then(res=>{
+            dispatch(getList(res.data.teacherDTO))
         })
     }
 }
