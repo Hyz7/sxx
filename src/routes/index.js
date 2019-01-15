@@ -3,7 +3,8 @@ import { Route, Switch, Redirect} from 'react-router-dom'
 import AsyncComponent from '../common/loadable'
 import Header from '../common/header'
 import Footer from '../common/footer'
-/*import Home from '../components/home'
+import Home from '../components/home'
+/*
 import Sxx from '../components/sixuexing'
 // import Teacher from '../components/teacher'
 import About from '../components/about'
@@ -24,7 +25,7 @@ export default ()=>(
     <div>
         <Header />
         <Switch>
-            <Route path='/' exact component={AsyncComponent(()=>import('../components/home'))}></Route>
+            <Route path='/' exact component={Home}></Route>
             <Route path='/allcourse' component={AsyncComponent(()=>import('../components/Home/allCourse'))}></Route>
             <Route path='/teacher' component={AsyncComponent(()=>import('../components/teacher'))}></Route>
             <Route path='/sixuexing' exact component={AsyncComponent(()=>import('../components/sixuexing'))}></Route>
