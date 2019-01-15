@@ -146,7 +146,7 @@ class Teacher extends Component {
                             <img className="avatar" src='http://52.83.225.97:8080/imgs/teacher/zhang.png'/>
                             <div className="list-right-box">
                                 <div className="title-box">
-                                    <span>专家</span><div className="teacher-name">张小松</div><div className="teacher-posi">区块链特约讲师</div>
+                                    <span>专家</span><div className="teacher-name">张小松</div><div className="teacher-posi">专家顾问</div>
                                 </div>
                                 <div className="box">
                                     <div className="text">长江学者特聘教授</div>
@@ -182,7 +182,7 @@ class Teacher extends Component {
                             <img className="avatar" src='http://52.83.225.97:8080/imgs/teacher/guobing.png'/>
                             <div className="list-right-box">
                                 <div className="title-box">
-                                    <span>专家</span><div className="teacher-name">郭兵</div><div className="teacher-posi">区块链特约讲师</div>
+                                    <span>专家</span><div className="teacher-name">郭兵</div><div className="teacher-posi">专家顾问</div>
                                 </div>
                                 <div className="box">
                                     <div className="text">四川大学计算机学院（软件学院）副院长,博士生导师</div>
@@ -226,7 +226,7 @@ class Teacher extends Component {
                             <img className="avatar" src='http://52.83.225.97:8080/imgs/teacher/gujianjun.png'/>
                             <div className="list-right-box">
                                 <div className="title-box">
-                                    <span>专家</span><div className="teacher-name">顾见军</div><div className="teacher-posi">区块链特约讲师</div>
+                                    <span>专家</span><div className="teacher-name">顾见军</div><div className="teacher-posi">实战导师</div>
                                 </div>
                                 <div className="box">
                                     <div className="text">区块链课程特聘专家</div>
@@ -275,7 +275,7 @@ class Teacher extends Component {
                             </div>*/}
                             <div className="list-right-box">
                                 <div className="title-box">
-                                    <span>专家</span><div className="teacher-name">陈诗佳</div><div className="teacher-posi">区块链特约讲师</div>
+                                    <span>专家</span><div className="teacher-name">陈诗佳</div><div className="teacher-posi">实战导师</div>
                                 </div>
                                 <div className="box">
                                     <div className="text">网信天成创始人</div>
@@ -308,7 +308,7 @@ class Teacher extends Component {
                             </div>*/}
                             <div className="list-right-box">
                                 <div className="title-box">
-                                    <span>专家</span><div className="teacher-name">刘宇峰</div><div className="teacher-posi">区块链特约讲师</div>
+                                    <span>专家</span><div className="teacher-name">刘宇峰</div><div className="teacher-posi">实战导师</div>
                                 </div>
                                 <div className="box">
                                     <div className="text">网信天成创始人</div>
@@ -345,7 +345,7 @@ class Teacher extends Component {
                             </div>*/}
                             <div className="list-right-box">
                                 <div className="title-box">
-                                    <span>专家</span><div className="teacher-name">张仕斌</div><div className="teacher-posi">区块链特约讲师</div>
+                                    <span>专家</span><div className="teacher-name">张仕斌</div><div className="teacher-posi">实战导师</div>
                                 </div>
                                 <div className="box">
                                     <div className="text">四川省司法厅网络安全鉴定专家</div>
@@ -362,6 +362,25 @@ class Teacher extends Component {
                                     发表学术论文100余篇（其中SCI检索18篇）；编著出版教材8本,省级精品在线开放
                                     课程先 后获得省部级科技进步一、二、三等奖4项，教学成果奖1等奖3项、二等
                                     奖4项。
+                                </div>
+                            </div>
+                        </div>
+                        <div className="list" id='shuai'>
+                            <img className="avatar" src='http://52.83.225.97:8080/imgs/teacher/he.png'/>
+                            <div className="list-right-box">
+                                <div className="title-box">
+                                    <span>专家</span><div className="teacher-name">帅青红</div><div className="teacher-posi">专家顾问</div>
+                                </div>
+                                <div className="box">
+                                    <div className="text">博士、教授</div>
+                                    <div className="text">西南财经大学博士生导师</div>
+                                </div>
+                                <div className="goodAt"><span>擅长领域：</span>电子商务，科技金融，区块链应用</div>
+                                <div className="goodAt1" style={{marginTop: '10px'}}><span>简介：</span>
+                                    中国电子商务协会电子金融产业联盟专家，中国互联网金融协会专家。四川省
+                                    市场监管研究院特聘研究员、四川省科技产业联盟专家，四川省电子商务协会
+                                    专家组副组长、四川省软件行业协会副理事长兼电子商务与电子政务专委会主任
+                                    ，成都市政府特聘电子商务专家。
                                 </div>
                             </div>
                         </div>
@@ -383,7 +402,7 @@ class Teacher extends Component {
                             </div>*/}
                             <div className="list-right-box">
                                 <div className="title-box">
-                                    <span>专家</span><div className="teacher-name">姚兰</div><div className="teacher-posi">区块链特约讲师</div>
+                                    <span>专家</span><div className="teacher-name">姚兰</div><div className="teacher-posi">课程讲师</div>
                                 </div>
                                 <div className="box">
                                     <div className="text">西南交通大学博士</div>
@@ -401,7 +420,7 @@ class Teacher extends Component {
                             <img className="avatar" src='http://52.83.225.97:8080/imgs/teacher/gui.png'/>
                             <div className="list-right-box">
                                 <div className="title-box">
-                                    <span>专家</span><div className="teacher-name">桂勋</div><div className="teacher-posi">区块链讲师</div>
+                                    <span>专家</span><div className="teacher-name">桂勋</div><div className="teacher-posi">课程讲师</div>
                                 </div>
                                 <div className="box">
                                     <div className="text">电子科技大学教授</div>
@@ -457,7 +476,7 @@ class Teacher extends Component {
                             </div>*/}
                             <div className="list-right-box">
                                 <div className="title-box">
-                                    <span>专家</span><div className="teacher-name">李维江</div><div className="teacher-posi">区块链讲师</div>
+                                    <span>专家</span><div className="teacher-name">李维江</div><div className="teacher-posi">课程讲师</div>
                                 </div>
                                 <div className="box">
                                     <div className="text">美国斯蒂文斯理工学院网络信息工程硕士</div>
@@ -497,7 +516,7 @@ class Teacher extends Component {
                             </div>*/}
                             <div className="list-right-box">
                                 <div className="title-box">
-                                    <span>专家</span><div className="teacher-name">田涌町</div><div className="teacher-posi">区块链讲师</div>
+                                    <span>专家</span><div className="teacher-name">田涌町</div><div className="teacher-posi">课程讲师</div>
                                 </div>
                                 <div className="box">
                                     <div className="text">电子科技大学& 格拉斯哥大学双校培养电子信息工程学士，一等荣誉学位。</div>
@@ -535,7 +554,7 @@ class Teacher extends Component {
                             </div>*/}
                             <div className="list-right-box">
                                 <div className="title-box">
-                                    <span>专家</span><div className="teacher-name">何涛</div><div className="teacher-posi">区块链讲师</div>
+                                    <span>专家</span><div className="teacher-name">何涛</div><div className="teacher-posi">课程讲师</div>
                                 </div>
                                 <div className="box">
                                     <div className="text">电子科技大学机电学院硕士</div>
@@ -551,6 +570,7 @@ class Teacher extends Component {
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
