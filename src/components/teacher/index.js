@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 import sxxImg from '../../images/sxxbanner.png'
 import FloatWin from '../../common/floatWindow'
-import { Modal } from 'antd'
-// import  Modal  from 'react-bootstrap/lib/Modal'
+import {Modal} from 'antd'
 import { connect } from 'react-redux'
-import { actionCreators } from '../Home/store'
+import { actionCreators } from '../teacher/store'
 import uniqueId from 'lodash/uniqueId'
+
 class Teacher extends Component {
     state = {
         teacherType: 'qkl',
@@ -26,12 +26,12 @@ class Teacher extends Component {
         document.removeEventListener('scroll', this.winScroll.bind(this), false);
     }
 
-    handleOk = (e) => {
+    handleOk = () => {
         this.setState({
             visible: false,
         });
     }
-    handleCancel = (e) => {
+    handleCancel = () => {
         this.setState({
             visible: false,
         });
@@ -39,7 +39,7 @@ class Teacher extends Component {
 
     winScroll = () => {
         let scollTop = document.body.scrollTop || document.documentElement.scrollTop;
-        if (scollTop < 550) {
+        if (scollTop < 550 || scollTop>3100) {
             if (this.state.navPosition) {
                 this.setState({
                     navPosition: !this.state.navPosition
@@ -96,24 +96,22 @@ class Teacher extends Component {
         return (
             <div className='teacher-container'>
                 <FloatWin />
+
                 <div className="teacher-banner">
                     <img src={sxxImg} alt=""/>
                 </div>
-                {/*<Modal show={this.state.visible} onHide={()=>this.handleCancel()}>
-                    gdsag
-                </Modal>*/}
-                <Modal title={this.state.teacherName}
+                {/*<Modal title={this.state.teacherName}
                        visible={this.state.visible}
                        onOk={this.handleOk}
                        onCancel={this.handleCancel}
                        footer={null}
-                       title={this.state.boxContent.teaCname}
+                       // title={this.state.boxContent.teaCname}
                        closable={false}
                        style={{top:'400px'}}
                        wrapClassName='teacherModal'
                 >
                     {this.state.boxContent.teaDesc}
-                </Modal>
+                </Modal>*/}
                 <div className="teacher-position">
                     <div className="teacher-title">专家大牛</div>
                     <div className="lnav">
@@ -450,7 +448,7 @@ class Teacher extends Component {
 }
 
 const mapStateToProps=(state)=>({
-    teacherList:state.home.teacherList
+    teacherList:state.teacher.teacherList
 })
 
 const mapDispatchToProps=(dispatch)=>({
