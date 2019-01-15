@@ -20,7 +20,10 @@ export const GET_DOWNLOAD_FILE = 'download/GET_DOWNLOAD_FILE'
  * @type {string}
  */
 export const GET_TYPE_LIST = 'sixuexing/GET_TYPE_LIST'
-
+/**
+ * 获取新闻列表
+ * @type {string}
+ */
 export const GET_NEWS_LIST = 'sixuexing/GET_NEWS_LIST'
 /**
  * 获取行业动态列表
@@ -38,8 +41,16 @@ export const GET_MORE_INDUSTRY_LIST = 'sixuexing/GET_MORE_INDUSTRY_LIST'
  * @type {string}
  */
 export const GET_STUDENT_LIST = 'sixuexing/GET_STUDENT_LIST'
-
+/**
+ * 获取新闻详情
+ * @type {string}
+ */
 export const GET_DETAIL_INFO='sixuexing/GET_DETAIL_INFO'
-
+/**
+ * 加载更多
+ * @type {string}
+ */
 export const GET_MORE_LIST = 'sixuexing/GET_MORE_LIST'
+
+export const GET_TEACHER_LIST= 'teacher/GET_TEACHER_LIST'
 

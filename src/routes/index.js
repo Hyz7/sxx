@@ -1,10 +1,11 @@
 import React,{Component,Fragment} from 'react'
 import { Route, Switch, Redirect} from 'react-router-dom'
+import AsyncComponent from '../common/loadable'
 import Header from '../common/header'
 import Footer from '../common/footer'
 import Home from '../components/home'
 import Sxx from '../components/sixuexing'
-import Teacher from '../components/teacher'
+// import Teacher from '../components/teacher'
 import About from '../components/about'
 import Core from '../components/core'
 import Download from '../components/download'
@@ -18,13 +19,14 @@ import NewsDetail from "../components/sixuexing/newsDetail";
 import Industry from "../components/sixuexing/industry";
 import Student from "../components/sixuexing/student";
 import DownloadDetail from "../components/download/downloadDetail";
+
 export default ()=>(
     <div>
         <Header />
         <Switch>
-            <Route path='/' exact component={Home}></Route>
+            <Route path='/' exact component={AsyncComponent(()=>import('../components/home'))}></Route>
             <Route path='/allcourse' component={AllCourse}></Route>
-            <Route path='/teacher' component={Teacher}></Route>
+            <Route path='/teacher' component={AsyncComponent(()=>import('../components/teacher'))}></Route>
             <Route path='/sixuexing' exact component={Sxx}></Route>
             <Route path='/sixuexing/news' component={Sxx}></Route>
             <Route path='/sixuexing/industry' component={Industry}></Route>

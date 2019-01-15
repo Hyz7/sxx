@@ -1,6 +1,6 @@
 let env = process.env.NODE_ENV
 
-const HOST = env === 'production'? 'https://52.83.225.97:30000' : 'https://52.83.225.97:30000'
+const HOST = env === 'production'? 'https://52.83.225.97:30000' : 'http://192.168.0.102:31000'
 // http://192.168.0.102:8080
 export const GET_MENU_LIST = HOST+'/getTitle'
 
@@ -35,3 +35,8 @@ export const GET_DOWNLOAD_INFO = HOST+'/data/findDataInfoByDataId'
  * @type {string}
  */
 export const GET_DOWNLOAD_FILE = HOST+'/data/downloadData'
+/**
+ * 获取师资列表
+ * @type {string}
+ */
+export const GET_TEACHER_LIST = HOST+ '/teaching/showTeacherList'
