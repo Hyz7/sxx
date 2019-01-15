@@ -18,7 +18,9 @@ export default function asyncComponent(importComponent) {
             const C = this.state.component;
             return C
                 ? <C {...this.props} />
-                : <Spin size="large" />;
+                : <div style={{width:'100%',minWidth:'1200px',height:'200px'}}>
+                    <Spin size="large" style={{width:'100px',margin:'0 auto',display:'block',lineHeight:'200px'}}/>
+                </div>;
         }
     }
     return AsyncComponent;
