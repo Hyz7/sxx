@@ -5,6 +5,7 @@ import project from '../../images/core/project.png'
 import model from '../../images/core/model.png'
 import FloatWin from '../../common/floatWindow'
 import sxxImg from "../../images/sxxbanner.png";
+import MyWOW from "../../common/wow";
 class Core extends Component{
     componentDidMount() {
         document.documentElement.scrollTop=0
@@ -36,21 +37,28 @@ class Core extends Component{
                             </div>
                         </div>
                         <div className="core-middle">
-                            <div className="list">
-                                <img src={model} alt=""/>
-                                <div className="title">首创培训模式</div>
-                                <div className="text">全国首创区块链开源项目源码工程和软件设计模式相结合的培训模式。</div>
-                            </div>
-                            <div className="list">
-                                <img src={project} alt=""/>
-                                <div className="title">项目资源多</div>
-                                <div className="text"> 与超过百家顶尖企业保持合作联系。</div>
-                            </div>
-                            <div className="list">
-                                <img src={coures} alt=""/>
-                                <div className="title">高质量课程</div>
-                                <div className="text">由电子科技大学等高校教授亲自主导课程设计，萃取融合多家顶级公司项目经验，打造真正对接就业的实战课程。</div>
-                            </div>
+
+                            <MyWOW  className='wow bounceInUp list' delay="0">
+                                <div className="">
+                                    <img src={model} alt=""/>
+                                    <div className="title">首创培训模式</div>
+                                    <div className="text">全国首创区块链开源项目源码工程和软件设计模式相结合的培训模式。</div>
+                                </div>
+                            </MyWOW>
+                            <MyWOW  className='wow bounceInUp list' delay="0.3s">
+                                <div className="">
+                                    <img src={project} alt=""/>
+                                    <div className="title">项目资源多</div>
+                                    <div className="text"> 与超过百家顶尖企业保持合作联系。</div>
+                                </div>
+                            </MyWOW>
+                            <MyWOW  className='wow bounceInUp list' delay="0.6s">
+                                <div className="">
+                                    <img src={coures} alt=""/>
+                                    <div className="title">高质量课程</div>
+                                    <div className="text">由电子科技大学等高校教授亲自主导课程设计，萃取融合多家顶级公司项目经验，打造真正对接就业的实战课程。</div>
+                                </div>
+                            </MyWOW>
                         </div>
                         <div className='core-item2'>
                             {/*<img src={Core2} alt=""/>*/}

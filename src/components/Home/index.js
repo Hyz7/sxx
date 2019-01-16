@@ -15,6 +15,7 @@ import baomingImg from '../../images/home/baoming.png'
 import lodashId from "lodash/uniqueId";
 import { message } from 'antd';
 import FloatWin from '../../common/floatWindow'
+import MyWOW from '../../common/wow'
 let timer;
 class Home extends Component{
     constructor(props){
@@ -134,50 +135,62 @@ class Home extends Component{
 
                     <div className="item1">
                         <div className="item1-position">
-                            <div className="item1-list" onClick={()=>{this.handleBoxChange('self')}}>
-                                <span className='span1'></span>
-                                <div className="list-title">个人</div>
-                                <div className="list-text">人才培养</div>
-                                <div className="inner-box">
-                                    <div className="button">
-                                        查看详情
+                            <MyWOW  className='wow bounceInRight' delay="0">
+                                <div className="item1-list" onClick={()=>{this.handleBoxChange('self')}}>
+                                    <span className='span1'></span>
+                                    <div className="list-title">个人</div>
+                                    <div className="list-text">人才培养</div>
+                                    <div className="inner-box">
+                                        <div className="button">
+                                            查看详情
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="item1-list" onClick={()=>{this.handleBoxChange('university')}}>
-                                <span className='span2'></span>
-                                <div className="list-title">高校</div>
-                                <div className="list-text">技术赋能</div>
-                                <div className="inner-box">
-                                    <div className="button">
-                                        查看详情
+                            </MyWOW>
+                            <MyWOW  className='wow bounceInRight' delay="0.3s">
+                                <div className="item1-list" onClick={()=>{this.handleBoxChange('university')}}>
+                                    <span className='span2'></span>
+                                    <div className="list-title">高校</div>
+                                    <div className="list-text">技术赋能</div>
+                                    <div className="inner-box">
+                                        <div className="button">
+                                            查看详情
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="item1-list" onClick={()=>{this.handleBoxChange('enterprise')}}>
-                                <span className='span3'></span>
-                                <div className="list-title">政企</div>
-                                <div className="list-text">产业研发</div>
-                                <div className="inner-box">
-                                    <div className="button">
-                                        查看详情
+                            </MyWOW>
+                            <MyWOW  className='wow bounceInRight' delay="0.6s">
+                                <div className="item1-list" onClick={()=>{this.handleBoxChange('enterprise')}}>
+                                    <span className='span3'></span>
+                                    <div className="list-title">政企</div>
+                                    <div className="list-text">产业研发</div>
+                                    <div className="inner-box">
+                                        <div className="button">
+                                            查看详情
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="item1-list item-list">
-                                <Link to='contactUs' className="item1-list-box">
-                                    <i className='img1'></i>来校路线
-                                </Link>
-                                <a className="item1-list-box fr" onClick={()=>{this.scrollToAnchor('baoming')}}>
-                                    <i className='img2'></i>报名流程
-                                </a>
-                                <Link to='core' className="item1-list-box" style={{marginTop:'4px'}}>
-                                    <i className='img3'></i>核心优势
-                                </Link>
-                                <Link to='sixuexing/student' className="item1-list-box fr" style={{marginTop:'4px'}}>
-                                    <i className='img4'></i>学员故事
-                                </Link>
-                            </div>
+                            </MyWOW>
+                            <MyWOW  className='wow bounceInRight' delay="0.9s">
+                                <div className="item1-list item-list">
+                                    <Link to='contactUs' className="item1-list-box">
+                                        <i className='img1'></i>来校路线
+                                    </Link>
+                                    <a className="item1-list-box fr" onClick={()=>{this.scrollToAnchor('baoming')}}>
+                                        <i className='img2'></i>报名流程
+                                    </a>
+                                    <Link to='core' className="item1-list-box" style={{marginTop:'4px'}}>
+                                        <i className='img3'></i>核心优势
+                                    </Link>
+                                    <Link to='sixuexing/student' className="item1-list-box fr" style={{marginTop:'4px'}}>
+                                        <i className='img4'></i>学员故事
+                                    </Link>
+                                </div>
+                            </MyWOW>
+
+
+
+
                         </div>
                     </div>
                     {pages==''?
@@ -283,102 +296,109 @@ class Home extends Component{
                                 <div className="title-description">顶尖高校教授研发课程，实名行业实战大牛授课</div>
                                 <div className="teacher-introduce">
                                     <Link to='teacher' className="more-btn">查看更多></Link>
-                                    <div className="introduce-list">
-                                        <div className="inner-box1">
-                                            <div className="avatar active1"></div>
-                                            <div className="name">张小松</div>
-                                            <div className="position">长江学者特聘教授</div>
-                                            <div className="content">
-                                                电子科技大学博士生导师，国家重点研发计划网络空间安全专项首席科学家，2017国家十大网络安全优秀人才，电子科技大学网络空间安全研究中心主任，政府治理大数据应用技术国家工程实验室技术专家委员会副主任，国防科技工业网络安全创新中心专家委员会委员，教育部科技委国防学部委员，四川省学术技术带头人。
+                                    <MyWOW style={{}} className='wow bounceInLeft' delay="300ms" >
+                                        <div className="introduce-list">
+                                            <div className="inner-box1">
+                                                <div className="avatar active1"></div>
+                                                <div className="name">张小松</div>
+                                                <div className="position">长江学者特聘教授</div>
+                                                <div className="content">
+                                                    电子科技大学博士生导师，国家重点研发计划网络空间安全专项首席科学家，2017国家十大网络安全优秀人才，电子科技大学网络空间安全研究中心主任，政府治理大数据应用技术国家工程实验室技术专家委员会副主任，国防科技工业网络安全创新中心专家委员会委员，教育部科技委国防学部委员，四川省学术技术带头人。
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div className="inner-box2">
-                                            <div className="t1">张小松</div>
-                                            <div className="t2">长江学者特聘教授</div>
-                                            <div className="t3"></div>
-                                            <div className="t4">
-                                                电子科技大学博士生导师，国家重点研发计划网络空间安全专项首席科学家，2017国家十大网络安全优秀人才，电子科技大学网络空间安全研究中心主任，政府治理大数据应用技术国家工程实验室技术专家委员会副主任，国防科技工业网络安全创新中心专家委员会委员，教育部科技委国防学部委员，四川省学术技术带头人。
+                                            <div className="inner-box2">
+                                                <div className="t1">张小松</div>
+                                                <div className="t2">长江学者特聘教授</div>
+                                                <div className="t3"></div>
+                                                <div className="t4">
+                                                    电子科技大学博士生导师，国家重点研发计划网络空间安全专项首席科学家，2017国家十大网络安全优秀人才，电子科技大学网络空间安全研究中心主任，政府治理大数据应用技术国家工程实验室技术专家委员会副主任，国防科技工业网络安全创新中心专家委员会委员，教育部科技委国防学部委员，四川省学术技术带头人。
+                                                </div>
                                             </div>
+                                            <div className="inner-box3"></div>
                                         </div>
-                                        <div className="inner-box3"></div>
-                                    </div>
-                                    <div className="introduce-list">
-                                        <div className="inner-box1">
-                                            <div className="avatar active2"></div>
-                                            <div className="name">桂勋</div>
-                                            <div className="position">思学行教务总监</div>
-                                            <div className="content">
-                                                美国田纳西大学CURENT实验室博士后，电子科技大学教授，思学行教育科技合伙人，国际电气工程师协会IEEE 2418.2 区块链数据格式标准制定委员会成员。
-                                                目前参与科技部重大专项《面向新型城镇的能源互联网关键技术及应用》，负责高性能能源区块链的研制工作。
+                                        <div className="introduce-list">
+                                            <div className="inner-box1">
+                                                <div className="avatar active2"></div>
+                                                <div className="name">桂勋</div>
+                                                <div className="position">思学行教务总监</div>
+                                                <div className="content">
+                                                    美国田纳西大学CURENT实验室博士后，电子科技大学教授，思学行教育科技合伙人，国际电气工程师协会IEEE 2418.2 区块链数据格式标准制定委员会成员。
+                                                    目前参与科技部重大专项《面向新型城镇的能源互联网关键技术及应用》，负责高性能能源区块链的研制工作。
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div className="inner-box2">
-                                            <div className="t1">桂勋</div>
-                                            <div className="t2">思学行教务总监</div>
-                                            <div className="t3"></div>
-                                            <div className="t4">
-                                                美国田纳西大学CURENT实验室博士后，电子科技大学教授，思学行教育科技合伙人，国际电气工程师协会IEEE 2418.2 区块链数据格式标准制定委员会成员。
-                                                目前参与科技部重大专项《面向新型城镇的能源互联网关键技术及应用》，负责高性能能源区块链的研制工作。
+                                            <div className="inner-box2">
+                                                <div className="t1">桂勋</div>
+                                                <div className="t2">思学行教务总监</div>
+                                                <div className="t3"></div>
+                                                <div className="t4">
+                                                    美国田纳西大学CURENT实验室博士后，电子科技大学教授，思学行教育科技合伙人，国际电气工程师协会IEEE 2418.2 区块链数据格式标准制定委员会成员。
+                                                    目前参与科技部重大专项《面向新型城镇的能源互联网关键技术及应用》，负责高性能能源区块链的研制工作。
+                                                </div>
                                             </div>
+                                            <div className="inner-box3"></div>
                                         </div>
-                                        <div className="inner-box3"></div>
-                                    </div>
-                                    <div className="introduce-list">
-                                        <div className="inner-box1">
-                                            <div className="avatar active3"></div>
-                                            <div className="name">姚兰</div>
-                                            <div className="position">成都信息工程大学副教授</div>
-                                            <div className="content">
-                                                西南交通大学博士，美国西北理工大学访问学者，成都软
-                                                件外包业务首批赴美培训专家，长期在成都信息工程大学
-                                                开设《面向对象程序设计》，《C++程序设计》等课程。研
-                                                究领域：区块链+人工智能，在区块链+人工智能领域发表论
-                                                文10多篇检索论文。
+                                    </MyWOW>
+                                    <MyWOW  className='wow bounceInRight' delay="300ms">
+                                        <div className="introduce-list">
+                                            <div className="inner-box1">
+                                                <div className="avatar active3"></div>
+                                                <div className="name">姚兰</div>
+                                                <div className="position">成都信息工程大学副教授</div>
+                                                <div className="content">
+                                                    西南交通大学博士，美国西北理工大学访问学者，成都软
+                                                    件外包业务首批赴美培训专家，长期在成都信息工程大学
+                                                    开设《面向对象程序设计》，《C++程序设计》等课程。研
+                                                    究领域：区块链+人工智能，在区块链+人工智能领域发表论
+                                                    文10多篇检索论文。
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div className="inner-box2">
-                                            <div className="t1">姚兰</div>
-                                            <div className="t2">成都信息工程大学副教授</div>
-                                            <div className="t3"></div>
-                                            <div className="t4">
-                                                西南交通大学博士，美国西北理工大学访问学者，成都软件外
-                                                包业务首批赴美培训专家，长期在成都信息工程大学开设《面
-                                                向对象程序设计》，《C++程序设计》等课程。研究领域：区块
-                                                链+人工智能，在区块链+人工智能领域发表论文10多篇检索论文。
+                                            <div className="inner-box2">
+                                                <div className="t1">姚兰</div>
+                                                <div className="t2">成都信息工程大学副教授</div>
+                                                <div className="t3"></div>
+                                                <div className="t4">
+                                                    西南交通大学博士，美国西北理工大学访问学者，成都软件外
+                                                    包业务首批赴美培训专家，长期在成都信息工程大学开设《面
+                                                    向对象程序设计》，《C++程序设计》等课程。研究领域：区块
+                                                    链+人工智能，在区块链+人工智能领域发表论文10多篇检索论文。
+                                                </div>
                                             </div>
+                                            <div className="inner-box3"></div>
                                         </div>
-                                        <div className="inner-box3"></div>
-                                    </div>
-                                    <div className="introduce-list">
-                                        <div className="inner-box1">
-                                            <div className="avatar active4"></div>
-                                            <div className="name">李维江</div>
-                                            <div className="position">斯蒂文斯网络信息工程硕士</div>
-                                            <div className="content">
-                                                美国斯蒂文斯理工学院网络信息工程硕士，曾就职于美国华尔
-                                                街大都会通信有限公司，从事金融、数据软件产品开发和运营。
-                                                曾在通信与信息系统国际会议上成功发表论文《多小区认知无线
-                                                网络中基于免疫算法的资源分配》。长期参与美国公司实验室区
-                                                块链应用的研究和实践，熟悉比特币和以太坊的源代码设计及技
-                                                术开发。
+                                        <div className="introduce-list">
+                                            <div className="inner-box1">
+                                                <div className="avatar active4"></div>
+                                                <div className="name">李维江</div>
+                                                <div className="position">斯蒂文斯网络信息工程硕士</div>
+                                                <div className="content">
+                                                    美国斯蒂文斯理工学院网络信息工程硕士，曾就职于美国华尔
+                                                    街大都会通信有限公司，从事金融、数据软件产品开发和运营。
+                                                    曾在通信与信息系统国际会议上成功发表论文《多小区认知无线
+                                                    网络中基于免疫算法的资源分配》。长期参与美国公司实验室区
+                                                    块链应用的研究和实践，熟悉比特币和以太坊的源代码设计及技
+                                                    术开发。
 
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div className="inner-box2">
-                                            <div className="t1">李维江</div>
-                                            <div className="t2">斯蒂文斯网络信息工程硕士</div>
-                                            <div className="t3"></div>
-                                            <div className="t4">
-                                                美国斯蒂文斯理工学院网络信息工程硕士，曾就职于美国华尔
-                                                街大都会通信有限公司，从事金融、数据软件产品开发和运营。
-                                                曾在通信与信息系统国际会议上成功发表论文《多小区认知无线
-                                                网络中基于免疫算法的资源分配》。长期参与美国公司实验室区
-                                                块链应用的研究和实践，熟悉比特币和以太坊的源代码设计及技
-                                                术开发。
+                                            <div className="inner-box2">
+                                                <div className="t1">李维江</div>
+                                                <div className="t2">斯蒂文斯网络信息工程硕士</div>
+                                                <div className="t3"></div>
+                                                <div className="t4">
+                                                    美国斯蒂文斯理工学院网络信息工程硕士，曾就职于美国华尔
+                                                    街大都会通信有限公司，从事金融、数据软件产品开发和运营。
+                                                    曾在通信与信息系统国际会议上成功发表论文《多小区认知无线
+                                                    网络中基于免疫算法的资源分配》。长期参与美国公司实验室区
+                                                    块链应用的研究和实践，熟悉比特币和以太坊的源代码设计及技
+                                                    术开发。
+                                                </div>
                                             </div>
+                                            <div className="inner-box3"></div>
                                         </div>
-                                        <div className="inner-box3"></div>
-                                    </div>
+                                    </MyWOW>
+
+
+
                                 </div>
                             </div>
                         </div>

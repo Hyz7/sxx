@@ -5,6 +5,7 @@ import {Modal} from 'antd'
 import { connect } from 'react-redux'
 import { actionCreators } from '../teacher/store'
 import uniqueId from 'lodash/uniqueId'
+import MyWOW from "../../common/wow";
 
 class Teacher extends Component {
     state = {
@@ -17,9 +18,10 @@ class Teacher extends Component {
     }
 
     componentDidMount() {
-        document.documentElement.scrollTop = 0
+
         document.addEventListener('scroll', this.winScroll.bind(this), false);
         this.props.getTeacherList()
+        document.documentElement.scrollTop = 0
     }
 
     componentWillUnmount() {
@@ -171,24 +173,27 @@ class Teacher extends Component {
                         {
                             this.props.teacherList.length?this.props.teacherList.map(item=>{
                                 return (
-                                    <div className="list" key={uniqueId()} onClick={()=>{
-                                        this.showTeacherDetail(item)
-                                    }}>
-                                        <img className="avatar" src={item.teaImage}/>
-                                        <div className="list-right-box">
-                                            <div className="title-box">
-                                                <span>专家</span><div className="teacher-name">{item.teaCname}</div><div className="teacher-posi">{item.teaJob}</div>
-                                            </div>
-                                            <div className="box">
-                                                <div className="text">{item.teaAchievement.a}</div>
-                                                <div className="text">{item.teaAchievement.b?item.teaAchievement.b:null}</div>
-                                            </div>
-                                            <div className="goodAt"><span>擅长领域：</span>{item.teaArea}</div>
-                                            <div className="goodAt1" style={{marginTop: '10px'}}><span>简介：</span>
-                                                {item.teaDesc}
+                                    <MyWOW  className='wow bounceInRight' delay="0">
+                                        <div className="list" key={uniqueId()} onClick={()=>{
+                                            this.showTeacherDetail(item)
+                                        }}>
+                                            <img className="avatar" src={item.teaImage}/>
+                                            <div className="list-right-box">
+                                                <div className="title-box">
+                                                    <span>专家</span><div className="teacher-name">{item.teaCname}</div><div className="teacher-posi">{item.teaJob}</div>
+                                                </div>
+                                                <div className="box">
+                                                    <div className="text">{item.teaAchievement.a}</div>
+                                                    <div className="text">{item.teaAchievement.b?item.teaAchievement.b:null}</div>
+                                                </div>
+                                                <div className="goodAt"><span>擅长领域：</span>{item.teaArea}</div>
+                                                <div className="goodAt1" style={{marginTop: '10px'}}><span>简介：</span>
+                                                    {item.teaDesc}
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </MyWOW>
+
                                 )
                             }):null
                         }
