@@ -98,7 +98,6 @@ class Teacher extends Component {
         return (
             <div className='teacher-container'>
                 <FloatWin />
-
                 <div className="teacher-banner">
                     <img src={sxxImg} alt=""/>
                 </div>
