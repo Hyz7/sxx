@@ -3,6 +3,7 @@ import img from '../../../images/home/banner1.png'
 import baomingImg from "../../../images/home/baoming.png";
 import {Modal} from 'antd'
 import webChat from '../../../images/publicNum.png'
+import MyWOW from "../../../common/wow";
 class QKL extends Component {
     state = { visible: false }
     showModal = (type) => {
@@ -40,13 +41,13 @@ class QKL extends Component {
                     <img src={img} alt=""/>
                     <div className="qkl-tab">
                         <ul className="qkl-tab-position">
-                            <li><span className='span1'></span>区块链工程师</li>
-                            <li><span className='span2'></span>大数据</li>
-                            <li><span className='span3'></span>AI人工智能</li>
-                            <li><span className='span4'></span>新一代网络安全</li>
-                            <li><span className='span5'></span>云计算</li>
-                            <li><span className='span6'></span>智能物联网</li>
-                            <li><span className='span7'></span>全栈软件测试</li>
+                            <MyWOW  className='wow bounceInUp' delay="0"><li><span className='span1'></span>区块链工程师</li></MyWOW>
+                            <MyWOW  className='wow bounceInUp' delay="0.2s"><li><span className='span2'></span>大数据</li></MyWOW>
+                            <MyWOW  className='wow bounceInUp' delay="0.4s"><li><span className='span3'></span>AI人工智能</li></MyWOW>
+                            <MyWOW  className='wow bounceInUp' delay="0.6s"><li><span className='span4'></span>新一代网络安全</li></MyWOW>
+                            <MyWOW  className='wow bounceInUp' delay="0.8s"><li><span className='span5'></span>云计算</li></MyWOW>
+                            <MyWOW  className='wow bounceInUp' delay="1s"><li><span className='span6'></span>智能物联网</li></MyWOW>
+                            <MyWOW  className='wow bounceInUp' delay="1.2s"><li><span className='span7'></span>全栈软件测试</li></MyWOW>
                         </ul>
                     </div>
                 </div>
