@@ -36,9 +36,9 @@ export default class Recruitment extends PureComponent{
                         {tabStatus==0||tabStatus==1? <Fragment>
                             <div className="list">
                                 新媒体运营专员
-                                <svg className='icon-svg'>
+                                {/*<svg className='icon-svg'>
                                     <use xlinkHref='#icon-jiahaozhankai'></use>
-                                </svg>
+                                </svg>*/}
                             </div>
                             <div className="list-content">
                                 <div className="box">
@@ -69,9 +69,9 @@ export default class Recruitment extends PureComponent{
                         <Fragment>
                             <div className="list">
                                 新媒体营销
-                                <svg className='icon-svg'>
+                                {/*<svg className='icon-svg'>
                                     <use xlinkHref='#icon-jiahaozhankai'></use>
-                                </svg>
+                                </svg>*/}
                             </div>
                             <div className="list-content">
                                 <div className="box">
@@ -102,9 +102,9 @@ export default class Recruitment extends PureComponent{
                         <Fragment>
                             <div className="list">
                                 课程顾问
-                                <svg className='icon-svg'>
+                                {/*<svg className='icon-svg'>
                                     <use xlinkHref='#icon-jiahaozhankai'></use>
-                                </svg>
+                                </svg>*/}
                             </div>
                             <div className="list-content">
                                 <div className="box">
@@ -133,9 +133,9 @@ export default class Recruitment extends PureComponent{
                         <Fragment>
                             <div className="list">
                                 项目执行
-                                <svg className='icon-svg'>
+                                {/*<svg className='icon-svg'>
                                     <use xlinkHref='#icon-jiahaozhankai'></use>
-                                </svg>
+                                </svg>*/}
                             </div>
                             <div className="list-content">
                                 <div className="box">
@@ -166,9 +166,9 @@ export default class Recruitment extends PureComponent{
                         <Fragment>
                             <div className="list">
                                 产品助理
-                                <svg className='icon-svg'>
+                                {/*<svg className='icon-svg'>
                                     <use xlinkHref='#icon-jiahaozhankai'></use>
-                                </svg>
+                                </svg>*/}
                             </div>
                             <div className="list-content">
                                 <div className="box">
