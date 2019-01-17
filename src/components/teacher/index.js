@@ -87,11 +87,11 @@ class Teacher extends Component {
         })
     }
 
-    componentWillUpdate(nextProps, nextState) {
+    /*componentWillUpdate(nextProps, nextState) {
         if(nextProps.visible!==nextState.visible){
             return true
         }
-    }
+    }*/
 
     render() {
         let {typeName,teacherName} = this.state
