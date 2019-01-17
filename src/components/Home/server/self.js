@@ -46,7 +46,7 @@ class Self extends Component {
                                 </div>
                                 <div className="btn-box">
                                     <div className="online-btn">在线咨询</div>
-                                    <div className="btn-text">服务热线：028-8525-3153</div>
+                                    <div className="btn-text">服务热线：02885253153</div>
                                 </div>
                             </div>
                         </div>
