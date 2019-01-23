@@ -176,21 +176,25 @@ class Teacher extends Component {
                                         <div className="list" key={uniqueId()} onClick={()=>{
                                             this.showTeacherDetail(item)
                                         }}>
-                                            <img className="avatar" src={item.teaImage}/>
-                                            <div className="list-right-box">
-                                                <div className="title-box">
-                                                    <span>专家</span><div className="teacher-name">{item.teaCname}</div><div className="teacher-posi">{item.teaJob}</div>
-                                                </div>
-                                                <div className="box">
-                                                    <div className="text">{item.teaAchievement.a}</div>
-                                                    <div className="text">{item.teaAchievement.b?item.teaAchievement.b:null}</div>
-                                                </div>
-                                                <div className="goodAt"><span>擅长领域：</span>{item.teaArea}</div>
-                                                <div className="goodAt1" style={{marginTop: '10px'}}><span>简介：</span>
-                                                    {item.teaDesc}
+                                            <img className="avatar" src={item.teaImage} alt={item.teaArea}/>
+                                            <div className="out-list-right-box">
+                                                <div className="list-right-box">
+                                                    <div className="title-box">
+                                                        <span>专家</span><div className="teacher-name">{item.teaCname}</div><div className="teacher-posi">{item.teaJob}</div>
+                                                    </div>
+                                                    <div className="box">
+                                                        <div className="text">{item.teaAchievement.a}</div>
+                                                        <div className="text">{item.teaAchievement.b?item.teaAchievement.b:null}</div>
+                                                    </div>
+                                                    <div className="goodAt"><span>擅长领域：</span>{item.teaArea}</div>
+                                                    <div className="goodAt1" style={{marginTop: '10px'}}><span>简介：</span>
+                                                        {item.teaDesc}
+                                                    </div>
                                                 </div>
                                             </div>
+
                                         </div>
+
                                     </MyWOW>
 
                                 )

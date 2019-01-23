@@ -16,6 +16,7 @@ import lodashId from "lodash/uniqueId";
 import { message } from 'antd';
 import FloatWin from '../../common/floatWindow'
 import MyWOW from '../../common/wow'
+import aixos from 'axios'
 let timer;
 class Home extends Component{
     constructor(props){
@@ -57,9 +58,7 @@ class Home extends Component{
         this.props.getNewsList()
     }
 
-    componentDidMount(){
-
-    }
+    componentDidMount(){}
     render() {
         const params = {
             effect: 'fade',
