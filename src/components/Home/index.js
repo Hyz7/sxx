@@ -483,7 +483,7 @@ class Home extends Component{
                         </div>
                         <div className="baoming" id='baoming'>
                             <div className="baoming-position">
-                                <div className="title">
+                                <div className="title" style={{width:'240px'}}>
                                     <span className='span'><span></span></span>
                                     <div className='text'>报名流程</div>
                                     <span className='span'><span></span></span>
