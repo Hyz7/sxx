@@ -33,14 +33,12 @@ class FloatWin extends Component {
                     visible:!this.state.visible
                 })
             }
-            // this.float.style.display='none'
         }else{
             if(!this.state.visible){
                 this.setState({
                     visible:!this.state.visible
                 })
             }
-            // this.float.style.display='block'
         }
     }
 

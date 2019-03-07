@@ -15,7 +15,7 @@ class Core extends Component{
         return(
             <div className='core-container'>
                 <FloatWin />
-                <div className="about-banner">
+                <div className="core-banner">
                     <img src={sxxImg} alt=""/>
                 </div>
                 <div className="core-position">

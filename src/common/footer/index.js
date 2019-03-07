@@ -45,10 +45,12 @@ export default class Footer extends Component{
                                 <li><a href="http://sixuexing.com/core">核心优势</a></li>
                                 <li><a href="http://sixuexing.com/teacher">授课导师</a></li>
                                 <li><a href="http://sixuexing.com/sixuexing">思学行动态</a></li>
-                                <li><a href="http://sixuexing.com/download">资料下载</a></li>
+                                <li><a href="http://sixuexing.com/teacher">授课导师</a></li>
+                                <li><a href="http://sixuexing.com/allCourse">视频教程</a></li>
+                                {/*<li><a href="http://sixuexing.com/download">资料下载</a></li>*/}
                                 <li><a href="http://sixuexing.com/recruitment">人才招聘</a></li>
                                 <li><a href="http://sixuexing.com/aboutUs">关于我们</a></li>
-                                <li><a href="http://sixuexing.com/contactUs">联系我们</a></li>
+                                {/*<li><a href="http://sixuexing.com/contactUs">联系我们</a></li>*/}
                             </ul>
                         </div>
                         <div className="item item2">
@@ -91,7 +93,7 @@ export default class Footer extends Component{
                     </div>
                 </div>
                 <div className="footer">
-                    Copyright ©2018 <a href="http://www.sixuexing.com">sixuexing.com</a> 成都思学行教育科技有限公司<a href="http://sixuexing.com/sitemap.xml">sitemap.xml</a><a href="http://www.miitbeian.gov.cn">蜀ICP备18033964号</a>
+                    Copyright ©2019 <a href="http://www.sixuexing.com">sixuexing.com</a> 成都思学行教育科技有限公司<a href="http://sixuexing.com/sitemap.xml">sitemap.xml</a><a href="http://www.miitbeian.gov.cn">蜀ICP备18033964号</a>
                 </div>
             </footer>
         )

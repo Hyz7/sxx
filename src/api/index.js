@@ -40,3 +40,15 @@ export const GET_DOWNLOAD_FILE = HOST+'/data/downloadData'
  * @type {string}
  */
 export const GET_TEACHER_LIST = HOST+ '/teaching/showTeacherList'
+/**
+ * 获取所有课程列表
+ * @type {string}
+ */
+export const GET_ALLCOURSE_LIST = HOST+ '/course/queryCourseList'
+/**
+ * 获取课程详情信息
+ * @type {string}
+ */
+export const GET_COURSE_DETAIL_INFO=HOST+'/course/queryCourseInformationByCourseId'
+
+export const SIGN_UP_INFO=HOST+'/studentSignUp'

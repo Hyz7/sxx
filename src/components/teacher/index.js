@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import sxxImg from '../../images/sxxbanner.png'
 import FloatWin from '../../common/floatWindow'
-import {Modal} from 'antd'
+import { Modal } from 'antd'
 import { connect } from 'react-redux'
 import { actionCreators } from '../teacher/store'
 import uniqueId from 'lodash/uniqueId'
@@ -18,7 +18,6 @@ class Teacher extends Component {
     }
 
     componentDidMount() {
-
         document.addEventListener('scroll', this.winScroll.bind(this), false);
         this.props.getTeacherList()
         document.documentElement.scrollTop = 0
@@ -66,6 +65,7 @@ class Teacher extends Component {
             }
         }
     }
+
     handleChangeType = (value) => {
         this.setState({
             teacherType: value

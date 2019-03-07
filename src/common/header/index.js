@@ -6,7 +6,7 @@ import '../icons/iconfont'
 import { CSSTransition } from 'react-transition-group';
 import ContactUs from "../../components/contact";
 import QKL from "../../components/Home/QKL";
-import CourseDetail from "../../components/Home/allCourse/courseDetail";
+import CourseDetail from "../../components/allCourse/courseDetail";
 class Header extends Component{
     constructor(props){
         super(props)
@@ -47,35 +47,26 @@ class Header extends Component{
                                     <li><NavLink to='/' exact activeClassName="active">首页</NavLink><span></span></li>
                                     <li><NavLink to='/core' activeClassName="active">核心优势</NavLink><span></span></li>
                                     <li><NavLink to='/teacher' activeClassName="active">授课导师</NavLink><span></span></li>
-                                    <li className='header-li' onMouseOver={()=>{this.setState({popupHeader:true})}}  onMouseLeave={()=>{this.setState({popupHeader:false})}}>
+                                    {/*<li className='header-li' onMouseOver={()=>{this.setState({popupHeader:true})}}  onMouseLeave={()=>{this.setState({popupHeader:false})}}>
                                         <NavLink to='/sixuexing' activeClassName="active">思学行动态
                                             <svg className="icon-svg">
                                                 <use xlinkHref='#icon-jiantou-copy-copy'></use>
                                             </svg>
                                         </NavLink>
                                         <span></span>
-                                        {/*<CSSTransition
-                                            in={this.state.popupHeader}
-                                            timeout={300}
-                                            classNames="popup"
-                                            unmountOnExit
-                                        >
-                                        <div className={this.state.popupHeader?"popup-header pop-fixed":"popup-header"}>
-                                            <div className='list'><Link to='/sixuexing/news'>新闻资讯</Link></div>
-                                            <div className='list'><Link to='/sixuexing/industry'>行业动态</Link></div>
-                                            <div className='list'><Link to='/sixuexing/student'>学员动态</Link></div>
-                                        </div>
-                                        </CSSTransition>*/}
                                         <div className="popup-header">
                                             <div className='list'><Link to='/sixuexing/news'>新闻资讯</Link></div>
                                             <div className='list'><Link to='/sixuexing/industry'>行业动态</Link></div>
                                             <div className='list'><Link to='/sixuexing/student'>学员动态</Link></div>
                                         </div>
-                                    </li>
-                                    <li><NavLink to='/download' activeClassName="active">资料下载</NavLink><span></span></li>
+
+                                    </li>*/}
+                                    <li><NavLink to='/sixuexing' activeClassName="active">思学行动态</NavLink><span></span></li>
+                                    <li><NavLink to='/allcourse' activeClassName="active">培训基础课程</NavLink><span></span></li>
+                                    {/*/!*<li><NavLink to='/download' activeClassName="active">资料下载</NavLink><span></span></li>*/}
                                     <li><NavLink to='/recruitment' activeClassName="active">人才招聘</NavLink><span></span></li>
                                     <li><NavLink to='/aboutUs' activeClassName="active">关于我们</NavLink><span></span></li>
-                                    <li><NavLink to='/contactUs' activeClassName="active">联系我们</NavLink><span></span></li>
+                                    {/*<li><NavLink to='/contactUs' activeClassName="active">联系我们</NavLink><span></span></li>*/}
                                 </ul>
                             </div>
                             <s style={{height:'0',clear:'both',display:'block'}}></s>

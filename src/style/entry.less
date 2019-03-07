@@ -33,6 +33,11 @@
       width: 100%;
       //border-bottom: 1px solid #e5e5e5;
       cursor: pointer;
+      &:hover{
+        .icon-svg{
+          fill:@theme-color;
+        }
+      }
       span{
         width: 40px;
         border-bottom: 1px solid #e5e5e5;
@@ -45,9 +50,6 @@
         fill:#BEBEBE;
         margin: 0 auto;
         display: block;
-        &:hover{
-          fill:@theme-color;
-        }
       }
       .text{
         font-size: 12px;

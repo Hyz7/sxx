@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import { Map,Marker,Navigation,Animation,Label, WalkingRoute, getPoiByKeyword,InfoWindow } from "rc-bmap";
+import { Map,Marker,Animation, getPoiByKeyword,InfoWindow } from "rc-bmap";
 import sxxImg from '../../images/sxxbanner.png'
 import FloatWin from '../../common/floatWindow'
 const centerPoint = { lng: 104.063296, lat: 30.592122 };
@@ -18,24 +18,11 @@ const events = {
     }
 };
 
-const style = {
-    backgroundColor: "#4E8DEF",
-    color: "#fff",
-    border:'0'
-};
 let route;
 const getRoute = instance => {
     route = instance;
 };
 
-const mapMounted = map => {
-    Promise.all([
-        getPoiByKeyword("金融城地铁A"),
-        getPoiByKeyword("成都天府新谷10号楼")
-    ]).then(res => {
-        route.search(res[0], res[1]);
-    });
-};
 export default class ContactUs extends Component{
     render(){
         return(
@@ -54,7 +41,6 @@ export default class ContactUs extends Component{
                             zoom={17}
                             style={{width:'100%',height:'100%'}}
                             scrollWheelZoom
-                            mapMounted={mapMounted}
                         >
                             <Marker point={point} animation={Animation.BOUNCE}/>
                             <InfoWindow
@@ -78,21 +64,6 @@ export default class ContactUs extends Component{
                                 message="短信内容" // 自定义部分的短信内容
                                 events={events} // 绑定事件
                             />
-                            {/*<Navigation />*/}
-                            {/*<Label
-                                content="天府新谷10号楼20层" // 显示标签，支持html
-                                point={point} // 标签显示坐标
-                                offset={offset} // 偏移值
-                                massClear={false} // 地图clearOverlays()时，是否清空
-                                title="天府新谷10号楼20层" // 鼠标悬浮显示文字
-                                events={events} // 绑定事件
-                                zIndex={100} // 同html的z-index
-                                style={style} // 标签样式
-                            />*/}
-                            {/*<WalkingRoute
-                                getInstance={getRoute}
-                                showInMap
-                            />*/}
                         </Map>
                     </div>
                     <div className="route">

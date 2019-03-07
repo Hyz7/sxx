@@ -54,3 +54,14 @@ export const GET_MORE_LIST = 'sixuexing/GET_MORE_LIST'
 
 export const GET_TEACHER_LIST= 'teacher/GET_TEACHER_LIST'
 
+/**
+ * 获取所有课程列表
+ * @type {string}
+ */
+export const GET_ALLCOURSE_LIST='course/GET_ALLCOURSE_LIST'
+/**
+ * 获取课程详情
+ * @type {string}
+ */
+export const GET_COURSE_DETAIL_INFO='course/GET_COURSE_DETAIL_INFO'
+
