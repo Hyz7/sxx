@@ -98,9 +98,7 @@ class Home extends Component{
                     <FloatWin />
                     <SignUp />
                     <div className="Swiper-content">
-                        <div className="nav-menuDown-box">
-
-                        </div>
+                        {/*<div className="nav-menuDown-box"></div>*/}
                         <Swiper {...params} >
                             <div><img src={require("../../images/home/banner4.png")} alt="区块链"/></div>
                             <div><img src={require("../../images/home/banner5.png")} alt="区块链"/></div>

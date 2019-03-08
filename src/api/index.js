@@ -1,6 +1,6 @@
 let env = process.env.NODE_ENV
 
-const HOST = env === 'production'? 'https://sixuexing.com:31000' : 'https://sixuexing.com:31400'
+const HOST = env === 'production'? 'https://sixuexing.com/home': 'https://sixuexing.com:31400'
 // http://192.168.0.102:8080
 export const GET_MENU_LIST = HOST+'/getTitle'
 
@@ -50,5 +50,8 @@ export const GET_ALLCOURSE_LIST = HOST+ '/course/queryCourseList'
  * @type {string}
  */
 export const GET_COURSE_DETAIL_INFO=HOST+'/course/queryCourseInformationByCourseId'
-
+/**
+ * 报名
+ * @type {string}
+ */
 export const SIGN_UP_INFO=HOST+'/studentSignUp'
