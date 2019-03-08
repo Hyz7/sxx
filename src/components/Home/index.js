@@ -99,39 +99,13 @@ class Home extends Component{
                     <SignUp />
                     <div className="Swiper-content">
                         <div className="nav-menuDown-box">
-                            <div className="inner-box" onMouseLeave={this.hideMenuRight}>
-                                <CSSTransition
-                                    in={true}
-                                    timeout={300}
-                                    appear={true}
-                                    classNames="bannerList"
-                                    unmountOnExit
-                                >
-                                    <div className="nav-menuDown">
-                                        <div className="box">
-                                            <Link to='/qkl' className="item">区块链工程师</Link>
-                                            <div className="item" onClick={()=>{this.warningMsg()}}>Javascript ES6</div>
-                                            <div className="item" onClick={()=>{this.warningMsg()}}>Python</div>
-                                            <div className="item" onClick={()=>{this.warningMsg()}}>Swift程序设计</div>
-                                            <div className="item" onClick={()=>{this.warningMsg()}}>新一代网络安全</div>
-                                            <div className="item" onClick={()=>{this.warningMsg()}}>全栈软件测试</div>
-                                        </div>
-                                        <div className="box">
-                                            <div className="item" onClick={()=>{this.warningMsg()}}>C/C++</div>
-                                            <div className="item" onClick={()=>{this.warningMsg()}}>GO语言</div>
-                                            <div className="item" onClick={()=>{this.warningMsg()}}>大数据</div>
-                                            <div className="item" onClick={()=>{this.warningMsg()}}>云计算</div>
-                                            <div className="item" onClick={()=>{this.warningMsg()}}>AI人工智能</div>
-                                            <div className="item" onClick={()=>{this.warningMsg()}}>智能物联网</div>
-                                        </div>
-                                    </div>
-                                </CSSTransition>
-                            </div>
+
                         </div>
                         <Swiper {...params} >
+                            <div><img src={require("../../images/home/banner4.png")} alt="区块链"/></div>
+                            <div><img src={require("../../images/home/banner5.png")} alt="区块链"/></div>
                             <div><img src={require("../../images/home/banner1-pc.png")} alt="区块链"/></div>
-                            <div><img src={require("../../images/home/banner2-pc.png")} alt="区块链"/></div>
-                            <div><img src={require("../../images/home/banner3.png")} alt="区块链"/></div>
+
                         </Swiper>
                     </div>
 
