@@ -1,5 +1,6 @@
 import React,{Component,Fragment} from 'react'
-import Swiper from 'react-id-swiper';
+import Swiper from 'react-id-swiper'
+import MySwiper from '../../common/MySwiper';
 import connect from "react-redux/es/connect/connect";
 import { withRouter, Link } from 'react-router-dom'
 import * as actionCreators1 from '../sixuexing/store/actionCreators'
@@ -79,6 +80,9 @@ class Home extends Component{
             },
             pagination: {
                 el: '.swiper-pagination'
+            },
+            onClick:()=>{
+
             }
         }
         const params1 = {
@@ -91,6 +95,15 @@ class Home extends Component{
             },
             slideNextClass:'active-swiper-data'
         }
+        const imageData=[{
+            image:{
+                image1:'../../images/home/banner4.png',
+                image2:'../../images/home/banner5.png',
+                image3:'../../images/home/banner1-pc.png',
+            }
+        }]
+
+
         let {pages,active} = this.state
         return(
             <Fragment>
@@ -98,13 +111,14 @@ class Home extends Component{
                     <FloatWin />
                     <SignUp />
                     <div className="Swiper-content">
+                        <MySwiper params={params} imageData={imageData}/>
                         {/*<div className="nav-menuDown-box"></div>*/}
-                        <Swiper {...params} >
+                        {/*<Swiper {...params} >
                             <div><img src={require("../../images/home/banner4.png")} alt="区块链"/></div>
                             <div><img src={require("../../images/home/banner5.png")} alt="区块链"/></div>
                             <div><img src={require("../../images/home/banner1-pc.png")} alt="区块链"/></div>
 
-                        </Swiper>
+                        </Swiper>*/}
                     </div>
 
                     <div className="item1">
@@ -527,6 +541,7 @@ class Home extends Component{
                                             <div><img src={Data2} alt="区块链"/></div>
                                             <div><img src={Data3} alt="区块链"/></div>
                                         </Swiper>
+                                        {/*<MySwiper params={params1}/>*/}
                                     </div>
                                     <div className="data-description">
                                         中国互联网行业已具规模，并且发展迅猛，行业平均就业薪资高，但专业技术人才供需严重失衡，未来行业的发展亟待复合型及国际化人才的出现。

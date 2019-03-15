@@ -2,18 +2,19 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import * as actionCreators from '../../store/allCourse/actionCreators'
+import MyDPlayer from '../../common/Dplayer'
 class CourseDetail extends Component {
     state={
         tabStatus:'induction',
+        mediaStatus:true
     }
 
     componentDidMount() {
-        console.log(this.props.match.params.id)
         this.props.getCourseDetail(this.props.match.params.id)
     }
 
     render() {
-        let { tabStatus }=this.state
+        let { tabStatus,mediaStatus }=this.state
         let {
             courseTitle,
             courseSubTitle,
@@ -34,7 +35,35 @@ class CourseDetail extends Component {
         return (
             <div className='courseDetail-container'>
                 <div className="position">
-                    <div className="header-box">
+                    {mediaStatus?
+                        <div className="header-box">
+                            <img src={courseImage} alt=""/>
+                            <div className="content">
+                                <div className="title">{courseTitle}</div>
+                                <div className="description">{courseSubTitle}</div>
+                                <div className="type">视频课</div>
+                                <div className="text">主讲老师：{courseTeacher}</div>
+                                <div className="text">观看次数：{courseWatchCount}</div>
+                                <div className="createTime">发布时间：{coursePublicTime}</div>
+                                <div className="price-box">
+                                    <div className="top">
+                                        <div className="left">限量特惠  2018.11.20 ~ 2019.11.30</div>
+                                        <div className="right">剩1865份 恢复原价</div>
+                                    </div>
+                                    <div className="bottom">
+                                        <div className="text">活动价：<span>¥{courseActivityPrice}</span></div>
+                                        <s className="text">原件¥{courseOriginalPrice}</s>
+                                    </div>
+                                </div>
+                                <div className="tryWatch" onClick={()=>{this.openMedia()}}>立即播放</div>
+                            </div>
+                        </div>
+                    :
+                        <div className="header-box1">
+                            <MyDPlayer/>
+                        </div>
+                    }
+                    {/*<div className="header-box">
                         <img src={courseImage} alt=""/>
                         <div className="content">
                             <div className="title">{courseTitle}</div>
@@ -53,9 +82,9 @@ class CourseDetail extends Component {
                                     <s className="text">原件¥{courseOriginalPrice}</s>
                                 </div>
                             </div>
-                            <div className="tryWatch">立即购买</div>
+                            <div className="tryWatch" onClick={()=>{this.openMedia()}}>立即购买</div>
                         </div>
-                    </div>
+                    </div>*/}
                     <div className="content-box">
                         <div className="left">
                             <div className="title">
@@ -109,6 +138,9 @@ class CourseDetail extends Component {
                 </div>
             </div>
         );
+    }
+    openMedia=()=>{
+        this.setState({mediaStatus:false})
     }
 }
 

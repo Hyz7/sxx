@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import signUpImg from '../../images/signup.png'
-import signUpBtn from '../../images/signBtn.png'
+import signUpBtn from '../../images/home/zixunBtn.png'
 import {message} from 'antd'
 import axios from 'axios'
 import * as API from '../../api'
@@ -55,13 +55,14 @@ class SignUp extends Component {
                                 <use xlinkHref='#icon-quxiao1' ></use>
                             </svg>
                             <img src={signUpImg} className='signUpImg' alt=""/>
-                            <div className="inputBox">
+                            {/*<div className="inputBox">
                                 <input type="text" ref={(node)=>this.inputName=node} placeholder='请输入您的姓名' />
                                 <input type="text" ref={(node)=>this.inputPhone=node} placeholder='请输入您的电话' onKeyDown={(e)=>{
                                     if(e.keyCode==13){this.signUp()}
                                 }}/>
-                            </div>
-                            <img src={signUpBtn} className='signUpBtn' alt="" onClick={()=>{this.signUp()}}/>
+                            </div>*/}
+                            {/*<img src={signUpBtn} className='signUpBtn' alt="" onClick={()=>{this.signUp()}}/>*/}
+                            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2507819723&site=qq&menu=yes"><img src={signUpBtn} className='signUpBtn' alt=""/></a>
                         </div>
                     </div>
                     :null}

@@ -94,8 +94,8 @@ class Header extends Component{
                                             <div className='list'><Link to='/sixuexing/student'>学员动态</Link></div>
                                         </div>
                                     </li>*/}
+                                    <li><NavLink to='/allcourse' activeClassName="active">在线免费试学</NavLink><span></span></li>
                                     <li><NavLink to='/sixuexing' activeClassName="active">思学行动态</NavLink><span></span></li>
-                                    <li><NavLink to='/allcourse' activeClassName="active">培训基础课程</NavLink><span></span></li>
                                     {/*/!*<li><NavLink to='/download' activeClassName="active">资料下载</NavLink><span></span></li>*/}
                                     <li><NavLink to='/recruitment' activeClassName="active">人才招聘</NavLink><span></span></li>
                                     <li><NavLink to='/aboutUs' activeClassName="active">关于我们</NavLink><span></span></li>

@@ -119,7 +119,7 @@ class About extends Component{
                                     </div>
                                 </div>
                             </div>
-                            <div className="list">
+                            {/*<div className="list">
                                 <div className="title">北京校区（分校）</div>
                                 <div className="box">
                                     <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2507819723&site=qq&menu=yes">
@@ -137,7 +137,7 @@ class About extends Component{
                                         学校地图地址
                                     </div>
                                 </div>
-                            </div>
+                            </div>*/}
                         </div>
 
                     </div>
