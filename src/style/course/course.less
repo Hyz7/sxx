@@ -109,6 +109,36 @@
   .position{
     width: 1200px;
     margin: 0 auto;
+    .titleTop{
+      display: flex;
+      flex-wrap: nowrap;
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      border-top: 1px solid #e5e5e5;
+      font-size: 14px;
+      color: #4d4d4d;
+      background-color: #fff;
+      padding: 0 20px;
+      span {
+        cursor: pointer;
+        padding: 0 15px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        height: 30px;
+        line-height: 30px;
+        display: block;
+        margin-top: 5px;
+
+        &:hover {
+          color: @theme-color;
+        }
+        &.active {
+          background-color: @theme-color;
+          color: #fff;
+        }
+      }
+    }
     .content-box{
       width: 100%;
       height: 600px;
@@ -141,8 +171,9 @@
         font-size: 16px;
         color: #4d4d4d;
       }
+
       .left{
-        padding: 0 40px;
+        //padding: 0 40px;
         box-sizing: border-box;
         float: left;
         width: 870px;
@@ -210,8 +241,11 @@
       width: 100%;
       height: 500px;
       background-color: #fff;
-      padding: 30px 40px;
+      padding: 20px 40px;
       box-sizing: border-box;
+      .mediaTitle{
+        margin-bottom: 20px;
+      }
     }
     .header-box{
       width: 100%;

@@ -170,9 +170,9 @@ class Teacher extends Component {
 
                     <div className="teacher-list">
                         {
-                            this.props.teacherList.length?this.props.teacherList.map(item=>{
+                            this.props.teacherList.length?this.props.teacherList.map((item,index)=>{
                                 return (
-                                    <MyWOW  className='wow bounceInRight' delay="0">
+                                    <MyWOW  className='wow bounceInRight' key={index} delay="0">
                                         <div className="list" key={uniqueId()} onClick={()=>{
                                             this.showTeacherDetail(item)
                                         }}>
