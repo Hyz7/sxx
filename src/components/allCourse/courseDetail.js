@@ -183,12 +183,12 @@ class CourseDetail extends Component {
                                 <div className="title">主讲老师</div>
                                 <img src={courseTeacherImage} alt=""/>
                                 <div className="name">{courseTeacher}</div>
-                                <div className="description">{courseTeacherIntroduce}</div>
+                                <div className="description">{courseTeacherIntroduce&&courseTeacherIntroduce.length>35?courseTeacherIntroduce.substring(0,35)+'...':courseTeacherIntroduce}</div>
                             </div>
                             <div className="item item2">
                                 <div className="title">课程介绍</div>
                                 <div className="description">
-                                    {introduce}
+                                    {introduce&&introduce.length>100?introduce.substring(0,100)+'...':introduce}
                                 </div>
                             </div>
                         </div>
@@ -198,7 +198,7 @@ class CourseDetail extends Component {
         );
     }
     getMediaUrl=(url)=>{
-        this.setState({mediaUrl:url},()=>{console.log(this.state.mediaUrl)})
+        this.setState({mediaUrl:url})
     }
 
     openMedia=()=>{

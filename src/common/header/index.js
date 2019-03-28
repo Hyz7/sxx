@@ -38,7 +38,7 @@ class Header extends Component{
                                 <div className='header-biaoyu'></div>
                                 <div className='header-right'>
                                     <div className='header-text'><span className='span1'></span>成都</div>
-                                    <div className='header-text'><span className='span2'></span>028-8525-3153</div>
+                                    <div className='header-text'><span className='span2'></span>028-6385-2532</div>
                                 </div>
                             </div>
                             <div className="header-nav">

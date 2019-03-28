@@ -56,7 +56,7 @@ export default class Footer extends Component{
                         <div className="item item2">
                             <div className="title" style={{width:'100px'}}>服务热线</div>
                             <div className="item1-hot">
-                                <div className="phone">028-8525-3153</div>
+                                <div className="phone">028-6385-2532</div>
                                 <div className="text">咨询时间：09 : 00 - 18 : 00</div>
                             </div>
                         </div>
