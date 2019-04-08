@@ -45,6 +45,8 @@ export default class MainRoutes extends  Component{
 
                 <Route path='/qkl' component={AsyncComponent(()=>import('../components/Home/QKL'))}></Route>
 
+                <Route path='/qklpxb' component={AsyncComponent(()=>import('../components/Home/qklpxb'))}></Route>
+
                 <Footer />
             </div>
         )

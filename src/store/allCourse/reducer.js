@@ -2,7 +2,8 @@ import * as actionTypes from "../actionTypes";
 
 const defaultState={
     allCourseList:[],
-    courseDetailInfo:[]
+    courseDetailInfo:[],
+
 }
 /**
  * 获取所有课程列表数据
@@ -30,6 +31,7 @@ export default (state = defaultState, action)=>{
             return getList(state,action)
         case actionTypes.GET_COURSE_DETAIL_INFO:
             return getDetailInfo(state,action)
+
         default:
             return state
     }

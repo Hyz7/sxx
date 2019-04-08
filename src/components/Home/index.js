@@ -1,9 +1,8 @@
 import React,{Component,Fragment} from 'react'
-import Swiper from 'react-id-swiper'
-import MySwiper from '../../common/MySwiper';
+import Slider from '../../common/myswiper/slider'
 import connect from "react-redux/es/connect/connect";
 import { withRouter, Link } from 'react-router-dom'
-import * as actionCreators1 from '../sixuexing/store/actionCreators'
+import MySwiper from '../../common/myswiper'
 import Self from './server/self.js'
 import University from './server/university.js'
 import Enterprise from './server/enterprise.js'
@@ -12,13 +11,15 @@ import Data1 from '../../images/largeData/data1.png'
 import Data2 from '../../images/largeData/data2.png'
 import Data3 from '../../images/largeData/data3.png'
 import DataTitle from '../../images/largeData/datatitle.png'
-import { CSSTransition } from 'react-transition-group';
 import baomingImg from '../../images/home/baoming.png'
 import lodashId from "lodash/uniqueId";
 import { message } from 'antd';
 import FloatWin from '../../common/floatWindow'
 import MyWOW from '../../common/wow'
 import SignUp from '../../common/floatWindow/signUp'
+import * as actionCreators from "../../store/allCourse/actionCreators";
+import * as actionCreators1 from '../sixuexing/store/actionCreators'
+import * as actionCreators2 from '../Home/store/actionCreators'
 let timer;
 class Home extends Component{
     constructor(props){
@@ -58,9 +59,12 @@ class Home extends Component{
 
     componentWillMount(){
         this.props.getNewsList()
+        this.props.getAllCourse()
     }
 
-    componentDidMount(){}
+    componentDidMount(){
+        this.props.getHomeBanner()
+    }
 
     render() {
         const params = {
@@ -79,7 +83,8 @@ class Home extends Component{
                 shadowScale: 0.94
             },
             pagination: {
-                el: '.swiper-pagination'
+                el: '.swiper-pagination',
+                clickable: true
             },
             onClick:()=>{
 
@@ -95,35 +100,37 @@ class Home extends Component{
             },
             slideNextClass:'active-swiper-data'
         }
-        const imageData=[{
-            image:{
-                image1:'../../images/home/banner4.png',
-                image2:'../../images/home/banner5.png',
-                image3:'../../images/home/banner1-pc.png',
-            }
-        }]
-
 
         let {pages,active} = this.state
         return(
             <Fragment>
+
                 <div className="home-container">
                     <FloatWin />
-                    <SignUp />
-                    <div className="Swiper-content">
-                        <MySwiper params={params} imageData={imageData}/>
-                        {/*<div className="nav-menuDown-box"></div>*/}
-                        {/*<Swiper {...params} >
-                            <div><img src={require("../../images/home/banner4.png")} alt="区块链"/></div>
-                            <div><img src={require("../../images/home/banner5.png")} alt="区块链"/></div>
+                    {/*<SignUp />*/}
+                    {/*<div className="Swiper-content">
+
+                        <MySwiper params={params} imageData={this.props.bannerList}/>
+                        {this.props.bannerList.map((item,index)=>{
+                            return <div key={index}><img src={item.bannerImage} alt="区块链"/></div>
+                        })}
+                        <Slider {...params} >
+
+                            <Link to={'/qklpxb'}><img src={require("../../images/home/banner4.png")} alt="区块链"/></Link>
+                            <div><img src={require("../../images/home/banner6.png")} alt="区块链"/></div>
                             <div><img src={require("../../images/home/banner1-pc.png")} alt="区块链"/></div>
-
-                        </Swiper>*/}
-                    </div>
-
+                        </Slider>
+                    </div>*/}
+                    <Slider
+                        items={this.props.bannerList}
+                        speed={1}
+                        delay={3}
+                        pause={true}
+                        autoplay={true}
+                        dots={true}
+                    />
                     <div className="item1">
                         <div className="item1-position">
-
                                 <div className="item1-list" onClick={()=>{this.handleBoxChange('self')}}>
                                     <span className='span1'></span>
                                     <div className="list-title">个人</div>
@@ -181,65 +188,29 @@ class Home extends Component{
                     <div>
                         <div className="course">
                             <div className="course-position">
-                                <div className="title" style={{width:'280px'}}>
+                                <div className="title" style={{width:'300px'}}>
                                     <span className='span'><span></span></span>
-                                    <h1 className='text'>0元免费课程</h1>
+                                    <h1 className='text'>在线免费试学</h1>
                                     <span className='span'><span></span></span>
                                 </div>
                                 <s style={{height:'0',clear:'both',display:'block',overflow:'hidden'}}></s>
                                 <div className="title-description">知识共享，做真正实用的公开课</div>
                                 <div className="course-list">
                                     <Link to='allcourse' className="more-btn">查看更多></Link>
-                                    <div className="list-box">
-                                        <div className="span-box">
-                                            <span className='span1'></span>
-                                        </div>
-                                        <div className="content">
-                                            <div className="course-title">私有区块链，我们一起GO</div>
-                                            <div className="course-text">用Go语言实现一个区块链私有链</div>
-                                            <div className="price"><span>￥0.00 免费</span><s>原价￥99.00</s></div>
-                                        </div>
-                                    </div>
-                                    <div className="list-box">
-                                        <div className="span-box">
-                                            <span className='span2'></span>
-                                        </div>
-                                        <div className="content">
-                                            <div className="course-title">玩转数据结构 从入门到进阶</div>
-                                            <div className="course-text">就看你会不会玩！</div>
-                                            <div className="price"><span>￥0.00 免费</span><s>原价￥99.00</s></div>
-                                        </div>
-                                    </div>
-                                    <div className="list-box">
-                                        <div className="span-box">
-                                            <span className='span3'></span>
-                                        </div>
-                                        <div className="content">
-                                            <div className="course-title">Spring Cloud微服务实战</div>
-                                            <div className="course-text">来吧！我们试试实战</div>
-                                            <div className="price"><span>￥0.00 免费</span><s>原价￥99.00</s></div>
-                                        </div>
-                                    </div>
-                                    <div className="list-box">
-                                        <div className="span-box">
-                                            <span className='span4'></span>
-                                        </div>
-                                        <div className="content">
-                                            <div className="course-title">Go语言实战流媒体视频网站</div>
-                                            <div className="course-text">用Go语言实践应用</div>
-                                            <div className="price"><span>￥0.00 免费</span><s>原价￥99.00</s></div>
-                                        </div>
-                                    </div>
-                                    <div className="list-box">
-                                        <div className="span-box">
-                                            <span className='span5'></span>
-                                        </div>
-                                        <div className="content">
-                                            <div className="course-title">SVN从入门到放弃</div>
-                                            <div className="course-text">入门级课程你敢不敢来</div>
-                                            <div className="price"><span>￥0.00 免费</span><s>原价￥99.00</s></div>
-                                        </div>
-                                    </div>
+                                    {this.props.allCourseList?this.props.allCourseList.map(item=>{
+                                        return (
+                                            <Link to={'/courseDetail/'+item.courseId} className="list-box" key={lodashId()}>
+                                                <div className="span-box">
+                                                    <img src={item.courseImage} className='img'/>
+                                                </div>
+                                                <div className="content">
+                                                    <div className="course-title">{item.courseTitle}</div>
+                                                    <div className="course-text">{item.courseSubTitle}</div>
+                                                    <div className="price"><span>￥{item.courseActivityPrice} 免费</span><s>原价￥{item.courseOriginalPrice}</s></div>
+                                                </div>
+                                            </Link>
+                                        )
+                                    }):null}
                                 </div>
                                 <s style={{height:'0',clear:'both',display:'block',overflow:'hidden'}}></s>
                             </div>
@@ -536,11 +507,11 @@ class Home extends Component{
                                 </div>
                                 <div className="data-content">
                                     <div className="img-box" onMouseOver={()=>{clearInterval(timer)}}>
-                                        <Swiper {...params1} >
+                                        <Slider {...params1} >
                                             <div><img src={Data1} alt="区块链"/></div>
                                             <div><img src={Data2} alt="区块链"/></div>
                                             <div><img src={Data3} alt="区块链"/></div>
-                                        </Swiper>
+                                        </Slider>
                                         {/*<MySwiper params={params1}/>*/}
                                     </div>
                                     <div className="data-description">
@@ -791,13 +762,20 @@ class Home extends Component{
 const mapStateToProps=(state)=>({
     newsList:state.sixuexing.newsList,
     industryList:state.sixuexing.industryList,
-    studentList:state.sixuexing.studentList
-
+    studentList:state.sixuexing.studentList,
+    allCourseList:state.course.allCourseList,
+    bannerList:state.home.bannerList
 })
 
 const mapDispatchToProps=(dispatch)=>({
     getNewsList(id){
         dispatch(actionCreators1.getNewsList(id))
+    },
+    getAllCourse(){
+        dispatch(actionCreators.getAllCourseList())
+    },
+    getHomeBanner(){
+        dispatch(actionCreators2.getHomeBanner())
     }
 })
 

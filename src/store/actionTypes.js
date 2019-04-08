@@ -64,4 +64,9 @@ export const GET_ALLCOURSE_LIST='course/GET_ALLCOURSE_LIST'
  * @type {string}
  */
 export const GET_COURSE_DETAIL_INFO='course/GET_COURSE_DETAIL_INFO'
+/**
+ * 获取banner轮播
+ * @type {string}
+ */
+export const GET_HOME_BANNER='home/GET_HOME_BANNER'
 

@@ -64,8 +64,8 @@ class CourseDetail extends Component {
                 v2.children.forEach((v3,index1)=>{
                     if(v3.id==id){
                         this.setState({
-                            courseNodeIndex:'第'+(index+1)+'章',
-                            courseNode:v2.pname,
+                            courseNodeIndex: '第'+(index+1)+'章',
+                            courseNode: v2.pname,
                             courseDetailName: v3.pname
                         })
                     }
@@ -75,7 +75,7 @@ class CourseDetail extends Component {
     }
 
     render() {
-        let { tabStatus,mediaStatus}=this.state
+        let { tabStatus,mediaStatus }=this.state
         let {
             courseTitle,
             courseSubTitle,

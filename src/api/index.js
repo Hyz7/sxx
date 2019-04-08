@@ -60,3 +60,8 @@ export const SIGN_UP_INFO=HOST+'/studentSignUp'
  * @type {string}
  */
 export const GET_COURSE_CATALOGUE='/course/findTeachplanList'
+/**
+ *获取banner轮播
+ * @type {string}
+ */
+export const GET_HOME_BANNER='/banner'
