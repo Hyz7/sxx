@@ -9,7 +9,7 @@ const wxContact=(
 const phoneContact=(
     <div>
         <div className="text" style={{color:'#5d96ee'}}>
-            成都：028-8525-3153
+            成都：028-6385-2532
         </div>
     </div>
 )

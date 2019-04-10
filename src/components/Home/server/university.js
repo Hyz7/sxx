@@ -16,7 +16,7 @@ class University extends Component {
                                 <img src={university} alt=""/>
                                 <div className="theme">
                                     <div className="num">2</div>
-                                    <div className="text">高校校际间合作</div>
+                                    <div className="text">实训基地</div>
                                 </div>
                             </div>
 

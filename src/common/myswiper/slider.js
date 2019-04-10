@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import Banner from '../../images/home/banner2-pc.png'
 import SliderItem from '../../common/myswiper/slideritem'
 // import SliderArrows from '../../common/myswiper/sliderArrows'
 import SliderDots from '../../common/myswiper/sliderDots'
+
 class Slider extends Component {
     constructor(props) {
         super(props);
@@ -46,7 +46,6 @@ class Slider extends Component {
         // let arrowsNode = <SliderArrows turn={this.turn}/>;
         let dotsNode = <SliderDots turn={this.turn} count={count} nowLocal={this.state.nowLocal} />;
         return (
-
             <div
                 className="slider-container"
                 onMouseOver={this.props.pause?this.pausePlay:null}

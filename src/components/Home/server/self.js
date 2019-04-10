@@ -16,7 +16,7 @@ class Self extends Component {
                                 <img src={SelfImg} alt=""/>
                                 <div className="theme">
                                     <div className="num">1</div>
-                                    <div className="text">个人教育培训服务</div>
+                                    <div className="text">就业培训</div>
                                 </div>
                             </div>
 
@@ -25,24 +25,24 @@ class Self extends Component {
                                 <div className="content content1">
                                     <div className="list">
                                         <div className="icon icon1"></div>
-                                        <span>名师原创课程</span>
-                                        由顶尖高校教师根据最新技术课程研发，紧跟时代，快速迭代
+                                        <span>原创课程</span>
+                                        由走在技术前端的教授、专家自主研发，紧跟时代，理论夯实
                                     </div>
                                     <div className="list">
                                         <div className="icon icon2"></div>
-                                        <span>模块学习</span>
-                                        通过参与多个精心设计的实战项目，全面掌握新一代信息开发技术
+                                        <span>项目实战</span>
+                                        企业CTO指导项目实战，全面掌握技术应用
                                     </div>
                                     <div className="list">
                                         <div className="icon icon3"></div>
-                                        <span> 参与校企合作项目</span>
-                                        参加与高校、企业合作的项目，完成学分拿到OFFER
+                                        <span> 推荐就业</span>
+                                        专委会沙龙优质企业资源、企业人才定制，学员就业渠道有保证
                                     </div>
-                                    <div className="list">
+                                    {/*<div className="list">
                                         <div className="icon icon4"></div>
                                         <span>推荐就业</span>
                                         定期开展双选会、上门招聘等活动，保证学员就业
-                                    </div>
+                                    </div>*/}
                                 </div>
                                 <div className="btn-box">
                                     <div className="online-btn">在线咨询</div>

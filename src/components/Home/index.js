@@ -2,24 +2,24 @@ import React,{Component,Fragment} from 'react'
 import Slider from '../../common/myswiper/slider'
 import connect from "react-redux/es/connect/connect";
 import { withRouter, Link } from 'react-router-dom'
-import MySwiper from '../../common/myswiper'
 import Self from './server/self.js'
 import University from './server/university.js'
 import Enterprise from './server/enterprise.js'
 import '../../../src/common/icons/iconfont'
-import Data1 from '../../images/largeData/data1.png'
-import Data2 from '../../images/largeData/data2.png'
-import Data3 from '../../images/largeData/data3.png'
-import DataTitle from '../../images/largeData/datatitle.png'
-import baomingImg from '../../images/home/baoming.png'
 import lodashId from "lodash/uniqueId";
 import { message } from 'antd';
 import FloatWin from '../../common/floatWindow'
-import MyWOW from '../../common/wow'
+
 import SignUp from '../../common/floatWindow/signUp'
 import * as actionCreators from "../../store/allCourse/actionCreators";
 import * as actionCreators1 from '../sixuexing/store/actionCreators'
 import * as actionCreators2 from '../Home/store/actionCreators'
+
+import bluebg from '../../images/home/bluebg.png'
+import salary from '../../images/home/salary.png'
+import field from '../../images/home/field.png'
+import teacherbg from '../../images/home/Clip.png'
+
 let timer;
 class Home extends Component{
     constructor(props){
@@ -108,45 +108,44 @@ class Home extends Component{
                 <div className="home-container">
                     <FloatWin />
                     {/*<SignUp />*/}
-                    {/*<div className="Swiper-content">
+                    <div className="banner-container-box">
+                        <Slider
+                            items={this.props.bannerList}
+                            speed={1}
+                            delay={3}
+                            pause={true}
+                            autoplay={true}
+                            dots={true}
+                        />
+                        <div className="menu-box">
+                            <div className="menu-title">热门课程</div>
+                            <ul className='course-name'>
+                                <h1><Link to={'/qklpxb'}>区块链项目实战班</Link><span></span></h1>
+                                <h1>区块链全栈工程师<span></span></h1>
+                                <h1>区块链商学院</h1>
+                                <h1>数字资产量化投资</h1>
+                                <h1>ACM信息奥数</h1>
+                                <h1>区块链实训</h1>
+                            </ul>
+                        </div>
+                    </div>
 
-                        <MySwiper params={params} imageData={this.props.bannerList}/>
-                        {this.props.bannerList.map((item,index)=>{
-                            return <div key={index}><img src={item.bannerImage} alt="区块链"/></div>
-                        })}
-                        <Slider {...params} >
-
-                            <Link to={'/qklpxb'}><img src={require("../../images/home/banner4.png")} alt="区块链"/></Link>
-                            <div><img src={require("../../images/home/banner6.png")} alt="区块链"/></div>
-                            <div><img src={require("../../images/home/banner1-pc.png")} alt="区块链"/></div>
-                        </Slider>
-                    </div>*/}
-                    <Slider
-                        items={this.props.bannerList}
-                        speed={1}
-                        delay={3}
-                        pause={true}
-                        autoplay={true}
-                        dots={true}
-                    />
                     <div className="item1">
                         <div className="item1-position">
                                 <div className="item1-list" onClick={()=>{this.handleBoxChange('self')}}>
                                     <span className='span1'></span>
-                                    <div className="list-title">个人</div>
-                                    <div className="list-text">人才培养</div>
+                                    <div className="list-title">就业培训</div>
+                                    {/*<div className="list-text">人才培养</div>*/}
                                     <div className="inner-box">
                                         <div className="button">
                                             查看详情
                                         </div>
                                     </div>
                                 </div>
-
-
                                 <div className="item1-list" onClick={()=>{this.handleBoxChange('university')}}>
                                     <span className='span2'></span>
-                                    <div className="list-title">高校</div>
-                                    <div className="list-text">技术赋能</div>
+                                    <div className="list-title">实训基地</div>
+                                    {/*<div className="list-text">技术赋能</div>*/}
                                     <div className="inner-box">
                                         <div className="button">
                                             查看详情
@@ -157,8 +156,8 @@ class Home extends Component{
 
                                 <div className="item1-list" onClick={()=>{this.handleBoxChange('enterprise')}}>
                                     <span className='span3'></span>
-                                    <div className="list-title">政企</div>
-                                    <div className="list-text">产业研发</div>
+                                    <div className="list-title">人才培养</div>
+                                    {/*<div className="list-text">产业研发</div>*/}
                                     <div className="inner-box">
                                         <div className="button">
                                             查看详情
@@ -188,13 +187,13 @@ class Home extends Component{
                     <div>
                         <div className="course">
                             <div className="course-position">
-                                <div className="title" style={{width:'300px'}}>
-                                    <span className='span'><span></span></span>
-                                    <h1 className='text'>在线免费试学</h1>
-                                    <span className='span'><span></span></span>
+                                <div className="title">
+                                    {/*<span className='span'><span></span></span>*/}
+                                    <h1 className='text'>免费课程</h1>
+                                    {/*<span className='span'><span></span></span>*/}
                                 </div>
                                 <s style={{height:'0',clear:'both',display:'block',overflow:'hidden'}}></s>
-                                <div className="title-description">知识共享，做真正实用的公开课</div>
+                                {/*<div className="title-description">知识共享，做真正实用的公开课</div>*/}
                                 <div className="course-list">
                                     <Link to='allcourse' className="more-btn">查看更多></Link>
                                     {this.props.allCourseList?this.props.allCourseList.map(item=>{
@@ -202,6 +201,7 @@ class Home extends Component{
                                             <Link to={'/courseDetail/'+item.courseId} className="list-box" key={lodashId()}>
                                                 <div className="span-box">
                                                     <img src={item.courseImage} className='img'/>
+                                                    <span>限时特惠</span>
                                                 </div>
                                                 <div className="content">
                                                     <div className="course-title">{item.courseTitle}</div>
@@ -215,286 +215,78 @@ class Home extends Component{
                                 <s style={{height:'0',clear:'both',display:'block',overflow:'hidden'}}></s>
                             </div>
                         </div>
-                        {/*<div className="Introduction">
-                            <div className="Introduction-position">
-                                <div className="introductionTitle">
-                                    <h2 className="title">一个“高端前沿，薪资涨幅快”的职位，区块链工程师</h2>
-                                    <h5 className="introductionDesc">每天8小时，4个月，轻松挑战30W年薪</h5>
+                        <div className="hot">
+                            <img src={bluebg} alt=""/>
+                            <h1>区块链热度攀升，市场薪资居高不下</h1>
+                            <div className="data-box">
+                                <img src={salary} alt=""/>
+                                <img src={field} alt=""/>
+                            </div>
+                        </div>
+                        <div className="training">
+                            <div className="train-title">区块链实训项目</div>
+                            <div className="train-desc">所有实训项目均拥有全套代码及成熟技术团队体系支持</div>
+                            <div className="train-content">
+                                <div className="list">
+                                    <div className="img img1"></div>
+                                    <div className="text">区块链能源</div>
                                 </div>
-                                <div className="IntroductionBox">
-                                    <div className="item-box item-box1">
-                                        <div className="img img1">
-                                            商业<br/>价值
-                                        </div>
-                                        <p>分布式容错性、不可篡改性、隐私保护性</p>
-                                    </div>
-                                    <div className="item-box item-box1">
-                                        <div className="img img1">
-                                            使用<br/>场景
-                                        </div>
-                                        <p>征信管理、跨国交易、跨组织合作、资源共享，物联网<br/>等诸多领域</p>
-                                    </div>
-                                    <div className="item-box">
-                                        <div className="img img1">
-                                            优势<br/>前景
-                                        </div>
-                                        <p>极大降低整个商业体系运转的成本，同时大大提高社会<br/>沟通协作的效率</p>
-                                    </div>
+                                <div className="list">
+                                    <div className="img img2"></div>
+                                    <div className="text">区块链知识资产</div>
+                                </div>
+                                <div className="list">
+                                    <div className="img img3"></div>
+                                    <div className="text">区块链游戏</div>
+                                </div>
+                                <div className="list">
+                                    <div className="img img4"></div>
+                                    <div className="text">区块链银行证券</div>
+                                </div>
+                                <div className="list">
+                                    <div className="img img5"></div>
+                                    <div className="text">区块链钱包应用交易所</div>
+                                </div>
+                                <div className="list">
+                                    <div className="img img6"></div>
+                                    <div className="text">区块链景区</div>
                                 </div>
                             </div>
                         </div>
+                        <div className="teacher">
+                            <img src={teacherbg} alt="区块链"/>
+                            <div className="teacher-content">
+                                <div className="teacherImg"></div>
+                                <div className="teacher-desc">
+                                    <div className="teacher-title-box">
+                                        <div className="teacher-title">桂勋</div>
+                                        <span>|</span>
+                                        <div className="position">课程讲师</div>
+                                    </div>
+                                    <div className="text-content">
+                                        <div className="text" style={{marginTop:'15px'}}>电子科技大学副教授</div>
+                                        <div className="text">美国田纳西大学CURENT实验室博士后</div>
+                                        <div className="text" style={{margin:'30px 0 40px 0'}}>长期从事能源和军工领域内复杂软件系统和实时服务器软件设计，具备实时系统 和并行系统设计的丰富经验;在电子科技大学首开32学时的《区块链技术及其应用》课 程。</div>
+                                        <div className="text">曾以“能源互联网区块链项目”，荣获工信部指导，国家电子标准研究院主 办的《首届全国区块链开发大赛》全国二等奖；目前参与科技部重大专项《面向新 型城镇的能源互联网关键技术及应用》，负责高性能能源区块链的研制工作。为国 际电气工程师协会IEEE 2418.2 区块链数据格式标准制定委员会成员。</div>
+                                        <Link to={'/teacher'} className="more-teacher">更多讲师 >></Link>
+                                    </div>
 
-                        <div className="employment">
-                            <div className="employment-position">
-                                <div className="employmentTitle">
-                                    <h2 className="title">高薪就业班</h2>
-                                    <h5 className="introductionDesc">做一个走在行业前沿,不仅懂前端还懂后端的高薪全栈工程师</h5>
-                                </div>
-                                <div className="employmentBox">
-                                    <div className="employmentItem fl">
-                                        <div className="itemTop">
-                                            <div className="itemTopBox">
-                                                <div className="itemL">
-                                                    <div className="title">前端开发工程师</div>
-                                                    <p className='line line1'></p>
-                                                    <p className="text">
-                                                        会coding的设计师、懂设计的程序猿。各大网站每天上万条招聘信息，快速入门 IT行业的不二之选。
-                                                    </p>
-                                                </div>
-                                                <div className="img1 itemImg"></div>
-                                            </div>
-                                            <div className="itemTopBox1">
-                                                <div className="title title1">前端开发工程师</div>
-                                                <div className="text">
-                                                    <span>岗位：</span>
-                                                    前端工程师是目前非常受欢迎的一个职业，生活中web端页面和移动端的界面、微信中的小程序，以及pad等各种移动设备所看到的页面，都是由前端工程师做的。作为用户交互必不可少的环节，对前端工程师的需求量与日俱增，薪资水平日益高涨。
-                                                </div>
-                                                <div className="text">
-                                                    <span>技能：</span>
-                                                    能够熟练掌握HTML5,CSS3,JS,运用主流框架进行项目开发，协同团队合作，提高工作效率，开发高性能网站。
-                                                </div>
-                                                <div className="button button1">了解更多前端开发工程师</div>
-                                            </div>
-                                        </div>
-                                        <div className="itemBottom">
-                                            <div className="text">总时长177小时<span></span>15641人学习</div>
-                                        </div>
-                                    </div>
-                                    <div className="employmentItem fl">
-                                        <div className="itemTop">
-                                            <div className="itemTopBox">
-                                                <div className="itemL">
-                                                    <div className="title">区块链开发工程师</div>
-                                                    <p className='line line2'></p>
-                                                    <p className="text">
-                                                        当前最高端最火热的岗位之一，高薪且人才稀缺。需要前端和Go等技术基础，适合中高级开发人员进行开发学习。
-                                                    </p>
-                                                </div>
-                                                <div className="img2 itemImg"></div>
-                                            </div>
-                                            <div className="itemTopBox1">
-                                                <div className="title title2">区块链开发工程师</div>
-                                                <div className="text">
-                                                    <span>岗位：</span>
-                                                    金融安全、信息安全等新兴方向再一次推动了区块链工程师的职业发展。区块链开发工程师涉及到多个领域，主要征信管理、跨国交易、跨组织合作、资源共享和物联网等诸多领域，也涌现出大量有趣的应用案例。
-                                                </div>
-                                                <div className="text">
-                                                    <span>技能：</span>
-                                                    掌握GO语言、C++、Java、Python、系统架构、Linux、hyperiedger等两至三项技能以上，还必须同时了解密码学、共识算法、超级账本、智能合约等。
-                                                </div>
-                                                <div className="button button2">了解更多区块链开发工程师</div>
-                                            </div>
-                                        </div>
-                                        <div className="itemBottom">
-                                            <div className="text">总时长177小时<span></span>15641人学习</div>
-                                        </div>
-                                    </div>
-                                    <div className="employmentItem fl">
-                                        <div className="itemTop">
-                                            <div className="itemTopBox">
-                                                <div className="itemL">
-                                                    <div className="title">Golang开发工程师</div>
-                                                    <p className='line line3'></p>
-                                                    <p className="text">
-                                                        Go协程比线程启动更快。Go可以像Java,C和C++高效处理并发，同时像Earlang以简洁直观的代码执行并发。
-                                                    </p>
-                                                </div>
-                                                <div className="img3 itemImg"></div>
-                                            </div>
-                                            <div className="itemTopBox1">
-                                                <div className="title title3">Golang开发工程师</div>
-                                                <div className="text">
-                                                    <span>岗位：</span>
-                                                    区块链开发是Go语言的主要应用场景。Go是Google支持的，谷歌拥有世界上最大的云基础设施之一。并且他的规模不断扩大。Go是由谷歌设计来解决他们的支持可扩展性和有效性问题。
-                                                </div>
-                                                <div className="text">
-                                                    <span>技能：</span>
-                                                    Web后端开发，如Socket ，高负载、高并发 ，MQTT ，Golang协程与channel
-                                                    前端能力，服务认证 ，实时推送 ，文件存储 ，知识库管理 ，精通Go ，后端系统架构 ，熟悉算法 ，熟悉各种数据库数据库 ，技术、业务、产品
-                                                </div>
-                                                <div className="button button3">了解更多Golang开发工程师</div>
-                                            </div>
-                                        </div>
-                                        <div className="itemBottom">
-                                            <div className="text">总时长177小时<span></span>15641人学习</div>
-                                        </div>
-                                    </div>
-                                    <div className="employmentItem fl">
-                                        <div className="itemTop">
-                                            <div className="itemTopBox">
-                                                <div className="itemL">
-                                                    <div className="title">Python开发工程师</div>
-                                                    <p className='line line4'></p>
-                                                    <p className="text">
-                                                        web后端，网络安全，简单易学，跨平台可扩展性强，爬虫技术，渗透测试，人工智能等前沿技术都在使用Python。
-                                                    </p>
-                                                </div>
-                                                <div className="img4 itemImg"></div>
-                                            </div>
-                                            <div className="itemTopBox1">
-                                                <div className="title title4">Python开发工程师</div>
-                                                <div className="text">
-                                                    <span>岗位：</span>
-                                                    Python开发工程师是非常具有竞争性的岗位，就业前景广阔。Python开发工程师主要从事Web后台，渗透测试，人工智能等开发工作。使用流行框架快速搭建企业项目架构，多线程数据爬虫，人工智能多用Python实现。
-                                                </div>
-                                                <div className="text">
-                                                    <span>技能：</span>
-                                                    掌握Python开发的必备技能，了解爬虫，安全测试开发等相关技术，能实现黑百盒测试，人工智能技术，使用流行框架，独立开发项目。
-                                                </div>
-                                                <div className="button button4">了解更多Python开发工程师</div>
-                                            </div>
-                                        </div>
-                                        <div className="itemBottom">
-                                            <div className="text">总时长177小时<span></span>15641人学习</div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="advantage">
-                            <div className="advantage-position">
-                                <div className="advantageTitle">
-                                    <h2 className="title">与别的培训不同，我们更在意你的学习质量！</h2>
-                                    <h5 className="introductionDesc">虚假承诺、乱画大饼的培训多如牛毛，我们不同，我们更专注于是否能让你学到真东西！</h5>
-                                </div>
-                                <div className="advantage-itemBox">
-                                    <div className="item">
-                                        <div className="title">线下培训班</div>
-                                        <ul className='item-text'>
-                                            <li><span></span>收费高，动辄几万元</li>
-                                            <li><span></span>课程知识反复使用，更新速度慢</li>
-                                            <li><span></span>讲师身份包装，水平参差不齐</li>
-                                            <li><span></span>学完推荐入职，但不保证成功</li>
-                                        </ul>
-                                    </div>
-                                    <div className="item">
-                                        <div className="title">“有的”线上培训</div>
-                                        <ul className='item-text'>
-                                            <li><span></span>费用不低</li>
-                                            <li><span></span>课程缺乏设计，内容陈旧</li>
-                                            <li><span></span>讲师自身技术水平难以保证</li>
-                                            <li><span></span>夸大学习效果，实际难以落地入职</li>
-                                        </ul>
-                                    </div>
-                                    <div className="item" style={{background:'#F9F4FE'}}>
-                                        <div className="title" style={{color:'#9447EB'}}>思学行就业班</div>
-                                        <ul className='item-text'>
-                                            <li className='li1'><span className='span1'></span>分阶段学习，费用更亲民</li>
-                                            <li className='li1'><span className='span1'></span>教学内容主流实用，与时俱进</li>
-                                            <li className='li1'><span className='span1'></span>讲师均来自国内一线互联网公司</li>
-                                            <li className='li1'><span className='span1'></span>课程技术接轨企业用人标准</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="advantageTitle">
-                                    <h2 className="title">为什么思学行就业班课程能让你学会</h2>
-                                </div>
-                                <div className="advantage-item-box">
-                                    <div className="item-list">
-                                        <div className="img">
-                                            <svg className='icon-svg'>
-                                                <use xlinkHref='#icon-jiaoxuezhongxin'></use>
-                                            </svg>
-                                        </div>
-                                        <div className="title1">教学内容：结合企业需求</div>
-                                        <p>根据企业需求、行业发展，系统设计<br/>的课程</p>
-                                    </div>
-                                    <div className="item-list">
-                                        <div className="img">
-                                            <svg className='icon-svg'>
-                                                <use xlinkHref='#icon-baoming'></use>
-                                            </svg>
-                                        </div>
-                                        <div className="title1">教学方式：学练测评一体</div>
-                                        <p>课程不只是讲课，练习，评测，作业
-                                            <br/>一体化，学习、巩固都不能少</p>
-                                    </div>
-                                    <div className="item-list">
-                                        <div className="img">
-                                            <svg className='icon-svg'>
-                                                <use xlinkHref='#icon-xinwen'></use>
-                                            </svg>
-                                        </div>
-                                        <div className="title1">课程案例：案例作业丰富</div>
-                                        <p>根据企业需求、行业发展，系统设计<br/>的课程</p>
-                                    </div>
-                                    <div className="item-list" style={{marginRight:'0'}}>
-                                        <div className="img">
-                                            <svg className='icon-svg'>
-                                                <use xlinkHref='#icon-link'></use>
-                                            </svg>
-                                        </div>
-                                        <div className="title1">教辅材料：大量辅助资料</div>
-                                        <p>根据企业需求、行业发展，系统设计<br/>的课程</p>
-                                    </div>
-                                </div>
-                                <div className="advantage-item-box">
-                                    <div className="item-list">
-                                        <div className="img">
-                                            <svg className='icon-svg'>
-                                                <use xlinkHref='#icon-shijian'></use>
-                                            </svg>
-                                        </div>
-                                        <div className="title1">随到随学</div>
-                                        <p>学习时间灵活自由，放学、下班皆可
-                                            <br/>学习，任你做主</p>
-                                    </div>
-                                    <div className="item-list">
-                                        <div className="img">
-                                            <svg className='icon-svg'>
-                                                <use xlinkHref='#icon-renwu-ren'></use>
-                                            </svg>
-                                        </div>
-                                        <div className="title1">1V1作业批改</div>
-                                        <p>课程不只是讲课，练习，评测，作业
-                                            <br/>一体化，学习、巩固都不能少</p>
-                                    </div>
-
-                                    <div className="item-list">
-                                        <div className="img">
-                                            <svg className='icon-svg'>
-                                                <use xlinkHref='#icon-xiaoxi'></use>
-                                            </svg>
-                                        </div>
-                                        <div className="title1">答疑解惑</div>
-                                        <p>课程设立专门的问答区，可随时提
-                                            <br/>问，我们将悉心为你解答</p>
-
-                                    </div>
-                                    <div className="item-list"  style={{marginRight:'0'}}>
-                                        <div className="img">
-                                            <svg className='icon-svg'>
-                                                <use xlinkHref='#icon-xiazai'></use>
-                                            </svg>
-                                        </div>
-                                        <div className="title1">代码下载</div>
-                                        <p>讲课过程中的代码，你可随时下载到
-                                            <br/>本地，供你练习使用</p>
-                                    </div>
-                                </div>
+                        <div className="cooperation">
+                            <div className="coop-title">合作校企</div>
+                            <div className="coop-content">
+                                <div className="img img1">百度超级链成都超级节点</div>
+                                <div className="img img2">中国管理科学研究所新兴经济研究所
+                                    <br/>通证经济商学院成都分院</div>
+                                <div className="img img3">亚马逊云计算人才培训基地</div>
+                                <div className="img img4">香港城市大学成都研究院实训基地</div>
+                                <div className="img img5">EC机器人俱乐部</div>
+                                <div className="img img6">黑镜区块链安全实验室</div>
                             </div>
-                        </div>*/}
-                        <div className="largeData">
+                        </div>
+                        {/*<div className="largeData">
                             <div className="largeData-position">
                                 <div className="title" style={{width:'340px'}}>
                                     <span className='span'><span></span></span>
@@ -507,20 +299,20 @@ class Home extends Component{
                                 </div>
                                 <div className="data-content">
                                     <div className="img-box" onMouseOver={()=>{clearInterval(timer)}}>
-                                        <Slider {...params1} >
+                                        <Swiper {...params1} >
                                             <div><img src={Data1} alt="区块链"/></div>
                                             <div><img src={Data2} alt="区块链"/></div>
                                             <div><img src={Data3} alt="区块链"/></div>
-                                        </Slider>
-                                        {/*<MySwiper params={params1}/>*/}
+                                        </Swiper>
+                                        <MySwiper params={params1}/>
                                     </div>
                                     <div className="data-description">
                                         中国互联网行业已具规模，并且发展迅猛，行业平均就业薪资高，但专业技术人才供需严重失衡，未来行业的发展亟待复合型及国际化人才的出现。
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="teacher">
+                        </div>*/}
+                        {/*<div className="teacher">
                             <div className="teacher-position">
                                 <div className="title" style={{width:'240px'}}>
                                     <span className='span'><span></span></span>
@@ -633,8 +425,8 @@ class Home extends Component{
                                     </MyWOW>
                                 </div>
                             </div>
-                        </div>
-                        <div className="news">
+                        </div>*/}
+                        {/*<div className="news">
                             <div className="news-position">
                                 <div className="title" style={{width:'240px'}}>
                                     <span className='span'><span></span></span>
@@ -713,8 +505,8 @@ class Home extends Component{
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div className="baoming" id='baoming'>
+                        </div>*/}
+                        {/*<div className="baoming" id='baoming'>
                             <div className="baoming-position">
                                 <div className="title" style={{width:'240px'}}>
                                     <span className='span'><span></span></span>
@@ -730,7 +522,7 @@ class Home extends Component{
                                     </a>
                                 </h1>
                             </div>
-                        </div>
+                        </div>*/}
                     </div>
                     : pages=='self'?<Self />
                     : pages=='university'?<University />

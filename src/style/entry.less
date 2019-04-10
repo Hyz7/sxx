@@ -149,30 +149,38 @@
 }
 body{
   position: relative;
-  padding-top: 160px;
+  padding-top: 140px;
 }
 .header-container{
   position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
-  background-color: #fff;
-  height: 159px;
+  background-color: #FAFAFA;
+  height: 140px;
   width: 100%;
   min-width: 1200px;
-  //margin-bottom: 160px;
   .header-position{
     width: 1200px;
     margin: 0 auto;
   }
   .header-top{
-    height: 113px;
+    height: 80px;
     width: 100%;
+    padding: 20px 0;
+    box-sizing: border-box;
+    .header-title{
+      font-size: 20px;
+      color: #666666;
+      margin-top: 10px;
+      float: left;
+      margin-left: 160px;
+    }
     .header-logo{
-      margin: 30px 0;
       float:left;
       background: url("../images/title.png") no-repeat;
-      height:51px;width:200px;
+      height:51px;
+      width:200px;
       background-position:-236px 0;
       img{
         height: 46px;
@@ -189,29 +197,71 @@ body{
     .header-right{
       display: flex;
       flex-wrap: nowrap;
-      width: 260px;
+      width: 190px;
       float: right;
-      margin-top: 40px;
-      margin-right: 40px;
+      margin-top: 15px;
       .header-text{
         display: flex;
         flex-wrap: nowrap;
         white-space: nowrap;
+        font-size: 14px;
+        color: #666;
+        margin-right: 15px;
       }
       span{
-        background: url("../images/title.png") no-repeat;
-        margin: 0 10px 0 40px;
+        margin: 3px 5px 0 5px;
+        width: 16px;
+        height: 16px;
       }
       .span1{
-        height:20px;width:16px;
-        background-position:0 0;
+        background-image: url("../images/header/address.png");
+        height:16px;width:16px;
+        //background-position:0 0;
       }
       .span2{
-        height:18px;width:18px;background-position:-21px -2px;
+        background-image: url("../images/header/phoneNum.png");
+        height:16px;width:16px;
       }
     }
   }
+  .header-navbar{
+    float: right;
+    margin-right: -20px;
+    line-height: 60px;
+    &>li{
+      float: left;
+      font-size: 16px;
+      span{
+        display: block;
+        margin: 0 auto;
+        width: 0;
+        height: 3px;
+        background-color: @theme-color;
+        transition: all 500ms;
+        border-radius: 1px;
+      }
+      a{
+        padding: 0 20px;
+        box-sizing: border-box;
+        color: #666;
+        line-height: 50px;
+        display: block;
+      }
+      &:hover{
+        a{
+          color:@theme-color;
+        }
+        span{
+          width: 40px;
+          transition: all 500ms;
+        }
+      }
+
+
+    }
+  }
   .header-nav{
+    border: 1px solid red;
     position: relative;
     height: 50px;
     line-height: 50px;
@@ -246,7 +296,6 @@ body{
             margin: 0 auto;
             width: 40px;
             height: 45px;
-
           }
           .popup-text{
             font-size: 11px;
