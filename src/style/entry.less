@@ -149,41 +149,103 @@
 }
 body{
   position: relative;
-  padding-top: 140px;
+}
+.header-container.active{
+  box-shadow: 0 3px 6px rgba(0,0,0,.16);
+  transition: all 1s;
+  background-color: #Fff;
+  position: fixed!important;
+  .header-navbar{
+    a{
+      color: #4d4d4d!important;
+    }
+  }
+  .header-logo{
+    background: url("../images/sxxlogo.png") no-repeat!important;
+    background-size: 147px 32px!important;
+  }
+  .header-text{
+    color: #4d4d4d!important;
+  }
+  .header-right{
+    .span1{
+      background-image: url("../images/header/address.png")!important;
+      background-size: 14px 16px!important;
+    }
+    .span2{
+      background-image: url("../images/header/phone.png")!important;
+      background-size:14px 16px!important;
+    }
+  }
 }
 .header-container{
-  position: absolute;
   top: 0;
   left: 0;
-  z-index: 10;
-  background-color: #FAFAFA;
-  height: 140px;
+  z-index: 100;
+  //background-color: #FAFAFA;
+  background-color: rgba(0,0,0,.16);
+  transition: all 1s;
+  height: 60px;
   width: 100%;
   min-width: 1200px;
+  position: absolute;
   .header-position{
     width: 1200px;
     margin: 0 auto;
   }
   .header-top{
-    height: 80px;
+    height: 60px;
     width: 100%;
-    padding: 20px 0;
+    display: flex;
+    flex-wrap: nowrap;
     box-sizing: border-box;
-    .header-title{
+    /*.header-title{
       font-size: 20px;
       color: #666666;
       margin-top: 10px;
       float: left;
       margin-left: 160px;
-    }
+    }*/
     .header-logo{
-      float:left;
-      background: url("../images/title.png") no-repeat;
-      height:51px;
+      background: url("../images/sxxlogo-white.png") no-repeat;
+
       width:200px;
-      background-position:-236px 0;
-      img{
-        height: 46px;
+      margin-top: 12px;
+      background-size: 147px 32px;
+    }
+    .header-navbar{
+      margin:0 50px 0 250px;
+      height: 60px;
+      line-height: 60px;
+      &>li{
+        float: left;
+        font-size: 16px;
+        span{
+          display: block;
+          margin: 0 auto;
+          width: 0;
+          height: 3px;
+          background-color: @theme-color;
+          transition: all 500ms;
+          border-radius: 1px;
+        }
+        a{
+          padding: 0 20px;
+          box-sizing: border-box;
+          color: #fff;
+          line-height: 60px;
+          display: block;
+          text-decoration: none;
+        }
+        &:hover{
+          a{
+            color:@theme-color;
+          }
+          span{
+            width: 40px;
+            transition: all 500ms;
+          }
+        }
       }
     }
     .header-biaoyu{
@@ -198,68 +260,31 @@ body{
       display: flex;
       flex-wrap: nowrap;
       width: 190px;
-      float: right;
-      margin-top: 15px;
+      margin-top: 20px;
       .header-text{
         display: flex;
         flex-wrap: nowrap;
         white-space: nowrap;
         font-size: 14px;
-        color: #666;
+        color: #fff;
         margin-right: 15px;
       }
       span{
         margin: 3px 5px 0 5px;
-        width: 16px;
+        width: 14px;
         height: 16px;
       }
       .span1{
-        background-image: url("../images/header/address.png");
-        height:16px;width:16px;
-        //background-position:0 0;
+        background-image: url("../images/header/address-white.png");
+        background-size: 14px 16px;
       }
       .span2{
-        background-image: url("../images/header/phoneNum.png");
-        height:16px;width:16px;
+        background-image: url("../images/header/phone-white.png");
+        background-size: 14px 16px;
       }
     }
   }
-  .header-navbar{
-    float: right;
-    margin-right: -20px;
-    line-height: 60px;
-    &>li{
-      float: left;
-      font-size: 16px;
-      span{
-        display: block;
-        margin: 0 auto;
-        width: 0;
-        height: 3px;
-        background-color: @theme-color;
-        transition: all 500ms;
-        border-radius: 1px;
-      }
-      a{
-        padding: 0 20px;
-        box-sizing: border-box;
-        color: #666;
-        line-height: 50px;
-        display: block;
-      }
-      &:hover{
-        a{
-          color:@theme-color;
-        }
-        span{
-          width: 40px;
-          transition: all 500ms;
-        }
-      }
 
-
-    }
-  }
   .header-nav{
     border: 1px solid red;
     position: relative;
@@ -509,8 +534,9 @@ body{
     .footer2{
       padding-top: 20px;
       height: 248px;
-      border-bottom: 1px solid #fff;
+      border-bottom: 1px dashed #fff;
       position: relative;
+      display: flex;
       .footer-siteMap{
         position: absolute;
         bottom: 0;
@@ -524,7 +550,7 @@ body{
         }
       }
       .item{
-        float: left;
+        flex: 1;
         .gongzhonghao{
           width: 128px;
           height: 128px;

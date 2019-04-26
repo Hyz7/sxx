@@ -14,32 +14,48 @@ class Header extends Component{
         }
     }
 
-    componentDidMount(){
+    getScollTop=()=>{
 
+        let header=this.header
+        let scrollTop=document.body.scrollTop||document.documentElement.scrollTop
+        if(scrollTop>100){
+            header.className='header-container active'
+        }else{
+            header.className='header-container'
+        }
+    }
+
+    componentDidMount(){
+        window.addEventListener('scroll',this.getScollTop.bind(this),false)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll',this.getScollTop.bind(this),false)
     }
 
     render() {
         let { popupHeader }=this.state
         return(
             <Fragment>
-                    <header className='header-container'>
+                    <header className='header-container' ref={node=>this.header=node}>
                         <div className="header-position">
-                            <div className="header-top">
+                            <div className="header-top" ref={node=>this.headerTop=node}>
                                 <NavLink to='/'activeClassName='header-logo'></NavLink>
                                 {/*<div className='header-biaoyu'></div>*/}
-                                <h1 className="header-title">具有区块链教材研发、制定能力的全球化教育培训中心</h1>
-                                <div className='header-right'>
+                                {/*<h1 className="header-title">具有区块链教材研发、制定能力的全球化教育培训中心</h1>*/}
+                                <ul className="header-navbar">
+                                    <li><NavLink to='/' exact activeClassName="active">首页</NavLink><span></span></li>
+                                    <li><NavLink to='/allcourse' activeClassName="active">免费课程</NavLink><span></span></li>
+                                    <li><NavLink to='/teacher' activeClassName="active">授课导师</NavLink><span></span></li>
+                                    <li><NavLink to='/sixuexing' activeClassName="active">思学行动态</NavLink><span></span></li>
+                                    <li><NavLink to='/aboutUs' activeClassName="active">关于我们</NavLink><span></span></li>
+                                </ul>
+                                <div className='header-right fr'>
                                     <div className='header-text'><span className='span1'></span>成都</div>
                                     <div className='header-text'><span className='span2'></span>028-6385-2532</div>
                                 </div>
                             </div>
-                            <ul className="header-navbar">
-                                <li><NavLink to='/' exact activeClassName="active">首页</NavLink><span></span></li>
-                                <li><NavLink to='/allcourse' activeClassName="active">免费课程</NavLink><span></span></li>
-                                <li><NavLink to='/teacher' activeClassName="active">授课导师</NavLink><span></span></li>
-                                <li><NavLink to='/sixuexing' activeClassName="active">思学行动态</NavLink><span></span></li>
-                                <li><NavLink to='/aboutUs' activeClassName="active">关于我们</NavLink><span></span></li>
-                            </ul>
+
                             {/*<div className="header-nav">
                                 {location.pathname=='/'?
                                     <div>

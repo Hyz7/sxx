@@ -67,7 +67,7 @@ export const getMoreList=(page,size)=>{
 export const getNewsList=(value)=>{
     return (dispatch)=>{
         axios.get(API.GET_NEWS_LIST+"?name="+value).then(res=>{
-            // console.log(res.data)
+            console.log(res)
             dispatch(createNewsList(res.data))
         })
     }

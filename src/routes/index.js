@@ -5,6 +5,7 @@ import Header from '../common/header'
 import Footer from '../common/footer'
 import Home from '../components/home'
 import Test from '../components/test'
+import courseDetail from '../components/allCourse/courseDetail'
 export default class MainRoutes extends  Component{
     render(){
         return(
@@ -19,7 +20,8 @@ export default class MainRoutes extends  Component{
 
                 <Route path='/allCourse' component={AsyncComponent(()=>import('../components/allCourse'))}></Route>
 
-                <Route path='/courseDetail/:id' component={AsyncComponent(()=>import('../components/allCourse/courseDetail'))}></Route>
+                {/*<Route path='/courseDetail/:id' component={AsyncComponent(()=>import('../components/allCourse/courseDetail'))}></Route>*/}
+                <Route path='/courseDetail/:id' component={courseDetail}></Route>
 
                 <Route path='/mediaDetail' component={AsyncComponent(()=>import('../components/allCourse/mediaDetail'))}></Route>
 

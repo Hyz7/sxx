@@ -181,7 +181,7 @@ class CourseDetail extends Component {
                         <div className="right">
                             <div className="item item1">
                                 <div className="title">主讲老师</div>
-                                <img src={courseTeacherImage} alt=""/>
+                                <img src={courseTeacherImage?courseTeacherImage:''} alt="区块链"/>
                                 <div className="name">{courseTeacher}</div>
                                 <div className="description">{courseTeacherIntroduce&&courseTeacherIntroduce.length>35?courseTeacherIntroduce.substring(0,35)+'...':courseTeacherIntroduce}</div>
                             </div>

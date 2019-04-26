@@ -100,7 +100,7 @@ class About extends Component{
                                     </div>
                                 </div>
                             </div>
-                            <div className="list">
+                            {/*<div className="list">
                                 <div className="title">重庆校区（分校）</div>
                                 <div className="box">
                                     <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2507819723&site=qq&menu=yes">
@@ -119,7 +119,7 @@ class About extends Component{
                                     </div>
                                 </div>
                             </div>
-                            {/*<div className="list">
+                            <div className="list">
                                 <div className="title">北京校区（分校）</div>
                                 <div className="box">
                                     <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2507819723&site=qq&menu=yes">
@@ -165,7 +165,7 @@ class About extends Component{
                                 <p style='font-weight:bold;'>公司地址：</p>四川省成都市武侯区府城大道西段399号 天府新谷10号楼20层
                                 </div>
                                 <div style='display:flex;flex-wrap:nowrap;height:20px;'>
-                                <p style='font-weight:bold;'>公司电话：</p>028-8525-3153
+                                <p style='font-weight:bold;'>公司电话：</p>028-6385-2532
                                 </div>
                                 </div>" // 信息窗显示文字，支持HTML内容
                                 point={point} // 显示位置坐标

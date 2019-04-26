@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import sxxImg from '../../images/sxxbanner.png'
 import FloatWin from '../../common/floatWindow'
-import { Modal } from 'antd'
 import { connect } from 'react-redux'
 import { actionCreators } from '../teacher/store'
 import uniqueId from 'lodash/uniqueId'
@@ -66,13 +65,6 @@ class Teacher extends Component {
         }
     }
 
-    handleChangeType = (value) => {
-        this.setState({
-            teacherType: value
-        })
-        document.documentElement.scrollTop = 400
-    }
-
     changeTeacher=(name)=>{
         this.setState({
             teacherName:name,
@@ -87,32 +79,14 @@ class Teacher extends Component {
         })
     }
 
-    /*componentWillUpdate(nextProps, nextState) {
-        if(nextProps.visible!==nextState.visible){
-            return true
-        }
-    }*/
-
     render() {
-        let {typeName,teacherName} = this.state
+        let {typeName} = this.state
         return (
             <div className='teacher-container'>
                 <FloatWin />
                 <div className="teacher-banner">
                     <img src={sxxImg} alt=""/>
                 </div>
-                {/*<Modal title={this.state.teacherName}
-                       visible={this.state.visible}
-                       onOk={this.handleOk}
-                       onCancel={this.handleCancel}
-                       footer={null}
-                       // title={this.state.boxContent.teaCname}
-                       closable={false}
-                       style={{top:'400px'}}
-                       wrapClassName='teacherModal'
-                >
-                    {this.state.boxContent.teaDesc}
-                </Modal>*/}
                 <div className="teacher-position">
                     <div className="teacher-title">专家大牛</div>
                     <div className="lnav">

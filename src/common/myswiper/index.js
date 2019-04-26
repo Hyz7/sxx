@@ -11,9 +11,6 @@ class MySwiper extends Component {
                 {this.props.imageData?this.props.imageData.map((item)=>{
                     return <div key={item.bannerId}><img src={item.bannerImage} alt="区块链"/></div>
                 }):null}
-                {/*<div><img src={require("../../images/home/banner4.png")} alt="区块链"/></div>
-                <div><img src={require("../../images/home/banner6.png")} alt="区块链"/></div>
-                <div><img src={require("../../images/home/banner1-pc.png")} alt="区块链"/></div>*/}
             </Swiper>
         );
     }

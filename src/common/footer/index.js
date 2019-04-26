@@ -5,7 +5,7 @@ export default class Footer extends Component{
         return(
             <footer className='footer-container'>
                 <div className="footer-position">
-                    <div className="footer1">
+                    {/*<div className="footer1">
                         <div className="title"  style={{width:'100px'}}>
                             合作伙伴
                         </div>
@@ -25,13 +25,13 @@ export default class Footer extends Component{
                             <li className="list"><img src={require('../../images/footer/tencent.png')} alt=""/></li>
                             <li className="list"><img src={require('../../images/footer/toutiao.png')} alt=""/></li>
                         </ul>
-                    </div>
+                    </div>*/}
                     <s style={{clear:'both',display:'block',height:'0'}}></s>
-                    <div className="footer2">
+                    <div className="footer2" >
                         <div className="item item1">
                             <div className="title" style={{width:'100px'}}>联系我们</div>
                             <div className="item-box">
-                                <div className="text text1">地址：成都市高新区吉泰五路88号香年广场T3栋14楼</div>
+                                <div className="text text1" style={{lineHeight:'24px'}}>地址：四川省-成都市武侯区府城大道西段399号-天府新谷10号楼20层</div>
                                 <div className="text text2">企业邮箱：sxx@sixuexing.com</div>
                                 <div className="text text2">企业QQ：
                                     {/*<a href="tencent://message/?uin=2507819723&Site=qq&Menu=yes">2507819723</a>*/}
@@ -42,15 +42,10 @@ export default class Footer extends Component{
                             </div>
                             <ul className='footer-siteMap'>
                                 <li><a href="http://sixuexing.com">首页</a></li>
-                                <li><a href="http://sixuexing.com/core">核心优势</a></li>
+                                <li><a href="http://sixuexing.com/allCourse">免费课程</a></li>
                                 <li><a href="http://sixuexing.com/teacher">授课导师</a></li>
                                 <li><a href="http://sixuexing.com/sixuexing">思学行动态</a></li>
-                                <li><a href="http://sixuexing.com/teacher">授课导师</a></li>
-                                <li><a href="http://sixuexing.com/allCourse">视频教程</a></li>
-                                {/*<li><a href="http://sixuexing.com/download">资料下载</a></li>*/}
-                                <li><a href="http://sixuexing.com/recruitment">人才招聘</a></li>
-                                <li><a href="http://sixuexing.com/aboutUs">关于我们</a></li>
-                                {/*<li><a href="http://sixuexing.com/contactUs">联系我们</a></li>*/}
+                                <li><a href="http://sixuexing.com/aboutUs">联系我们</a></li>
                             </ul>
                         </div>
                         <div className="item item2">
@@ -73,27 +68,26 @@ export default class Footer extends Component{
                             友情链接(友链交换QQ：2507819723)
                         </div>
                         <ul className="box">
-                            <li><a href="http://app.sxwlwq.com/?baidu21&e_keywordid=100694692077&e_keywordid2=100694692077&b_scene_zt=1&audience=428417">西安APP开发</a></li>
-                            <li><a href="http://zt.epwk.com/1809appkaifa/?epi=1443298&utm_source=pc-bd&utm_medium=cpc&utm_campaign=87291794&utm_content=3224851895&utm_term=%E8%B4%B5%E9%98%B3APP%E5%BC%80%E5%8F%91">贵阳APP开发</a></li>
-                            <li><a href="http://www.cdlchd.com/?bd-html5jh-html5yxkf-h5%D3%CE%CF%B7%BF%AA%B7%A2">h5游戏开发</a></li>
-                            <li><a href="http://www.ydwzxc.com/">上海大众搬家公司</a></li>
-                            <li><a href="https://tf.zbj.com/v/pc/yingxiao?pmcode=121125739&utm_source=baidu&utm_medium=SEM">SEO排名软件</a></li>
-                            <li><a href="http://www.yishenzhou.com/">网络危机处理</a></li>
-                            <li><a href="http://www.xuejianzhan.com/">建站技术网</a></li>
-                            <li><a href="http://www.linsenad.cn/">东营网站建设</a></li>
-                            <li><a href="http://www.mydown.com/soft/273/525443773.shtml">腾讯视频下载</a></li>
-                            <li><a href="http://cd.site.xiniu.com/?audience=518694">网站建设</a></li>
-                            <li><a href="http://www.cdlchd.com/">h5游戏开发</a></li>
-                            <li><a href="https://tf.zbj.com/v/pc/yingxiao">SEO排名软件</a></li>
-                            <li><a href="http://www.yishenzhou.com/">网络危机处理</a></li>
-                            <li><a href="http://www.ydwzxc.com/">上海大众搬家公司</a></li>
-                            <li><a href="https://www.weixinqun.com/group?t=41">微信群</a></li>
-                            <li><a href="http://cd.site.xiniu.com/">建站技术网</a></li>
+                            <li><a href="http://www.scu.edu.cn/">四川大学</a></li>
+                            <li><a href="https://www.uestc.edu.cn/">四川电子科技大学</a></li>
+                            <li><a href="http://www.cdut.edu.cn/default.html">成都理工</a></li>
+                            <li><a href="https://tf.zbj.com/v/pc/yingxiao?pmcode=121125739&utm_source=baidu&utm_medium=SEM">成都孵化园</a></li>
+                            <li><a href="http://www.scujcc.cn/">四川大学锦城学院</a></li>
+                            <li><a href="http://www.cduestc.cn/">电子科技大学成都学院</a></li>
+                            <li><a href="https://www.cdu.edu.cn/">成都学院</a></li>
+                            <li><a href="http://www.swust.edu.cn/?tdnkbjjzfbzrihfk">西南科技大学</a></li>
+                            <li><a href="https://www.sicnu.edu.cn/">四川师范大学</a></li>
+                            <li><a href="https://www.sicau.edu.cn/">四川农业大学</a></li>
+                            <li><a href="https://www.swjtu.edu.cn/">西南交通大学</a></li>
+                            <li><a href="https://www.cdu.edu.cn/">成都大学</a></li>
+                            <li><a href="https://www.swpu.edu.cn/">西南石油大学</a></li>
+                            <li><a href="https://www.xhu.edu.cn/">西华大学</a></li>
+                            <li><a href="https://www.cdivtc.com/">成都工业职业技术学院</a></li>
                         </ul>
                     </div>
                 </div>
                 <div className="footer">
-                    Copyright ©2019 <a href="http://www.sixuexing.com">sixuexing.com</a> 成都思学行教育科技有限公司<a href="http://sixuexing.com/sitemap.xml">sitemap.xml</a><a href="http://www.miitbeian.gov.cn">蜀ICP备18033964号</a>
+                    Copyright ©2019 <a href="https://www.sixuexing.com">sixuexing.com</a> 成都思学行教育科技有限公司<a href="http://www.miitbeian.gov.cn">蜀ICP备18033964号</a>
                 </div>
             </footer>
         )

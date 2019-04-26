@@ -8,7 +8,7 @@ class MyPlayer extends Component {
             <div>
                 <Player
                     playsInline
-                    poster="../../images/title.png"
+                    poster=""
                     src={this.props.url}
                     fluid={false}
                     height={400}
