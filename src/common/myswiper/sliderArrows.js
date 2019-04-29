@@ -1,17 +1,14 @@
-import React, {Component} from 'react';
-
-class SliderArrows extends Component {
-    handleDotClick=(i)=> {
-        let option = i - this.props.nowLocal;
-        this.props.turn(option);
-    }
-    render() {
+import React,{Component} from 'react';
+export default class SliderArrows extends Component {
+    render(){
         return (
-            <div>
-                
+            <div className='slider-dots'>
+                {this.props.items.map((item,index)=>(
+                    <span key={index} className={this.props.index===index?'active':''}
+                          onClick={()=>{this.props.go(index-this.props.index)}}>
+                    </span>
+                ))}
             </div>
-        );
+        )
     }
 }
-
-export default SliderArrows;

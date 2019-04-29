@@ -72,7 +72,6 @@ class Sxx extends Component{
                                 <div className="loading-more" onClick={()=>{this.props.handleMoreList(this.props.page,5)}}>加载更多......</div>
                                 :
                                 <div className="loading-more" >没有更多数据了！</div>}
-
                         </ul>
                     </div>
                     <div className="sxx-box sxx-industry">

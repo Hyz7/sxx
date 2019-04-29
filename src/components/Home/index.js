@@ -19,10 +19,16 @@ import * as actionCreators3 from '../../store/teacher/actionCreators'
 import bluebg from '../../images/home/bluebg.png'
 import salary from '../../images/home/salary.png'
 import field from '../../images/home/field.png'
+import jiaoda from '../../images/home/media/jiaoda.png'
+import shiyou from '../../images/home/media/shiyou.png'
+import gongda from '../../images/home/media/gongda.png'
 
 let  a =''
 
 let timer;
+// let array;
+
+
 class Home extends Component{
     constructor(props){
         super(props)
@@ -30,7 +36,8 @@ class Home extends Component{
             menuRightList: false,
             newsLeft: 1,
             pages:'',
-            active:false
+            active:false,
+            itemActive:'1'
         }
         this.showMenuRight=this.showMenuRight.bind(this)
         this.hideMenuRight=this.hideMenuRight.bind(this)
@@ -63,10 +70,30 @@ class Home extends Component{
     checkclient=()=>{
         let scrollTop=document.body.scrollTop||document.documentElement.scrollTop
         if ( scrollTop+400>=a ) {
-            this.coopContent.className='coop-content active'
+            this.coopContent.className?this.coopContent.className='coop-content active':''
         }else{
-            this.coopContent.className='coop-content'
+            this.coopContent.className?this.coopContent.className='coop-content':''
         }
+    }
+    equals=(x,y)=>{
+        var f1=x instanceof Object;
+        var f2=y instanceof Object;
+        if(!f1 || !f2){
+            return x===y
+        }
+        if(Object.keys(x).length!== Object.keys(y).length){
+            return false
+        }
+        for(var p in x){
+            var a= x[p] instanceof Object;
+            var b= y[p] instanceof Object;
+            if(a && b){
+                this.equals(x[p],y[p])
+            }else if(x[p]!=y[p]){
+                return false;
+            }
+        }
+        return true;
     }
 
     componentDidMount(){
@@ -74,7 +101,7 @@ class Home extends Component{
         window.addEventListener('scroll',this.checkclient.bind(this),false)
         this.props.getHomeBanner()
         this.props.getTeacherList()
-        // this.props.getNewsList()
+        this.props.getNewsList()
         this.props.getAllCourse()
 
     }
@@ -84,8 +111,7 @@ class Home extends Component{
     }
 
     render() {
-
-        let {pages,active} = this.state
+        let {pages,active,itemActive} = this.state
         return(
             <Fragment>
 
@@ -168,6 +194,34 @@ class Home extends Component{
                     </div>
                     {pages==''?
                     <div>
+                        <div className="qklxyx">
+                            <div className="qklxyx-position">
+                                <div className="qklxyx-title">
+                                    <h1 className='text'>区块链校园行</h1>
+                                </div>
+                                <div className="qklxyx-content">
+
+                                    <div className="item">
+                                        <img src={shiyou} alt=""/>
+                                        <div className="item-title">
+                                            区块链校园行NO.5·走进西南石油大学
+                                        </div>
+                                    </div>
+                                    <div className="item">
+                                        <img src={gongda} alt=""/>
+                                        <div className="item-title">
+                                            区块链校园行NO.6·走进成都信息工程大学
+                                        </div>
+                                    </div>
+                                    <div className="item">
+                                        <img src={jiaoda} alt=""/>
+                                        <div className="item-title">
+                                            区块链校园行NO.7·走进西南交通大学
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div className="course">
                             <div className="course-position">
                                 <div className="course-title">
@@ -245,7 +299,8 @@ class Home extends Component{
                             <div className="teacher-title">区块链领域顶尖技术专家</div>
                             <div className="teacher-content">
                                 <Link to={'/teacher'} className="more-btn">查看更多></Link>
-                                {this.props.teacherList&&this.props.teacherList.slice(0,6).map((item,index)=>{
+
+                                {this.props.teacherList&&this.props.teacherList.filter(item=>!this.equals(item,this.props.teacherList.slice(6,7)[0])).map((item,index)=>{
                                     return (
                                         <div className="item" key={index}>
                                             <div className="inner-item">
@@ -259,8 +314,83 @@ class Home extends Component{
                                         </div>
                                     )
                                 })}
-
                             </div>
+                            </div>
+                        </div>
+                        <div className="news">
+                            <div className="news-title">新闻中心</div>
+                            <div className="news-content">
+                                {this.props.newsList.slice(0,1).map(item=>{
+                                    return (
+                                        <div className="news-hot" key={lodashId()}>
+                                            <img src={item.image} alt=""/>
+                                            <div className="content">
+                                                <Link to={'/sixuexing/detail?id='+item.id} className="imgTitle">{item.title}</Link>
+                                                <div className="time">{item.createTime}</div>
+                                                <div className="desc" dangerouslySetInnerHTML={{__html:item.content.replace(/[\r\n]/g,"")}}></div>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+                                <div className="news-list">
+                                    <div className="item-box">
+                                        <div className={itemActive==='1'?"item active":"item"} onClick={()=>{this.setState({itemActive:'1'})}}>思学行动态</div>
+                                        <div className={itemActive==='2'?"item active":"item"} onClick={()=>{this.setState({itemActive:'2'})}}>行业新闻</div>
+                                        <div className={itemActive==='3'?"item active":"item"} onClick={()=>{this.setState({itemActive:'3'})}}>公众号报道</div>
+                                        <Link to={'/sixuexing'} className="more-btn">查看更多></Link>
+                                    </div>
+                                    <div className="item-content">
+                                        {itemActive==='1'&&<div className="content">
+                                            {this.props.newsList.length&&this.props.newsList.slice(0,3).map((item , index)=>{
+                                                return (
+                                                    <Link to={'/sixuexing/detail?id='+item.id} className="list" key={index}>
+                                                        <div className="list-left">
+                                                            <div className="mouth">{item&&item.createTime.substring(5,7)}/{item&&item.createTime.substring(8,10)}</div>
+                                                            <div className="year">{item&&item.createTime.substring(0,4)}</div>
+                                                        </div>
+                                                        <div className="list-box">
+                                                            <div className="list-title" >{item&&item.title}</div>
+                                                            <div className="list-desc" dangerouslySetInnerHTML={{__html:item.content.replace(/\s+/g,"")}}></div>
+                                                        </div>
+                                                    </Link>
+                                                )
+                                            })}
+                                        </div>}
+                                        {itemActive==='2'&&<div className="content">
+                                            {this.props.industryList.length&&this.props.industryList.slice(0,3).map((item , index)=>{
+                                                return (
+                                                    <Link to={'/sixuexing/detail?id='+item.id} className="list" key={index}>
+                                                        <div className="list-left">
+                                                            <div className="mouth">{item&&item.createTime.substring(5,7)}/{item&&item.createTime.substring(8,10)}</div>
+                                                            <div className="year">{item&&item.createTime.substring(0,4)}</div>
+                                                        </div>
+                                                        <div className="list-box">
+                                                            <div className="list-title" >{item&&item.title}</div>
+                                                            <div className="list-desc" dangerouslySetInnerHTML={{__html:item.content.replace(/\s+/g,"")}}></div>
+                                                        </div>
+                                                    </Link>
+                                                )
+                                            })}
+                                        </div>}
+                                        {itemActive==='3'&&<div className="content">
+                                            {this.props.studentList.length&&this.props.studentList.slice(0,3).map((item , index)=>{
+                                                return (
+                                                    <Link to={'/sixuexing/detail?id='+item.id} className="list" key={index}>
+                                                        <div className="list-left">
+                                                            <div className="mouth">{item&&item.createTime.substring(5,7)}/{item&&item.createTime.substring(8,10)}</div>
+                                                            <div className="year">{item&&item.createTime.substring(0,4)}</div>
+                                                        </div>
+                                                        <div className="list-box">
+                                                            <div className="list-title" >{item&&item.title}</div>
+                                                            <div className="list-desc" dangerouslySetInnerHTML={{__html:item.content.replace(/\s+/g,"")}}></div>
+                                                        </div>
+                                                    </Link>
+                                                )
+                                            })}
+                                        </div>}
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div className="cooperation" id='cooperation'>

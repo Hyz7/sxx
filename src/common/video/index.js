@@ -11,8 +11,8 @@ class MyPlayer extends Component {
                     poster=""
                     src={this.props.url}
                     fluid={false}
-                    height={400}
-                    width={1120}
+                    height={this.props.width}
+                    width={this.props.height}
                     autoPlay={true}
                 />
             </div>

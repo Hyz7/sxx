@@ -6,6 +6,7 @@ import axios from 'axios'
 import * as API from '../../api'
 import uniqueId from 'lodash/uniqueId'
 import MyPlayer from '../../common/video'
+import sxxImg from "../../images/sxxbanner.png";
 let listBox=[]
 let list=[]
 class CourseDetail extends Component {
@@ -95,7 +96,11 @@ class CourseDetail extends Component {
         }=this.props.courseDetailInfo
         return (
             <div className='courseDetail-container'>
+                <div className="course-banner">
+                    <img src={sxxImg} alt=""/>
+                </div>
                 <div className="position">
+
                     {mediaStatus?
                         <div className="header-box">
                             <img src={courseImage} alt=""/>
@@ -130,7 +135,7 @@ class CourseDetail extends Component {
                                 {this.state.courseDetailName?this.state.courseDetailName:'暂无'}
                             </div>
                             {/*<MyDPlayer url={this.state.mediaUrl}/>*/}
-                            <MyPlayer url={this.state.mediaUrl} />
+                            <MyPlayer url={this.state.mediaUrl} width={400} height={1120}/>
                         </div>
                     }
                     <div className="titleTop">

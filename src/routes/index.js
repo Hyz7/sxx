@@ -23,8 +23,6 @@ export default class MainRoutes extends  Component{
                 {/*<Route path='/courseDetail/:id' component={AsyncComponent(()=>import('../components/allCourse/courseDetail'))}></Route>*/}
                 <Route path='/courseDetail/:id' component={courseDetail}></Route>
 
-                <Route path='/mediaDetail' component={AsyncComponent(()=>import('../components/allCourse/mediaDetail'))}></Route>
-
                 <Route path='/teacher' component={AsyncComponent(()=>import('../components/teacher'))}></Route>
 
                 <Route path='/sixuexing' exact component={AsyncComponent(()=>import('../components/sixuexing'))}></Route>
@@ -48,6 +46,8 @@ export default class MainRoutes extends  Component{
                 <Route path='/qkl' component={AsyncComponent(()=>import('../components/Home/QKL'))}></Route>
 
                 <Route path='/qklpxb' component={AsyncComponent(()=>import('../components/Home/qklpxb'))}></Route>
+
+                <Route path='/qklxyx' component={AsyncComponent(()=>import('../components/qklxyx'))}></Route>
 
                 <Footer />
             </div>

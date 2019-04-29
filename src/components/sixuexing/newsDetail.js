@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as actionCreators from '../sixuexing/store/actionCreators'
 import uniqueId from "lodash/uniqueId";
+import sxxImg from "../../images/sxxbanner.png";
 let array=[]
 class NewsDetail extends Component{
     state={
@@ -25,6 +26,9 @@ class NewsDetail extends Component{
     render(){
         return(
             <div className='sxx-container' ref={node => this.node = node} >
+                <div className="sxx-banner">
+                    <img src={sxxImg} alt=""/>
+                </div>
                 <FloatWin />
                 <div className="sxx-content">
                     <div className='newsDetail-container'>
@@ -34,7 +38,7 @@ class NewsDetail extends Component{
                             </div>
                             <div className="content" dangerouslySetInnerHTML={{__html:this.props.detailInfo.content}}></div>
                     </div>
-                    <div className="sxx-box sxx-industry">
+                    <div className="sxx-box sxx-industry sxx-box1">
                         <div className="sxx-title">
                             <span></span>
                             行业动态
@@ -61,46 +65,7 @@ class NewsDetail extends Component{
                             })}
                         </div>
                     </div>
-                    {/*<div className="sxx-box sxx-student">
-                        <div className="sxx-title">
-                            <span></span>
-                            学员动态
-                        </div>
-                        <ul className='student-list'>
-                            <li>
-                                <div className="box"><img src={cansai} alt=""/></div>
-                                <div className="news-content">
-                                    <div className="list-title">区块链课程学员参赛</div>
-                                    <div className="description">桂勋老师带领学员参加由工信部指导的“首届全国区块链开发大赛”并荣获二等奖</div>
-                                    <div className="time">2018-9-28</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="box"><img src={huang} alt=""/></div>
-                                <div className="news-content">
-                                    <div className="list-title">“区块链体验课“学员采访</div>
-                                    <div className="description">黄同学：试过，才知道自己有多厉害！！</div>
-                                    <div className="time">2018-9-10</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="box"><img src={erdengjiang} alt=""/></div>
-                                <div className="news-content">
-                                    <div className="list-title">区块链开发大赛二等奖</div>
-                                    <div className="description">学员的努力和汗水！</div>
-                                    <div className="time">2018-9-28</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="box"><img src={third} alt=""/></div>
-                                <div className="news-content">
-                                    <div className="list-title">“区块链体验课“顺利开展</div>
-                                    <div className="description">区块链第一课，在天府新谷顺利开展</div>
-                                    <div className="time">2018-9-10</div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>*/}
+
                 </div>
             </div>
 

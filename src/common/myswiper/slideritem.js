@@ -5,7 +5,7 @@ class SliderItem extends Component {
         let { count, item } = this.props;
         let width = 100 / count + '%';
         return (
-            <li className="slider-item" style={{width: width}}>
+            <li className="slider-item" style={{width: width}} ref={node=>this.$ul=node}>
                 <a href={item.forwardUrl}><img src={item.bannerImage} alt='区块链' /></a>
             </li>
         );
