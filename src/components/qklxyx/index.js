@@ -1,11 +1,27 @@
-import React, {Component} from 'react';
+import React, {Component,PureComponent} from 'react';
 import FloatWin from "../../common/floatWindow";
 import sxxImg from "../../images/sxxbanner.png";
 import jiaoda from '../../images/home/media/jiaoda.png'
 import shiyou from '../../images/home/media/shiyou.png'
 import gongda from '../../images/home/media/gongda.png'
+import {Link} from 'react-router-dom'
 import MyPlayer from '../../common/video'
-class Index extends Component {
+import {connect} from 'react-redux'
+import * as actionCreator from '../../store/actionCreators'
+
+class Qklxyx extends Component {
+
+    componentDidMount() {
+        this.props.getMediaDetail(this.props.location.pathname.substring(8))
+        this.props.getMediaList()
+    }
+
+    handleChangePage=(id)=>{
+        this.props.getMediaDetail(id)
+        this.props.history.replace('/qklxyx/'+id)
+    }
+
+
     render() {
         return (
             <div className='qklxyx-container'>
@@ -14,46 +30,30 @@ class Index extends Component {
                     <img src={sxxImg} alt=""/>
                 </div>
                 <div className="qklxyx-content">
-                    <div className="qklxyx-title">区块链校园行NO.5 ▪ 走进西南石油大学</div>
-                    {/*<MyPlayer url={'...'} width={750} height={480}/>*/}
-                    <div className="video"></div>
+                    <div className="qklxyx-title">{this.props.mediaDetail.title}</div>
+                    <MyPlayer
+                        className="video"
+                        poster={gongda}
+                        url={this.props.mediaDetail&&this.props.mediaDetail.videoUrl}
+                        width={750} height={480}
+                        autoPlay={false}
+                    />
                     <div className="desc">
-                        成都市大数据协会区块链专委会“区块链校园行”走进成都信息工程大学。此次活动邀请到微众银行区块链高级产品经理、FISCO BCOS开源社区高级运营经理赵锦哲和电子科技大学副教授、成都市大数据协会区块链专委会特聘专家桂勋进行专题分享。
+                        {this.props.mediaDetail.content}
                     </div>
                 </div>
                 <div className="qklxyx-list">
                     <div className="qklxyx-title">更多校园行</div>
                     <div className="list">
-                        <div className="item">
-                            <img src={jiaoda} alt=""/>
-                            <div className="item-title">区块链校园行NO.5 ▪ 走进西南石油大学</div>
-                            <div className="item-desc">详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容....</div>
-                        </div>
-                        <div className="item">
-                            <img src={shiyou} alt=""/>
-                            <div className="item-title">区块链校园行NO.5 ▪ 走进西南石油大学</div>
-                            <div className="item-desc">详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容....</div>
-                        </div>
-                        <div className="item">
-                            <img src={gongda} alt=""/>
-                            <div className="item-title">区块链校园行NO.5 ▪ 走进西南石油大学</div>
-                            <div className="item-desc">详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容....</div>
-                        </div>
-                        <div className="item">
-                            <img src={jiaoda} alt=""/>
-                            <div className="item-title">区块链校园行NO.5 ▪ 走进西南石油大学</div>
-                            <div className="item-desc">详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容....</div>
-                        </div>
-                        <div className="item">
-                            <img src={shiyou} alt=""/>
-                            <div className="item-title">区块链校园行NO.5 ▪ 走进西南石油大学</div>
-                            <div className="item-desc">详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容....</div>
-                        </div>
-                        <div className="item">
-                            <img src={gongda} alt=""/>
-                            <div className="item-title">区块链校园行NO.5 ▪ 走进西南石油大学</div>
-                            <div className="item-desc">详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容....</div>
-                        </div>
+                        {this.props.mediaList&&this.props.mediaList.map(item=>{
+                            return (
+                                <Link to={'/qklxyx/'+item.id} onClick={()=>{this.handleChangePage(item.id)}} className="item" key={item.id}>
+                                    <img src={item.image} alt=""/>
+                                    <div className="item-title">{item.title}</div>
+                                    <div className="item-desc">{item.content}</div>
+                                </Link>
+                            )
+                        })}
                     </div>
                 </div>
             </div>
@@ -61,4 +61,14 @@ class Index extends Component {
     }
 }
 
-export default Index;
+export default connect((state)=>({
+    mediaDetail:state.xyx.mediaDetail,
+    mediaList:state.xyx.mediaList
+}),(dispatch)=>({
+    getMediaDetail(id){
+        dispatch(actionCreator.getMediaList(id))
+    },
+    getMediaList(){
+        dispatch(actionCreator.getMediaList())
+    }
+}))(Qklxyx);

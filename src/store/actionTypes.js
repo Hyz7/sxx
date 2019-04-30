@@ -69,4 +69,13 @@ export const GET_COURSE_DETAIL_INFO='course/GET_COURSE_DETAIL_INFO'
  * @type {string}
  */
 export const GET_HOME_BANNER='home/GET_HOME_BANNER'
-
+/**
+ * 获取校园行视频列表
+ * @type {string}
+ */
+export const GET_MEDIA_LIST='home/GET_MEDIA_LIST'
+/**
+ * 获取视频详情
+ * @type {string}
+ */
+export const GET_MEDIA_DETAIL='home/GET_MEDIA_DETAIL'

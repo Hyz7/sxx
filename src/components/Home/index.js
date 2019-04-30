@@ -16,18 +16,15 @@ import * as actionCreators from "../../store/allCourse/actionCreators";
 import * as actionCreators1 from '../sixuexing/store/actionCreators'
 import * as actionCreators2 from '../Home/store/actionCreators'
 import * as actionCreators3 from '../../store/teacher/actionCreators'
+import * as actionCreators4 from '../../store/actionCreators'
+
 import bluebg from '../../images/home/bluebg.png'
 import salary from '../../images/home/salary.png'
 import field from '../../images/home/field.png'
-import jiaoda from '../../images/home/media/jiaoda.png'
-import shiyou from '../../images/home/media/shiyou.png'
-import gongda from '../../images/home/media/gongda.png'
 
 let  a =''
 
 let timer;
-// let array;
-
 
 class Home extends Component{
     constructor(props){
@@ -69,10 +66,10 @@ class Home extends Component{
 
     checkclient=()=>{
         let scrollTop=document.body.scrollTop||document.documentElement.scrollTop
-        if ( scrollTop+400>=a ) {
-            this.coopContent.className?this.coopContent.className='coop-content active':''
+        if ( scrollTop+500>=a ) {
+            this.coopContent?this.coopContent.className='coop-content active':''
         }else{
-            this.coopContent.className?this.coopContent.className='coop-content':''
+            this.coopContent?this.coopContent.className='coop-content':''
         }
     }
     equals=(x,y)=>{
@@ -103,6 +100,7 @@ class Home extends Component{
         this.props.getTeacherList()
         this.props.getNewsList()
         this.props.getAllCourse()
+        this.props.getMediaList()
 
     }
 
@@ -131,7 +129,7 @@ class Home extends Component{
                             <div className="menu-title">热门课程</div>
                             <ul className='course-name'>
                                 <h1><Link to={'/qklpxb'}>区块链项目实战班</Link><span></span></h1>
-                                <h1>区块链全栈工程师<span></span></h1>
+                                <h1><Link to={'/qkl'}>区块链全栈工程师</Link><span></span></h1>
                                 <h1>区块链商学院</h1>
                                 <h1>数字资产量化投资</h1>
                                 <h1>国际大学生程序设计竞赛</h1>
@@ -194,34 +192,27 @@ class Home extends Component{
                     </div>
                     {pages==''?
                     <div>
-                        <div className="qklxyx">
+                        {/*<div className="qklxyx">
                             <div className="qklxyx-position">
                                 <div className="qklxyx-title">
                                     <h1 className='text'>区块链校园行</h1>
                                 </div>
                                 <div className="qklxyx-content">
+                                    {this.props.mediaList&&this.props.mediaList.slice(0,3).map(item=>{
+                                        return (
+                                            <Link to={'/qklxyx/'+item.id} key={lodashId()} className="item">
+                                                <img src={item.image} alt=""/>
+                                                <div className="item-title">
+                                                    {item.title}
+                                                </div>
+                                                <span></span>
+                                            </Link>
+                                        )
+                                    })}
 
-                                    <div className="item">
-                                        <img src={shiyou} alt=""/>
-                                        <div className="item-title">
-                                            区块链校园行NO.5·走进西南石油大学
-                                        </div>
-                                    </div>
-                                    <div className="item">
-                                        <img src={gongda} alt=""/>
-                                        <div className="item-title">
-                                            区块链校园行NO.6·走进成都信息工程大学
-                                        </div>
-                                    </div>
-                                    <div className="item">
-                                        <img src={jiaoda} alt=""/>
-                                        <div className="item-title">
-                                            区块链校园行NO.7·走进西南交通大学
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>*/}
                         <div className="course">
                             <div className="course-position">
                                 <div className="course-title">
@@ -300,7 +291,7 @@ class Home extends Component{
                             <div className="teacher-content">
                                 <Link to={'/teacher'} className="more-btn">查看更多></Link>
 
-                                {this.props.teacherList&&this.props.teacherList.filter(item=>!this.equals(item,this.props.teacherList.slice(6,7)[0])).map((item,index)=>{
+                                {this.props.teacherList&&this.props.teacherList.filter(item=>!this.equals(item,this.props.teacherList.slice(6,7)[0])).slice(0,9).map((item,index)=>{
                                     return (
                                         <div className="item" key={index}>
                                             <div className="inner-item">
@@ -334,9 +325,9 @@ class Home extends Component{
                                 })}
                                 <div className="news-list">
                                     <div className="item-box">
-                                        <div className={itemActive==='1'?"item active":"item"} onClick={()=>{this.setState({itemActive:'1'})}}>思学行动态</div>
-                                        <div className={itemActive==='2'?"item active":"item"} onClick={()=>{this.setState({itemActive:'2'})}}>行业新闻</div>
-                                        <div className={itemActive==='3'?"item active":"item"} onClick={()=>{this.setState({itemActive:'3'})}}>公众号报道</div>
+                                        <div className={itemActive==='1'?"item active":"item"} onClick={()=>{this.setState({itemActive:'1'})}}>区块链校园行</div>
+                                        <div className={itemActive==='2'?"item active":"item"} onClick={()=>{this.setState({itemActive:'2'})}}>区块链企业沙龙</div>
+                                        <div className={itemActive==='3'?"item active":"item"} onClick={()=>{this.setState({itemActive:'3'})}}>学员风采</div>
                                         <Link to={'/sixuexing'} className="more-btn">查看更多></Link>
                                     </div>
                                     <div className="item-content">
@@ -514,12 +505,16 @@ const mapStateToProps=(state)=>({
     studentList:state.sixuexing.studentList,
     allCourseList:state.course.allCourseList,
     bannerList:state.home.bannerList,
-    teacherList:state.teacher.teacherList
+    teacherList:state.teacher.teacherList,
+    mediaList:state.xyx.mediaList
 })
 
 const mapDispatchToProps=(dispatch)=>({
     getNewsList(id){
         dispatch(actionCreators1.getNewsList(id))
+    },
+    getMediaList(){
+        dispatch(actionCreators4.getMediaList())
     },
     getAllCourse(){
         dispatch(actionCreators.getAllCourseList())

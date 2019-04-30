@@ -135,7 +135,7 @@ class CourseDetail extends Component {
                                 {this.state.courseDetailName?this.state.courseDetailName:'暂无'}
                             </div>
                             {/*<MyDPlayer url={this.state.mediaUrl}/>*/}
-                            <MyPlayer url={this.state.mediaUrl} width={400} height={1120}/>
+                            <MyPlayer url={this.state.mediaUrl} width={1120} height={400} autoPlay={true}/>
                         </div>
                     }
                     <div className="titleTop">

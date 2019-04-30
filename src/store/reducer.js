@@ -5,13 +5,15 @@ import {reducer as sixuexingReducer} from '../components/sixuexing/store'
 import {reducer as downloadReducer} from '../components/download/store'
 import teacherReducer from '../store/teacher/reducer'
 import courseReducer from '../store/allCourse/reducer'
+import meidaReducer from '../store/mediaList/reducer'
 const reducer = combineReducers({
     home: homeReducer,
     header: headerReducer,
     sixuexing:sixuexingReducer,
     download:downloadReducer,
     teacher:teacherReducer,
-    course:courseReducer
+    course:courseReducer,
+    xyx:meidaReducer
 })
 
 export default reducer

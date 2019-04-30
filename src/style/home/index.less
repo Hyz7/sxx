@@ -313,13 +313,39 @@
       }
       .qklxyx-content{
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         justify-content: space-around;
         .item{
           width: 380px;
           height: 240px;
           position: relative;
           cursor: pointer;
+          transition: all 500ms;
+          &:hover{
+            transition: all 500ms;
+            transform: scale(1.1);
+            box-shadow: 0 3px 12px rgba(0,0,0,.16);
+            span{
+              opacity: 1;
+              transition: all 1s;
+              box-shadow: 0 3px 12px rgba(0,0,0,.3);
+            }
+          }
+          span{
+            background: url("../../images/home/media/play.png");
+            background-size: 55px 55px;
+            display: block;
+            width: 55px;
+            height: 55px;
+            position: absolute;
+            top: 50%;
+            margin-top: -22px;
+            left: 50%;
+            margin-left: -22px;
+            opacity: 0;
+            transition: all 1s;
+            border-radius: 50%;
+          }
           .item-title{
             position: absolute;
             bottom: 0;
@@ -755,7 +781,8 @@
           height: 95px;
           position: absolute;
           bottom: 0;
-          background-color: rgba(0,0,0,.36);
+          background-color: rgba(0,0,0,.46);
+          box-shadow: 0 -6px 6px rgba(0,0,0,.16);
           padding: 15px 20px;
           box-sizing: border-box;
           .imgTitle{

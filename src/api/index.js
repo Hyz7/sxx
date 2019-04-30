@@ -65,3 +65,8 @@ export const GET_COURSE_CATALOGUE='/course/findTeachplanList'
  * @type {string}
  */
 export const GET_HOME_BANNER='/banner'
+/**
+ * 获取区块链校园行视频列表
+ * @type {string}
+ */
+export const GET_MEDIA_LIST='/compusTalk'
