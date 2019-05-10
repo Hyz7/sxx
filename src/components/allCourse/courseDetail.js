@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
-import {withRouter} from 'react-router-dom'
+import {withRouter,Link} from 'react-router-dom'
 import * as actionCreators from '../../store/allCourse/actionCreators'
 import axios from 'axios'
 import * as API from '../../api'
@@ -16,6 +16,7 @@ class CourseDetail extends Component {
     }
 
     componentDidMount() {
+        document.documentElement.scrollTop=0
         this.props.getCourseDetail(this.props.match.params.id)
         axios.get(API.GET_COURSE_CATALOGUE+'?courseId='+this.props.match.params.id,{baseURL: 'https://sixuexing.com/home/',
         }).then(res=>{
@@ -23,7 +24,6 @@ class CourseDetail extends Component {
             listBox.push(res.data)
             this.setState({courseList:listBox},()=>{
                 this.renderTree(this.state.courseList)
-
                 if(this.state.courseList[0].children&&this.state.courseList[0].children.length){
                     this.state.courseList.forEach(v=>{
                         v.children.forEach((v2,index)=>{
@@ -93,6 +93,8 @@ class CourseDetail extends Component {
             introduce,
             courseCatalog,
             courseVideoUrl,
+            courseCoverImg,
+            classify
         }=this.props.courseDetailInfo
         return (
             <div className='courseDetail-container'>
@@ -107,7 +109,7 @@ class CourseDetail extends Component {
                             <div className="content">
                                 <div className="title">{courseTitle}</div>
                                 <div className="description">{courseSubTitle}</div>
-                                <div className="type">视频课</div>
+                                <div className="type">{classify==courseStatus[1].type?courseStatus[1].name:courseStatus[2].name}</div>
                                 <div className="text">主讲老师：{courseTeacher}</div>
                                 <div className="text">观看次数：{courseWatchCount}</div>
                                 <div className="createTime">发布时间：{coursePublicTime}</div>
@@ -130,17 +132,17 @@ class CourseDetail extends Component {
                     :
                         <div className="header-box1">
                             <div className="mediaTitle">
-                                {this.state.courseNodeIndex?this.state.courseNodeIndex:'第1章'}>
+                                <Link to={'/'} className="link">首页</Link>>
+                                {this.state.courseNodeIndex?this.state.courseNodeIndex:<Link to={'/allCourse'} className="link">课程列表</Link>}>
                                 {this.state.courseNode?this.state.courseNode:'暂无'}>
                                 {this.state.courseDetailName?this.state.courseDetailName:'暂无'}
                             </div>
-                            {/*<MyDPlayer url={this.state.mediaUrl}/>*/}
-                            <MyPlayer url={this.state.mediaUrl} width={1120} height={400} autoPlay={true}/>
+                            <MyPlayer poster={courseCoverImg} url={this.state.mediaUrl} width={1120} height={400} autoPlay={false}/>
                         </div>
                     }
                     <div className="titleTop">
                         <span className={tabStatus=='induction'?'active':''} onClick={()=>{this.setState({tabStatus:'induction'})}}>介绍</span>
-                        <span className={tabStatus=='catalogue'?'active':''} onClick={()=>{this.setState({tabStatus:'catalogue'})}}>目录</span>
+                        {courseSubTitle&&courseSubTitle.indexOf('区块链校园行')==-1?<span className={tabStatus=='catalogue'?'active':''} onClick={()=>{this.setState({tabStatus:'catalogue'})}}>目录</span>:null}
                     </div>
                     <div className="content-box">
                         <div className="left">
@@ -188,14 +190,14 @@ class CourseDetail extends Component {
                                 <div className="title">主讲老师</div>
                                 <img src={courseTeacherImage?courseTeacherImage:''} alt="区块链"/>
                                 <div className="name">{courseTeacher}</div>
-                                <div className="description">{courseTeacherIntroduce&&courseTeacherIntroduce.length>35?courseTeacherIntroduce.substring(0,35)+'...':courseTeacherIntroduce}</div>
+                                <div className="description">{courseTeacherIntroduce&&courseTeacherIntroduce.length>45?courseTeacherIntroduce.substring(0,45)+'...':courseTeacherIntroduce}</div>
                             </div>
-                            <div className="item item2">
-                                <div className="title">课程介绍</div>
+                            {courseSubTitle&&courseSubTitle.indexOf('区块链校园行')==-1?<div className="item item2">
+                                <div className="title">区块链校园行</div>
                                 <div className="description">
                                     {introduce&&introduce.length>100?introduce.substring(0,100)+'...':introduce}
                                 </div>
-                            </div>
+                            </div>:null}
                         </div>
                     </div>
                 </div>

@@ -5,11 +5,12 @@ import sxxImg from '../../images/sxxbanner.png'
 import {Link} from 'react-router-dom'
 import lodashId from "lodash/uniqueId";
 import {withRouter} from 'react-router-dom'
+import CourseList from './courseList'
 class AllCourse extends Component{
     componentDidMount() {
         this.props.getAllCourse()
+        document.documentElement.scrollTop=0
     }
-
     render(){
         return(
             <div className='all-course-container'>
@@ -19,22 +20,8 @@ class AllCourse extends Component{
                 <div className="allcourse-position">
                     <div className="title">全部课程</div>
                     <div className="description">更多精品优质课程</div>
-                    <div className="course-list">
-                        {this.props.allCourseList?this.props.allCourseList.map(item=>{
-                            return (
-                                <Link to={'/courseDetail/'+item.courseId} className="list-box" key={lodashId()}>
-                                    <div className="span-box">
-                                        <img src={item.courseImage} className='img'/>
-                                    </div>
-                                    <div className="content">
-                                        <div className="course-title">{item.courseTitle}</div>
-                                        <div className="course-text">{item.courseSubTitle}</div>
-                                        <div className="price"><span>￥{item.courseActivityPrice} 免费</span><s>原价￥{item.courseOriginalPrice}</s></div>
-                                    </div>
-                                </Link>
-                            )
-                        }):null}
-                    </div>
+                    <CourseList allCourseList={this.props.allCourseList}/>
+
                 </div>
             </div>
         )

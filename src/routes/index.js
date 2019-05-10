@@ -6,7 +6,7 @@ import Footer from '../common/footer'
 import Home from '../components/home'
 import Test from '../components/test'
 import courseDetail from '../components/allCourse/courseDetail'
-import mediaDetail from '../components/qklxyx'
+import QKL from '../components/Home/QKL'
 
 export default class MainRoutes extends  Component{
     render(){
@@ -45,13 +45,12 @@ export default class MainRoutes extends  Component{
 
                 <Route path='/aboutUs' component={AsyncComponent(()=>import('../components/about'))}></Route>
 
-                <Route path='/qkl' component={AsyncComponent(()=>import('../components/Home/QKL'))}></Route>
+                {/*<Route path='/qkl' exact component={AsyncComponent(()=>import('../components/Home/QKL'))}></Route>*/}
+                <Route path='/qkl' exact component={QKL}></Route>
 
                 <Route path='/qklpxb' component={AsyncComponent(()=>import('../components/Home/qklpxb'))}></Route>
 
                 <Route path='/qklxyx' component={AsyncComponent(()=>import('../components/qklxyx'))}></Route>
-
-                {/*<Route path='/qklxyx/:id' component={mediaDetail}></Route>*/}
                 <Footer />
             </div>
         )

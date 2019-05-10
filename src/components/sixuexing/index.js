@@ -51,7 +51,7 @@ class Sxx extends Component{
                     <div className="sxx-box sxx-news">
                         <div className="sxx-title">
                             <span></span>
-                            新闻资讯
+                            区块链校园行
                         </div>
                         <ul className='news-list'>
                             {this.props.newsList.map((item)=>{
@@ -77,14 +77,14 @@ class Sxx extends Component{
                     <div className="sxx-box sxx-industry">
                         <div className="sxx-title">
                             <span></span>
-                            行业动态
+                            区块链沙龙汇
                         </div>
                         <div className="industry-content">
                             {this.props.industryList.map((item)=>{
                                 return (
                                     <div className="industry-list" key={lodashId()}>
                                         <span></span>
-                                        <a className="text" href={item.url}>{item.title}</a>
+                                        <Link to={'/sixuexing/detail?id='+item.id} className="text" href={item.url}>{item.title}</Link>
                                     </div>
                                 )
                             })}
@@ -93,7 +93,7 @@ class Sxx extends Component{
                     <div className="sxx-box sxx-student">
                         <div className="sxx-title">
                             <span></span>
-                            学员动态
+                            学员风采
                         </div>
                         <ul className='student-list'>
                             {this.props.studentList.map((item)=>{
@@ -114,9 +114,7 @@ class Sxx extends Component{
             </div>
         )
     }
-    /*handleMoreList=(page,size)=>{
 
-    }*/
 }
 
 const mapStateToProps=(state)=>({

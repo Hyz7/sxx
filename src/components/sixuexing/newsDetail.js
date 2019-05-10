@@ -1,15 +1,12 @@
 import React,{ Component,Fragment } from 'react'
 import FloatWin from '../../common/floatWindow'
-import { withRouter } from 'react-router-dom'
+import { withRouter,Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as actionCreators from '../sixuexing/store/actionCreators'
 import uniqueId from "lodash/uniqueId";
 import sxxImg from "../../images/sxxbanner.png";
-let array=[]
+
 class NewsDetail extends Component{
-    state={
-        zanStatus:false
-    }
 
     componentDidMount() {
         this.props.getDetailContent(this.props.location.search.substring(4))
@@ -41,24 +38,57 @@ class NewsDetail extends Component{
                     <div className="sxx-box sxx-industry sxx-box1">
                         <div className="sxx-title">
                             <span></span>
-                            行业动态
+                            区块链沙龙汇
                         </div>
                         <div className="industry-content">
-                            {this.props.industryList?this.props.industryList.map((item)=>{
-                                return (
-                                    <a href={item.url?item.url:null} className="industry-list" key={uniqueId()}>
-                                        <span></span>
-                                        <div  className="text" >{item.title}</div>
-                                    </a>
-                                )
-                            }):null}
 
-                            {this.props.newsList.map((item,index)=>{
+                            {this.props.industryList&&this.props.industryList.map((item)=>{
+                                return (
+                                    <Link to={'/sixuexing/detail?id='+item.id} href={item.url?item.url:null} className="industry-list" key={uniqueId()}>
+                                        <span></span>
+                                        <div className="text">{item.title}</div>
+                                    </Link>
+                                )
+                            })}
+
+                            {this.props.newsList&&this.props.newsList.map((item,index)=>{
                                 if(this.props.location.search.substring(4)==item.id){
                                     return (
                                         <div className="btn-box" key={uniqueId()}>
-                                            <div className="btn prev-btn noSelectText" onClick={()=>{this.handleChangePage(this.props.newsList[index-1].id)}}>上一篇：<div>{this.props.newsList[index-1]?this.props.newsList[index-1].title:'无上一篇'}</div></div>
-                                            <div className="btn next-btn noSelectText" onClick={()=>{this.handleChangePage(this.props.newsList[index+1].id)}}>下一篇：<div>{this.props.newsList[index+1]?this.props.newsList[index+1].title:'无下一篇'}</div></div>
+                                            <div className="btn prev-btn noSelectText"
+                                                 onClick={()=>{this.handleChangePage(this.props.newsList[index-1].id)}}>
+                                                上一篇：
+                                                <div>
+                                                    {this.props.newsList[index-1]?this.props.newsList[index-1].title:'无上一篇'}
+                                                </div>
+                                            </div>
+                                            <div className="btn next-btn noSelectText"
+                                                 onClick={()=>{this.handleChangePage(this.props.newsList[index+1].id)}}>
+                                                下一篇：
+                                                <div>
+                                                    {this.props.newsList[index+1]?this.props.newsList[index+1].title:'无下一篇'}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            })}
+                            {this.props.industryList&&this.props.industryList.map((item,index)=>{
+                                if(this.props.location.search.substring(4)==item.id){
+                                    return (
+                                        <div className="btn-box" key={uniqueId()}>
+                                            <div className="btn prev-btn noSelectText" onClick={()=>{this.handleChangePage(this.props.industryList[index-1].id)}}>上一篇：<div>{this.props.industryList[index-1]?this.props.industryList[index-1].title:'无上一篇'}</div></div>
+                                            <div className="btn next-btn noSelectText" onClick={()=>{this.handleChangePage(this.props.industryList[index+1].id)}}>下一篇：<div>{this.props.industryList[index+1]?this.props.industryList[index+1].title:'无下一篇'}</div></div>
+                                        </div>
+                                    )
+                                }
+                            })}
+                            {this.props.studentList&&this.props.studentList.map((item,index)=>{
+                                if(this.props.location.search.substring(4)==item.id){
+                                    return (
+                                        <div className="btn-box" key={uniqueId()}>
+                                            <div className="btn prev-btn noSelectText" onClick={()=>{this.handleChangePage(this.props.studentList[index-1].id)}}>上一篇：<div>{this.props.studentList[index-1]?this.props.studentList[index-1].title:'无上一篇'}</div></div>
+                                            <div className="btn next-btn noSelectText" onClick={()=>{this.handleChangePage(this.props.studentList[index+1].id)}}>下一篇：<div>{this.props.studentList[index+1]?this.props.studentList[index+1].title:'无下一篇'}</div></div>
                                         </div>
                                     )
                                 }
@@ -77,6 +107,7 @@ const mapStateToProps=(state)=>({
     list:state.sixuexing.newsList,
     detailInfo:state.sixuexing.detailInfo,
     industryList:state.sixuexing.industryList,
+    studentList:state.sixuexing.studentList,
 })
 const mapDispatchToProps=(dispatch)=>({
     getDetailContent(id){

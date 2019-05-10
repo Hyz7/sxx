@@ -3,7 +3,6 @@ import img from '../../../images/home/banner1.png'
 import baomingImg from "../../../images/home/baoming.png";
 import {Modal} from 'antd'
 import webChat from '../../../images/publicNum.png'
-import MyWOW from "../../../common/wow";
 class QKL extends Component {
     state = { visible: false }
     showModal = (type) => {

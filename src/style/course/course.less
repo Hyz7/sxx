@@ -31,10 +31,11 @@
     }
     .course-list{
       margin-top: 20px;
-      height: 1000px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
       .list-box{
         margin-bottom: 20px;
-        float: left;
         width: 210px;
         height: 220px;
         margin-right: 30px;
@@ -67,7 +68,7 @@
           .span5{height:120px;width:210px;background-position:-0px 0;}
         }
         .content{
-          padding: 16px 10px 25px 10px;
+          padding: 16px 10px 0 10px;
           box-sizing: border-box;
           .course-title{
             font-size: 16px;
@@ -81,6 +82,35 @@
             margin-top: 10px;
             font-size: 12px;
             color: #999;
+          }
+          .course-type{
+            box-sizing: border-box;
+            margin-top: 10px;
+            display: flex;
+            .left-box{
+              flex: 3;
+              display: flex;
+              flex-wrap: nowrap;
+              margin-top: 2px;
+              span{
+                width: 20px;
+                height: 20px;
+                background: url("../../images/home/fire.png");
+                margin-right: 5px;
+              }
+              .text{
+                color: #9b9da2;
+              }
+            }
+            .right-box{
+              flex: 1;
+              text-align: center;
+              border-radius: 20px;
+              font-size: 12px;
+              color: #fff;
+              padding: 3px 5px;
+              box-sizing: border-box;
+            }
           }
           .price{
             display: flex;
@@ -248,6 +278,10 @@
         }
       }
     }
+    .backCourseList{
+      float: right;
+      white-space: nowrap;
+    }
     .header-box1{
       width: 100%;
       min-height: 500px;
@@ -256,7 +290,15 @@
       box-sizing: border-box;
       .mediaTitle{
         margin-bottom: 20px;
+        .link{
+          color: #666;
+          &:hover{
+            color: @theme-color;
+            text-decoration: underline;
+          }
+        }
       }
+
     }
     .header-box{
       width: 100%;

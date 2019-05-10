@@ -7,7 +7,7 @@ import MainRoutes from "./routes/index";
 import NotFound from "./components/notFound";
 import { Provider } from "react-redux";
 import './style/swiper/swiper.less'
-
+import './utils/global'
 
 const App=()=>{
     return(

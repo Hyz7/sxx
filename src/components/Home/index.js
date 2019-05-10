@@ -21,6 +21,7 @@ import * as actionCreators4 from '../../store/actionCreators'
 import bluebg from '../../images/home/bluebg.png'
 import salary from '../../images/home/salary.png'
 import field from '../../images/home/field.png'
+import CourseList from "../allCourse/courseList";
 
 let  a =''
 
@@ -192,33 +193,14 @@ class Home extends Component{
                     </div>
                     {pages==''?
                     <div>
-                        {/*<div className="qklxyx">
-                            <div className="qklxyx-position">
-                                <div className="qklxyx-title">
-                                    <h1 className='text'>区块链校园行</h1>
-                                </div>
-                                <div className="qklxyx-content">
-                                    {this.props.mediaList&&this.props.mediaList.slice(0,3).map(item=>{
-                                        return (
-                                            <Link to={'/qklxyx/'+item.id} key={lodashId()} className="item">
-                                                <img src={item.image} alt=""/>
-                                                <div className="item-title">
-                                                    {item.title}
-                                                </div>
-                                                <span></span>
-                                            </Link>
-                                        )
-                                    })}
 
-                                </div>
-                            </div>
-                        </div>*/}
                         <div className="course">
                             <div className="course-position">
                                 <div className="course-title">
                                     <h1 className='text'>免费课程</h1>
                                 </div>
                                 <s style={{height:'0',clear:'both',display:'block',overflow:'hidden'}}></s>
+                                {/*<CourseList allCourseList={this.props.allCourseList}/>*/}
                                 <div className="course-list">
                                     <Link to='allcourse' className="more-btn">查看更多></Link>
                                     {this.props.allCourseList&&this.props.allCourseList.map((item,index)=>{
@@ -232,14 +214,21 @@ class Home extends Component{
                                                     <div className="content">
                                                         <div className="course-title">{item.courseTitle}</div>
                                                         <div className="course-text">{item.courseSubTitle}</div>
-                                                        <div className="price"><span>￥{item.courseActivityPrice} 免费</span><s>原价￥{item.courseOriginalPrice}</s></div>
+                                                        {/*<div className="price"><span>￥{item.courseActivityPrice} 免费</span><s>原价￥{item.courseOriginalPrice}</s></div>*/}
+                                                        <div className="course-type">
+                                                            <div className="left-box">
+                                                                <span></span>
+                                                                <div className="text">{item.courseWatchCount}</div>
+                                                            </div>
+                                                            <div className="right-box" style={{backgroundColor:item.classify==courseStatus[1].type?courseStatus[1].color:courseStatus[2].color}}>{item.classify==courseStatus[1].type?courseStatus[1].name:courseStatus[2].name}</div>
+                                                        </div>
                                                     </div>
                                                 </Link>
                                             )
                                         }
                                     })}
                                 </div>
-                                <s style={{height:'0',clear:'both',display:'block',overflow:'hidden'}}></s>
+
                             </div>
                         </div>
                         <div className="hot">
@@ -443,9 +432,52 @@ class Home extends Component{
                                     <span className={`span11 ${active==='span11'?'active':null}`}></span>
                                 </div>
                                 <div className="item"
+                                     onMouseOver={()=>{this.setState({active:'span17'})}}
+                                     onMouseOut={()=>{this.setState({active:''})}}>
+                                    <span className={`span17 ${active==='span17'?'active':null}`}></span>
+                                </div>
+
+                                <div className="item"
+                                     onMouseOver={()=>{this.setState({active:'span21'})}}
+                                     onMouseOut={()=>{this.setState({active:''})}}>
+                                    <span className={`span21 ${active==='span21'?'active':null}`}></span>
+                                </div>
+                                <div className="item"
+                                     onMouseOver={()=>{this.setState({active:'span22'})}}
+                                     onMouseOut={()=>{this.setState({active:''})}}>
+                                    <span className={`span22 ${active==='span22'?'active':null}`}></span>
+                                </div>
+                                <div className="item"
                                      onMouseOver={()=>{this.setState({active:'span12'})}}
                                      onMouseOut={()=>{this.setState({active:''})}}>
                                     <span className={`span12 ${active==='span12'?'active':null}`}></span>
+                                </div>
+                                <div className="item"
+                                     onMouseOver={()=>{this.setState({active:'span18'})}}
+                                     onMouseOut={()=>{this.setState({active:''})}}>
+                                    <span className={`span18 ${active==='span18'?'active':null}`}></span>
+                                </div>
+                                <div className="item"
+                                     onMouseOver={()=>{this.setState({active:'span19'})}}
+                                     onMouseOut={()=>{this.setState({active:''})}}>
+                                    <span className={`span19 ${active==='span19'?'active':null}`}></span>
+                                </div>
+                                <div className="item"
+                                     onMouseOver={()=>{this.setState({active:'span23'})}}
+                                     onMouseOut={()=>{this.setState({active:''})}}>
+                                    <span className={`span23 ${active==='span23'?'active':null}`}></span>
+                                </div>
+                                <div className="item"
+                                     onMouseOver={()=>{this.setState({active:'span24'})}}
+                                     onMouseOut={()=>{this.setState({active:''})}}>
+                                    <span className={`span24 ${active==='span24'?'active':null}`}></span>
+                                </div>
+
+
+                                <div className="item"
+                                     onMouseOver={()=>{this.setState({active:'span20'})}}
+                                     onMouseOut={()=>{this.setState({active:''})}}>
+                                    <span className={`span20 ${active==='span20'?'active':null}`}></span>
                                 </div>
                                 <div className="item"
                                      onMouseOver={()=>{this.setState({active:'span13'})}}
