@@ -91,7 +91,7 @@ class About extends Component{
                                     <div className="text">邮箱：sxx@sixuexing.com</div>
                                     <div className="text">企业内训/商务合作：028-63852532</div>
                                     <div className="text" style={{margin:"20px 0"}}>QQ：2507819723</div>
-                                    <div className="text">地址：成都高新区吉泰五路88号香年广场3栋14楼2号</div>
+                                    <div className="text">地址：四川省成都市武侯区府城大道西段399号 天府新谷10号楼20层</div>
                                     <div className="address">
                                         <svg className='icon-svg'>
                                             <use xlinkHref='#icon-didian01'></use>

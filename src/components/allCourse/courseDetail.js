@@ -190,14 +190,14 @@ class CourseDetail extends Component {
                                 <div className="title">主讲老师</div>
                                 <img src={courseTeacherImage?courseTeacherImage:''} alt="区块链"/>
                                 <div className="name">{courseTeacher}</div>
-                                <div className="description">{courseTeacherIntroduce&&courseTeacherIntroduce.length>45?courseTeacherIntroduce.substring(0,45)+'...':courseTeacherIntroduce}</div>
+                                <div className="description">{courseTeacherIntroduce&&courseTeacherIntroduce}</div>
                             </div>
-                            {courseSubTitle&&courseSubTitle.indexOf('区块链校园行')==-1?<div className="item item2">
+                            {/*{courseSubTitle&&courseSubTitle.indexOf('区块链校园行')!==-1?<div className="item item2">
                                 <div className="title">区块链校园行</div>
                                 <div className="description">
-                                    {introduce&&introduce.length>100?introduce.substring(0,100)+'...':introduce}
+                                    {introduce&&introduce}
                                 </div>
-                            </div>:null}
+                            </div>:null}*/}
                         </div>
                     </div>
                 </div>
