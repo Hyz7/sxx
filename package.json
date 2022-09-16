@@ -16,7 +16,7 @@
     "antd": "^3.10.8",
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
-    "bootstrap": "^3.4.0",
+    "bootstrap": "^3.4.1",
     "express": "^4.16.4",
     "hypernova": "^2.4.0",
     "lodash": "latest",
